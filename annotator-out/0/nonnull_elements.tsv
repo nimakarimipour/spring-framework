@@ -1,2 +1,2 @@
 kind	class	method	param	index	uri
-METHOD	org.springframework.core.annotation.AnnotatedMethod$AnnotatedMethodParameter	getMethod()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotatedMethod.java
+METHOD	org.springframework.core.annotation.AnnotatedMethod$AnnotatedMethodParameter	getMethod()	null	null	/home/nima/Developer/nullness-benchmarks/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotatedMethod.java

@@ -182,8 +182,11 @@ tasks.withType(JavaCompile) {
 	options.errorprone {
 		check("NullAway", CheckSeverity.WARN)
 		check("AnnotatorScanner", CheckSeverity.WARN)
-		check("AnnotLocator", CheckSeverity.WARN)
+		// check("AnnotLocator", CheckSeverity.WARN)
 		option("NullAway:AnnotatedPackages", "org.springframework")
+		option("NullAway:UnannotatedSubPackages", "org.springframework.instrument,org.springframework.context.index," +
+				"org.springframework.asm,org.springframework.cglib,org.springframework.objenesis," +
+				"org.springframework.javapoet,org.springframework.aot.nativex.substitution,org.springframework.aot.nativex.feature")
 		option("NullAway:SerializeFixMetadata", "true")
 		option("NullAway:FixSerializationConfigPath", nullaway_path)
 		option("AnnotatorScanner:ConfigPath",  scanner_path)
