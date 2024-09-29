@@ -123,7 +123,7 @@ public class SingletonSupplier<T> implements Supplier<T> {
 	 * @return the singleton instance (never {@code null})
 	 * @throws IllegalStateException in case of no instance
 	 */
-	public T obtain() {
+	@Nullable public T obtain() {
 		T instance = get();
 		Assert.state(instance != null, "No instance from Supplier");
 		return instance;

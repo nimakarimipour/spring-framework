@@ -19,6 +19,7 @@ package org.springframework.core.convert.support;
 import kotlin.text.Regex;
 
 import org.springframework.core.convert.converter.Converter;
+import javax.annotation.Nullable;
 
 /**
  * Converts from a String to a Kotlin {@link Regex}.
@@ -28,7 +29,7 @@ import org.springframework.core.convert.converter.Converter;
  */
 class StringToRegexConverter implements Converter<String, Regex> {
 
-	@Override
+	@Nullable @Override
 	public Regex convert(String source) {
 		if (source.isEmpty()) {
 			return null;

@@ -97,7 +97,7 @@ public abstract class SerializationUtils {
 	 * @return a clone (deep-copy) of the given object
 	 * @since 6.0
 	 */
-	@SuppressWarnings("unchecked")
+	@Nullable @SuppressWarnings("unchecked")
 	public static <T extends Serializable> T clone(T object) {
 		return (T) SerializationUtils.deserialize(SerializationUtils.serialize(object));
 	}

@@ -138,7 +138,7 @@ final class SimpleAnnotationMetadataReadingVisitor extends ClassVisitor {
 				this.interfaceNames, this.memberClassNames, this.declaredMethods, annotations);
 	}
 
-	public SimpleAnnotationMetadata getMetadata() {
+	@Nullable public SimpleAnnotationMetadata getMetadata() {
 		Assert.state(this.metadata != null, "AnnotationMetadata not initialized");
 		return this.metadata;
 	}

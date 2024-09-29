@@ -109,7 +109,7 @@ public class DefaultMethodReference implements MethodReference {
 		code.add(CodeBlock.join(arguments, ", "));
 	}
 
-	protected CodeBlock instantiateDeclaringClass(ClassName declaringClass) {
+	protected CodeBlock instantiateDeclaringClass(@Nullable ClassName declaringClass) {
 		return CodeBlock.of("new $T().", declaringClass);
 	}
 
@@ -117,7 +117,7 @@ public class DefaultMethodReference implements MethodReference {
 		return this.method.modifiers.contains(Modifier.STATIC);
 	}
 
-	private boolean isSameDeclaringClass(ClassName declaringClass) {
+	private boolean isSameDeclaringClass(@Nullable ClassName declaringClass) {
 		return this.declaringClass == null || this.declaringClass.equals(declaringClass);
 	}
 
