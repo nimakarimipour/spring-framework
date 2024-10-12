@@ -17,6 +17,7 @@
 package org.springframework.core.task;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
@@ -182,7 +183,7 @@ public class SimpleAsyncTaskExecutor extends CustomizableThreadCreator
 	public void setTaskTerminationTimeout(long timeout) {
 		Assert.isTrue(timeout >= 0, "Timeout value must be >=0");
 		this.taskTerminationTimeout = timeout;
-		this.activeThreads = (timeout > 0 ? ConcurrentHashMap.newKeySet() : null);
+		this.activeThreads = (timeout > 0 ? Collections.newSetFromMap(new ConcurrentHashMap<>()) : null);
 	}
 
 	/**

@@ -230,7 +230,7 @@ public class TypeUtils {
     }
 
     private static String map(String type) {
-        if (type.isEmpty()) {
+        if (type.equals("")) {
             return type;
         }
         String t = (String)transforms.get(type);

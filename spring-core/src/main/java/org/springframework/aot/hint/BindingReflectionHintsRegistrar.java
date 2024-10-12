@@ -22,7 +22,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.RecordComponent;
 import java.lang.reflect.Type;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -64,7 +63,7 @@ public class BindingReflectionHintsRegistrar {
 	 * @param types the types to register
 	 */
 	public void registerReflectionHints(ReflectionHints hints, Type... types) {
-		Set<Type> seen = new HashSet<>();
+		Set<Type> seen = new LinkedHashSet<>();
 		for (Type type : types) {
 			registerReflectionHints(hints, seen, type);
 		}

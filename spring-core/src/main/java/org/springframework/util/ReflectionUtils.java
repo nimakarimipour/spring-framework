@@ -338,7 +338,7 @@ public abstract class ReflectionUtils {
 	 * @throws IllegalStateException if introspection fails
 	 * @see #doWithMethods(Class, MethodCallback, MethodFilter)
 	 */
-	public static void doWithMethods(@Nullable Class<?> clazz, MethodCallback mc) {
+	public static void doWithMethods(Class<?> clazz, MethodCallback mc) {
 		doWithMethods(clazz, mc, null);
 	}
 
@@ -386,7 +386,7 @@ public abstract class ReflectionUtils {
 	 * @param leafClass the class to introspect
 	 * @throws IllegalStateException if introspection fails
 	 */
-	public static Method[] getAllDeclaredMethods(@Nullable Class<?> leafClass) {
+	public static Method[] getAllDeclaredMethods(Class<?> leafClass) {
 		final List<Method> methods = new ArrayList<>(20);
 		doWithMethods(leafClass, methods::add);
 		return methods.toArray(EMPTY_METHOD_ARRAY);

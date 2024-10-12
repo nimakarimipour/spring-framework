@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ import org.springframework.util.ConcurrentReferenceHashMap;
  * @author Rob Harrop
  * @author Sam Brannen
  * @author Phillip Webb
- * @author Yanming Zhou
  * @since 2.5.2
  */
 public final class GenericTypeResolver {
@@ -147,7 +146,6 @@ public final class GenericTypeResolver {
 	/**
 	 * Resolve the given generic type against the given context class,
 	 * substituting type variables as far as possible.
-	 * <p>As of 6.2, this method resolves type variables recursively.
 	 * @param genericType the (potentially) generic type
 	 * @param contextClass a context class for the target type, for example a class
 	 * in which the target type appears in a method signature (can be {@code null})
@@ -169,7 +167,7 @@ public final class GenericTypeResolver {
 			else if (genericType instanceof ParameterizedType parameterizedType) {
 				ResolvableType resolvedType = ResolvableType.forType(genericType);
 				if (resolvedType.hasUnresolvableGenerics()) {
-					ResolvableType[] generics = new ResolvableType[parameterizedType.getActualTypeArguments().length];
+					Class<?>[] generics = new Class<?>[parameterizedType.getActualTypeArguments().length];
 					Type[] typeArguments = parameterizedType.getActualTypeArguments();
 					ResolvableType contextType = ResolvableType.forClass(contextClass);
 					for (int i = 0; i < typeArguments.length; i++) {
@@ -177,17 +175,14 @@ public final class GenericTypeResolver {
 						if (typeArgument instanceof TypeVariable<?> typeVariable) {
 							ResolvableType resolvedTypeArgument = resolveVariable(typeVariable, contextType);
 							if (resolvedTypeArgument != ResolvableType.NONE) {
-								generics[i] = resolvedTypeArgument;
+								generics[i] = resolvedTypeArgument.resolve();
 							}
 							else {
-								generics[i] = ResolvableType.forType(typeArgument);
+								generics[i] = ResolvableType.forType(typeArgument).resolve();
 							}
 						}
-						else if (typeArgument instanceof ParameterizedType) {
-							generics[i] = ResolvableType.forType(resolveType(typeArgument, contextClass));
-						}
 						else {
-							generics[i] = ResolvableType.forType(typeArgument);
+							generics[i] = ResolvableType.forType(typeArgument).resolve();
 						}
 					}
 					Class<?> rawClass = resolvedType.getRawClass();

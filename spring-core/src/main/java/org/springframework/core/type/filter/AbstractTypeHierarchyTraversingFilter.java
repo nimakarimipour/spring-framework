@@ -123,7 +123,7 @@ public abstract class AbstractTypeHierarchyTraversingFilter implements TypeFilte
 		return false;
 	}
 
-	private boolean match(@Nullable String className, MetadataReaderFactory metadataReaderFactory) throws IOException {
+	private boolean match(String className, MetadataReaderFactory metadataReaderFactory) throws IOException {
 		return match(metadataReaderFactory.getMetadataReader(className), metadataReaderFactory);
 	}
 

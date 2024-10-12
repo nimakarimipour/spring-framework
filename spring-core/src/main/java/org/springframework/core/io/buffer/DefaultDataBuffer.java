@@ -80,21 +80,19 @@ public class DefaultDataBuffer implements DataBuffer {
 
 	/**
 	 * Directly exposes the native {@code ByteBuffer} that this buffer is based
-	 * on. The {@linkplain ByteBuffer#position() position} of the returned
-	 * {@code ByteBuffer} is set to the {@linkplain #readPosition() read
-	 * position}, and the {@linkplain ByteBuffer#limit()} to the
-	 * {@linkplain #writePosition() write position}.
+	 * on also updating the {@code ByteBuffer's} position and limit to match
+	 * the current {@link #readPosition()} and {@link #readableByteCount()}.
 	 * @return the wrapped byte buffer
 	 */
 	public ByteBuffer getNativeBuffer() {
-		return this.byteBuffer.duplicate()
-				.position(this.readPosition)
-				.limit(this.writePosition);
+		this.byteBuffer.position(this.readPosition);
+		this.byteBuffer.limit(readableByteCount());
+		return this.byteBuffer;
 	}
 
 	private void setNativeBuffer(ByteBuffer byteBuffer) {
 		this.byteBuffer = byteBuffer;
-		this.capacity = byteBuffer.capacity();
+		this.capacity = byteBuffer.remaining();
 	}
 
 

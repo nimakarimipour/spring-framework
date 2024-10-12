@@ -19,6 +19,7 @@ package org.springframework.core;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.Objects;
 
 import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
@@ -111,8 +112,7 @@ public abstract class CoroutinesUtils {
 	public static Publisher<?> invokeSuspendingFunction(CoroutineContext context, Method method, Object target,
 			Object... args) {
 		Assert.isTrue(KotlinDetector.isSuspendingFunction(method), "'method' must be a suspending function");
-		KFunction<?> function = ReflectJvmMapping.getKotlinFunction(method);
-		Assert.notNull(function, () -> "Failed to get Kotlin function for method: " + method);
+		KFunction<?> function = Objects.requireNonNull(ReflectJvmMapping.getKotlinFunction(method));
 		if (method.isAccessible() && !KCallablesJvm.isAccessible(function)) {
 			KCallablesJvm.setAccessible(function, true);
 		}

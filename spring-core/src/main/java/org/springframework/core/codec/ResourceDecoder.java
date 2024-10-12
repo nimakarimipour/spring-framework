@@ -79,7 +79,7 @@ public class ResourceDecoder extends AbstractDataBufferDecoder<Resource> {
 		String filename = (hints != null ? (String) hints.get(FILENAME_HINT) : null);
 		if (clazz == InputStreamResource.class) {
 			return new InputStreamResource(new ByteArrayInputStream(bytes)) {
-				@Nullable @Override
+				@Override
 				public String getFilename() {
 					return filename;
 				}
@@ -91,7 +91,7 @@ public class ResourceDecoder extends AbstractDataBufferDecoder<Resource> {
 		}
 		else if (Resource.class.isAssignableFrom(clazz)) {
 			return new ByteArrayResource(bytes) {
-				@Nullable @Override
+				@Override
 				public String getFilename() {
 					return filename;
 				}

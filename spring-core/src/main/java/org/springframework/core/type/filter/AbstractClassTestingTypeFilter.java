@@ -21,7 +21,6 @@ import java.io.IOException;
 import org.springframework.core.type.ClassMetadata;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
-import javax.annotation.Nullable;
 
 /**
  * Type filter that exposes a

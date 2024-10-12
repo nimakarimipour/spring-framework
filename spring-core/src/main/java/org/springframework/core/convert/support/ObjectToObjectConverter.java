@@ -155,7 +155,7 @@ final class ObjectToObjectConverter implements ConditionalGenericConverter {
 		return executable;
 	}
 
-	private static boolean isApplicable(@Nullable Executable executable, Class<?> sourceClass) {
+	private static boolean isApplicable(Executable executable, Class<?> sourceClass) {
 		if (executable instanceof Method method) {
 			return (!Modifier.isStatic(method.getModifiers()) ?
 					ClassUtils.isAssignable(method.getDeclaringClass(), sourceClass) :

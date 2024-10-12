@@ -15,7 +15,6 @@
  */
 
 package org.springframework.core.convert.converter;
-import javax.annotation.Nullable;
 
 /**
  * A factory for "ranged" converters that can convert objects from S to subtypes of R.

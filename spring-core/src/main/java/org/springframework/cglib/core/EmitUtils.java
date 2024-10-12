@@ -653,14 +653,14 @@ public class EmitUtils {
             e.dup();
             e.ifnull(skip);
             e.swap();
-            if (delims != null && delims.before != null && !delims.before.isEmpty()) {
+            if (delims != null && delims.before != null && !"".equals(delims.before)) {
                 e.push(delims.before);
                 e.invoke_virtual(Constants.TYPE_STRING_BUFFER, APPEND_STRING);
                 e.swap();
             }
             EmitUtils.process_array(e, type, callback);
             shrinkStringBuffer(e, 2);
-            if (delims != null && delims.after != null && !delims.after.isEmpty()) {
+            if (delims != null && delims.after != null && !"".equals(delims.after)) {
                 e.push(delims.after);
                 e.invoke_virtual(Constants.TYPE_STRING_BUFFER, APPEND_STRING);
             }

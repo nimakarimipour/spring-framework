@@ -19,7 +19,6 @@ package org.springframework.core.metrics;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.function.Supplier;
-import javax.annotation.Nullable;
 
 /**
  * Default "no op" {@code ApplicationStartup} implementation.
@@ -52,7 +51,7 @@ class DefaultApplicationStartup implements ApplicationStartup {
 			return 0L;
 		}
 
-		@Nullable @Override
+		@Override
 		public Long getParentId() {
 			return null;
 		}

@@ -20,7 +20,6 @@ import java.util.regex.Pattern;
 
 import org.springframework.core.type.ClassMetadata;
 import org.springframework.util.Assert;
-import javax.annotation.Nullable;
 
 /**
  * A simple filter for matching a fully-qualified class name with a regex {@link Pattern}.

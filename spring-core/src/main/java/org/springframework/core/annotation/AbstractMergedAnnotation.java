@@ -240,6 +240,6 @@ abstract class AbstractMergedAnnotation<A extends Annotation> implements MergedA
 	 * <p>Consult the documentation for {@link MergedAnnotation#synthesize()}
 	 * for an explanation of what is considered synthesizable.
 	 */
-	@Nullable protected abstract A createSynthesizedAnnotation();
+	protected abstract A createSynthesizedAnnotation();
 
 }

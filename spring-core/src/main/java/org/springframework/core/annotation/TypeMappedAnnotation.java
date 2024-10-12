@@ -318,7 +318,7 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 		return value;
 	}
 
-	@Nullable @Override
+	@Override
 	@SuppressWarnings("unchecked")
 	protected A createSynthesizedAnnotation() {
 		// Check root annotation
@@ -350,7 +350,7 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 	 * @param annotation the annotation to check
 	 * @since 5.3.22
 	 */
-	private boolean isSynthesizable(@Nullable Annotation annotation) {
+	private boolean isSynthesizable(Annotation annotation) {
 		// Already synthesized?
 		if (AnnotationUtils.isSynthesizedAnnotation(annotation)) {
 			return false;
@@ -432,7 +432,7 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 	}
 
 	@Nullable
-	private Object getValueForMirrorResolution(Method attribute, @Nullable Object annotation) {
+	private Object getValueForMirrorResolution(Method attribute, Object annotation) {
 		int attributeIndex = this.mapping.getAttributes().indexOf(attribute);
 		boolean valueAttribute = VALUE.equals(attribute.getName());
 		return getValue(attributeIndex, !valueAttribute, true);
