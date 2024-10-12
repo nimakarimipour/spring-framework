@@ -1122,18 +1122,19 @@ public class ResolvableType implements Serializable {
 		Assert.notNull(clazz, "Class must not be null");
 		Assert.notNull(generics, "Generics array must not be null");
 		TypeVariable<?>[] variables = clazz.getTypeParameters();
-		Assert.isTrue(variables.length == generics.length,
-				() -> "Mismatched number of generics specified for " + clazz.toGenericString());
-
-		Type[] arguments = new Type[generics.length];
-		for (int i = 0; i < generics.length; i++) {
-			ResolvableType generic = generics[i];
+		if (generics != null) {
+			Assert.isTrue(variables.length == generics.length,
+					() -> "Mismatched number of generics specified for " + clazz.toGenericString());
+		}
+		Type[] arguments = new Type[variables.length];
+		for (int i = 0; i < variables.length; i++) {
+			ResolvableType generic = (generics != null ? generics[i] : null);
 			Type argument = (generic != null ? generic.getType() : null);
 			arguments[i] = (argument != null && !(argument instanceof TypeVariable) ? argument : variables[i]);
 		}
 
 		ParameterizedType syntheticType = new SyntheticParameterizedType(clazz, arguments);
-		return forType(syntheticType, new TypeVariablesVariableResolver(variables, generics));
+		return forType(syntheticType, (generics != null ? new TypeVariablesVariableResolver(variables, generics) : null));
 	}
 
 	/**
