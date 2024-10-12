@@ -277,7 +277,7 @@ public class AnnotatedMethod {
 			return AnnotatedMethod.this.getContainingClass();
 		}
 
-		@Override
+		@Nullable @Override
 		public <T extends Annotation> T getMethodAnnotation(Class<T> annotationType) {
 			return AnnotatedMethod.this.getMethodAnnotation(annotationType);
 		}

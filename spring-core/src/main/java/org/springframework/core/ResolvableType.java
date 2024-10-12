@@ -1118,7 +1118,7 @@ public class ResolvableType implements Serializable {
 	 * @return a {@code ResolvableType} for the specific class and generics
 	 * @see #forClassWithGenerics(Class, Class...)
 	 */
-	public static ResolvableType forClassWithGenerics(Class<?> clazz, ResolvableType... generics) {
+	public static ResolvableType forClassWithGenerics(Class<?> clazz, @Nullable ResolvableType... generics) {
 		Assert.notNull(clazz, "Class must not be null");
 		Assert.notNull(generics, "Generics array must not be null");
 		TypeVariable<?>[] variables = clazz.getTypeParameters();

@@ -95,7 +95,7 @@ final class UnmodifiableMultiValueMap<K,V> implements MultiValueMap<K,V>, Serial
 		return (result != null ? Collections.unmodifiableList(result) : null);
 	}
 
-	@Override
+	@Nullable @Override
 	public V getFirst(K key) {
 		return this.delegate.getFirst(key);
 	}

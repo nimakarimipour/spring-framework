@@ -92,7 +92,7 @@ public abstract class ValueCodeGeneratorDelegates {
 			this.emptyResult = emptyResult;
 		}
 
-		@Override
+		@Nullable @Override
 		@SuppressWarnings("unchecked")
 		public CodeBlock generateCode(ValueCodeGenerator valueCodeGenerator, Object value) {
 			if (this.collectionType.isInstance(value)) {
@@ -134,7 +134,7 @@ public abstract class ValueCodeGeneratorDelegates {
 
 		private static final CodeBlock EMPTY_RESULT = CodeBlock.of("$T.emptyMap()", Collections.class);
 
-		@Override
+		@Nullable @Override
 		public CodeBlock generateCode(ValueCodeGenerator valueCodeGenerator, Object value) {
 			if (value instanceof Map<?, ?> map) {
 				if (map.isEmpty()) {

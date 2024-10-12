@@ -19,6 +19,7 @@ package org.springframework.core.convert.support;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Converts from a Character to any JDK-standard Number implementation.

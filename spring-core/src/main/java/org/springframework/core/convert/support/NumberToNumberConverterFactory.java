@@ -21,6 +21,7 @@ import org.springframework.core.convert.converter.ConditionalConverter;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Converts from any JDK-standard Number implementation to any other JDK-standard Number implementation.

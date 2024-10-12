@@ -19,6 +19,7 @@ package org.springframework.core.type.classreading;
 import org.springframework.core.io.Resource;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.ClassMetadata;
+import javax.annotation.Nullable;
 
 /**
  * Simple facade for accessing class metadata,
