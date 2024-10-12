@@ -188,6 +188,7 @@ tasks.withType(JavaCompile) {
 				"org.springframework.asm,org.springframework.cglib,org.springframework.objenesis," +
 				"org.springframework.javapoet,org.springframework.aot.nativex.substitution,org.springframework.aot.nativex.feature")
 		option("NullAway:SerializeFixMetadata", "true")
+		option("NullAway:AssertsEnabled", "true")
 		option("NullAway:FixSerializationConfigPath", nullaway_path)
 		option("AnnotatorScanner:ConfigPath",  scanner_path)
 	}
