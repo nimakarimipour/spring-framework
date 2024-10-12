@@ -53,3 +53,6 @@ atlassian-ide-plugin.xml
 cached-antora-playbook.yml
 
 annotator-out/
+
+after.txt
+before.txt
