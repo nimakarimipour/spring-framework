@@ -1083,7 +1083,7 @@ public abstract class DataBufferUtils {
 			attachment.iterator().close();
 			DataBuffer dataBuffer = attachment.dataBuffer();
 
-			if (this.state.get().equals(State.DISPOSED)) {
+			if (this.state.get() == State.DISPOSED) {
 				release(dataBuffer);
 				closeChannel(this.channel);
 				return;
