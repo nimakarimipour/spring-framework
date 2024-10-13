@@ -205,6 +205,7 @@ abstract class AbstractMergedAnnotation<A extends Annotation> implements MergedA
 		}
 		A synthesized = this.synthesizedAnnotation;
 		if (synthesized == null) {
+			// IGNORE THIS COMMENT : NULLAWAY: error start was here.
 			synthesized = createSynthesizedAnnotation();
 			this.synthesizedAnnotation = synthesized;
 		}
@@ -240,6 +241,6 @@ abstract class AbstractMergedAnnotation<A extends Annotation> implements MergedA
 	 * <p>Consult the documentation for {@link MergedAnnotation#synthesize()}
 	 * for an explanation of what is considered synthesizable.
 	 */
-	@Nullable protected abstract A createSynthesizedAnnotation();
+	protected abstract A createSynthesizedAnnotation();
 
 }
