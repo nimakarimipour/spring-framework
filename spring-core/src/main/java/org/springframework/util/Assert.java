@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import org.jetbrains.annotations.Contract;
 import org.springframework.lang.Nullable;
 
 /**
@@ -71,6 +72,8 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalStateException if {@code expression} is {@code false}
 	 */
+
+	@Contract("false,_-> fail")
 	public static void state(boolean expression, String message) {
 		if (!expression) {
 			throw new IllegalStateException(message);
@@ -92,6 +95,7 @@ public abstract class Assert {
 	 * @throws IllegalStateException if {@code expression} is {@code false}
 	 * @since 5.0
 	 */
+	@Contract("false,_-> fail")
 	public static void state(boolean expression, Supplier<String> messageSupplier) {
 		if (!expression) {
 			throw new IllegalStateException(nullSafeGet(messageSupplier));
@@ -106,6 +110,7 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalArgumentException if {@code expression} is {@code false}
 	 */
+	@Contract("false,_-> fail")
 	public static void isTrue(boolean expression, String message) {
 		if (!expression) {
 			throw new IllegalArgumentException(message);
@@ -124,6 +129,7 @@ public abstract class Assert {
 	 * @throws IllegalArgumentException if {@code expression} is {@code false}
 	 * @since 5.0
 	 */
+	@Contract("false,_-> fail")
 	public static void isTrue(boolean expression, Supplier<String> messageSupplier) {
 		if (!expression) {
 			throw new IllegalArgumentException(nullSafeGet(messageSupplier));
@@ -137,6 +143,7 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalArgumentException if the object is not {@code null}
 	 */
+	@Contract("!null,_-> fail")
 	public static void isNull(@Nullable Object object, String message) {
 		if (object != null) {
 			throw new IllegalArgumentException(message);
@@ -154,6 +161,7 @@ public abstract class Assert {
 	 * @throws IllegalArgumentException if the object is not {@code null}
 	 * @since 5.0
 	 */
+	@Contract("!null,_-> fail")
 	public static void isNull(@Nullable Object object, Supplier<String> messageSupplier) {
 		if (object != null) {
 			throw new IllegalArgumentException(nullSafeGet(messageSupplier));
@@ -167,6 +175,7 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalArgumentException if the object is {@code null}
 	 */
+	@Contract("null,_ -> fail")
 	public static void notNull(@Nullable Object object, String message) {
 		if (object == null) {
 			throw new IllegalArgumentException(message);
@@ -185,6 +194,7 @@ public abstract class Assert {
 	 * @throws IllegalArgumentException if the object is {@code null}
 	 * @since 5.0
 	 */
+	@Contract("null,_ -> fail")
 	public static void notNull(@Nullable Object object, Supplier<String> messageSupplier) {
 		if (object == null) {
 			throw new IllegalArgumentException(nullSafeGet(messageSupplier));
@@ -303,6 +313,7 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalArgumentException if the object array is {@code null} or contains no elements
 	 */
+	@Contract("null,_-> fail")
 	public static void notEmpty(@Nullable Object[] array, String message) {
 		if (ObjectUtils.isEmpty(array)) {
 			throw new IllegalArgumentException(message);
@@ -321,6 +332,7 @@ public abstract class Assert {
 	 * @throws IllegalArgumentException if the object array is {@code null} or contains no elements
 	 * @since 5.0
 	 */
+	@Contract("null,_-> fail")
 	public static void notEmpty(@Nullable Object[] array, Supplier<String> messageSupplier) {
 		if (ObjectUtils.isEmpty(array)) {
 			throw new IllegalArgumentException(nullSafeGet(messageSupplier));
@@ -420,18 +432,6 @@ public abstract class Assert {
 		}
 	}
 
-	/**
-	 * Assert that a collection contains no {@code null} elements.
-	 * <p>Note: Does not complain if the collection is empty!
-	 * <pre class="code">
-	 * Assert.noNullElements(collection, () -&gt; "Collection " + collectionName + " must contain non-null elements");
-	 * </pre>
-	 * @param collection the collection to check
-	 * @param messageSupplier a supplier for the exception message to use if the
-	 * assertion fails
-	 * @throws IllegalArgumentException if the collection contains a {@code null} element
-	 * @since 5.2
-	 */
 	public static void noNullElements(@Nullable Collection<?> collection, Supplier<String> messageSupplier) {
 		if (collection != null) {
 			for (Object element : collection) {
@@ -450,6 +450,7 @@ public abstract class Assert {
 	 * @param message the exception message to use if the assertion fails
 	 * @throws IllegalArgumentException if the map is {@code null} or contains no entries
 	 */
+	@Contract("null,_-> fail")
 	public static void notEmpty(@Nullable Map<?, ?> map, String message) {
 		if (CollectionUtils.isEmpty(map)) {
 			throw new IllegalArgumentException(message);
@@ -468,6 +469,7 @@ public abstract class Assert {
 	 * @throws IllegalArgumentException if the map is {@code null} or contains no entries
 	 * @since 5.0
 	 */
+	@Contract("null,_-> fail")
 	public static void notEmpty(@Nullable Map<?, ?> map, Supplier<String> messageSupplier) {
 		if (CollectionUtils.isEmpty(map)) {
 			throw new IllegalArgumentException(nullSafeGet(messageSupplier));
