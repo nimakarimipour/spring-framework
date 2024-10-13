@@ -352,7 +352,7 @@ public abstract class ReflectionUtils {
 	 * @param mf the filter that determines the methods to apply the callback to
 	 * @throws IllegalStateException if introspection fails
 	 */
-	public static void doWithMethods(Class<?> clazz, MethodCallback mc, @Nullable MethodFilter mf) {
+	public static void doWithMethods(@Nullable Class<?> clazz, MethodCallback mc, @Nullable MethodFilter mf) {
 		if (mf == USER_DECLARED_METHODS && clazz == Object.class) {
 			// nothing to introspect
 			return;
@@ -457,7 +457,7 @@ public abstract class ReflectionUtils {
 		return getDeclaredMethods(clazz, true);
 	}
 
-	private static Method[] getDeclaredMethods(Class<?> clazz, boolean defensive) {
+	private static Method[] getDeclaredMethods(@Nullable Class<?> clazz, boolean defensive) {
 		Assert.notNull(clazz, "Class must not be null");
 		Method[] result = declaredMethodsCache.get(clazz);
 		if (result == null) {
