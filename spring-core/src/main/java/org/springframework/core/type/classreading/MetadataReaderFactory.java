@@ -39,7 +39,7 @@ public interface MetadataReaderFactory {
 	 * @throws ClassFormatException in case of an incompatible class format
 	 * @throws IOException in case of I/O failure
 	 */
-	MetadataReader getMetadataReader(@Nullable String className) throws IOException;
+	MetadataReader getMetadataReader(String className) throws IOException;
 
 	/**
 	 * Obtain a MetadataReader for the given resource.

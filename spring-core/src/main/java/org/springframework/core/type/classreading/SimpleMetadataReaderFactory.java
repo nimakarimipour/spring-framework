@@ -73,7 +73,7 @@ public class SimpleMetadataReaderFactory implements MetadataReaderFactory {
 
 
 	@Override
-	public MetadataReader getMetadataReader(@Nullable String className) throws IOException {
+	public MetadataReader getMetadataReader(String className) throws IOException {
 		try {
 			String resourcePath = ResourceLoader.CLASSPATH_URL_PREFIX +
 					ClassUtils.convertClassNameToResourcePath(className) + ClassUtils.CLASS_FILE_SUFFIX;
@@ -83,7 +83,7 @@ public class SimpleMetadataReaderFactory implements MetadataReaderFactory {
 		catch (FileNotFoundException ex) {
 			// Maybe an inner class name using the dot name syntax? Need to use the dollar syntax here...
 			// ClassUtils.forName has an equivalent check for resolution into Class references later on.
-			int lastDotIndex = className.lastIndexOf('.');
+			int lastDotIndex = className.lastIndexOf('.');  // IGNORE THIS COMMENT : NULLAWAY: error start was here. className is nullable
 			if (lastDotIndex != -1) {
 				String innerClassName =
 						className.substring(0, lastDotIndex) + '$' + className.substring(lastDotIndex + 1);
