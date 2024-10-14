@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,17 +155,16 @@ public interface RestClient {
 	}
 
 	/**
-	 * Create a new {@code RestClient} based on the configuration of the given
-	 * {@code RestTemplate}.
-	 * <p>The returned builder is configured with the following attributes of
-	 * the template.
+	 * Create a new {@code RestClient} based on the configuration of the
+	 * given {@code RestTemplate}. The returned builder is configured with the
+	 * template's
 	 * <ul>
-	 * <li>{@link RestTemplate#getRequestFactory() ClientHttpRequestFactory}</li>
-	 * <li>{@link RestTemplate#getMessageConverters() HttpMessageConverters}</li>
-	 * <li>{@link RestTemplate#getInterceptors() ClientHttpRequestInterceptors}</li>
-	 * <li>{@link RestTemplate#getClientHttpRequestInitializers() ClientHttpRequestInitializers}</li>
-	 * <li>{@link RestTemplate#getUriTemplateHandler() UriBuilderFactory}</li>
-	 * <li>{@linkplain RestTemplate#getErrorHandler() error handler}</li>
+	 * <li>{@link RestTemplate#getRequestFactory() ClientHttpRequestFactory},</li>
+	 * <li>{@link RestTemplate#getMessageConverters() HttpMessageConverters},</li>
+	 * <li>{@link RestTemplate#getInterceptors() ClientHttpRequestInterceptors},</li>
+	 * <li>{@link RestTemplate#getClientHttpRequestInitializers() ClientHttpRequestInitializers},</li>
+	 * <li>{@link RestTemplate#getUriTemplateHandler() UriBuilderFactory}, and</li>
+	 * <li>{@linkplain RestTemplate#getErrorHandler() error handler}.</li>
 	 * </ul>
 	 * @param restTemplate the rest template to base the returned client's
 	 * configuration on
@@ -185,16 +184,15 @@ public interface RestClient {
 
 	/**
 	 * Obtain a {@code RestClient} builder based on the configuration of the
-	 * given {@code RestTemplate}.
-	 * <p>The returned builder is configured with the following attributes of
-	 * the template.
+	 * given {@code RestTemplate}. The returned builder is configured with the
+	 * template's
 	 * <ul>
-	 * <li>{@link RestTemplate#getRequestFactory() ClientHttpRequestFactory}</li>
-	 * <li>{@link RestTemplate#getMessageConverters() HttpMessageConverters}</li>
-	 * <li>{@link RestTemplate#getInterceptors() ClientHttpRequestInterceptors}</li>
-	 * <li>{@link RestTemplate#getClientHttpRequestInitializers() ClientHttpRequestInitializers}</li>
-	 * <li>{@link RestTemplate#getUriTemplateHandler() UriBuilderFactory}</li>
-	 * <li>{@linkplain RestTemplate#getErrorHandler() error handler}</li>
+	 * <li>{@link RestTemplate#getRequestFactory() ClientHttpRequestFactory},</li>
+	 * <li>{@link RestTemplate#getMessageConverters() HttpMessageConverters},</li>
+	 * <li>{@link RestTemplate#getInterceptors() ClientHttpRequestInterceptors},</li>
+	 * <li>{@link RestTemplate#getClientHttpRequestInitializers() ClientHttpRequestInitializers},</li>
+	 * <li>{@link RestTemplate#getUriTemplateHandler() UriBuilderFactory}, and</li>
+	 * <li>{@linkplain RestTemplate#getErrorHandler() error handler}.</li>
 	 * </ul>
 	 * @param restTemplate the rest template to base the returned builder's
 	 * configuration on

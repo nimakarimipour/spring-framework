@@ -18,6 +18,7 @@ package org.springframework.jdbc.core.metadata;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -214,7 +215,7 @@ public class TableMetaDataContext {
 		if (!declaredColumns.isEmpty()) {
 			return new ArrayList<>(declaredColumns);
 		}
-		Set<String> keys = CollectionUtils.newLinkedHashSet(generatedKeyNames.length);
+		Set<String> keys = new LinkedHashSet<>(generatedKeyNames.length);
 		for (String key : generatedKeyNames) {
 			keys.add(key.toUpperCase());
 		}
@@ -295,7 +296,7 @@ public class TableMetaDataContext {
 	 * @return the insert string to be used
 	 */
 	public String createInsertString(String... generatedKeyNames) {
-		Set<String> keys = CollectionUtils.newLinkedHashSet(generatedKeyNames.length);
+		Set<String> keys = new LinkedHashSet<>(generatedKeyNames.length);
 		for (String key : generatedKeyNames) {
 			keys.add(key.toUpperCase());
 		}

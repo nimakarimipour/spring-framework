@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,10 @@ package org.springframework.cache.annotation;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.springframework.cache.interceptor.AbstractFallbackCacheOperationSource;
@@ -45,9 +47,9 @@ import org.springframework.util.Assert;
 @SuppressWarnings("serial")
 public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperationSource implements Serializable {
 
-	private final Set<CacheAnnotationParser> annotationParsers;
+	private final boolean publicMethodsOnly;
 
-	private boolean publicMethodsOnly = true;
+	private final Set<CacheAnnotationParser> annotationParsers;
 
 
 	/**
@@ -55,7 +57,7 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 	 * that carry the {@code Cacheable} and {@code CacheEvict} annotations.
 	 */
 	public AnnotationCacheOperationSource() {
-		this.annotationParsers = Collections.singleton(new SpringCacheAnnotationParser());
+		this(true);
 	}
 
 	/**
@@ -64,11 +66,10 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 	 * @param publicMethodsOnly whether to support only annotated public methods
 	 * typically for use with proxy-based AOP), or protected/private methods as well
 	 * (typically used with AspectJ class weaving)
-	 * @see #setPublicMethodsOnly
 	 */
 	public AnnotationCacheOperationSource(boolean publicMethodsOnly) {
-		this();
 		this.publicMethodsOnly = publicMethodsOnly;
+		this.annotationParsers = Collections.singleton(new SpringCacheAnnotationParser());
 	}
 
 	/**
@@ -76,6 +77,7 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 	 * @param annotationParser the CacheAnnotationParser to use
 	 */
 	public AnnotationCacheOperationSource(CacheAnnotationParser annotationParser) {
+		this.publicMethodsOnly = true;
 		Assert.notNull(annotationParser, "CacheAnnotationParser must not be null");
 		this.annotationParsers = Collections.singleton(annotationParser);
 	}
@@ -85,8 +87,9 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 	 * @param annotationParsers the CacheAnnotationParser to use
 	 */
 	public AnnotationCacheOperationSource(CacheAnnotationParser... annotationParsers) {
+		this.publicMethodsOnly = true;
 		Assert.notEmpty(annotationParsers, "At least one CacheAnnotationParser needs to be specified");
-		this.annotationParsers = Set.of(annotationParsers);
+		this.annotationParsers = new LinkedHashSet<>(Arrays.asList(annotationParsers));
 	}
 
 	/**
@@ -94,18 +97,9 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 	 * @param annotationParsers the CacheAnnotationParser to use
 	 */
 	public AnnotationCacheOperationSource(Set<CacheAnnotationParser> annotationParsers) {
+		this.publicMethodsOnly = true;
 		Assert.notEmpty(annotationParsers, "At least one CacheAnnotationParser needs to be specified");
 		this.annotationParsers = annotationParsers;
-	}
-
-
-	/**
-	 * Set whether cacheable methods are expected to be public.
-	 * <p>The default is {@code true}.
-	 * @since 6.2
-	 */
-	public void setPublicMethodsOnly(boolean publicMethodsOnly) {
-		this.publicMethodsOnly = publicMethodsOnly;
 	}
 
 
@@ -162,7 +156,6 @@ public class AnnotationCacheOperationSource extends AbstractFallbackCacheOperati
 
 	/**
 	 * By default, only public methods can be made cacheable.
-	 * @see #setPublicMethodsOnly
 	 */
 	@Override
 	protected boolean allowPublicMethodsOnly() {

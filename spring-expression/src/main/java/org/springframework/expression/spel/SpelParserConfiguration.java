@@ -32,7 +32,7 @@ import org.springframework.lang.Nullable;
 public class SpelParserConfiguration {
 
 	/**
-	 * Default maximum length permitted for a SpEL expression: {@value}.
+	 * Default maximum length permitted for a SpEL expression.
 	 * @since 5.2.24
 	 */
 	public static final int DEFAULT_MAX_EXPRESSION_LENGTH = 10_000;

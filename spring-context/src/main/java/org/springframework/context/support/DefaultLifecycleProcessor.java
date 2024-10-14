@@ -106,7 +106,7 @@ public class DefaultLifecycleProcessor implements LifecycleProcessor, BeanFactor
 
 	private final Log logger = LogFactory.getLog(getClass());
 
-	private volatile long timeoutPerShutdownPhase = 10000;
+	private volatile long timeoutPerShutdownPhase = 30000;
 
 	private volatile boolean running;
 
@@ -135,7 +135,7 @@ public class DefaultLifecycleProcessor implements LifecycleProcessor, BeanFactor
 	/**
 	 * Specify the maximum time allotted in milliseconds for the shutdown of any
 	 * phase (group of {@link SmartLifecycle} beans with the same 'phase' value).
-	 * <p>The default value is 10000 milliseconds (10 seconds) as of 6.2.
+	 * <p>The default value is 30000 milliseconds (30 seconds).
 	 * @see SmartLifecycle#getPhase()
 	 */
 	public void setTimeoutPerShutdownPhase(long timeoutPerShutdownPhase) {
@@ -229,7 +229,7 @@ public class DefaultLifecycleProcessor implements LifecycleProcessor, BeanFactor
 
 	void stopForRestart() {
 		if (this.running) {
-			this.stoppedBeans = ConcurrentHashMap.newKeySet();
+			this.stoppedBeans = Collections.newSetFromMap(new ConcurrentHashMap<>());
 			stopBeans();
 			this.running = false;
 		}

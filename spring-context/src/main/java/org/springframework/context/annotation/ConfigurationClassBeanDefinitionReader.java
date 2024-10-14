@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,6 @@ import org.springframework.core.type.StandardAnnotationMetadata;
 import org.springframework.core.type.StandardMethodMetadata;
 import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
-import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
 
 /**
@@ -230,12 +229,8 @@ class ConfigurationClassBeanDefinitionReader {
 			beanDef.setUniqueFactoryMethodName(methodName);
 		}
 
-		if (metadata instanceof StandardMethodMetadata smm &&
-				configClass.getMetadata() instanceof StandardAnnotationMetadata sam) {
-			Method method = ClassUtils.getMostSpecificMethod(smm.getIntrospectedMethod(), sam.getIntrospectedClass());
-			if (method == smm.getIntrospectedMethod()) {
-				beanDef.setResolvedFactoryMethod(method);
-			}
+		if (metadata instanceof StandardMethodMetadata sam) {
+			beanDef.setResolvedFactoryMethod(sam.getIntrospectedMethod());
 		}
 
 		beanDef.setAutowireMode(AbstractBeanDefinition.AUTOWIRE_CONSTRUCTOR);
@@ -244,16 +239,6 @@ class ConfigurationClassBeanDefinitionReader {
 		boolean autowireCandidate = bean.getBoolean("autowireCandidate");
 		if (!autowireCandidate) {
 			beanDef.setAutowireCandidate(false);
-		}
-
-		boolean defaultCandidate = bean.getBoolean("defaultCandidate");
-		if (!defaultCandidate) {
-			beanDef.setDefaultCandidate(false);
-		}
-
-		Bean.Bootstrap instantiation = bean.getEnum("bootstrap");
-		if (instantiation == Bean.Bootstrap.BACKGROUND) {
-			beanDef.setBackgroundInit(true);
 		}
 
 		String initMethodName = bean.getString("initMethod");

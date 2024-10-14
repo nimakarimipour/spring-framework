@@ -23,6 +23,7 @@ import org.springframework.aop.ClassFilter;
 import org.springframework.aop.support.StaticMethodMatcherPointcut;
 import org.springframework.cache.CacheManager;
 import org.springframework.lang.Nullable;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 /**
@@ -53,7 +54,7 @@ final class CacheOperationSourcePointcut extends StaticMethodMatcherPointcut imp
 	@Override
 	public boolean matches(Method method, Class<?> targetClass) {
 		return (this.cacheOperationSource == null ||
-				this.cacheOperationSource.hasCacheOperations(method, targetClass));
+				!CollectionUtils.isEmpty(this.cacheOperationSource.getCacheOperations(method, targetClass)));
 	}
 
 	@Override

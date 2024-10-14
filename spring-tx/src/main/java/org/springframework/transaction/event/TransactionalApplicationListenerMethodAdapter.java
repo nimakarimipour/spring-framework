@@ -102,4 +102,8 @@ public class TransactionalApplicationListenerMethodAdapter extends ApplicationLi
 		}
 	}
 
+	private boolean isDefaultExecution() {
+		return false;
+	}
+
 }

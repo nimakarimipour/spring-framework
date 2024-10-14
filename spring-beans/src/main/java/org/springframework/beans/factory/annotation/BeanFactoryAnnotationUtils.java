@@ -201,4 +201,7 @@ public abstract class BeanFactoryAnnotationUtils {
 		return false;
 	}
 
+	public static String getQualifierValue(Class<?> targetClass) {
+		return "";
+	}
 }

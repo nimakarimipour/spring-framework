@@ -21,7 +21,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executor;
 import java.util.function.Supplier;
 
 import org.springframework.beans.factory.BeanInitializationException;
@@ -31,6 +30,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.SmartLifecycle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.SmartApplicationListener;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.lang.Nullable;
 import org.springframework.messaging.MessageHandler;
 import org.springframework.messaging.converter.ByteArrayMessageConverter;
@@ -158,7 +158,7 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 
 	@Bean
 	public AbstractSubscribableChannel clientInboundChannel(
-			@Qualifier("clientInboundChannelExecutor") Executor executor) {
+			@Qualifier("clientInboundChannelExecutor") TaskExecutor executor) {
 
 		ExecutorSubscribableChannel channel = new ExecutorSubscribableChannel(executor);
 		channel.setLogger(SimpLogging.forLog(channel.getLogger()));
@@ -170,9 +170,9 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 	}
 
 	@Bean
-	public Executor clientInboundChannelExecutor() {
+	public TaskExecutor clientInboundChannelExecutor() {
 		ChannelRegistration registration = getClientInboundChannelRegistration();
-		Executor executor = getExecutor(registration, "clientInboundChannel-", this::defaultExecutor);
+		TaskExecutor executor = getTaskExecutor(registration, "clientInboundChannel-", this::defaultTaskExecutor);
 		if (executor instanceof ExecutorConfigurationSupport executorSupport) {
 			executorSupport.setPhase(getPhase());
 		}
@@ -209,7 +209,7 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 
 	@Bean
 	public AbstractSubscribableChannel clientOutboundChannel(
-			@Qualifier("clientOutboundChannelExecutor") Executor executor) {
+			@Qualifier("clientOutboundChannelExecutor") TaskExecutor executor) {
 
 		ExecutorSubscribableChannel channel = new ExecutorSubscribableChannel(executor);
 		channel.setLogger(SimpLogging.forLog(channel.getLogger()));
@@ -221,9 +221,9 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 	}
 
 	@Bean
-	public Executor clientOutboundChannelExecutor() {
+	public TaskExecutor clientOutboundChannelExecutor() {
 		ChannelRegistration registration = getClientOutboundChannelRegistration();
-		Executor executor = getExecutor(registration, "clientOutboundChannel-", this::defaultExecutor);
+		TaskExecutor executor = getTaskExecutor(registration, "clientOutboundChannel-", this::defaultTaskExecutor);
 		if (executor instanceof ExecutorConfigurationSupport executorSupport) {
 			executorSupport.setPhase(getPhase());
 		}
@@ -250,11 +250,11 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 	@Bean
 	public AbstractSubscribableChannel brokerChannel(
 			AbstractSubscribableChannel clientInboundChannel, AbstractSubscribableChannel clientOutboundChannel,
-			@Qualifier("brokerChannelExecutor") Executor executor) {
+			@Qualifier("brokerChannelExecutor") TaskExecutor executor) {
 
 		MessageBrokerRegistry registry = getBrokerRegistry(clientInboundChannel, clientOutboundChannel);
 		ChannelRegistration registration = registry.getBrokerChannelRegistration();
-		ExecutorSubscribableChannel channel = (registration.hasExecutor() ?
+		ExecutorSubscribableChannel channel = (registration.hasTaskExecutor() ?
 				new ExecutorSubscribableChannel(executor) : new ExecutorSubscribableChannel());
 		registration.interceptors(new ImmutableMessageChannelInterceptor());
 		channel.setLogger(SimpLogging.forLog(channel.getLogger()));
@@ -263,18 +263,18 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 	}
 
 	@Bean
-	public Executor brokerChannelExecutor(
+	public TaskExecutor brokerChannelExecutor(
 			AbstractSubscribableChannel clientInboundChannel, AbstractSubscribableChannel clientOutboundChannel) {
 
 		MessageBrokerRegistry registry = getBrokerRegistry(clientInboundChannel, clientOutboundChannel);
 		ChannelRegistration registration = registry.getBrokerChannelRegistration();
-		Executor executor = getExecutor(registration, "brokerChannel-", () -> {
+		TaskExecutor executor = getTaskExecutor(registration, "brokerChannel-", () -> {
 			// Should never be used
-			ThreadPoolTaskExecutor fallbackExecutor = new ThreadPoolTaskExecutor();
-			fallbackExecutor.setCorePoolSize(0);
-			fallbackExecutor.setMaxPoolSize(1);
-			fallbackExecutor.setQueueCapacity(0);
-			return fallbackExecutor;
+			ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+			threadPoolTaskExecutor.setCorePoolSize(0);
+			threadPoolTaskExecutor.setMaxPoolSize(1);
+			threadPoolTaskExecutor.setQueueCapacity(0);
+			return threadPoolTaskExecutor;
 		});
 		if (executor instanceof ExecutorConfigurationSupport executorSupport) {
 			executorSupport.setPhase(getPhase());
@@ -282,19 +282,19 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 		return executor;
 	}
 
-	private Executor defaultExecutor() {
+	private TaskExecutor defaultTaskExecutor() {
 		return new TaskExecutorRegistration().getTaskExecutor();
 	}
 
-	private static Executor getExecutor(ChannelRegistration registration,
-			String threadNamePrefix, Supplier<Executor> fallback) {
+	private static TaskExecutor getTaskExecutor(ChannelRegistration registration,
+			String threadNamePrefix, Supplier<TaskExecutor> fallback) {
 
-		return registration.getExecutor(fallback,
+		return registration.getTaskExecutor(fallback,
 				executor -> setThreadNamePrefix(executor, threadNamePrefix));
 	}
 
-	private static void setThreadNamePrefix(Executor executor, String name) {
-		if (executor instanceof CustomizableThreadCreator ctc) {
+	private static void setThreadNamePrefix(TaskExecutor taskExecutor, String name) {
+		if (taskExecutor instanceof CustomizableThreadCreator ctc) {
 			ctc.setThreadNamePrefix(name);
 		}
 	}

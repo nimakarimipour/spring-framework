@@ -72,12 +72,9 @@ public interface SmartLifecycle extends Lifecycle, Phased {
 	 * {@link Lifecycle} implementations, putting the typically auto-started
 	 * {@code SmartLifecycle} beans into a later startup phase and an earlier
 	 * shutdown phase.
-	 * <p>Note that certain {@code SmartLifecycle} components come with a different
-	 * default phase: e.g. executors/schedulers with {@code Integer.MAX_VALUE / 2}.
 	 * @since 5.1
 	 * @see #getPhase()
-	 * @see org.springframework.scheduling.concurrent.ExecutorConfigurationSupport#DEFAULT_PHASE
-	 * @see org.springframework.context.support.DefaultLifecycleProcessor#setTimeoutPerShutdownPhase
+	 * @see org.springframework.context.support.DefaultLifecycleProcessor#getPhase(Lifecycle)
 	 */
 	int DEFAULT_PHASE = Integer.MAX_VALUE;
 

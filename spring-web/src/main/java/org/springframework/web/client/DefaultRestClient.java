@@ -181,11 +181,7 @@ final class DefaultRestClient implements RestClient {
 	}
 
 	private RequestBodyUriSpec methodInternal(HttpMethod httpMethod) {
-		DefaultRequestBodyUriSpec spec = new DefaultRequestBodyUriSpec(httpMethod);
-		if (this.defaultRequest != null) {
-			this.defaultRequest.accept(spec);
-		}
-		return spec;
+		return new DefaultRequestBodyUriSpec(httpMethod);
 	}
 
 	@Override
@@ -460,6 +456,9 @@ final class DefaultRestClient implements RestClient {
 			Observation observation = null;
 			URI uri = null;
 			try {
+				if (DefaultRestClient.this.defaultRequest != null) {
+					DefaultRestClient.this.defaultRequest.accept(this);
+				}
 				uri = initUri();
 				HttpHeaders headers = initHeaders();
 				ClientHttpRequest clientRequest = createRequest(uri);

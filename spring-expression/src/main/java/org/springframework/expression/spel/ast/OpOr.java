@@ -16,7 +16,6 @@
 
 package org.springframework.expression.spel.ast;
 
-import org.jetbrains.annotations.Contract;
 import org.springframework.asm.Label;
 import org.springframework.asm.MethodVisitor;
 import org.springframework.expression.EvaluationException;
@@ -64,7 +63,6 @@ public class OpOr extends Operator {
 		}
 	}
 
-	@Contract("null -> fail")
 	private void assertValueNotNull(@Nullable Boolean value) {
 		if (value == null) {
 			throw new SpelEvaluationException(SpelMessage.TYPE_CONVERSION_ERROR, "null", "boolean");
