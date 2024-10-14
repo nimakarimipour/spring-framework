@@ -30,6 +30,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.SortedSet;
 
+import org.jetbrains.annotations.Contract;
 import org.springframework.lang.Nullable;
 
 /**
@@ -57,6 +58,7 @@ public abstract class CollectionUtils {
 	 * @param collection the Collection to check
 	 * @return whether the given Collection is empty
 	 */
+	@Contract("null -> true")
 	public static boolean isEmpty(@Nullable Collection<?> collection) {
 		return (collection == null || collection.isEmpty());
 	}
@@ -67,6 +69,7 @@ public abstract class CollectionUtils {
 	 * @param map the Map to check
 	 * @return whether the given Map is empty
 	 */
+	@Contract("null -> true")
 	public static boolean isEmpty(@Nullable Map<?, ?> map) {
 		return (map == null || map.isEmpty());
 	}

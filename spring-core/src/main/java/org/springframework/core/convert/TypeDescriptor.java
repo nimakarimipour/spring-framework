@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import org.jetbrains.annotations.Contract;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.ResolvableType;
 import org.springframework.core.annotation.AnnotatedElementUtils;
@@ -562,6 +563,7 @@ public class TypeDescriptor implements Serializable {
 	 * @return the type descriptor
 	 */
 	@Nullable
+	@Contract("!null -> !null; null -> null")
 	public static TypeDescriptor forObject(@Nullable Object source) {
 		return (source != null ? valueOf(source.getClass()) : null);
 	}
