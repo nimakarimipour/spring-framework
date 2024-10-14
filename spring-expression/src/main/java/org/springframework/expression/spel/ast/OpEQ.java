@@ -22,6 +22,7 @@ import org.springframework.expression.EvaluationException;
 import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.support.BooleanTypedValue;
+import javax.annotation.Nullable;
 
 /**
  * Implements the equality operator.
@@ -31,7 +32,7 @@ import org.springframework.expression.spel.support.BooleanTypedValue;
  */
 public class OpEQ extends Operator {
 
-	public OpEQ(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpEQ(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("==", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

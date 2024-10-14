@@ -96,7 +96,7 @@ public class DeferredResult<T> {
 	 * timeout depends on the default of the underlying server.
 	 * @param timeoutValue timeout value in milliseconds
 	 */
-	public DeferredResult(Long timeoutValue) {
+	public DeferredResult(@Nullable Long timeoutValue) {
 		this(timeoutValue, () -> RESULT_NONE);
 	}
 
@@ -291,7 +291,7 @@ public class DeferredResult<T> {
 	final DeferredResultProcessingInterceptor getInterceptor() {
 		return new DeferredResultProcessingInterceptor() {
 			@Override
-			public <S> boolean handleTimeout(NativeWebRequest request, DeferredResult<S> deferredResult) {
+			public <S> boolean handleTimeout(@Nullable NativeWebRequest request, DeferredResult<S> deferredResult) {
 				boolean continueProcessing = true;
 				try {
 					if (timeoutCallback != null) {
@@ -313,7 +313,7 @@ public class DeferredResult<T> {
 				return continueProcessing;
 			}
 			@Override
-			public <S> boolean handleError(NativeWebRequest request, DeferredResult<S> deferredResult, Throwable t) {
+			public <S> boolean handleError(@Nullable NativeWebRequest request, DeferredResult<S> deferredResult, Throwable t) {
 				try {
 					if (errorCallback != null) {
 						errorCallback.accept(t);
@@ -330,7 +330,7 @@ public class DeferredResult<T> {
 				return false;
 			}
 			@Override
-			public <S> void afterCompletion(NativeWebRequest request, DeferredResult<S> deferredResult) {
+			public <S> void afterCompletion(@Nullable NativeWebRequest request, DeferredResult<S> deferredResult) {
 				expired = true;
 				if (completionCallback != null) {
 					completionCallback.run();

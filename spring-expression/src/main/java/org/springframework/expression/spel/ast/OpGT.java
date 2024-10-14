@@ -25,6 +25,7 @@ import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.support.BooleanTypedValue;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Implements the greater-than operator.
@@ -36,7 +37,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OpGT extends Operator {
 
-	public OpGT(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpGT(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super(">", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

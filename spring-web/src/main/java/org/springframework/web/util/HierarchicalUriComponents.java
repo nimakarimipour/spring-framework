@@ -1076,7 +1076,7 @@ final class HierarchicalUriComponents extends UriComponents {
 			this.delegate = delegate;
 		}
 
-		@Override
+		@Nullable @Override
 		public Object getValue(@Nullable String name) {
 			Object value = this.delegate.getValue(name);
 			if (ObjectUtils.isArray(value)) {

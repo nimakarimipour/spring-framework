@@ -89,7 +89,7 @@ public interface CallableProcessingInterceptor {
 	 * @param task the task for the current async request
 	 * @throws Exception in case of errors
 	 */
-	default <T> void preProcess(NativeWebRequest request, Callable<T> task) throws Exception {
+	default <T> void preProcess(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
 	}
 
 	/**
@@ -104,7 +104,7 @@ public interface CallableProcessingInterceptor {
 	 * be a {@link Throwable} if the {@code Callable} raised an exception
 	 * @throws Exception in case of errors
 	 */
-	default <T> void postProcess(NativeWebRequest request, Callable<T> task,
+	default <T> void postProcess(@Nullable NativeWebRequest request, Callable<T> task,
 			@Nullable Object concurrentResult) throws Exception {
 	}
 
@@ -121,7 +121,7 @@ public interface CallableProcessingInterceptor {
 	 * is resumed and subsequent interceptors are not invoked
 	 * @throws Exception in case of errors
 	 */
-	default <T> Object handleTimeout(NativeWebRequest request, Callable<T> task) throws Exception {
+	default <T> Object handleTimeout(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
 		return RESULT_NONE;
 	}
 
@@ -140,7 +140,7 @@ public interface CallableProcessingInterceptor {
 	 * @throws Exception in case of errors
 	 * @since 5.0
 	 */
-	default <T> Object handleError(NativeWebRequest request, Callable<T> task, Throwable t) throws Exception {
+	default <T> Object handleError(@Nullable NativeWebRequest request, Callable<T> task, Throwable t) throws Exception {
 		return RESULT_NONE;
 	}
 
@@ -152,7 +152,7 @@ public interface CallableProcessingInterceptor {
 	 * @param task the task for the current async request
 	 * @throws Exception in case of errors
 	 */
-	default <T> void afterCompletion(NativeWebRequest request, Callable<T> task) throws Exception {
+	default <T> void afterCompletion(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
 	}
 
 }

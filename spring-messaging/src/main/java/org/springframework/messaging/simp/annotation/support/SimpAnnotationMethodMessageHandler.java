@@ -475,7 +475,7 @@ public class SimpAnnotationMethodMessageHandler extends AbstractMethodMessageHan
 		return SimpMessageHeaderAccessor.getDestination(message.getHeaders());
 	}
 
-	@Override
+	@Nullable @Override
 	protected String getLookupDestination(@Nullable String destination) {
 		if (destination == null) {
 			return null;

@@ -50,7 +50,7 @@ public class HttpMessageConverterExtractor<T> implements ResponseExtractor<T> {
 	@Nullable
 	private final Class<T> responseClass;
 
-	private final List<HttpMessageConverter<?>> messageConverters;
+	@Nullable private final List<HttpMessageConverter<?>> messageConverters;
 
 	private final Log logger;
 
@@ -67,12 +67,12 @@ public class HttpMessageConverterExtractor<T> implements ResponseExtractor<T> {
 	 * Creates a new instance of the {@code HttpMessageConverterExtractor} with the given response
 	 * type and message converters. The given converters must support the response type.
 	 */
-	public HttpMessageConverterExtractor(Type responseType, List<HttpMessageConverter<?>> messageConverters) {
+	public HttpMessageConverterExtractor(Type responseType, @Nullable List<HttpMessageConverter<?>> messageConverters) {
 		this(responseType, messageConverters, LogFactory.getLog(HttpMessageConverterExtractor.class));
 	}
 
 	@SuppressWarnings({"rawtypes", "unchecked"})
-	HttpMessageConverterExtractor(Type responseType, List<HttpMessageConverter<?>> messageConverters, Log logger) {
+	HttpMessageConverterExtractor(Type responseType, @Nullable List<HttpMessageConverter<?>> messageConverters, Log logger) {
 		Assert.notNull(responseType, "'responseType' must not be null");
 		Assert.notEmpty(messageConverters, "'messageConverters' must not be empty");
 		Assert.noNullElements(messageConverters, "'messageConverters' must not contain null elements");
@@ -83,7 +83,7 @@ public class HttpMessageConverterExtractor<T> implements ResponseExtractor<T> {
 	}
 
 
-	@Override
+	@Nullable @Override
 	@SuppressWarnings({"rawtypes", "unchecked", "resource"})
 	public T extractData(ClientHttpResponse response) throws IOException {
 		IntrospectingClientHttpResponse responseWrapper = new IntrospectingClientHttpResponse(response);

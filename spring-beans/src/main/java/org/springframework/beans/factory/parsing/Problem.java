@@ -69,7 +69,7 @@ public class Problem {
 	 * @param parseState the {@link ParseState} at the time of the error
 	 * @param location the location within a bean configuration source that triggered the error
 	 */
-	public Problem(String message, Location location, @Nullable ParseState parseState, @Nullable Throwable rootCause) {
+	public Problem(@Nullable String message, Location location, @Nullable ParseState parseState, @Nullable Throwable rootCause) {
 		Assert.notNull(message, "Message must not be null");
 		Assert.notNull(location, "Location must not be null");
 		this.message = message;

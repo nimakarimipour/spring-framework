@@ -61,14 +61,14 @@ class CallableInterceptorChain {
 		}
 	}
 
-	public void applyPreProcess(NativeWebRequest request, Callable<?> task) throws Exception {
+	public void applyPreProcess(@Nullable NativeWebRequest request, Callable<?> task) throws Exception {
 		for (CallableProcessingInterceptor interceptor : this.interceptors) {
 			interceptor.preProcess(request, task);
 			this.preProcessIndex++;
 		}
 	}
 
-	public Object applyPostProcess(NativeWebRequest request, Callable<?> task, @Nullable Object concurrentResult) {
+	@Nullable public Object applyPostProcess(@Nullable NativeWebRequest request, Callable<?> task, @Nullable Object concurrentResult) {
 		Throwable exceptionResult = null;
 		for (int i = this.preProcessIndex; i >= 0; i--) {
 			try {
@@ -89,7 +89,7 @@ class CallableInterceptorChain {
 		return (exceptionResult != null) ? exceptionResult : concurrentResult;
 	}
 
-	public Object triggerAfterTimeout(NativeWebRequest request, Callable<?> task) {
+	public Object triggerAfterTimeout(@Nullable NativeWebRequest request, Callable<?> task) {
 		cancelTask();
 		for (CallableProcessingInterceptor interceptor : this.interceptors) {
 			try {
@@ -120,7 +120,7 @@ class CallableInterceptorChain {
 		}
 	}
 
-	public Object triggerAfterError(NativeWebRequest request, Callable<?> task, Throwable throwable) {
+	public Object triggerAfterError(@Nullable NativeWebRequest request, Callable<?> task, Throwable throwable) {
 		cancelTask();
 		for (CallableProcessingInterceptor interceptor : this.interceptors) {
 			try {
@@ -139,7 +139,7 @@ class CallableInterceptorChain {
 		return CallableProcessingInterceptor.RESULT_NONE;
 	}
 
-	public void triggerAfterCompletion(NativeWebRequest request, Callable<?> task) {
+	public void triggerAfterCompletion(@Nullable NativeWebRequest request, Callable<?> task) {
 		for (int i = this.interceptors.size()-1; i >= 0; i--) {
 			try {
 				this.interceptors.get(i).afterCompletion(request, task);

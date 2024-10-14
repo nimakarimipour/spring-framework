@@ -334,7 +334,7 @@ class ConfigurationClassEnhancer {
 			return resolveBeanReference(beanMethod, beanMethodArgs, beanFactory, beanName);
 		}
 
-		private Object resolveBeanReference(Method beanMethod, Object[] beanMethodArgs,
+		@Nullable private Object resolveBeanReference(Method beanMethod, Object[] beanMethodArgs,
 				ConfigurableBeanFactory beanFactory, String beanName) {
 
 			// The user (i.e. not the factory) is requesting this bean through a call to

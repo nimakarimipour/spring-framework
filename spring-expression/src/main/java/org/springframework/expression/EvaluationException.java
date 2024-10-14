@@ -15,6 +15,7 @@
  */
 
 package org.springframework.expression;
+import javax.annotation.Nullable;
 
 /**
  * Represent an exception that occurs during expression evaluation.
@@ -66,7 +67,7 @@ public class EvaluationException extends ExpressionException {
 	 * @param message description of the problem that occurred
 	 * @param cause the underlying cause of this exception
 	 */
-	public EvaluationException(int position, String message, Throwable cause) {
+	public EvaluationException(int position, String message, @Nullable Throwable cause) {
 		super(position, message, cause);
 	}
 

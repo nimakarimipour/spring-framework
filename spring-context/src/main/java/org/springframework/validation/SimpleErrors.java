@@ -146,7 +146,7 @@ public class SimpleErrors implements Errors, Serializable {
 				"' - neither a getter method nor a raw field found");
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getFieldType(String field) {
 		PropertyDescriptor pd = BeanUtils.getPropertyDescriptor(this.target.getClass(), field);
 		if (pd != null) {

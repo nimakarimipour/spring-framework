@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * A {@link ScopeMetadataResolver} implementation that by default checks for
@@ -57,7 +58,7 @@ public class AnnotationScopeMetadataResolver implements ScopeMetadataResolver {
 	 * supplied default {@link ScopedProxyMode}.
 	 * @param defaultProxyMode the default scoped-proxy mode
 	 */
-	public AnnotationScopeMetadataResolver(ScopedProxyMode defaultProxyMode) {
+	public AnnotationScopeMetadataResolver(@Nullable ScopedProxyMode defaultProxyMode) {
 		Assert.notNull(defaultProxyMode, "'defaultProxyMode' must not be null");
 		this.defaultProxyMode = defaultProxyMode;
 	}

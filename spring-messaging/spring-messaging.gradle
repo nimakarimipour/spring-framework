@@ -54,8 +54,8 @@ dependencies {
 
 
 
-def scanner_path = project.projectDir.parent + "/annotator-out/scanner.xml"
-def nullaway_path = project.projectDir.parent + "/annotator-out/nullaway.xml"
+def scanner_path = project.projectDir.toString() + "/annotator-out/scanner.xml"
+def nullaway_path = project.projectDir.toString() + "/annotator-out/nullaway.xml"
 
 import net.ltgt.gradle.errorprone.CheckSeverity
 tasks.withType(JavaCompile) {

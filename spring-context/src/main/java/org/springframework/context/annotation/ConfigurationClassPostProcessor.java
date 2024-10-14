@@ -551,7 +551,7 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 			this.beanFactory = beanFactory;
 		}
 
-		@Override
+		@Nullable @Override
 		public PropertyValues postProcessProperties(@Nullable PropertyValues pvs, Object bean, String beanName) {
 			// Inject the BeanFactory before AutowiredAnnotationBeanPostProcessor's
 			// postProcessProperties method attempts to autowire other configuration beans.
@@ -662,7 +662,7 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 
 		private final Function<String, Resource> resourceResolver;
 
-		PropertySourcesAotContribution(List<PropertySourceDescriptor> descriptors, Function<String, Resource> resourceResolver) {
+		PropertySourcesAotContribution(@Nullable List<PropertySourceDescriptor> descriptors, Function<String, Resource> resourceResolver) {
 			this.descriptors = descriptors;
 			this.resourceResolver = resourceResolver;
 		}

@@ -29,6 +29,7 @@ import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.util.Assert;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Implements the {@code multiply} operator.
@@ -61,7 +62,7 @@ public class OpMultiply extends Operator {
 	private static final int MAX_REPEATED_TEXT_SIZE = 256;
 
 
-	public OpMultiply(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpMultiply(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("*", startPos, endPos, operands);
 	}
 

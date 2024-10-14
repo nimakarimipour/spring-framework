@@ -76,7 +76,7 @@ public abstract class DataSourceUtils {
 	 * @see #releaseConnection(Connection, DataSource)
 	 * @see #isConnectionTransactional(Connection, DataSource)
 	 */
-	public static Connection getConnection(DataSource dataSource) throws CannotGetJdbcConnectionException {
+	public static Connection getConnection(@Nullable DataSource dataSource) throws CannotGetJdbcConnectionException {
 		try {
 			return doGetConnection(dataSource);
 		}
@@ -100,7 +100,7 @@ public abstract class DataSourceUtils {
 	 * @throws SQLException if thrown by JDBC methods
 	 * @see #doReleaseConnection
 	 */
-	public static Connection doGetConnection(DataSource dataSource) throws SQLException {
+	public static Connection doGetConnection(@Nullable DataSource dataSource) throws SQLException {
 		Assert.notNull(dataSource, "No DataSource specified");
 
 		ConnectionHolder conHolder = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);

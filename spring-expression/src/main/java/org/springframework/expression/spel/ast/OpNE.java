@@ -23,6 +23,7 @@ import org.springframework.expression.EvaluationException;
 import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.support.BooleanTypedValue;
+import javax.annotation.Nullable;
 
 /**
  * Implements the not-equal operator.
@@ -32,7 +33,7 @@ import org.springframework.expression.spel.support.BooleanTypedValue;
  */
 public class OpNE extends Operator {
 
-	public OpNE(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpNE(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("!=", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

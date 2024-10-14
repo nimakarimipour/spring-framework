@@ -37,7 +37,7 @@ import org.springframework.lang.Nullable;
  */
 public class OpAnd extends Operator {
 
-	public OpAnd(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpAnd(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("and", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

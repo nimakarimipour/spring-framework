@@ -564,7 +564,7 @@ public abstract class AbstractMethodMessageHandler<T>
 
 		private final HandlerMethod handlerMethod;
 
-		Match(T mapping, HandlerMethod handlerMethod) {
+		Match(T mapping, @Nullable HandlerMethod handlerMethod) {
 			this.mapping = mapping;
 			this.handlerMethod = handlerMethod;
 		}

@@ -36,7 +36,7 @@ import org.springframework.lang.Nullable;
  */
 public class OpOr extends Operator {
 
-	public OpOr(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpOr(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("or", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

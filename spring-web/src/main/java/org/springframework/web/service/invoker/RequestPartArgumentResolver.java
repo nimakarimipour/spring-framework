@@ -64,7 +64,7 @@ public class RequestPartArgumentResolver extends AbstractNamedValueArgumentResol
 	 * Constructor with a {@link HttpExchangeAdapter}, for access to config settings.
 	 * @since 6.1
 	 */
-	public RequestPartArgumentResolver(HttpExchangeAdapter exchangeAdapter) {
+	public RequestPartArgumentResolver(@Nullable HttpExchangeAdapter exchangeAdapter) {
 		if (REACTOR_PRESENT) {
 			this.reactiveAdapterRegistry =
 					(exchangeAdapter instanceof ReactorHttpExchangeAdapter reactorAdapter ?
@@ -77,7 +77,7 @@ public class RequestPartArgumentResolver extends AbstractNamedValueArgumentResol
 	}
 
 
-	@Override
+	@Nullable @Override
 	protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {
 		RequestPart annot = parameter.getParameterAnnotation(RequestPart.class);
 		boolean isMultiPartFile = parameter.nestedIfOptional().getNestedParameterType().equals(MultipartFile.class);

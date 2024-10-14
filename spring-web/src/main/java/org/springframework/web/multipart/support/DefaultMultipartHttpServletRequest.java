@@ -129,7 +129,7 @@ public class DefaultMultipartHttpServletRequest extends AbstractMultipartHttpSer
 		return result;
 	}
 
-	@Override
+	@Nullable @Override
 	public String getMultipartContentType(String paramOrFileName) {
 		MultipartFile file = getFile(paramOrFileName);
 		if (file != null) {
@@ -140,7 +140,7 @@ public class DefaultMultipartHttpServletRequest extends AbstractMultipartHttpSer
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public HttpHeaders getMultipartHeaders(String paramOrFileName) {
 		String contentType = getMultipartContentType(paramOrFileName);
 		if (contentType != null) {
@@ -187,7 +187,7 @@ public class DefaultMultipartHttpServletRequest extends AbstractMultipartHttpSer
 	 * lazily initializing it if necessary.
 	 * @see #initializeMultipart()
 	 */
-	protected Map<String, String> getMultipartParameterContentTypes() {
+	@Nullable protected Map<String, String> getMultipartParameterContentTypes() {
 		if (this.multipartParameterContentTypes == null) {
 			initializeMultipart();
 		}

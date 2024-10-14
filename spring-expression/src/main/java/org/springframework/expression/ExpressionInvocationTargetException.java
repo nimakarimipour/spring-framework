@@ -15,6 +15,7 @@
  */
 
 package org.springframework.expression;
+import javax.annotation.Nullable;
 
 /**
  * This exception wraps (as cause) a checked exception thrown by some method that SpEL
@@ -28,7 +29,7 @@ package org.springframework.expression;
 @SuppressWarnings("serial")
 public class ExpressionInvocationTargetException extends EvaluationException {
 
-	public ExpressionInvocationTargetException(int position, String message, Throwable cause) {
+	public ExpressionInvocationTargetException(int position, String message, @Nullable Throwable cause) {
 		super(position, message, cause);
 	}
 

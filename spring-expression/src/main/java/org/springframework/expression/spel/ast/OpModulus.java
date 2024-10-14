@@ -27,6 +27,7 @@ import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.util.Assert;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Implements the modulus operator.
@@ -38,7 +39,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OpModulus extends Operator {
 
-	public OpModulus(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpModulus(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("%", startPos, endPos, operands);
 	}
 

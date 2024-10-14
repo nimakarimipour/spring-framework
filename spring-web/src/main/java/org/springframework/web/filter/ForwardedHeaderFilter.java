@@ -338,7 +338,7 @@ public class ForwardedHeaderFilter extends OncePerRequestFilter {
 			return (this.remoteAddress != null ? this.remoteAddress.getPort() : super.getRemotePort());
 		}
 
-		@SuppressWarnings("DataFlowIssue")
+		@Nullable @SuppressWarnings("DataFlowIssue")
 		@Override
 		public Object getAttribute(String name) {
 			if (name.equals(WebUtils.ERROR_REQUEST_URI_ATTRIBUTE)) {

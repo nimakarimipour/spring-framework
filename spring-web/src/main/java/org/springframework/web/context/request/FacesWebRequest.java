@@ -57,7 +57,7 @@ public class FacesWebRequest extends FacesRequestAttributes implements NativeWeb
 		return getExternalContext().getResponse();
 	}
 
-	@Override
+	@Nullable @Override
 	@SuppressWarnings("unchecked")
 	public <T> T getNativeRequest(@Nullable Class<T> requiredType) {
 		if (requiredType != null) {
@@ -69,7 +69,7 @@ public class FacesWebRequest extends FacesRequestAttributes implements NativeWeb
 		return null;
 	}
 
-	@Override
+	@Nullable @Override
 	@SuppressWarnings("unchecked")
 	public <T> T getNativeResponse(@Nullable Class<T> requiredType) {
 		if (requiredType != null) {

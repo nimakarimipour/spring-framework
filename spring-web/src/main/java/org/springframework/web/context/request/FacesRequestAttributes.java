@@ -28,6 +28,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.util.WebUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@link RequestAttributes} adapter for a JSF {@link jakarta.faces.context.FacesContext}.
@@ -101,7 +102,7 @@ public class FacesRequestAttributes implements RequestAttributes {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public Object getAttribute(String name, int scope) {
 		return getAttributeMap(scope).get(name);
 	}
@@ -129,7 +130,7 @@ public class FacesRequestAttributes implements RequestAttributes {
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public Object resolveReference(String key) {
 		return switch (key) {
 			case REFERENCE_REQUEST -> getExternalContext().getRequest();

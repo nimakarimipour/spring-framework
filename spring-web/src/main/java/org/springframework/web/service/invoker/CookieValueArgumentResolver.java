@@ -19,6 +19,7 @@ package org.springframework.web.service.invoker;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.web.bind.annotation.CookieValue;
+import javax.annotation.Nullable;
 
 /**
  * {@link HttpServiceArgumentResolver} for {@link CookieValue @CookieValue}
@@ -55,7 +56,7 @@ public class CookieValueArgumentResolver extends AbstractNamedValueArgumentResol
 	}
 
 
-	@Override
+	@Nullable @Override
 	protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {
 		CookieValue annot = parameter.getParameterAnnotation(CookieValue.class);
 		return (annot == null ? null :

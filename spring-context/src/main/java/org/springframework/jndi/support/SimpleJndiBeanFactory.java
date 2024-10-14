@@ -105,7 +105,7 @@ public class SimpleJndiBeanFactory extends JndiLocatorSupport implements BeanFac
 
 
 	@Override
-	public Object getBean(String name) throws BeansException {
+	public Object getBean(@Nullable String name) throws BeansException {
 		return getBean(name, Object.class);
 	}
 
@@ -211,7 +211,7 @@ public class SimpleJndiBeanFactory extends JndiLocatorSupport implements BeanFac
 	}
 
 	@Override
-	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
+	public boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException {
 		return this.shareableResources.contains(name);
 	}
 

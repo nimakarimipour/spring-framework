@@ -209,7 +209,7 @@ public abstract class CacheAspectSupport extends AbstractCacheInvoker
 	/**
 	 * Return the default {@link KeyGenerator} that this cache aspect delegates to.
 	 */
-	public KeyGenerator getKeyGenerator() {
+	@Nullable public KeyGenerator getKeyGenerator() {
 		return this.keyGenerator.obtain();
 	}
 
@@ -795,12 +795,12 @@ public abstract class CacheAspectSupport extends AbstractCacheInvoker
 
 		private final AnnotatedElementKey methodKey;
 
-		private final KeyGenerator keyGenerator;
+		@Nullable private final KeyGenerator keyGenerator;
 
 		private final CacheResolver cacheResolver;
 
 		public CacheOperationMetadata(CacheOperation operation, Method method, Class<?> targetClass,
-				KeyGenerator keyGenerator, CacheResolver cacheResolver) {
+				@Nullable KeyGenerator keyGenerator, CacheResolver cacheResolver) {
 
 			this.operation = operation;
 			this.method = BridgeMethodResolver.findBridgedMethod(method);

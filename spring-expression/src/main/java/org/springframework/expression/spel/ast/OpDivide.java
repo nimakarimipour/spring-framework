@@ -28,6 +28,7 @@ import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.util.Assert;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Implements division operator.
@@ -40,7 +41,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OpDivide extends Operator {
 
-	public OpDivide(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpDivide(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("/", startPos, endPos, operands);
 	}
 

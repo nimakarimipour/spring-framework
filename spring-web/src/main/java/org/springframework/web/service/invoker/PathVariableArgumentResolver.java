@@ -19,6 +19,7 @@ package org.springframework.web.service.invoker;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.web.bind.annotation.PathVariable;
+import javax.annotation.Nullable;
 
 /**
  * {@link HttpServiceArgumentResolver} for {@link PathVariable @PathVariable}
@@ -47,7 +48,7 @@ public class PathVariableArgumentResolver extends AbstractNamedValueArgumentReso
 	}
 
 
-	@Override
+	@Nullable @Override
 	protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {
 		PathVariable annot = parameter.getParameterAnnotation(PathVariable.class);
 		return (annot == null ? null :

@@ -31,6 +31,7 @@ import org.springframework.http.codec.json.AbstractJackson2Encoder;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.util.Assert;
 import org.springframework.util.MimeType;
+import javax.annotation.Nullable;
 
 /**
  * Encode from an {@code Object} to bytes of CBOR objects using Jackson.
@@ -54,7 +55,7 @@ public class Jackson2CborEncoder extends AbstractJackson2Encoder {
 
 
 	@Override
-	public Flux<DataBuffer> encode(Publisher<?> inputStream, DataBufferFactory bufferFactory, ResolvableType elementType, MimeType mimeType, Map<String, Object> hints) {
+	public Flux<DataBuffer> encode(Publisher<?> inputStream, DataBufferFactory bufferFactory, ResolvableType elementType, @Nullable MimeType mimeType, @Nullable Map<String, Object> hints) {
 		throw new UnsupportedOperationException("Does not support stream encoding yet");
 	}
 

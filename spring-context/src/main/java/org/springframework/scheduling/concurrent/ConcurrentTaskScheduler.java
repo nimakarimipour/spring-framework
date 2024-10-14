@@ -333,17 +333,17 @@ public class ConcurrentTaskScheduler extends ConcurrentTaskExecutor implements T
 					this.le = le;
 				}
 
-				@Override
+				@Nullable @Override
 				public Instant lastScheduledExecution() {
 					return (this.le != null ? toInstant(this.le.getScheduledStart()) : null);
 				}
 
-				@Override
+				@Nullable @Override
 				public Instant lastActualExecution() {
 					return (this.le != null ? toInstant(this.le.getRunStart()) : null);
 				}
 
-				@Override
+				@Nullable @Override
 				public Instant lastCompletion() {
 					return (this.le != null ? toInstant(this.le.getRunEnd()) : null);
 				}

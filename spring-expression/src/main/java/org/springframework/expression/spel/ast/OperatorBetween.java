@@ -24,6 +24,7 @@ import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.expression.spel.support.BooleanTypedValue;
+import javax.annotation.Nullable;
 
 /**
  * Represents the {@code between} operator.
@@ -42,7 +43,7 @@ import org.springframework.expression.spel.support.BooleanTypedValue;
  */
 public class OperatorBetween extends Operator {
 
-	public OperatorBetween(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OperatorBetween(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("between", startPos, endPos, operands);
 	}
 

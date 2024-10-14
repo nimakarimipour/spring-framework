@@ -196,7 +196,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	//---------------------------------------------------------------------
 
 	@Override
-	public Object getBean(String name) throws BeansException {
+	public Object getBean(@Nullable String name) throws BeansException {
 		return doGetBean(name, null, null, false);
 	}
 
@@ -238,7 +238,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 */
 	@SuppressWarnings("unchecked")
 	protected <T> T doGetBean(
-			String name, @Nullable Class<T> requiredType, @Nullable Object[] args, boolean typeCheckOnly)
+			@Nullable String name, @Nullable Class<T> requiredType, @Nullable Object[] args, boolean typeCheckOnly)
 			throws BeansException {
 
 		String beanName = transformedBeanName(name);
@@ -393,7 +393,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	}
 
 	@SuppressWarnings("unchecked")
-	<T> T adaptBeanInstance(String name, Object bean, @Nullable Class<?> requiredType) {
+	<T> T adaptBeanInstance(@Nullable String name, Object bean, @Nullable Class<?> requiredType) {
 		// Check if required type matches the type of the actual bean instance.
 		if (requiredType != null && !requiredType.isInstance(bean)) {
 			try {
@@ -426,7 +426,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	}
 
 	@Override
-	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
+	public boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException {
 		String beanName = transformedBeanName(name);
 
 		Object beanInstance = getSingleton(beanName, false);
@@ -1231,7 +1231,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 * @param name the user-specified name
 	 * @return the transformed bean name
 	 */
-	protected String transformedBeanName(String name) {
+	protected String transformedBeanName(@Nullable String name) {
 		return canonicalName(BeanFactoryUtils.transformedBeanName(name));
 	}
 
@@ -1240,7 +1240,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 * @param name the user-specified name
 	 * @return the original bean name
 	 */
-	protected String originalBeanName(String name) {
+	protected String originalBeanName(@Nullable String name) {
 		String beanName = transformedBeanName(name);
 		if (name.startsWith(FACTORY_BEAN_PREFIX)) {
 			beanName = FACTORY_BEAN_PREFIX + beanName;
@@ -1779,7 +1779,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 * @return the object to expose for the bean
 	 */
 	protected Object getObjectForBeanInstance(
-			Object beanInstance, String name, String beanName, @Nullable RootBeanDefinition mbd) {
+			Object beanInstance, @Nullable String name, String beanName, @Nullable RootBeanDefinition mbd) {
 
 		// Don't let calling code try to dereference the factory if the bean isn't a factory.
 		if (BeanFactoryUtils.isFactoryDereference(name)) {

@@ -51,7 +51,7 @@ public class NamedCacheResolver extends AbstractCacheResolver {
 		this.cacheNames = cacheNames;
 	}
 
-	@Override
+	@Nullable @Override
 	protected Collection<String> getCacheNames(CacheOperationInvocationContext<?> context) {
 		return this.cacheNames;
 	}

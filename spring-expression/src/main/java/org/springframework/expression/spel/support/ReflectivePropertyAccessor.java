@@ -641,7 +641,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 
 		private final TypeDescriptor typeDescriptor;
 
-		OptimalPropertyAccessor(InvokerPair target) {
+		OptimalPropertyAccessor(@Nullable InvokerPair target) {
 			this.member = target.member;
 			this.typeDescriptor = target.typeDescriptor;
 		}

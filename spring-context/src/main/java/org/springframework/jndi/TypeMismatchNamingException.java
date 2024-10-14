@@ -17,6 +17,7 @@
 package org.springframework.jndi;
 
 import javax.naming.NamingException;
+import javax.annotation.Nullable;
 
 /**
  * Exception thrown if a type mismatch is encountered for an object

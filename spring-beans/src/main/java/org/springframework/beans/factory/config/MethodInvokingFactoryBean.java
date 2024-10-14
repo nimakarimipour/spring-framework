@@ -135,7 +135,7 @@ public class MethodInvokingFactoryBean extends MethodInvokingBean implements Fac
 	 * Return the type of object that this FactoryBean creates,
 	 * or {@code null} if not known in advance.
 	 */
-	@Override
+	@Nullable @Override
 	public Class<?> getObjectType() {
 		if (!isPrepared()) {
 			// Not fully initialized yet -> return null to indicate "not known yet".

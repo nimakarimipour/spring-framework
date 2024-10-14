@@ -21,6 +21,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.dao.DataAccessException;
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * Base implementation of {@link DataFieldMaxValueIncrementer} that delegates
@@ -34,10 +35,10 @@ import org.springframework.util.Assert;
  */
 public abstract class AbstractDataFieldMaxValueIncrementer implements DataFieldMaxValueIncrementer, InitializingBean {
 
-	private DataSource dataSource;
+	@Nullable private DataSource dataSource;
 
 	/** The name of the sequence/table containing the sequence. */
-	private String incrementerName;
+	@Nullable private String incrementerName;
 
 	/** The length to which a string result should be pre-pended with zeroes. */
 	protected int paddingLength = 0;
@@ -74,7 +75,7 @@ public abstract class AbstractDataFieldMaxValueIncrementer implements DataFieldM
 	/**
 	 * Return the data source to retrieve the value from.
 	 */
-	public DataSource getDataSource() {
+	@Nullable public DataSource getDataSource() {
 		return this.dataSource;
 	}
 
@@ -88,7 +89,7 @@ public abstract class AbstractDataFieldMaxValueIncrementer implements DataFieldM
 	/**
 	 * Return the name of the sequence/table.
 	 */
-	public String getIncrementerName() {
+	@Nullable public String getIncrementerName() {
 		return this.incrementerName;
 	}
 

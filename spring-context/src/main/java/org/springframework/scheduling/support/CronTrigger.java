@@ -111,7 +111,7 @@ public class CronTrigger implements Trigger {
 	 * {@linkplain TriggerContext#lastCompletion completion time} of the
 	 * previous execution; therefore, overlapping executions won't occur.
 	 */
-	@Override
+	@Nullable @Override
 	public Instant nextExecution(TriggerContext triggerContext) {
 		Instant timestamp = determineLatestTimestamp(triggerContext);
 		ZoneId zone = (this.zoneId != null ? this.zoneId : triggerContext.getClock().getZone());

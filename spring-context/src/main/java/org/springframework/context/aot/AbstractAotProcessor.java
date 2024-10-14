@@ -136,12 +136,12 @@ public abstract class AbstractAotProcessor<T> {
 
 		private final Path classOutput;
 
-		private final String groupId;
+		@Nullable private final String groupId;
 
-		private final String artifactId;
+		@Nullable private final String artifactId;
 
 
-		private Settings(Path sourceOutput, Path resourceOutput, Path classOutput, String groupId, String artifactId) {
+		private Settings(Path sourceOutput, Path resourceOutput, Path classOutput, @Nullable String groupId, @Nullable String artifactId) {
 			this.sourceOutput = sourceOutput;
 			this.resourceOutput = resourceOutput;
 			this.classOutput = classOutput;
@@ -182,14 +182,14 @@ public abstract class AbstractAotProcessor<T> {
 		/**
 		 * Get the group ID of the application.
 		 */
-		public String getGroupId() {
+		@Nullable public String getGroupId() {
 			return this.groupId;
 		}
 
 		/**
 		 * Get the artifact ID of the application.
 		 */
-		public String getArtifactId() {
+		@Nullable public String getArtifactId() {
 			return this.artifactId;
 		}
 

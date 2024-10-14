@@ -101,7 +101,7 @@ public class StandardServletAsyncWebRequest extends ServletWebRequest implements
 	 * container processing thread has exited.
 	 */
 	@Override
-	public void setTimeout(Long timeout) {
+	public void setTimeout(@Nullable Long timeout) {
 		Assert.state(!isAsyncStarted(), "Cannot change the timeout with concurrent handling in progress");
 		this.timeout = timeout;
 	}
@@ -242,7 +242,7 @@ public class StandardServletAsyncWebRequest extends ServletWebRequest implements
 			this.asyncWebRequest = asyncWebRequest;
 		}
 
-		@Override
+		@Nullable @Override
 		public ServletOutputStream getOutputStream() throws IOException {
 			int level = obtainLockAndCheckState();
 			try {
@@ -261,7 +261,7 @@ public class StandardServletAsyncWebRequest extends ServletWebRequest implements
 			return this.outputStream;
 		}
 
-		@Override
+		@Nullable @Override
 		public PrintWriter getWriter() throws IOException {
 			int level = obtainLockAndCheckState();
 			try {

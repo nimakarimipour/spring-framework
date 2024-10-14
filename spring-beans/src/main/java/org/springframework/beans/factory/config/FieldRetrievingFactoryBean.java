@@ -225,7 +225,7 @@ public class FieldRetrievingFactoryBean
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getObjectType() {
 		return (this.fieldObject != null ? this.fieldObject.getType() : null);
 	}

@@ -32,6 +32,7 @@ import org.springframework.web.service.invoker.HttpExchangeAdapter;
 import org.springframework.web.service.invoker.HttpRequestValues;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import org.springframework.web.util.UriBuilderFactory;
+import javax.annotation.Nullable;
 
 /**
  * {@link HttpExchangeAdapter} that enables an {@link HttpServiceProxyFactory}
@@ -69,7 +70,7 @@ public final class RestTemplateAdapter implements HttpExchangeAdapter {
 		return this.restTemplate.exchange(newRequest(values), Void.class).getHeaders();
 	}
 
-	@Override
+	@Nullable @Override
 	public <T> T exchangeForBody(HttpRequestValues values, ParameterizedTypeReference<T> bodyType) {
 		return this.restTemplate.exchange(newRequest(values), bodyType).getBody();
 	}

@@ -27,6 +27,7 @@ import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.expression.spel.support.BooleanTypedValue;
+import javax.annotation.Nullable;
 
 /**
  * Implements the matches operator. Matches takes two operands:
@@ -67,7 +68,7 @@ public class OperatorMatches extends Operator {
 	 * Create a new {@link OperatorMatches} instance with a shared pattern cache.
 	 * @since 5.2.23
 	 */
-	public OperatorMatches(ConcurrentMap<String, Pattern> patternCache, int startPos, int endPos, SpelNodeImpl... operands) {
+	public OperatorMatches(ConcurrentMap<String, Pattern> patternCache, int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("matches", startPos, endPos, operands);
 		this.patternCache = patternCache;
 	}

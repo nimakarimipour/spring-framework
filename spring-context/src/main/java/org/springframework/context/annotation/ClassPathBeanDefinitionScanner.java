@@ -230,7 +230,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	 * <p>The default is {@link ScopedProxyMode#NO}.
 	 * @see #setScopeMetadataResolver
 	 */
-	public void setScopedProxyMode(ScopedProxyMode scopedProxyMode) {
+	public void setScopedProxyMode(@Nullable ScopedProxyMode scopedProxyMode) {
 		this.scopeMetadataResolver = new AnnotationScopeMetadataResolver(scopedProxyMode);
 	}
 

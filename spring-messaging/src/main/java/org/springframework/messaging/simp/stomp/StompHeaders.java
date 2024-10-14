@@ -513,7 +513,7 @@ public class StompHeaders implements MultiValueMap<String, String>, Serializable
 		return this.headers.containsValue(value);
 	}
 
-	@Override
+	@Nullable @Override
 	public List<String> get(Object key) {
 		return this.headers.get(key);
 	}

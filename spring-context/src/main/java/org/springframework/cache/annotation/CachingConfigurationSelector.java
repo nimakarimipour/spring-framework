@@ -24,6 +24,7 @@ import org.springframework.context.annotation.AdviceModeImportSelector;
 import org.springframework.context.annotation.AutoProxyRegistrar;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * Selects which implementation of {@link AbstractCachingConfiguration} should
@@ -67,7 +68,7 @@ public class CachingConfigurationSelector extends AdviceModeImportSelector<Enabl
 	 * respectively. Potentially includes corresponding JCache configuration as well.
 	 */
 	@Override
-	public String[] selectImports(AdviceMode adviceMode) {
+	public String[] selectImports(@Nullable AdviceMode adviceMode) {
 		return switch (adviceMode) {
 			case PROXY -> getProxyImports();
 			case ASPECTJ -> getAspectJImports();

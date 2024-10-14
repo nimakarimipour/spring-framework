@@ -93,7 +93,7 @@ public class ServerWebExchangeDecorator implements ServerWebExchange {
 		return getDelegate().getLocaleContext();
 	}
 
-	@Override
+	@Nullable @Override
 	public ApplicationContext getApplicationContext() {
 		return getDelegate().getApplicationContext();
 	}

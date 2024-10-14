@@ -59,7 +59,7 @@ class DeferredResultInterceptorChain {
 	}
 
 	@Nullable
-	public Object applyPostProcess(NativeWebRequest request, DeferredResult<?> deferredResult,
+	public Object applyPostProcess(@Nullable NativeWebRequest request, DeferredResult<?> deferredResult,
 			@Nullable Object concurrentResult) {
 
 		try {
@@ -73,7 +73,7 @@ class DeferredResultInterceptorChain {
 		return concurrentResult;
 	}
 
-	public void triggerAfterTimeout(NativeWebRequest request, DeferredResult<?> deferredResult) throws Exception {
+	public void triggerAfterTimeout(@Nullable NativeWebRequest request, DeferredResult<?> deferredResult) throws Exception {
 		for (DeferredResultProcessingInterceptor interceptor : this.interceptors) {
 			if (deferredResult.isSetOrExpired()) {
 				return;
@@ -89,7 +89,7 @@ class DeferredResultInterceptorChain {
 	 * @return {@code true} to continue error handling, or false to bypass any further
 	 * error handling
 	 */
-	public boolean triggerAfterError(NativeWebRequest request, DeferredResult<?> deferredResult, Throwable ex)
+	public boolean triggerAfterError(@Nullable NativeWebRequest request, DeferredResult<?> deferredResult, Throwable ex)
 			throws Exception {
 
 		for (DeferredResultProcessingInterceptor interceptor : this.interceptors) {
@@ -103,7 +103,7 @@ class DeferredResultInterceptorChain {
 		return true;
 	}
 
-	public void triggerAfterCompletion(NativeWebRequest request, DeferredResult<?> deferredResult) {
+	public void triggerAfterCompletion(@Nullable NativeWebRequest request, DeferredResult<?> deferredResult) {
 		for (int i = this.preProcessingIndex; i >= 0; i--) {
 			try {
 				this.interceptors.get(i).afterCompletion(request, deferredResult);

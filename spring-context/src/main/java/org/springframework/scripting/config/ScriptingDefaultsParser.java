@@ -23,6 +23,7 @@ import org.springframework.beans.factory.config.TypedStringValue;
 import org.springframework.beans.factory.xml.BeanDefinitionParser;
 import org.springframework.beans.factory.xml.ParserContext;
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * A {@link BeanDefinitionParser} for use when loading scripting XML.
@@ -37,7 +38,7 @@ class ScriptingDefaultsParser implements BeanDefinitionParser {
 	private static final String PROXY_TARGET_CLASS_ATTRIBUTE = "proxy-target-class";
 
 
-	@Override
+	@Nullable @Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		BeanDefinition bd =
 				LangNamespaceUtils.registerScriptFactoryPostProcessorIfNecessary(parserContext.getRegistry());

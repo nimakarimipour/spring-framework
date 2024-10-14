@@ -25,6 +25,7 @@ import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.support.BooleanTypedValue;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * Implements greater-than-or-equal operator.
@@ -36,7 +37,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OpGE extends Operator {
 
-	public OpGE(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpGE(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super(">=", startPos, endPos, operands);
 		this.exitTypeDescriptor = "Z";
 	}

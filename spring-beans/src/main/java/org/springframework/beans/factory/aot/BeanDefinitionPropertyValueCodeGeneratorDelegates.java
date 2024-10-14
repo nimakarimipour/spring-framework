@@ -37,6 +37,7 @@ import org.springframework.beans.factory.support.ManagedMap;
 import org.springframework.beans.factory.support.ManagedSet;
 import org.springframework.javapoet.AnnotationSpec;
 import org.springframework.javapoet.CodeBlock;
+import javax.annotation.Nullable;
 
 /**
  * Code generator {@link Delegate} for common bean definition property values.
@@ -100,7 +101,7 @@ abstract class BeanDefinitionPropertyValueCodeGeneratorDelegates {
 
 		private static final CodeBlock EMPTY_RESULT = CodeBlock.of("$T.ofEntries()", ManagedMap.class);
 
-		@Override
+		@Nullable @Override
 		public CodeBlock generateCode(ValueCodeGenerator valueCodeGenerator, Object value) {
 			if (value instanceof ManagedMap<?, ?> managedMap) {
 				return generateManagedMapCode(valueCodeGenerator, managedMap);
@@ -171,7 +172,7 @@ abstract class BeanDefinitionPropertyValueCodeGeneratorDelegates {
 	 */
 	private static class BeanReferenceDelegate implements Delegate {
 
-		@Override
+		@Nullable @Override
 		public CodeBlock generateCode(ValueCodeGenerator valueCodeGenerator, Object value) {
 			if (value instanceof RuntimeBeanReference runtimeBeanReference &&
 					runtimeBeanReference.getBeanType() != null) {
@@ -192,7 +193,7 @@ abstract class BeanDefinitionPropertyValueCodeGeneratorDelegates {
 	 */
 	private static class TypedStringValueDelegate implements Delegate {
 
-		@Override
+		@Nullable @Override
 		public CodeBlock generateCode(ValueCodeGenerator valueCodeGenerator, Object value) {
 			if (value instanceof TypedStringValue typedStringValue) {
 				return generateTypeStringValueCode(valueCodeGenerator, typedStringValue);

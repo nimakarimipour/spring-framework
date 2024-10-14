@@ -138,7 +138,7 @@ public class StaticWebApplicationContext extends StaticApplicationContext
 		throw new UnsupportedOperationException("StaticWebApplicationContext does not support config locations");
 	}
 
-	@Override
+	@Nullable @Override
 	public String[] getConfigLocations() {
 		return null;
 	}

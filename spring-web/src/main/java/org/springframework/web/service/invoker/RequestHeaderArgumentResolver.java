@@ -19,6 +19,7 @@ package org.springframework.web.service.invoker;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.web.bind.annotation.RequestHeader;
+import javax.annotation.Nullable;
 
 /**
  * {@link HttpServiceArgumentResolver} for {@link RequestHeader @RequestHeader}
@@ -56,7 +57,7 @@ public class RequestHeaderArgumentResolver extends AbstractNamedValueArgumentRes
 	}
 
 
-	@Override
+	@Nullable @Override
 	protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {
 		RequestHeader annot = parameter.getParameterAnnotation(RequestHeader.class);
 		return (annot == null ? null :

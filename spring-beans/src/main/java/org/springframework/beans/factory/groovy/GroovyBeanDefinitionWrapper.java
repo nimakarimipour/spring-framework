@@ -84,7 +84,7 @@ class GroovyBeanDefinitionWrapper extends GroovyObjectSupport {
 		this(beanName, clazz, null);
 	}
 
-	GroovyBeanDefinitionWrapper(@Nullable String beanName, Class<?> clazz, @Nullable Collection<?> constructorArgs) {
+	GroovyBeanDefinitionWrapper(@Nullable String beanName, @Nullable Class<?> clazz, @Nullable Collection<?> constructorArgs) {
 		this.beanName = beanName;
 		this.clazz = clazz;
 		this.constructorArgs = constructorArgs;
@@ -148,7 +148,7 @@ class GroovyBeanDefinitionWrapper extends GroovyObjectSupport {
 		getBeanDefinition().setAbstract(false);
 	}
 
-	GroovyBeanDefinitionWrapper addProperty(String propertyName, Object propertyValue) {
+	GroovyBeanDefinitionWrapper addProperty(String propertyName, @Nullable Object propertyValue) {
 		if (propertyValue instanceof GroovyBeanDefinitionWrapper wrapper) {
 			propertyValue = wrapper.getBeanDefinition();
 		}
@@ -157,7 +157,7 @@ class GroovyBeanDefinitionWrapper extends GroovyObjectSupport {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public Object getProperty(String property) {
 		Assert.state(this.definitionWrapper != null, "BeanDefinition wrapper not initialized");
 		if (this.definitionWrapper.isReadableProperty(property)) {

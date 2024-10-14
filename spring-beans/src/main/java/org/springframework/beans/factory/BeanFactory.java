@@ -143,7 +143,7 @@ public interface BeanFactory {
 	 * @throws NoSuchBeanDefinitionException if there is no bean with the specified name
 	 * @throws BeansException if the bean could not be obtained
 	 */
-	Object getBean(String name) throws BeansException;
+	Object getBean(@Nullable String name) throws BeansException;
 
 	/**
 	 * Return an instance, which may be shared or independent, of the specified bean.
@@ -288,7 +288,7 @@ public interface BeanFactory {
 	 * @see #getBean
 	 * @see #isPrototype
 	 */
-	boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
+	boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException;
 
 	/**
 	 * Is this bean a prototype? That is, will {@link #getBean} always return

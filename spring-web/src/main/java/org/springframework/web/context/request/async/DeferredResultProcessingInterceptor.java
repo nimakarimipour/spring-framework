@@ -82,7 +82,7 @@ public interface DeferredResultProcessingInterceptor {
 	 * @param concurrentResult the concurrent result
 	 * @throws Exception in case of errors
 	 */
-	default <T> void postProcess(NativeWebRequest request, DeferredResult<T> deferredResult,
+	default <T> void postProcess(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult,
 			@Nullable Object concurrentResult) throws Exception {
 	}
 
@@ -99,7 +99,7 @@ public interface DeferredResultProcessingInterceptor {
 	 * other interceptors should not be invoked
 	 * @throws Exception in case of errors
 	 */
-	default <T> boolean handleTimeout(NativeWebRequest request, DeferredResult<T> deferredResult)
+	default <T> boolean handleTimeout(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult)
 			throws Exception {
 
 		return true;
@@ -119,7 +119,7 @@ public interface DeferredResultProcessingInterceptor {
 	 * other interceptors should be bypassed and not be invoked
 	 * @throws Exception in case of errors
 	 */
-	default <T> boolean handleError(NativeWebRequest request, DeferredResult<T> deferredResult,
+	default <T> boolean handleError(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult,
 			Throwable t) throws Exception {
 
 		return true;
@@ -133,7 +133,7 @@ public interface DeferredResultProcessingInterceptor {
 	 * @param deferredResult the DeferredResult for the current request
 	 * @throws Exception in case of errors
 	 */
-	default <T> void afterCompletion(NativeWebRequest request, DeferredResult<T> deferredResult)
+	default <T> void afterCompletion(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult)
 			throws Exception {
 	}
 

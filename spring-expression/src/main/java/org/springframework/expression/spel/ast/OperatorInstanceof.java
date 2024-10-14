@@ -41,7 +41,7 @@ public class OperatorInstanceof extends Operator {
 	private Class<?> type;
 
 
-	public OperatorInstanceof(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OperatorInstanceof(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("instanceof", startPos, endPos, operands);
 	}
 

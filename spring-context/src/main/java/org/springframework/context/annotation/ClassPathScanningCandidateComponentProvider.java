@@ -175,7 +175,7 @@ public class ClassPathScanningCandidateComponentProvider implements EnvironmentC
 	 * @see #findCandidateComponents(String)
 	 * @see #DEFAULT_RESOURCE_PATTERN
 	 */
-	public void setResourcePattern(String resourcePattern) {
+	public void setResourcePattern(@Nullable String resourcePattern) {
 		Assert.notNull(resourcePattern, "'resourcePattern' must not be null");
 		this.resourcePattern = resourcePattern;
 	}

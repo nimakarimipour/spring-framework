@@ -107,14 +107,14 @@ public class ReaderContext {
 	/**
 	 * Raise a regular error.
 	 */
-	public void error(String message, @Nullable Object source, @Nullable ParseState parseState) {
+	public void error(@Nullable String message, @Nullable Object source, @Nullable ParseState parseState) {
 		error(message, source, parseState, null);
 	}
 
 	/**
 	 * Raise a regular error.
 	 */
-	public void error(String message, @Nullable Object source, @Nullable ParseState parseState, @Nullable Throwable cause) {
+	public void error(@Nullable String message, @Nullable Object source, @Nullable ParseState parseState, @Nullable Throwable cause) {
 		Location location = new Location(getResource(), source);
 		this.problemReporter.error(new Problem(message, location, parseState, cause));
 	}

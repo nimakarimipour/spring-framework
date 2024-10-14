@@ -17,6 +17,7 @@
 package org.springframework.jmx.access;
 
 import javax.management.JMRuntimeException;
+import javax.annotation.Nullable;
 
 /**
  * Thrown when trying to invoke an operation on a proxy that is not exposed
@@ -35,7 +36,7 @@ public class InvalidInvocationException extends JMRuntimeException {
 	 * error message.
 	 * @param msg the detail message
 	 */
-	public InvalidInvocationException(String msg) {
+	public InvalidInvocationException(@Nullable String msg) {
 		super(msg);
 	}
 

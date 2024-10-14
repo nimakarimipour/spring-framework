@@ -23,6 +23,7 @@ import org.springframework.core.MethodParameter;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import javax.annotation.Nullable;
 
 /**
  * Resolver for arguments of type {@link Principal}, including {@code Optional<Principal>}.
@@ -39,7 +40,7 @@ public class PrincipalMethodArgumentResolver implements HandlerMethodArgumentRes
 		return Principal.class.isAssignableFrom(paramType);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object resolveArgument(MethodParameter parameter, Message<?> message){
 		Principal user = SimpMessageHeaderAccessor.getUser(message.getHeaders());
 		return parameter.isOptional() ? Optional.ofNullable(user) : user;

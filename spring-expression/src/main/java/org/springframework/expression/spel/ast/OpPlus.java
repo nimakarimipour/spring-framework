@@ -60,7 +60,7 @@ public class OpPlus extends Operator {
 	private static final int MAX_CONCATENATED_STRING_LENGTH = 100_000;
 
 
-	public OpPlus(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpPlus(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("+", startPos, endPos, operands);
 		Assert.notEmpty(operands, "Operands must not be empty");
 	}

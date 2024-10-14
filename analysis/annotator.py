@@ -3,15 +3,16 @@ import os
 from pathlib import Path
 
 VERSION = '1.3.16-SNAPSHOT'
+MODULE = "spring-web"
 REPO = subprocess.check_output(['git', 'rev-parse', '--show-toplevel']).strip().decode('utf-8')
-OUT_DIR = '{}/annotator-out'.format(REPO)
+OUT_DIR = '{}/{}/annotator-out'.format(REPO, MODULE)
 ANNOTATOR_JAR = "{}/.m2/repository/edu/ucr/cs/riple/annotator/annotator-core/{}/annotator-core-{}.jar".format(str(Path.home()), VERSION, VERSION)
 
 def prepare():
     os.makedirs(OUT_DIR, exist_ok=True)
     with open('{}/paths.tsv'.format(OUT_DIR), 'w') as o:
         o.write("{}\t{}\n".format('{}/nullaway.xml'.format(OUT_DIR), '{}/scanner.xml'.format(OUT_DIR)))
-    os.system("rm -rvf ../annotator-out/0 > /dev/null 2>&1")
+    os.system("rm -rvf {}/0 > /dev/null 2>&1".format(OUT_DIR))
 
 
 def run_annotator():
@@ -19,7 +20,7 @@ def run_annotator():
     commands = []
     commands += ["java", "-jar", ANNOTATOR_JAR]
     commands += ['-d', OUT_DIR]
-    commands += ['-bc', 'cd {} && ./gradlew clean spring-core:compileJava --rerun-tasks --no-build-cache'.format(REPO)]
+    commands += ['-bc', 'cd {} && ./gradlew clean {}:compileJava --rerun-tasks --no-build-cache'.format(REPO, MODULE)]
     commands += ['-cp', '{}/paths.tsv'.format(OUT_DIR)]
     commands += ['-i', 'com.uber.nullaway.annotation.Initializer']
     commands += ['-n', 'javax.annotation.Nullable']

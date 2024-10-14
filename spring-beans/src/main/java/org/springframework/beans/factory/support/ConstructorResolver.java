@@ -806,7 +806,7 @@ class ConstructorResolver {
 	 * Resolve the prepared arguments stored in the given bean definition.
 	 */
 	private Object[] resolvePreparedArguments(String beanName, RootBeanDefinition mbd, BeanWrapper bw,
-			Executable executable, Object[] argsToResolve) {
+			@Nullable Executable executable, Object[] argsToResolve) {
 
 		TypeConverter customConverter = this.beanFactory.getCustomTypeConverter();
 		TypeConverter converter = (customConverter != null ? customConverter : bw);
@@ -1433,7 +1433,7 @@ class ConstructorResolver {
 			return (this.shortcut != null);
 		}
 
-		@Override
+		@Nullable @Override
 		public Object resolveShortcut(BeanFactory beanFactory) {
 			String shortcut = this.shortcut;
 			return (shortcut != null ? beanFactory.getBean(shortcut, getDependencyType()) : null);
