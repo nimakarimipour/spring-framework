@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import java.lang.reflect.AnnotatedElement;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.StringJoiner;
 import java.util.stream.Stream;
 
 import org.springframework.javapoet.AnnotationSpec;
@@ -117,7 +118,9 @@ class CodeWarnings {
 
 	@Override
 	public String toString() {
-		return CodeWarnings.class.getSimpleName() + this.warnings;
+		return new StringJoiner(", ", CodeWarnings.class.getSimpleName(), "")
+				.add(this.warnings.toString())
+				.toString();
 	}
 
 }

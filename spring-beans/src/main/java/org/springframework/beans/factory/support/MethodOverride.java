@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package org.springframework.beans.factory.support;
 
 import java.lang.reflect.Method;
-import java.util.Objects;
 
 import org.springframework.beans.BeanMetadataElement;
 import org.springframework.lang.Nullable;
@@ -108,13 +107,13 @@ public abstract class MethodOverride implements BeanMetadataElement {
 	@Override
 	public boolean equals(@Nullable Object other) {
 		return (this == other || (other instanceof MethodOverride that &&
-				this.methodName.equals(that.methodName) &&
+				ObjectUtils.nullSafeEquals(this.methodName, that.methodName) &&
 				ObjectUtils.nullSafeEquals(this.source, that.source)));
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.methodName, this.source);
+		return ObjectUtils.nullSafeHash(this.methodName, this.source);
 	}
 
 }
