@@ -28,6 +28,7 @@ import java.util.Set;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.lang.Contract;
 import org.springframework.lang.Nullable;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ReflectionUtils;
@@ -115,6 +116,7 @@ public class InjectionMetadata {
 	 * @return {@code true} indicating a refresh, {@code false} otherwise
 	 * @since 5.2.4
 	 */
+	@Contract("null, _ -> true")
 	protected boolean needsRefresh(Class<?> clazz) {
 		return (this.targetClass != clazz);
 	}

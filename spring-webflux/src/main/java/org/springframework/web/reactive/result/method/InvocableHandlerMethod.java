@@ -35,6 +35,7 @@ import kotlin.reflect.KType;
 import kotlin.reflect.full.KClasses;
 import kotlin.reflect.jvm.KCallablesJvm;
 import kotlin.reflect.jvm.ReflectJvmMapping;
+import org.springframework.lang.Contract;
 import reactor.core.publisher.Mono;
 
 import org.springframework.core.CoroutinesUtils;
@@ -261,6 +262,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 		}
 	}
 
+	@Contract("_, null -> false")
 	private static boolean isAsyncVoidReturnType(MethodParameter returnType, @Nullable ReactiveAdapter adapter) {
 		if (adapter != null && adapter.supportsEmpty()) {
 			if (adapter.isNoValue()) {
