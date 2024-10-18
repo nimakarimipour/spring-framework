@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/codec/Decoder.java:111: warning: [NullAway] dereferenced expression failure is @Nullable
-                                new DecodingException("Failed to decode: " + failure.getMessage(), failure));
-                                                                                    ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/MimeType.java:579: warning: [NullAway] dereferenced expression thisValue is @Nullable
+                                comp = thisValue.compareTo(otherValue);
+                                                ^
     (see http://t.uber.com/nullaway )
