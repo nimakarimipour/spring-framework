@@ -205,7 +205,6 @@ abstract class AbstractMergedAnnotation<A extends Annotation> implements MergedA
 		}
 		A synthesized = this.synthesizedAnnotation;
 		if (synthesized == null) {
-			// IGNORE THIS COMMENT : NULLAWAY: error start was here.
 			synthesized = createSynthesizedAnnotation();
 			this.synthesizedAnnotation = synthesized;
 		}

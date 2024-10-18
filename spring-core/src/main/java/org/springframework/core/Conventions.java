@@ -61,7 +61,7 @@ public final class Conventions {
 	 * @param value the value to generate a variable name for
 	 * @return the generated variable name
 	 */
-	public static String getVariableName(@Nullable Object value) {
+	public static String getVariableName(Object value) {
 		Assert.notNull(value, "Value must not be null");
 		Class<?> valueClass;
 		boolean pluralize = false;

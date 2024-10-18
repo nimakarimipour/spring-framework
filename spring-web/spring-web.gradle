@@ -2,7 +2,6 @@ description = "Spring Web"
 
 apply plugin: "kotlin"
 apply plugin: "kotlinx-serialization"
-apply plugin: "net.ltgt.errorprone"
 
 dependencies {
 	api(project(":spring-beans"))
@@ -101,37 +100,4 @@ dependencies {
 	testRuntimeOnly("org.eclipse:yasson")
 	testRuntimeOnly("org.glassfish:jakarta.el")
 	testRuntimeOnly("org.hibernate:hibernate-validator")
-
-	// ErrorProne and NullAway
-	errorprone "com.uber.nullaway:nullaway:0.10.20"
-	errorprone "edu.ucr.cs.riple.annot-util:AnnotLocator:0.1"
-	errorprone "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.14"
-	errorprone "com.google.errorprone:error_prone_core:2.29.2"
-	compileOnly "com.google.code.findbugs:jsr305:3.0.2"
-	compileOnly "com.uber.nullaway:nullaway-annotations:0.10.20"
-}
-
-
-def scanner_path = project.projectDir.parent + "/annotator-out/scanner.xml"
-def nullaway_path = project.projectDir.parent + "/annotator-out/nullaway.xml"
-
-import net.ltgt.gradle.errorprone.CheckSeverity
-tasks.withType(JavaCompile) {
-	options.errorprone.disableAllChecks = true
-	options.errorprone {
-		check("NullAway", CheckSeverity.WARN)
-		check("AnnotatorScanner", CheckSeverity.WARN)
-		// check("AnnotLocator", CheckSeverity.WARN)
-		option("NullAway:AnnotatedPackages", "org.springframework.http,org.springframework.web")
-		option("NullAway:UnannotatedSubPackages", "org.springframework.instrument,org.springframework.context.index," +
-				"org.springframework.asm,org.springframework.cglib,org.springframework.objenesis," +
-				"org.springframework.javapoet,org.springframework.aot.nativex.substitution,org.springframework.aot.nativex.feature")
-		option("NullAway:SerializeFixMetadata", "true")
-		option("NullAway:AssertsEnabled", "true")
-		option("NullAway:FixSerializationConfigPath", nullaway_path)
-		option("AnnotatorScanner:ConfigPath",  scanner_path)
-	}
-	// Set max errors to 10000
-	options.compilerArgs += ["-Xmaxerrs", "10000"]
-	options.compilerArgs += ["-Xmaxwarns", "10000"]
 }

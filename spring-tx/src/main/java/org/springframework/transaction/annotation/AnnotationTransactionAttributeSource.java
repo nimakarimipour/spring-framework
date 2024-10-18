@@ -84,7 +84,7 @@ public class AnnotationTransactionAttributeSource extends AbstractFallbackTransa
 	 */
 	public AnnotationTransactionAttributeSource() {
 		if (jtaPresent || ejb3Present) {
-			this.annotationParsers = new LinkedHashSet<>();
+			this.annotationParsers = CollectionUtils.newLinkedHashSet(3);
 			this.annotationParsers.add(new SpringTransactionAnnotationParser());
 			if (jtaPresent) {
 				this.annotationParsers.add(new JtaTransactionAnnotationParser());

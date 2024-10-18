@@ -985,11 +985,8 @@ public abstract class AnnotationUtils {
 		}
 	}
 
-	@Nullable private static Object getAttributeValueForMirrorResolution(Method attribute, @Nullable Object attributes) {
-		if (!(attributes instanceof AnnotationAttributes annotationAttributes)) {
-			return null;
-		}
-		Object result = annotationAttributes.get(attribute.getName());
+	private static Object getAttributeValueForMirrorResolution(Method attribute, Object attributes) {
+		Object result = ((AnnotationAttributes) attributes).get(attribute.getName());
 		return (result instanceof DefaultValueHolder defaultValueHolder ? defaultValueHolder.defaultValue : result);
 	}
 

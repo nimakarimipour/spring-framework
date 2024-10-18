@@ -80,7 +80,7 @@ public abstract class AbstractTypeHierarchyTraversingFilter implements TypeFilte
 				else {
 					// Need to read superclass to determine a match...
 					try {
-						if (match(superClassName, metadataReaderFactory)) {
+						if (match(metadata.getSuperClassName(), metadataReaderFactory)) {
 							return true;
 						}
 					}

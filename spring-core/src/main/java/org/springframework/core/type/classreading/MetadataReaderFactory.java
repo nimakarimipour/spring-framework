@@ -19,7 +19,6 @@ package org.springframework.core.type.classreading;
 import java.io.IOException;
 
 import org.springframework.core.io.Resource;
-import javax.annotation.Nullable;
 
 /**
  * Factory interface for {@link MetadataReader} instances.

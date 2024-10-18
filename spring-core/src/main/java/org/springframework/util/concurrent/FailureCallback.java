@@ -17,7 +17,6 @@
 package org.springframework.util.concurrent;
 
 import java.util.function.BiConsumer;
-import javax.annotation.Nullable;
 
 /**
  * Failure callback for a {@link ListenableFuture}.

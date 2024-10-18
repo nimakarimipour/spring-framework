@@ -18,7 +18,6 @@ package org.springframework.transaction.interceptor;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.springframework.lang.Nullable;
@@ -216,7 +215,7 @@ public class DefaultTransactionAttribute extends DefaultTransactionDefinition im
 			if (this.qualifier != null) {
 				this.qualifier = resolver.resolveStringValue(this.qualifier);
 			}
-			Set<String> resolvedLabels = new LinkedHashSet<>();
+			Set<String> resolvedLabels = CollectionUtils.newLinkedHashSet(this.labels.size());
 			for (String label : this.labels) {
 				resolvedLabels.add(resolver.resolveStringValue(label));
 			}

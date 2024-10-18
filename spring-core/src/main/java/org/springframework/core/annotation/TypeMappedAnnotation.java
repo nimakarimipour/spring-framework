@@ -322,13 +322,12 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 	@SuppressWarnings("unchecked")
 	protected A createSynthesizedAnnotation() {
 		// Check root annotation
-		if (this.rootAttributes instanceof Annotation ann && isTargetAnnotation(ann) && !isSynthesizable(ann)) {
-			return (A) ann;
+		if (isTargetAnnotation(this.rootAttributes) && !isSynthesizable((Annotation) this.rootAttributes)) {
+			return (A) this.rootAttributes;
 		}
 		// Check meta-annotation
-		Annotation meta = this.mapping.getAnnotation();
-		if (meta != null && isTargetAnnotation(meta) && !isSynthesizable(meta)) {
-			return (A) meta;
+		else if (isTargetAnnotation(this.mapping.getAnnotation()) && !isSynthesizable(this.mapping.getAnnotation())) {
+			return (A) this.mapping.getAnnotation();
 		}
 		return SynthesizedMergedAnnotationInvocationHandler.createProxy(this, getType());
 	}
@@ -351,7 +350,7 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 	 * @param annotation the annotation to check
 	 * @since 5.3.22
 	 */
-	private boolean isSynthesizable(@Nullable Annotation annotation) {
+	private boolean isSynthesizable(Annotation annotation) {
 		// Already synthesized?
 		if (AnnotationUtils.isSynthesizedAnnotation(annotation)) {
 			return false;
@@ -433,7 +432,7 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 	}
 
 	@Nullable
-	private Object getValueForMirrorResolution(Method attribute, @Nullable Object annotation) {
+	private Object getValueForMirrorResolution(Method attribute, Object annotation) {
 		int attributeIndex = this.mapping.getAttributes().indexOf(attribute);
 		boolean valueAttribute = VALUE.equals(attribute.getName());
 		return getValue(attributeIndex, !valueAttribute, true);

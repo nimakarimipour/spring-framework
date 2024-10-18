@@ -36,7 +36,6 @@ import java.util.StringTokenizer;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-import org.jetbrains.annotations.Contract;
 import org.springframework.lang.Nullable;
 
 /**
@@ -123,7 +122,6 @@ public abstract class StringUtils {
 	 * @see #hasLength(String)
 	 * @see #hasText(CharSequence)
 	 */
-	@Contract("null -> false")
 	public static boolean hasLength(@Nullable CharSequence str) {
 		return (str != null && str.length() > 0);
 	}
@@ -137,7 +135,6 @@ public abstract class StringUtils {
 	 * @see #hasLength(CharSequence)
 	 * @see #hasText(String)
 	 */
-	@Contract("null -> false")
 	public static boolean hasLength(@Nullable String str) {
 		return (str != null && !str.isEmpty());
 	}
@@ -161,7 +158,6 @@ public abstract class StringUtils {
 	 * @see #hasLength(CharSequence)
 	 * @see Character#isWhitespace
 	 */
-	@Contract("null -> false")
 	public static boolean hasText(@Nullable CharSequence str) {
 		if (str == null) {
 			return false;
@@ -192,7 +188,6 @@ public abstract class StringUtils {
 	 * @see #hasLength(String)
 	 * @see Character#isWhitespace
 	 */
-	@Contract("null -> false")
 	public static boolean hasText(@Nullable String str) {
 		return (str != null && !str.isBlank());
 	}

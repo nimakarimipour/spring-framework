@@ -15,7 +15,6 @@
  */
 
 package org.springframework.util;
-import javax.annotation.Nullable;
 
 /**
  * Exception thrown from {@link MimeTypeUtils#parseMimeType(String)} in case of
@@ -36,7 +35,7 @@ public class InvalidMimeTypeException extends IllegalArgumentException {
 	 * @param mimeType the offending media type
 	 * @param message a detail message indicating the invalid part
 	 */
-	public InvalidMimeTypeException(String mimeType, @Nullable String message) {
+	public InvalidMimeTypeException(String mimeType, String message) {
 		super("Invalid mime type \"" + mimeType + "\": " + message);
 		this.mimeType = mimeType;
 	}
