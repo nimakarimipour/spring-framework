@@ -21,6 +21,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import javax.annotation.Nullable;
 
 /**
  * Interface specifying the API for a Simple JDBC Call implemented by {@link SimpleJdbcCall}.
@@ -117,7 +118,7 @@ public interface SimpleJdbcCallOperations {
 	 * Parameter values must be provided in the same order as the parameters are defined
 	 * for the stored procedure.
 	 */
-	<T> T executeFunction(Class<T> returnType, Object... args);
+	@Nullable <T> T executeFunction(Class<T> returnType, Object... args);
 
 	/**
 	 * Execute the stored function and return the results obtained as an Object of the
@@ -125,7 +126,7 @@ public interface SimpleJdbcCallOperations {
 	 * @param returnType the type of the value to return
 	 * @param args a Map containing the parameter values to be used in the call
 	 */
-	<T> T executeFunction(Class<T> returnType, Map<String, ?> args);
+	@Nullable <T> T executeFunction(Class<T> returnType, Map<String, ?> args);
 
 	/**
 	 * Execute the stored function and return the results obtained as an Object of the
@@ -133,7 +134,7 @@ public interface SimpleJdbcCallOperations {
 	 * @param returnType the type of the value to return
 	 * @param args the MapSqlParameterSource containing the parameter values to be used in the call
 	 */
-	<T> T executeFunction(Class<T> returnType, SqlParameterSource args);
+	@Nullable <T> T executeFunction(Class<T> returnType, SqlParameterSource args);
 
 	/**
 	 * Execute the stored procedure and return the single out parameter as an Object
@@ -144,7 +145,7 @@ public interface SimpleJdbcCallOperations {
 	 * Parameter values must be provided in the same order as the parameters are defined for
 	 * the stored procedure.
 	 */
-	<T> T executeObject(Class<T> returnType, Object... args);
+	@Nullable <T> T executeObject(Class<T> returnType, Object... args);
 
 	/**
 	 * Execute the stored procedure and return the single out parameter as an Object
@@ -153,7 +154,7 @@ public interface SimpleJdbcCallOperations {
 	 * @param returnType the type of the value to return
 	 * @param args a Map containing the parameter values to be used in the call
 	 */
-	<T> T executeObject(Class<T> returnType, Map<String, ?> args);
+	@Nullable <T> T executeObject(Class<T> returnType, Map<String, ?> args);
 
 	/**
 	 * Execute the stored procedure and return the single out parameter as an Object
@@ -162,7 +163,7 @@ public interface SimpleJdbcCallOperations {
 	 * @param returnType the type of the value to return
 	 * @param args the MapSqlParameterSource containing the parameter values to be used in the call
 	 */
-	<T> T executeObject(Class<T> returnType, SqlParameterSource args);
+	@Nullable <T> T executeObject(Class<T> returnType, SqlParameterSource args);
 
 	/**
 	 * Execute the stored procedure and return a map of output params, keyed by name

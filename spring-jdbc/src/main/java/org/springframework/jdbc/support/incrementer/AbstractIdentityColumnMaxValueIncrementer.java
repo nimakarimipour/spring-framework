@@ -27,6 +27,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.support.JdbcUtils;
+import javax.annotation.Nullable;
 
 /**
  * Abstract base class for {@link DataFieldMaxValueIncrementer} implementations
@@ -41,7 +42,7 @@ public abstract class AbstractIdentityColumnMaxValueIncrementer extends Abstract
 	private boolean deleteSpecificValues = false;
 
 	/** The current cache of values. */
-	private long[] valueCache;
+	@Nullable private long[] valueCache;
 
 	/** The next id to serve from the value cache. */
 	private int nextValueIndex = -1;

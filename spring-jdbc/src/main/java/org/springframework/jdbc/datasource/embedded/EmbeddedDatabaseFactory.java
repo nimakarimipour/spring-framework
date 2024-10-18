@@ -257,7 +257,7 @@ public class EmbeddedDatabaseFactory {
 
 		private final DataSource dataSource;
 
-		public EmbeddedDataSourceProxy(DataSource dataSource) {
+		public EmbeddedDataSourceProxy(@Nullable DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
 
