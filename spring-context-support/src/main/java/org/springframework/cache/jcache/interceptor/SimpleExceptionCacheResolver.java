@@ -24,6 +24,7 @@ import org.springframework.cache.interceptor.AbstractCacheResolver;
 import org.springframework.cache.interceptor.BasicOperation;
 import org.springframework.cache.interceptor.CacheOperationInvocationContext;
 import org.springframework.cache.interceptor.CacheResolver;
+import javax.annotation.Nullable;
 
 /**
  * A simple {@link CacheResolver} that resolves the exception cache
@@ -40,7 +41,7 @@ public class SimpleExceptionCacheResolver extends AbstractCacheResolver {
 		super(cacheManager);
 	}
 
-	@Override
+	@Nullable @Override
 	protected Collection<String> getCacheNames(CacheOperationInvocationContext<?> context) {
 		BasicOperation operation = context.getOperation();
 		if (!(operation instanceof CacheResultOperation cacheResultOperation)) {

@@ -179,7 +179,7 @@ public class JCacheAspectSupport extends AbstractCacheInvoker implements Initial
 			this.delegate = delegate;
 		}
 
-		@Override
+		@Nullable @Override
 		public Object invoke() throws ThrowableWrapper {
 			return invokeOperation(this.delegate);
 		}

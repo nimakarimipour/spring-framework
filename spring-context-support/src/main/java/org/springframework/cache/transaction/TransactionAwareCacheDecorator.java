@@ -82,7 +82,7 @@ public class TransactionAwareCacheDecorator implements Cache {
 		return this.targetCache.get(key);
 	}
 
-	@Override
+	@Nullable @Override
 	public <T> T get(Object key, @Nullable Class<T> type) {
 		return this.targetCache.get(key, type);
 	}

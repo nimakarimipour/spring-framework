@@ -198,7 +198,7 @@ public class MethodInvokingJobDetailFactoryBean extends ArgumentConvertingMethod
 	/**
 	 * Overridden to support the {@link #setTargetBeanName "targetBeanName"} feature.
 	 */
-	@Override
+	@Nullable @Override
 	public Class<?> getTargetClass() {
 		Class<?> targetClass = super.getTargetClass();
 		if (targetClass == null && this.targetBeanName != null) {
@@ -211,7 +211,7 @@ public class MethodInvokingJobDetailFactoryBean extends ArgumentConvertingMethod
 	/**
 	 * Overridden to support the {@link #setTargetBeanName "targetBeanName"} feature.
 	 */
-	@Override
+	@Nullable @Override
 	public Object getTargetObject() {
 		Object targetObject = super.getTargetObject();
 		if (targetObject == null && this.targetBeanName != null) {

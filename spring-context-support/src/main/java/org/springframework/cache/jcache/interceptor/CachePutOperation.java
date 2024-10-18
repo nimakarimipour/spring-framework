@@ -43,7 +43,7 @@ class CachePutOperation extends AbstractJCacheKeyOperation<CachePut> {
 
 
 	public CachePutOperation(
-			CacheMethodDetails<CachePut> methodDetails, CacheResolver cacheResolver, KeyGenerator keyGenerator) {
+			CacheMethodDetails<CachePut> methodDetails, @Nullable CacheResolver cacheResolver, KeyGenerator keyGenerator) {
 
 		super(methodDetails, cacheResolver, keyGenerator);
 

@@ -23,6 +23,7 @@ import org.springframework.aot.hint.TypeHint.Builder;
 import org.springframework.aot.hint.TypeReference;
 import org.springframework.aot.hint.annotation.ReflectiveRuntimeHintsRegistrar;
 import org.springframework.util.ClassUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@link RuntimeHintsRegistrar} implementation that makes sure {@link SchedulerFactoryBean}
@@ -40,7 +41,7 @@ class SchedulerFactoryBeanRuntimeHints implements RuntimeHintsRegistrar {
 
 
 	@Override
-	public void registerHints(RuntimeHints hints, ClassLoader classLoader) {
+	public void registerHints(RuntimeHints hints, @Nullable ClassLoader classLoader) {
 		if (!ClassUtils.isPresent(SCHEDULER_FACTORY_CLASS_NAME, classLoader)) {
 			return;
 		}

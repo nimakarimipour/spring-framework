@@ -21,6 +21,7 @@ import javax.cache.annotation.CacheRemoveAll;
 
 import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.util.ExceptionTypeFilter;
+import javax.annotation.Nullable;
 
 /**
  * The {@link JCacheOperation} implementation for a {@link CacheRemoveAll} operation.
@@ -34,7 +35,7 @@ class CacheRemoveAllOperation extends AbstractJCacheOperation<CacheRemoveAll> {
 	private final ExceptionTypeFilter exceptionTypeFilter;
 
 
-	public CacheRemoveAllOperation(CacheMethodDetails<CacheRemoveAll> methodDetails, CacheResolver cacheResolver) {
+	public CacheRemoveAllOperation(CacheMethodDetails<CacheRemoveAll> methodDetails, @Nullable CacheResolver cacheResolver) {
 		super(methodDetails, cacheResolver);
 		CacheRemoveAll ann = methodDetails.getCacheAnnotation();
 		this.exceptionTypeFilter = createExceptionTypeFilter(ann.evictFor(), ann.noEvictFor());

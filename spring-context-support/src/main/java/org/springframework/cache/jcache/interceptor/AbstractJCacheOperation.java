@@ -33,6 +33,7 @@ import javax.cache.annotation.CacheValue;
 import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.util.Assert;
 import org.springframework.util.ExceptionTypeFilter;
+import javax.annotation.Nullable;
 
 /**
  * A base {@link JCacheOperation} implementation.
@@ -55,7 +56,7 @@ abstract class AbstractJCacheOperation<A extends Annotation> implements JCacheOp
 	 * @param methodDetails the {@link CacheMethodDetails} related to the cached method
 	 * @param cacheResolver the cache resolver to resolve regular caches
 	 */
-	protected AbstractJCacheOperation(CacheMethodDetails<A> methodDetails, CacheResolver cacheResolver) {
+	protected AbstractJCacheOperation(CacheMethodDetails<A> methodDetails, @Nullable CacheResolver cacheResolver) {
 		Assert.notNull(methodDetails, "CacheMethodDetails must not be null");
 		Assert.notNull(cacheResolver, "CacheResolver must not be null");
 		this.methodDetails = methodDetails;

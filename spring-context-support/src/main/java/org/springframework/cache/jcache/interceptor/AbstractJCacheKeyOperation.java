@@ -25,6 +25,7 @@ import javax.cache.annotation.CacheMethodDetails;
 
 import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.cache.interceptor.KeyGenerator;
+import javax.annotation.Nullable;
 
 /**
  * A base {@link JCacheOperation} that operates with a key.
@@ -47,7 +48,7 @@ abstract class AbstractJCacheKeyOperation<A extends Annotation> extends Abstract
 	 * @param keyGenerator the key generator to compute cache keys
 	 */
 	protected AbstractJCacheKeyOperation(CacheMethodDetails<A> methodDetails,
-			CacheResolver cacheResolver, KeyGenerator keyGenerator) {
+			@Nullable CacheResolver cacheResolver, KeyGenerator keyGenerator) {
 
 		super(methodDetails, cacheResolver);
 		this.keyGenerator = keyGenerator;

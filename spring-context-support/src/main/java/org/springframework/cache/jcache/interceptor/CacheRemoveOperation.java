@@ -22,6 +22,7 @@ import javax.cache.annotation.CacheRemove;
 import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.util.ExceptionTypeFilter;
+import javax.annotation.Nullable;
 
 /**
  * The {@link JCacheOperation} implementation for a {@link CacheRemove} operation.
@@ -36,7 +37,7 @@ class CacheRemoveOperation extends AbstractJCacheKeyOperation<CacheRemove> {
 
 
 	public CacheRemoveOperation(
-			CacheMethodDetails<CacheRemove> methodDetails, CacheResolver cacheResolver, KeyGenerator keyGenerator) {
+			CacheMethodDetails<CacheRemove> methodDetails, @Nullable CacheResolver cacheResolver, KeyGenerator keyGenerator) {
 
 		super(methodDetails, cacheResolver, keyGenerator);
 		CacheRemove ann = methodDetails.getCacheAnnotation();

@@ -206,7 +206,7 @@ public class DefaultJCacheOperationSource extends AnnotationJCacheOperationSourc
 		return getCacheManager();
 	}
 
-	@Override
+	@Nullable @Override
 	protected CacheResolver getDefaultCacheResolver() {
 		if (getCacheResolver() == null) {
 			this.cacheResolver = SingletonSupplier.of(new SimpleCacheResolver(getDefaultCacheManager()));
@@ -214,7 +214,7 @@ public class DefaultJCacheOperationSource extends AnnotationJCacheOperationSourc
 		return getCacheResolver();
 	}
 
-	@Override
+	@Nullable @Override
 	protected CacheResolver getDefaultExceptionCacheResolver() {
 		if (getExceptionCacheResolver() == null) {
 			this.exceptionCacheResolver = SingletonSupplier.of(new LazyCacheResolver());

@@ -57,7 +57,7 @@ public abstract class AnnotationJCacheOperationSource extends AbstractFallbackJC
 		return AnnotationUtils.isCandidateClass(targetClass, JCACHE_OPERATION_ANNOTATIONS);
 	}
 
-	@Override
+	@Nullable @Override
 	protected JCacheOperation<?> findCacheOperation(Method method, @Nullable Class<?> targetType) {
 		CacheResult cacheResult = method.getAnnotation(CacheResult.class);
 		CachePut cachePut = method.getAnnotation(CachePut.class);
@@ -150,7 +150,7 @@ public abstract class AnnotationJCacheOperationSource extends AbstractFallbackJC
 		return new DefaultCacheMethodDetails<>(method, annotation, cacheName);
 	}
 
-	protected CacheResolver getCacheResolver(
+	@Nullable protected CacheResolver getCacheResolver(
 			@Nullable CacheResolverFactory factory, CacheMethodDetails<?> details) {
 
 		if (factory != null) {
@@ -162,7 +162,7 @@ public abstract class AnnotationJCacheOperationSource extends AbstractFallbackJC
 		}
 	}
 
-	protected CacheResolver getExceptionCacheResolver(
+	@Nullable protected CacheResolver getExceptionCacheResolver(
 			@Nullable CacheResolverFactory factory, CacheMethodDetails<CacheResult> details) {
 
 		if (factory != null) {
@@ -249,12 +249,12 @@ public abstract class AnnotationJCacheOperationSource extends AbstractFallbackJC
 	/**
 	 * Return the default {@link CacheResolver} if none is set.
 	 */
-	protected abstract CacheResolver getDefaultCacheResolver();
+	@Nullable protected abstract CacheResolver getDefaultCacheResolver();
 
 	/**
 	 * Return the default exception {@link CacheResolver} if none is set.
 	 */
-	protected abstract CacheResolver getDefaultExceptionCacheResolver();
+	@Nullable protected abstract CacheResolver getDefaultExceptionCacheResolver();
 
 	/**
 	 * Return the default {@link KeyGenerator} if none is set.

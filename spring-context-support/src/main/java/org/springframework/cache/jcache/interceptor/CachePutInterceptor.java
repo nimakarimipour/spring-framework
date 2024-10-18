@@ -23,6 +23,7 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.CacheOperationInvocationContext;
 import org.springframework.cache.interceptor.CacheOperationInvoker;
+import javax.annotation.Nullable;
 
 /**
  * Intercept methods annotated with {@link CachePut}.
@@ -38,7 +39,7 @@ class CachePutInterceptor extends AbstractKeyCacheInterceptor<CachePutOperation,
 	}
 
 
-	@Override
+	@Nullable @Override
 	protected Object invoke(
 			CacheOperationInvocationContext<CachePutOperation> context, CacheOperationInvoker invoker) {
 

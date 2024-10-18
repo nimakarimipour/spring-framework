@@ -43,7 +43,7 @@ class CacheResultOperation extends AbstractJCacheKeyOperation<CacheResult> {
 	private final String exceptionCacheName;
 
 
-	public CacheResultOperation(CacheMethodDetails<CacheResult> methodDetails, CacheResolver cacheResolver,
+	public CacheResultOperation(CacheMethodDetails<CacheResult> methodDetails, @Nullable CacheResolver cacheResolver,
 			KeyGenerator keyGenerator, @Nullable CacheResolver exceptionCacheResolver) {
 
 		super(methodDetails, cacheResolver, keyGenerator);
