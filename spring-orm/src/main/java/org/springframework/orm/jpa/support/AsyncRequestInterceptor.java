@@ -29,6 +29,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.async.CallableProcessingInterceptor;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.context.request.async.DeferredResultProcessingInterceptor;
+import javax.annotation.Nullable;
 
 /**
  * An interceptor with asynchronous web requests used in OpenSessionInViewFilter and
@@ -61,7 +62,7 @@ class AsyncRequestInterceptor implements CallableProcessingInterceptor, Deferred
 
 
 	@Override
-	public <T> void preProcess(NativeWebRequest request, Callable<T> task) {
+	public <T> void preProcess(@Nullable NativeWebRequest request, Callable<T> task) {
 		bindEntityManager();
 	}
 
@@ -72,24 +73,24 @@ class AsyncRequestInterceptor implements CallableProcessingInterceptor, Deferred
 	}
 
 	@Override
-	public <T> void postProcess(NativeWebRequest request, Callable<T> task, Object concurrentResult) {
+	public <T> void postProcess(@Nullable NativeWebRequest request, Callable<T> task, @Nullable Object concurrentResult) {
 		TransactionSynchronizationManager.unbindResource(this.emFactory);
 	}
 
 	@Override
-	public <T> Object handleTimeout(NativeWebRequest request, Callable<T> task) {
+	public <T> Object handleTimeout(@Nullable NativeWebRequest request, Callable<T> task) {
 		this.timeoutInProgress = true;
 		return RESULT_NONE;  // give other interceptors a chance to handle the timeout
 	}
 
 	@Override
-	public <T> Object handleError(NativeWebRequest request, Callable<T> task, Throwable t) {
+	public <T> Object handleError(@Nullable NativeWebRequest request, Callable<T> task, Throwable t) {
 		this.errorInProgress = true;
 		return RESULT_NONE;  // give other interceptors a chance to handle the error
 	}
 
 	@Override
-	public <T> void afterCompletion(NativeWebRequest request, Callable<T> task) throws Exception {
+	public <T> void afterCompletion(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
 		closeEntityManager();
 	}
 
@@ -104,19 +105,19 @@ class AsyncRequestInterceptor implements CallableProcessingInterceptor, Deferred
 	// Implementation of DeferredResultProcessingInterceptor methods
 
 	@Override
-	public <T> boolean handleTimeout(NativeWebRequest request, DeferredResult<T> deferredResult) {
+	public <T> boolean handleTimeout(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult) {
 		this.timeoutInProgress = true;
 		return true;  // give other interceptors a chance to handle the timeout
 	}
 
 	@Override
-	public <T> boolean handleError(NativeWebRequest request, DeferredResult<T> deferredResult, Throwable t) {
+	public <T> boolean handleError(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult, Throwable t) {
 		this.errorInProgress = true;
 		return true;  // give other interceptors a chance to handle the error
 	}
 
 	@Override
-	public <T> void afterCompletion(NativeWebRequest request, DeferredResult<T> deferredResult) {
+	public <T> void afterCompletion(@Nullable NativeWebRequest request, DeferredResult<T> deferredResult) {
 		closeEntityManager();
 	}
 

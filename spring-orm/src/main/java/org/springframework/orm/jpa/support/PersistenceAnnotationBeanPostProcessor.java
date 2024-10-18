@@ -358,7 +358,7 @@ public class PersistenceAnnotationBeanPostProcessor implements InstantiationAwar
 		this.injectionMetadataCache.remove(beanName);
 	}
 
-	@Override
+	@Nullable @Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		Class<?> beanClass = registeredBean.getBeanClass();
 		String beanName = registeredBean.getBeanName();

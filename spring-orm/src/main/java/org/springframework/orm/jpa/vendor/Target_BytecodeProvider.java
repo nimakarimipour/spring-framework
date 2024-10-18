@@ -23,6 +23,7 @@ import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 import org.hibernate.bytecode.spi.ReflectionOptimizer;
 import org.hibernate.property.access.spi.PropertyAccess;
+import javax.annotation.Nullable;
 
 /**
  * Hibernate 6.3+ substitution designed to leniently return {@code null}, as authorized by the API, to avoid throwing an
@@ -35,7 +36,7 @@ import org.hibernate.property.access.spi.PropertyAccess;
 @TargetClass(className = "org.hibernate.bytecode.internal.none.BytecodeProviderImpl", onlyWith = Target_BytecodeProvider.SubstituteOnlyIfPresent.class)
 final class Target_BytecodeProvider {
 
-	@Substitute
+	@Nullable @Substitute
 	public ReflectionOptimizer getReflectionOptimizer(Class<?> clazz, Map<String, PropertyAccess> propertyAccessMap) {
 		return null;
 	}

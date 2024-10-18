@@ -24,6 +24,7 @@ import com.oracle.svm.core.annotate.RecomputeFieldValue.Kind;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 import org.hibernate.bytecode.spi.BytecodeProvider;
+import javax.annotation.Nullable;
 
 /**
  * Hibernate substitution designed to prevent ByteBuddy reachability on native, and to enforce the
@@ -35,10 +36,10 @@ import org.hibernate.bytecode.spi.BytecodeProvider;
 @TargetClass(className = "org.hibernate.bytecode.internal.BytecodeProviderInitiator", onlyWith = Target_BytecodeProviderInitiator.SubstituteOnlyIfPresent.class)
 final class Target_BytecodeProviderInitiator {
 
-	@Alias
+	@Nullable @Alias
 	public static String BYTECODE_PROVIDER_NAME_NONE;
 
-	@Alias
+	@Nullable @Alias
 	@RecomputeFieldValue(kind = Kind.FromAlias)
 	public static String BYTECODE_PROVIDER_NAME_DEFAULT = BYTECODE_PROVIDER_NAME_NONE;
 
