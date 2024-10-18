@@ -81,7 +81,7 @@ public final class ProducesRequestCondition extends AbstractRequestCondition<Pro
 	 * @param produces expressions with syntax defined by {@link RequestMapping#produces()}
 	 * @param headers expressions with syntax defined by {@link RequestMapping#headers()}
 	 */
-	public ProducesRequestCondition(String[] produces, String[] headers) {
+	public ProducesRequestCondition(String[] produces, @Nullable String[] headers) {
 		this(produces, headers, null);
 	}
 
@@ -92,7 +92,7 @@ public final class ProducesRequestCondition extends AbstractRequestCondition<Pro
 	 * @param headers expressions with syntax defined by {@link RequestMapping#headers()}
 	 * @param resolver used to determine requested content type
 	 */
-	public ProducesRequestCondition(String[] produces, String[] headers, RequestedContentTypeResolver resolver) {
+	public ProducesRequestCondition(@Nullable String[] produces, @Nullable String[] headers, @Nullable RequestedContentTypeResolver resolver) {
 		this.expressions = parseExpressions(produces, headers);
 		if (this.expressions.size() > 1) {
 			Collections.sort(this.expressions);
@@ -100,7 +100,7 @@ public final class ProducesRequestCondition extends AbstractRequestCondition<Pro
 		this.contentTypeResolver = resolver != null ? resolver : DEFAULT_CONTENT_TYPE_RESOLVER;
 	}
 
-	private List<ProduceMediaTypeExpression> parseExpressions(String[] produces, String[] headers) {
+	private List<ProduceMediaTypeExpression> parseExpressions(@Nullable String[] produces, @Nullable String[] headers) {
 		Set<ProduceMediaTypeExpression> result = null;
 		if (!ObjectUtils.isEmpty(headers)) {
 			for (String header : headers) {

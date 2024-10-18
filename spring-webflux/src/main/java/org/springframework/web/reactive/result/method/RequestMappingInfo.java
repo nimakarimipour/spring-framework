@@ -409,7 +409,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 	 * Create a new {@code RequestMappingInfo.Builder} with the given paths.
 	 * @param paths the paths to use
 	 */
-	public static Builder paths(String... paths) {
+	public static Builder paths(@Nullable String... paths) {
 		return new DefaultBuilder(paths);
 	}
 
@@ -474,7 +474,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 
 	private static class DefaultBuilder implements Builder {
 
-		private String[] paths;
+		@Nullable private String[] paths;
 
 		@Nullable
 		private RequestMethod[] methods;
@@ -504,7 +504,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 		private BuilderConfiguration options = new BuilderConfiguration();
 
 
-		public DefaultBuilder(String... paths) {
+		public DefaultBuilder(@Nullable String... paths) {
 			this.paths = paths;
 		}
 
@@ -591,7 +591,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 					this.options);
 		}
 
-		static List<PathPattern> parse(String[] patterns, PathPatternParser parser) {
+		static List<PathPattern> parse(@Nullable String[] patterns, PathPatternParser parser) {
 			if (isEmpty(patterns)) {
 				return Collections.emptyList();
 			}
@@ -603,7 +603,7 @@ public final class RequestMappingInfo implements RequestCondition<RequestMapping
 			return result;
 		}
 
-		static boolean isEmpty(String[] patterns) {
+		static boolean isEmpty(@Nullable String[] patterns) {
 			if (!ObjectUtils.isEmpty(patterns)) {
 				for (String pattern : patterns) {
 					if (StringUtils.hasText(pattern)) {

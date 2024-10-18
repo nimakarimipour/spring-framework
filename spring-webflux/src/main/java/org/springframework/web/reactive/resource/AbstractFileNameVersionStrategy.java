@@ -23,6 +23,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * Abstract base class for filename suffix based {@link VersionStrategy}
@@ -39,7 +40,7 @@ public abstract class AbstractFileNameVersionStrategy implements VersionStrategy
 	private static final Pattern pattern = Pattern.compile("-(\\S*)\\.");
 
 
-	@Override
+	@Nullable @Override
 	public String extractVersion(String requestPath) {
 		Matcher matcher = pattern.matcher(requestPath);
 		if (matcher.find()) {

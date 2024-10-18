@@ -20,6 +20,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * Abstract base class for {@link VersionStrategy} implementations that insert
@@ -43,7 +44,7 @@ public abstract class AbstractPrefixVersionStrategy implements VersionStrategy {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public String extractVersion(String requestPath) {
 		return (requestPath.startsWith(this.prefix) ? this.prefix : null);
 	}

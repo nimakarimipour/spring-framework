@@ -1,1 +1,1 @@
-./gradlew clean spring-webmvc:compileJava --rerun-tasks --no-build-cache
+./gradlew clean spring-webflux:compileJava --rerun-tasks --no-build-cache

@@ -25,6 +25,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 import org.springframework.web.server.ServerWebExchange;
+import javax.annotation.Nullable;
 
 /**
  * A {@link ResourceTransformer} that checks a {@link Cache} to see if a
@@ -41,7 +42,7 @@ public class CachingResourceTransformer implements ResourceTransformer {
 	private final Cache cache;
 
 
-	public CachingResourceTransformer(Cache cache) {
+	public CachingResourceTransformer(@Nullable Cache cache) {
 		Assert.notNull(cache, "Cache is required");
 		this.cache = cache;
 	}

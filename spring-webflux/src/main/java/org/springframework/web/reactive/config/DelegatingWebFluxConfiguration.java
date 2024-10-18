@@ -29,6 +29,7 @@ import org.springframework.web.ErrorResponse;
 import org.springframework.web.reactive.accept.RequestedContentTypeResolverBuilder;
 import org.springframework.web.reactive.result.method.annotation.ArgumentResolverConfigurer;
 import org.springframework.web.reactive.socket.server.WebSocketService;
+import javax.annotation.Nullable;
 
 /**
  * A subclass of {@code WebFluxConfigurationSupport} that detects and delegates
@@ -63,13 +64,13 @@ public class DelegatingWebFluxConfiguration extends WebFluxConfigurationSupport 
 		this.configurers.addFormatters(registry);
 	}
 
-	@Override
+	@Nullable @Override
 	protected Validator getValidator() {
 		Validator validator = this.configurers.getValidator();
 		return (validator != null ? validator : super.getValidator());
 	}
 
-	@Override
+	@Nullable @Override
 	protected MessageCodesResolver getMessageCodesResolver() {
 		MessageCodesResolver messageCodesResolver = this.configurers.getMessageCodesResolver();
 		return (messageCodesResolver != null ? messageCodesResolver : super.getMessageCodesResolver());
@@ -116,7 +117,7 @@ public class DelegatingWebFluxConfiguration extends WebFluxConfigurationSupport 
 		this.configurers.configureViewResolvers(registry);
 	}
 
-	@Override
+	@Nullable @Override
 	protected WebSocketService getWebSocketService() {
 		WebSocketService service = this.configurers.getWebSocketService();
 		return (service != null ? service : super.getWebSocketService());

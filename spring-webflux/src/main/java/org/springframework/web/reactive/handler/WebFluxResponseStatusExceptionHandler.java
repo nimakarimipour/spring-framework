@@ -20,6 +20,7 @@ import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.handler.ResponseStatusExceptionHandler;
+import javax.annotation.Nullable;
 
 /**
  * Common WebFlux exception handler that detects instances of
@@ -37,7 +38,7 @@ import org.springframework.web.server.handler.ResponseStatusExceptionHandler;
  */
 public class WebFluxResponseStatusExceptionHandler extends ResponseStatusExceptionHandler {
 
-	@Override
+	@Nullable @Override
 	protected HttpStatusCode determineStatus(Throwable ex) {
 		HttpStatusCode statusCode = super.determineStatus(ex);
 		if (statusCode == null) {

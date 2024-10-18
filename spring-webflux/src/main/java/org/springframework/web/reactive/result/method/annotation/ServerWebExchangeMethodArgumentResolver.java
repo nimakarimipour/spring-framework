@@ -79,7 +79,7 @@ public class ServerWebExchangeMethodArgumentResolver extends HandlerMethodArgume
 						UriBuilder.class == type || UriComponentsBuilder.class == type);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object resolveArgumentValue(
 			MethodParameter methodParameter, BindingContext context, ServerWebExchange exchange) {
 

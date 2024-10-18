@@ -68,7 +68,7 @@ public class WebSocketMessage {
 	 * library, if applicable.
 	 * @since 5.3
 	 */
-	public WebSocketMessage(Type type, DataBuffer payload, @Nullable Object nativeMessage) {
+	public WebSocketMessage(@Nullable Type type, DataBuffer payload, @Nullable Object nativeMessage) {
 		Assert.notNull(type, "'type' must not be null");
 		Assert.notNull(payload, "'payload' must not be null");
 		this.type = type;

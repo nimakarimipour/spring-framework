@@ -61,12 +61,12 @@ public class WebFluxConfigurerComposite implements WebFluxConfigurer {
 		this.delegates.forEach(delegate -> delegate.addFormatters(registry));
 	}
 
-	@Override
+	@Nullable @Override
 	public Validator getValidator() {
 		return createSingleBean(WebFluxConfigurer::getValidator, Validator.class);
 	}
 
-	@Override
+	@Nullable @Override
 	public MessageCodesResolver getMessageCodesResolver() {
 		return createSingleBean(WebFluxConfigurer::getMessageCodesResolver, MessageCodesResolver.class);
 	}

@@ -51,6 +51,7 @@ import org.springframework.web.server.ServerWebInputException;
 import org.springframework.web.server.UnsatisfiedRequestParameterException;
 import org.springframework.web.server.UnsupportedMediaTypeStatusException;
 import org.springframework.web.util.pattern.PathPattern;
+import javax.annotation.Nullable;
 
 /**
  * Abstract base class for classes for which {@link RequestMappingInfo} defines
@@ -86,7 +87,7 @@ public abstract class RequestMappingInfoHandlerMapping extends AbstractHandlerMe
 	 * current request -- for example with a subset of URL patterns.
 	 * @return an info in case of a match; or {@code null} otherwise.
 	 */
-	@Override
+	@Nullable @Override
 	protected RequestMappingInfo getMatchingMapping(RequestMappingInfo info, ServerWebExchange exchange) {
 		return info.getMatchingCondition(exchange);
 	}
@@ -170,7 +171,7 @@ public abstract class RequestMappingInfoHandlerMapping extends AbstractHandlerMe
 	 * @throws ServerWebInputException if there are matches by URL and HTTP
 	 * method but not by query parameter conditions
 	 */
-	@Override
+	@Nullable @Override
 	protected HandlerMethod handleNoMatch(Set<RequestMappingInfo> infos,
 			ServerWebExchange exchange) throws Exception {
 

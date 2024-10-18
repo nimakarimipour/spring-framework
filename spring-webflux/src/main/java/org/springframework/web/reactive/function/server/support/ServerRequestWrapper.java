@@ -49,6 +49,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebSession;
 import org.springframework.web.util.UriBuilder;
+import javax.annotation.Nullable;
 
 /**
  * Implementation of the {@link ServerRequest} interface that can be subclassed
@@ -203,7 +204,7 @@ public class ServerRequestWrapper implements ServerRequest {
 		return this.delegate.queryParams();
 	}
 
-	@Override
+	@Nullable @Override
 	public String pathVariable(String name) {
 		return this.delegate.pathVariable(name);
 	}
@@ -282,7 +283,7 @@ public class ServerRequestWrapper implements ServerRequest {
 			return this.headers.contentType();
 		}
 
-		@Override
+		@Nullable @Override
 		public InetSocketAddress host() {
 			return this.headers.host();
 		}

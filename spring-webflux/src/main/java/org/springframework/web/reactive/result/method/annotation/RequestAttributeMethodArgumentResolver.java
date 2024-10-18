@@ -65,7 +65,7 @@ public class RequestAttributeMethodArgumentResolver extends AbstractNamedValueSy
 		return new NamedValueInfo(ann.name(), ann.required(), ValueConstants.DEFAULT_NONE);
 	}
 
-	@Override
+	@Nullable @Override
 	protected Object resolveNamedValue(String name, MethodParameter parameter, ServerWebExchange exchange) {
 		Object value = exchange.getAttribute(name);
 		ReactiveAdapter toAdapter = getAdapterRegistry().getAdapter(parameter.getParameterType());
