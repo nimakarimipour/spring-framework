@@ -36,7 +36,7 @@ public class ContinuationHandlerMethodArgumentResolver implements HandlerMethodA
 		return "kotlin.coroutines.Continuation".equals(parameter.getParameterType().getName());
 	}
 
-	@Override
+	@Nullable @Override
 	public Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception {
 

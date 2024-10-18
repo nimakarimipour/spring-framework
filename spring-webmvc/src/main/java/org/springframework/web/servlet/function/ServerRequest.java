@@ -240,7 +240,7 @@ public interface ServerRequest {
 	 * @return the variable value
 	 * @throws IllegalArgumentException if there is no path variable with the given name
 	 */
-	default String pathVariable(String name) {
+	@Nullable default String pathVariable(String name) {
 		Map<String, String> pathVariables = pathVariables();
 		if (pathVariables.containsKey(name)) {
 			return pathVariables().get(name);

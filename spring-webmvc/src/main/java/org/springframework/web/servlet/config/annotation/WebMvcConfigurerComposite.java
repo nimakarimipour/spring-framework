@@ -167,7 +167,7 @@ class WebMvcConfigurerComposite implements WebMvcConfigurer {
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public Validator getValidator() {
 		Validator selected = null;
 		for (WebMvcConfigurer configurer : this.delegates) {

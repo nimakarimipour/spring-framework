@@ -320,7 +320,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	 * @param request current HTTP request
 	 * @throws Exception if validation failed
 	 */
-	protected void validateHandler(Object handler, HttpServletRequest request) throws Exception {
+	protected void validateHandler(@Nullable Object handler, HttpServletRequest request) throws Exception {
 	}
 
 	/**
@@ -335,7 +335,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	 * @param uriTemplateVariables the URI template variables, can be {@code null} if no variables found
 	 * @return the final handler object
 	 */
-	protected Object buildPathExposingHandler(Object rawHandler, String bestMatchingPattern,
+	protected Object buildPathExposingHandler(@Nullable Object rawHandler, String bestMatchingPattern,
 			String pathWithinMapping, @Nullable Map<String, String> uriTemplateVariables) {
 
 		HandlerExecutionChain chain = new HandlerExecutionChain(rawHandler);

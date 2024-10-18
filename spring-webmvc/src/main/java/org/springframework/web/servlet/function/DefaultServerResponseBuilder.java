@@ -39,6 +39,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.servlet.ModelAndView;
+import javax.annotation.Nullable;
 
 /**
  * Default {@link ServerResponse.BodyBuilder} implementation.
@@ -228,7 +229,7 @@ class DefaultServerResponseBuilder implements ServerResponse.BodyBuilder {
 			this.writeFunction = writeFunction;
 		}
 
-		@Override
+		@Nullable @Override
 		protected ModelAndView writeToInternal(HttpServletRequest request, HttpServletResponse response,
 				Context context) throws Exception {
 

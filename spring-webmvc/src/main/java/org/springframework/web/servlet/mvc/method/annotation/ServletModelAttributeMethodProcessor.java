@@ -69,7 +69,7 @@ public class ServletModelAttributeMethodProcessor extends ModelAttributeMethodPr
 	 * are true delegate back to the base class.
 	 * @see #createAttributeFromRequestValue
 	 */
-	@Override
+	@Nullable @Override
 	protected final Object createAttribute(String attributeName, MethodParameter parameter,
 			WebDataBinderFactory binderFactory, NativeWebRequest request) throws Exception {
 

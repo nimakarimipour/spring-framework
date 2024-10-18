@@ -85,7 +85,7 @@ class ResourcesBeanDefinitionParser implements BeanDefinitionParser {
 			"org.webjars.WebJarAssetLocator", ResourcesBeanDefinitionParser.class.getClassLoader());
 
 
-	@Override
+	@Nullable @Override
 	public BeanDefinition parse(Element element, ParserContext context) {
 		Object source = context.extractSource(element);
 

@@ -1206,7 +1206,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	private class RequestBindingInterceptor implements CallableProcessingInterceptor {
 
 		@Override
-		public <T> void preProcess(NativeWebRequest webRequest, Callable<T> task) {
+		public <T> void preProcess(@Nullable NativeWebRequest webRequest, Callable<T> task) {
 			HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
 			if (request != null) {
 				HttpServletResponse response = webRequest.getNativeResponse(HttpServletResponse.class);
@@ -1215,7 +1215,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 			}
 		}
 		@Override
-		public <T> void postProcess(NativeWebRequest webRequest, Callable<T> task, Object concurrentResult) {
+		public <T> void postProcess(@Nullable NativeWebRequest webRequest, Callable<T> task, @Nullable Object concurrentResult) {
 			HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
 			if (request != null) {
 				resetContextHolders(request, null, null);

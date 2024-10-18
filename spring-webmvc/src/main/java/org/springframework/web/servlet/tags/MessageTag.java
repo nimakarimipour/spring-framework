@@ -395,7 +395,7 @@ public class MessageTag extends HtmlEscapingAwareTag implements ArgumentAware {
 	/**
 	 * Return default exception message.
 	 */
-	protected String getNoSuchMessageExceptionDescription(NoSuchMessageException ex) {
+	@Nullable protected String getNoSuchMessageExceptionDescription(NoSuchMessageException ex) {
 		return ex.getMessage();
 	}
 

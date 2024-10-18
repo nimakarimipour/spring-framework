@@ -118,7 +118,7 @@ public class XmlViewResolver extends AbstractCachingViewResolver
 		return viewName;
 	}
 
-	@Override
+	@Nullable @Override
 	protected View loadView(String viewName, Locale locale) throws BeansException {
 		BeanFactory factory = initFactory();
 		try {

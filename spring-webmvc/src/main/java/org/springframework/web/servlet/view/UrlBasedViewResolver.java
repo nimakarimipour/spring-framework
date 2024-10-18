@@ -460,7 +460,7 @@ public class UrlBasedViewResolver extends AbstractCachingViewResolver implements
 	 * @see #loadView
 	 * @see #requiredViewClass
 	 */
-	@Override
+	@Nullable @Override
 	protected View createView(String viewName, Locale locale) throws Exception {
 		// If this resolver is not supposed to handle the given view,
 		// return null to pass on to the next resolver in the chain.
@@ -544,7 +544,7 @@ public class UrlBasedViewResolver extends AbstractCachingViewResolver implements
 	 * @see org.springframework.context.ApplicationContextAware#setApplicationContext
 	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet
 	 */
-	@Override
+	@Nullable @Override
 	protected View loadView(String viewName, Locale locale) throws Exception {
 		AbstractUrlBasedView view = buildView(viewName);
 		View result = applyLifecycleMethods(viewName, view);

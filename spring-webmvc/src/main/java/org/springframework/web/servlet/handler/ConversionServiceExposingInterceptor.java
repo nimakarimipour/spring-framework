@@ -25,6 +25,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.HandlerInterceptor;
+import javax.annotation.Nullable;
 
 /**
  * Interceptor that places the configured {@link ConversionService} in request scope

@@ -105,7 +105,7 @@ public abstract class RequestMappingInfoHandlerMapping extends AbstractHandlerMe
 	 * current request -- for example with a subset of URL patterns.
 	 * @return an info in case of a match; or {@code null} otherwise.
 	 */
-	@Override
+	@Nullable @Override
 	protected RequestMappingInfo getMatchingMapping(RequestMappingInfo info, HttpServletRequest request) {
 		return info.getMatchingCondition(request);
 	}
@@ -242,7 +242,7 @@ public abstract class RequestMappingInfoHandlerMapping extends AbstractHandlerMe
 	 * @throws HttpMediaTypeNotAcceptableException if there are matches by URL
 	 * but not by consumable/producible media types
 	 */
-	@Override
+	@Nullable @Override
 	protected HandlerMethod handleNoMatch(
 			Set<RequestMappingInfo> infos, String lookupPath, HttpServletRequest request) throws ServletException {
 

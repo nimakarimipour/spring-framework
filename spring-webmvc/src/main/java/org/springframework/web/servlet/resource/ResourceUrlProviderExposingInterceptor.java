@@ -22,6 +22,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.servlet.HandlerInterceptor;
+import javax.annotation.Nullable;
 
 /**
  * An interceptor that exposes the {@link ResourceUrlProvider} instance it

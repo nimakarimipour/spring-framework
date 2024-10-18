@@ -1225,7 +1225,7 @@ public abstract class RequestPredicates {
 			return this.delegate.multipartData();
 		}
 
-		@Override
+		@Nullable @Override
 		public String pathVariable(String name) {
 			return this.delegate.pathVariable(name);
 		}
@@ -1295,7 +1295,7 @@ public abstract class RequestPredicates {
 			return this.attributes;
 		}
 
-		@Override
+		@Nullable @Override
 		public String pathVariable(String name) {
 			Map<String, String> pathVariables = pathVariables();
 			if (pathVariables.containsKey(name)) {

@@ -37,6 +37,7 @@ import org.springframework.web.servlet.view.ViewResolverComposite;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import org.springframework.web.servlet.view.groovy.GroovyMarkupViewResolver;
 import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
+import javax.annotation.Nullable;
 
 /**
  * Parses the {@code view-resolvers} MVC namespace element and registers
@@ -67,7 +68,7 @@ public class ViewResolversBeanDefinitionParser implements BeanDefinitionParser {
 	public static final String VIEW_RESOLVER_BEAN_NAME = "mvcViewResolver";
 
 
-	@Override
+	@Nullable @Override
 	public BeanDefinition parse(Element element, ParserContext context) {
 		Object source = context.extractSource(element);
 		context.pushContainingComponent(new CompositeComponentDefinition(element.getTagName(), source));

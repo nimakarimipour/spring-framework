@@ -81,7 +81,7 @@ abstract class AbstractServerResponse extends ErrorHandlingServerResponse {
 		return this.cookies;
 	}
 
-	@Override
+	@Nullable @Override
 	public ModelAndView writeTo(HttpServletRequest request, HttpServletResponse response,
 			Context context) throws ServletException, IOException {
 

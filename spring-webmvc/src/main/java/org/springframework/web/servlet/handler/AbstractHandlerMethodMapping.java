@@ -482,7 +482,7 @@ public abstract class AbstractHandlerMethodMapping<T> extends AbstractHandlerMap
 						this.mappingRegistry.getCorsConfiguration(handerMethod) != null);
 	}
 
-	@Override
+	@Nullable @Override
 	protected CorsConfiguration getCorsConfiguration(Object handler, HttpServletRequest request) {
 		CorsConfiguration corsConfig = super.getCorsConfiguration(handler, request);
 		if (handler instanceof HandlerMethod handlerMethod) {
@@ -600,7 +600,7 @@ public abstract class AbstractHandlerMethodMapping<T> extends AbstractHandlerMap
 		/**
 		 * Return handler methods by mapping name. Thread-safe for concurrent use.
 		 */
-		public List<HandlerMethod> getHandlerMethodsByMappingName(String mappingName) {
+		@Nullable public List<HandlerMethod> getHandlerMethodsByMappingName(String mappingName) {
 			return this.nameLookup.get(mappingName);
 		}
 
@@ -801,7 +801,7 @@ public abstract class AbstractHandlerMethodMapping<T> extends AbstractHandlerMap
 
 		private final MappingRegistration<T> registration;
 
-		public Match(T mapping, MappingRegistration<T> registration) {
+		public Match(T mapping, @Nullable MappingRegistration<T> registration) {
 			this.mapping = mapping;
 			this.registration = registration;
 		}

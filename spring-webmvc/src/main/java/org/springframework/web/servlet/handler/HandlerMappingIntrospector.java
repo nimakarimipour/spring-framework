@@ -499,7 +499,7 @@ public class HandlerMappingIntrospector
 			this.attributes.put(name, value);
 		}
 
-		@Override
+		@Nullable @Override
 		public Object getAttribute(String name) {
 			return this.attributes.get(name);
 		}
@@ -531,7 +531,7 @@ public class HandlerMappingIntrospector
 					ServletRequestPathUtils.PATH_ATTRIBUTE : UrlPathHelper.PATH_ATTRIBUTE);
 		}
 
-		@Override
+		@Nullable @Override
 		public PathPatternParser getPatternParser() {
 			return this.delegate.getPatternParser();
 		}

@@ -263,7 +263,7 @@ final class DefaultEntityResponseBuilder<T> implements EntityResponse.Builder<T>
 			return this.entity;
 		}
 
-		@Override
+		@Nullable @Override
 		protected ModelAndView writeToInternal(HttpServletRequest servletRequest,
 				HttpServletResponse servletResponse, Context context)
 				throws ServletException, IOException {
@@ -362,7 +362,7 @@ final class DefaultEntityResponseBuilder<T> implements EntityResponse.Builder<T>
 			super(statusCode, headers, cookies, entity, entityType);
 		}
 
-		@Override
+		@Nullable @Override
 		protected ModelAndView writeToInternal(HttpServletRequest servletRequest, HttpServletResponse servletResponse,
 				Context context) throws ServletException, IOException {
 
@@ -415,7 +415,7 @@ final class DefaultEntityResponseBuilder<T> implements EntityResponse.Builder<T>
 			super(statusCode, headers, cookies, entity, entityType);
 		}
 
-		@Override
+		@Nullable @Override
 		protected ModelAndView writeToInternal(HttpServletRequest servletRequest, HttpServletResponse servletResponse,
 				Context context) throws ServletException, IOException {
 

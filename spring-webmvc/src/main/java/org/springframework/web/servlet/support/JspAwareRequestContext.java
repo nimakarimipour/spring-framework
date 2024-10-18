@@ -94,7 +94,7 @@ public class JspAwareRequestContext extends RequestContext {
 	 * This implementation checks for a JSTL time zone attribute in page,
 	 * request, session or application scope; if not found, returns {@code null}.
 	 */
-	@Override
+	@Nullable @Override
 	protected TimeZone getFallbackTimeZone() {
 		if (jstlPresent) {
 			TimeZone timeZone = JstlPageLocaleResolver.getJstlTimeZone(getPageContext());

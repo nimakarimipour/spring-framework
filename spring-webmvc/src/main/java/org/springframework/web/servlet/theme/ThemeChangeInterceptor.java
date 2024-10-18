@@ -23,6 +23,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ThemeResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
+import javax.annotation.Nullable;
 
 /**
  * Interceptor that allows for changing the current theme on every request,

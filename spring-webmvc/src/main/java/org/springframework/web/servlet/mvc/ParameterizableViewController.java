@@ -148,7 +148,7 @@ public class ParameterizableViewController extends AbstractController {
 	 * "input" FlashMap} is also added to the model.
 	 * @see #getViewName()
 	 */
-	@Override
+	@Nullable @Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 

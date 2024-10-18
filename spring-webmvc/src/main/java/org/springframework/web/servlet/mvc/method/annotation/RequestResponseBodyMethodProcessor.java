@@ -141,7 +141,7 @@ public class RequestResponseBodyMethodProcessor extends AbstractMessageConverter
 	 * is {@code true} and there is no body content or if there is no suitable
 	 * converter to read the content with.
 	 */
-	@Override
+	@Nullable @Override
 	public Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception {
 
@@ -166,7 +166,7 @@ public class RequestResponseBodyMethodProcessor extends AbstractMessageConverter
 		return adaptArgumentIfNecessary(arg, parameter);
 	}
 
-	@Override
+	@Nullable @Override
 	protected <T> Object readWithMessageConverters(NativeWebRequest webRequest, MethodParameter parameter,
 			Type paramType) throws IOException, HttpMediaTypeNotSupportedException, HttpMessageNotReadableException {
 

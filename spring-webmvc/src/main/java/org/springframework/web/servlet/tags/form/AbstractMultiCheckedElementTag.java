@@ -179,7 +179,7 @@ public abstract class AbstractMultiCheckedElementTag extends AbstractCheckedElem
 	 * Appends a counter to a specified id as well,
 	 * since we're dealing with multiple HTML elements.
 	 */
-	@Override
+	@Nullable @Override
 	protected String resolveId() throws JspException {
 		Object id = evaluate("id", getId());
 		if (id != null) {

@@ -84,7 +84,7 @@ public class ServletRequestMethodArgumentResolver implements HandlerMethodArgume
 				ZoneId.class == paramType);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception {
 

@@ -87,7 +87,7 @@ public class FixedLocaleResolver extends AbstractLocaleContextResolver {
 			public Locale getLocale() {
 				return getDefaultLocale();
 			}
-			@Override
+			@Nullable @Override
 			public TimeZone getTimeZone() {
 				return getDefaultTimeZone();
 			}

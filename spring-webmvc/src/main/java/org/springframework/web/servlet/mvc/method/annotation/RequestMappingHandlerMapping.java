@@ -522,7 +522,7 @@ public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMappi
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public RequestMatchResult match(HttpServletRequest request, String pattern) {
 		Assert.state(getPatternParser() == null, "This HandlerMapping uses PathPatterns.");
 		RequestMappingInfo info = RequestMappingInfo.paths(pattern).options(this.config).build();
@@ -534,7 +534,7 @@ public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMappi
 						getPathMatcher()) : null);
 	}
 
-	@Override
+	@Nullable @Override
 	protected CorsConfiguration initCorsConfiguration(Object handler, Method method, RequestMappingInfo mappingInfo) {
 		HandlerMethod handlerMethod = createHandlerMethod(handler, method);
 		Class<?> beanType = handlerMethod.getBeanType();

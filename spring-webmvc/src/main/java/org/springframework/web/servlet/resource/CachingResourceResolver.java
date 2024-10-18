@@ -59,7 +59,7 @@ public class CachingResourceResolver extends AbstractResourceResolver {
 	private final List<String> contentCodings = new ArrayList<>(EncodedResourceResolver.DEFAULT_CODINGS);
 
 
-	public CachingResourceResolver(Cache cache) {
+	public CachingResourceResolver(@Nullable Cache cache) {
 		Assert.notNull(cache, "Cache is required");
 		this.cache = cache;
 	}

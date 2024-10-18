@@ -252,7 +252,7 @@ public class ServletInvocableHandlerMethod extends InvocableHandlerMethod {
 		/**
 		 * Bridge to controller method-level annotations.
 		 */
-		@Override
+		@Nullable @Override
 		public <A extends Annotation> A getMethodAnnotation(Class<A> annotationType) {
 			return ServletInvocableHandlerMethod.this.getMethodAnnotation(annotationType);
 		}
