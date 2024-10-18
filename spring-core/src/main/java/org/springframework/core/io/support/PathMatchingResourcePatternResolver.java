@@ -618,7 +618,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 					actualRootPath = path;
 				}
 			}
-			if (rootDirResources == null & StringUtils.hasLength(commonPrefix)) {
+			if (rootDirResources == null && StringUtils.hasLength(commonPrefix)) {
 				// Try common parent directory as long as it points to the same classpath locations.
 				rootDirResources = getResources(commonPrefix);
 				Resource[] existingResources = this.rootDirCache.get(existingPath);

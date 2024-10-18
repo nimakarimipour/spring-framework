@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/buffer/DataBufferUtils.java:1086: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
-                        if (this.state.get().equals(State.DISPOSED)) {
-                                            ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/support/PathMatchingResourcePatternResolver.java:631: warning: [NullAway] dereferenced expression commonPrefix is @Nullable
+                                else if (commonPrefix.equals(rootDirPath)) {
+                                                     ^
     (see http://t.uber.com/nullaway )
