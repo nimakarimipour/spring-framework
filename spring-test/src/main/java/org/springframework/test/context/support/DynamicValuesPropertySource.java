@@ -21,6 +21,7 @@ import java.util.function.Supplier;
 
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.util.function.SupplierUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@link MapPropertySource} backed by a map with dynamically supplied values.
@@ -37,7 +38,7 @@ class DynamicValuesPropertySource extends MapPropertySource {
 		super(name, (Map) valueSuppliers);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getProperty(String name) {
 		return SupplierUtils.resolve(super.getProperty(name));
 	}

@@ -15,6 +15,7 @@
  */
 
 package org.springframework.test.context.aot;
+import javax.annotation.Nullable;
 
 /**
  * Thrown if an error occurs during AOT build-time processing or AOT run-time
@@ -39,7 +40,7 @@ public class TestContextAotException extends RuntimeException {
 	 * @param message the detail message
 	 * @param cause the root cause
 	 */
-	public TestContextAotException(String message, Throwable cause) {
+	public TestContextAotException(String message, @Nullable Throwable cause) {
 		super(message, cause);
 	}
 

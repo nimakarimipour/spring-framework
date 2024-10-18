@@ -48,13 +48,13 @@ class MergedSqlConfig {
 	private static final String COMMENT_PREFIXES = "commentPrefixes";
 
 
-	private final String dataSource;
+	@Nullable private final String dataSource;
 
-	private final String transactionManager;
+	@Nullable private final String transactionManager;
 
-	private final TransactionMode transactionMode;
+	@Nullable private final TransactionMode transactionMode;
 
-	private final String encoding;
+	@Nullable private final String encoding;
 
 	private final String separator;
 
@@ -64,7 +64,7 @@ class MergedSqlConfig {
 
 	private final String blockCommentEndDelimiter;
 
-	private final ErrorMode errorMode;
+	@Nullable private final ErrorMode errorMode;
 
 
 	/**
@@ -136,7 +136,7 @@ class MergedSqlConfig {
 	 * Get the bean name of the {@link javax.sql.DataSource}.
 	 * @see SqlConfig#dataSource()
 	 */
-	String getDataSource() {
+	@Nullable String getDataSource() {
 		return this.dataSource;
 	}
 
@@ -144,7 +144,7 @@ class MergedSqlConfig {
 	 * Get the bean name of the {@link org.springframework.transaction.PlatformTransactionManager}.
 	 * @see SqlConfig#transactionManager()
 	 */
-	String getTransactionManager() {
+	@Nullable String getTransactionManager() {
 		return this.transactionManager;
 	}
 
@@ -152,7 +152,7 @@ class MergedSqlConfig {
 	 * Get the {@link TransactionMode}.
 	 * @see SqlConfig#transactionMode()
 	 */
-	TransactionMode getTransactionMode() {
+	@Nullable TransactionMode getTransactionMode() {
 		return this.transactionMode;
 	}
 
@@ -161,7 +161,7 @@ class MergedSqlConfig {
 	 * encoding.
 	 * @see SqlConfig#encoding()
 	 */
-	String getEncoding() {
+	@Nullable String getEncoding() {
 		return this.encoding;
 	}
 
@@ -203,7 +203,7 @@ class MergedSqlConfig {
 	 * Get the {@link ErrorMode}.
 	 * @see SqlConfig#errorMode()
 	 */
-	ErrorMode getErrorMode() {
+	@Nullable ErrorMode getErrorMode() {
 		return this.errorMode;
 	}
 
@@ -226,7 +226,7 @@ class MergedSqlConfig {
 	}
 
 
-	private static <E extends Enum<?>> E getEnum(AnnotationAttributes attributes, String attributeName,
+	@Nullable private static <E extends Enum<?>> E getEnum(AnnotationAttributes attributes, String attributeName,
 			E inheritedOrDefaultValue, E defaultValue) {
 
 		E value = attributes.getEnum(attributeName);

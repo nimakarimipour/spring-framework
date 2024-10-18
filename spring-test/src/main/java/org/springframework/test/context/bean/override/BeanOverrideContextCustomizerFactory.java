@@ -26,6 +26,7 @@ import org.springframework.test.context.ContextCustomizer;
 import org.springframework.test.context.ContextCustomizerFactory;
 import org.springframework.test.context.MergedContextConfiguration;
 import org.springframework.test.context.TestContextAnnotationUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@link ContextCustomizerFactory} which provides support for Bean Overriding
@@ -36,7 +37,7 @@ import org.springframework.test.context.TestContextAnnotationUtils;
  */
 public class BeanOverrideContextCustomizerFactory implements ContextCustomizerFactory {
 
-	@Override
+	@Nullable @Override
 	public ContextCustomizer createContextCustomizer(Class<?> testClass,
 			List<ContextConfigurationAttributes> configAttributes) {
 

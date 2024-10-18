@@ -44,7 +44,7 @@ class TransactionContext {
 
 	private final TestContext testContext;
 
-	private final TransactionDefinition transactionDefinition;
+	@Nullable private final TransactionDefinition transactionDefinition;
 
 	private final PlatformTransactionManager transactionManager;
 
@@ -59,7 +59,7 @@ class TransactionContext {
 
 
 	TransactionContext(TestContext testContext, PlatformTransactionManager transactionManager,
-			TransactionDefinition transactionDefinition, boolean defaultRollback) {
+			@Nullable TransactionDefinition transactionDefinition, boolean defaultRollback) {
 
 		this.testContext = testContext;
 		this.transactionManager = transactionManager;

@@ -382,7 +382,7 @@ public class MockHttpServletRequest implements HttpServletRequest {
 	// ServletRequest interface
 	// ---------------------------------------------------------------------
 
-	@Override
+	@Nullable @Override
 	public Object getAttribute(String name) {
 		checkActive();
 		return this.attributes.get(name);
@@ -636,7 +636,7 @@ public class MockHttpServletRequest implements HttpServletRequest {
 		return Collections.enumeration(this.parameters.keySet());
 	}
 
-	@Override
+	@Nullable @Override
 	public String[] getParameterValues(String name) {
 		Assert.notNull(name, "Parameter name must not be null");
 		return this.parameters.get(name);

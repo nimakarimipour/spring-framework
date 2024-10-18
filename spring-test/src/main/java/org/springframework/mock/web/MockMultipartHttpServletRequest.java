@@ -95,7 +95,7 @@ public class MockMultipartHttpServletRequest extends MockHttpServletRequest impl
 		return this.multipartFiles.keySet().iterator();
 	}
 
-	@Override
+	@Nullable @Override
 	public MultipartFile getFile(String name) {
 		return this.multipartFiles.getFirst(name);
 	}
@@ -116,7 +116,7 @@ public class MockMultipartHttpServletRequest extends MockHttpServletRequest impl
 		return new LinkedMultiValueMap<>(this.multipartFiles);
 	}
 
-	@Override
+	@Nullable @Override
 	public String getMultipartContentType(String paramOrFileName) {
 		MultipartFile file = getFile(paramOrFileName);
 		if (file != null) {
@@ -153,7 +153,7 @@ public class MockMultipartHttpServletRequest extends MockHttpServletRequest impl
 		return headers;
 	}
 
-	@Override
+	@Nullable @Override
 	public HttpHeaders getMultipartHeaders(String paramOrFileName) {
 		MultipartFile file = getFile(paramOrFileName);
 		if (file != null) {

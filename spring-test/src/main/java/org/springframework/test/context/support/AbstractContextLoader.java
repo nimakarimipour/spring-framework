@@ -42,6 +42,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.ResourceUtils;
+import javax.annotation.Nullable;
 
 /**
  * Abstract application context loader that provides a basis for all concrete
@@ -215,11 +216,11 @@ public abstract class AbstractContextLoader implements SmartContextLoader {
 	 */
 	@Override
 	@SuppressWarnings("deprecation")
-	public final String[] processLocations(Class<?> clazz, String... locations) {
+	public final String[] processLocations(Class<?> clazz, @Nullable String... locations) {
 		return processLocationsInternal(clazz, locations);
 	}
 
-	private String[] processLocationsInternal(Class<?> clazz, String... locations) {
+	private String[] processLocationsInternal(Class<?> clazz, @Nullable String... locations) {
 		return (ObjectUtils.isEmpty(locations) && isGenerateDefaultLocations()) ?
 				generateDefaultLocations(clazz) : modifyLocations(clazz, locations);
 	}
@@ -286,7 +287,7 @@ public abstract class AbstractContextLoader implements SmartContextLoader {
 	 * @return an array of modified application context resource locations
 	 * @since 2.5
 	 */
-	protected String[] modifyLocations(Class<?> clazz, String... locations) {
+	protected String[] modifyLocations(Class<?> clazz, @Nullable String... locations) {
 		return TestContextResourceUtils.convertToClasspathResourcePaths(clazz, locations);
 	}
 

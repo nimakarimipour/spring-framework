@@ -129,7 +129,7 @@ class StubWebApplicationContext implements WebApplicationContext {
 		return this.startupDate;
 	}
 
-	@Override
+	@Nullable @Override
 	public ApplicationContext getParent() {
 		return null;
 	}
@@ -158,7 +158,7 @@ class StubWebApplicationContext implements WebApplicationContext {
 	//---------------------------------------------------------------------
 
 	@Override
-	public Object getBean(String name) throws BeansException {
+	public Object getBean(@Nullable String name) throws BeansException {
 		return this.beanFactory.getBean(name);
 	}
 
@@ -198,7 +198,7 @@ class StubWebApplicationContext implements WebApplicationContext {
 	}
 
 	@Override
-	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
+	public boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException {
 		return this.beanFactory.isSingleton(name);
 	}
 
@@ -217,12 +217,12 @@ class StubWebApplicationContext implements WebApplicationContext {
 		return this.beanFactory.isTypeMatch(name, typeToMatch);
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getType(String name) throws NoSuchBeanDefinitionException {
 		return this.beanFactory.getType(name);
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getType(String name, boolean allowFactoryBeanInit) throws NoSuchBeanDefinitionException {
 		return this.beanFactory.getType(name, allowFactoryBeanInit);
 	}
@@ -336,7 +336,7 @@ class StubWebApplicationContext implements WebApplicationContext {
 	// Implementation of HierarchicalBeanFactory interface
 	//---------------------------------------------------------------------
 
-	@Override
+	@Nullable @Override
 	public BeanFactory getParentBeanFactory() {
 		return null;
 	}
@@ -351,7 +351,7 @@ class StubWebApplicationContext implements WebApplicationContext {
 	// Implementation of MessageSource interface
 	//---------------------------------------------------------------------
 
-	@Override
+	@Nullable @Override
 	public String getMessage(String code, @Nullable Object[] args, @Nullable String defaultMessage, Locale locale) {
 		return this.messageSource.getMessage(code, args, defaultMessage, locale);
 	}

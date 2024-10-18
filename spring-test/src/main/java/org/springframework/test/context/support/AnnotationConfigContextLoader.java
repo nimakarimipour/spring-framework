@@ -27,6 +27,7 @@ import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.test.context.ContextConfigurationAttributes;
 import org.springframework.test.context.MergedContextConfiguration;
+import javax.annotation.Nullable;
 
 /**
  * Concrete implementation of {@link AbstractGenericContextLoader} that loads
@@ -112,7 +113,7 @@ public class AnnotationConfigContextLoader extends AbstractGenericContextLoader 
 	 * @see AbstractContextLoader#modifyLocations
 	 */
 	@Override
-	protected String[] modifyLocations(Class<?> clazz, String... locations) {
+	protected String[] modifyLocations(Class<?> clazz, @Nullable String... locations) {
 		throw new UnsupportedOperationException(
 				"AnnotationConfigContextLoader does not support the modifyLocations(Class, String...) method");
 	}

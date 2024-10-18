@@ -94,7 +94,7 @@ public class UriAssert extends AbstractStringAssert<UriAssert> {
 
 	private static final class ShouldBeValidUriTemplate extends BasicErrorMessageFactory {
 
-		private ShouldBeValidUriTemplate(String uriTemplate, String errorMessage) {
+		private ShouldBeValidUriTemplate(String uriTemplate, @Nullable String errorMessage) {
 			super("%nExpecting:%n  %s%nTo be a valid URI template but got:%n  %s%n", uriTemplate, errorMessage);
 		}
 	}

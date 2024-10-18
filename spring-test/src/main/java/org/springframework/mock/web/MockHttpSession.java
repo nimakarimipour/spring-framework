@@ -147,7 +147,7 @@ public class MockHttpSession implements HttpSession {
 		return this.maxInactiveInterval;
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getAttribute(String name) {
 		assertIsValid();
 		Assert.notNull(name, "Attribute name must not be null");

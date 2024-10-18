@@ -29,6 +29,7 @@ import org.springframework.core.io.support.ResourcePatternUtils;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * Utility methods for working with resources within the <em>Spring TestContext
@@ -60,7 +61,7 @@ public abstract class TestContextResourceUtils {
 	 * @return a new array of converted resource paths
 	 * @see #convertToResources
 	 */
-	public static String[] convertToClasspathResourcePaths(Class<?> clazz, String... paths) {
+	public static String[] convertToClasspathResourcePaths(Class<?> clazz, @Nullable String... paths) {
 		return convertToClasspathResourcePaths(clazz, false, paths);
 	}
 
@@ -92,7 +93,7 @@ public abstract class TestContextResourceUtils {
 	 * @see ResourceUtils#CLASSPATH_URL_PREFIX
 	 * @see ResourceUtils#FILE_URL_PREFIX
 	 */
-	public static String[] convertToClasspathResourcePaths(Class<?> clazz, boolean preservePlaceholders, String... paths) {
+	public static String[] convertToClasspathResourcePaths(Class<?> clazz, boolean preservePlaceholders, @Nullable String... paths) {
 		String[] convertedPaths = new String[paths.length];
 		for (int i = 0; i < paths.length; i++) {
 			String path = paths[i];

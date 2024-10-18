@@ -67,22 +67,22 @@ final class DefaultAssertableMvcResult implements AssertableMvcResult {
 		return getTarget().getResponse();
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getHandler() {
 		return getTarget().getHandler();
 	}
 
-	@Override
+	@Nullable @Override
 	public HandlerInterceptor[] getInterceptors() {
 		return getTarget().getInterceptors();
 	}
 
-	@Override
+	@Nullable @Override
 	public ModelAndView getModelAndView() {
 		return getTarget().getModelAndView();
 	}
 
-	@Override
+	@Nullable @Override
 	public Exception getResolvedException() {
 		return getTarget().getResolvedException();
 	}
@@ -92,12 +92,12 @@ final class DefaultAssertableMvcResult implements AssertableMvcResult {
 		return getTarget().getFlashMap();
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getAsyncResult() {
 		return getTarget().getAsyncResult();
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getAsyncResult(long timeToWait) {
 		return getTarget().getAsyncResult(timeToWait);
 	}

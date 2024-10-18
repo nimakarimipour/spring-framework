@@ -33,6 +33,7 @@ import org.springframework.core.NativeDetector;
 import org.springframework.core.Ordered;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
+import javax.annotation.Nullable;
 
 /**
  * {@code TestExecutionListener} that resets any mock beans that have been marked
@@ -101,7 +102,7 @@ public class MockitoResetTestExecutionListener extends AbstractTestExecutionList
 		}
 	}
 
-	private Object getBean(ConfigurableListableBeanFactory beanFactory, String name) {
+	@Nullable private Object getBean(ConfigurableListableBeanFactory beanFactory, String name) {
 		try {
 			if (isStandardBeanOrSingletonFactoryBean(beanFactory, name)) {
 				return beanFactory.getBean(name);

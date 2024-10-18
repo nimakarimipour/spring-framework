@@ -143,7 +143,7 @@ class TestPropertySourceAttributes {
 	}
 
 	private void addPropertiesAndLocations(List<PropertySourceDescriptor> descriptors, String[] properties,
-			Class<?> declaringClass, String encoding, boolean prepend) {
+			Class<?> declaringClass, @Nullable String encoding, boolean prepend) {
 
 		if (hasNoLocations(descriptors) && ObjectUtils.isEmpty(properties)) {
 			String defaultPropertiesFile = detectDefaultPropertiesFile(declaringClass);

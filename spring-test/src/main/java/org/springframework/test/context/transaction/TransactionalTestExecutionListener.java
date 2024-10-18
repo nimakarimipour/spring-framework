@@ -154,7 +154,7 @@ public class TransactionalTestExecutionListener extends AbstractTestExecutionLis
 	@SuppressWarnings("serial")
 	protected final TransactionAttributeSource attributeSource = new AnnotationTransactionAttributeSource(false) {
 
-		@Override
+		@Nullable @Override
 		protected TransactionAttribute findTransactionAttribute(Class<?> clazz) {
 			// @Transactional present in inheritance hierarchy?
 			TransactionAttribute result = super.findTransactionAttribute(clazz);

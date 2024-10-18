@@ -293,12 +293,12 @@ public class MockMvcHttpConnector implements ClientHttpConnector {
 			return this.mvcResult.getFlashMap();
 		}
 
-		@Override
+		@Nullable @Override
 		public Object getAsyncResult() {
 			return this.mvcResult.getAsyncResult();
 		}
 
-		@Override
+		@Nullable @Override
 		public Object getAsyncResult(long timeToWait) {
 			return this.mvcResult.getAsyncResult(timeToWait);
 		}

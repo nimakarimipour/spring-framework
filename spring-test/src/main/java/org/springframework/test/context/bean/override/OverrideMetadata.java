@@ -120,7 +120,7 @@ public abstract class OverrideMetadata {
 	 * @param trackingBeanRegistry the registry in which trackers can
 	 * optionally be registered
 	 */
-	protected void track(Object override, SingletonBeanRegistry trackingBeanRegistry) {
+	protected void track(Object override, @Nullable SingletonBeanRegistry trackingBeanRegistry) {
 		// NO-OP
 	}
 

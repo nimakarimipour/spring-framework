@@ -60,7 +60,7 @@ public class MockWebSession implements WebSession {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public String getId() {
 		return this.delegate.getId();
 	}

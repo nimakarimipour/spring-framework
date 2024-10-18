@@ -25,6 +25,7 @@ import org.springframework.mock.http.client.MockClientHttpRequest;
 import org.springframework.test.web.client.ResponseCreator;
 import org.springframework.util.Assert;
 import org.springframework.util.StreamUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@code ResponseCreator} that obtains the response by executing the request
@@ -59,7 +60,7 @@ public class ExecutingResponseCreator implements ResponseCreator {
 
 
 	@Override
-	public ClientHttpResponse createResponse(ClientHttpRequest request) throws IOException {
+	public ClientHttpResponse createResponse(@Nullable ClientHttpRequest request) throws IOException {
 		Assert.state(request instanceof MockClientHttpRequest, "Expected a MockClientHttpRequest");
 		MockClientHttpRequest mockRequest = (MockClientHttpRequest) request;
 		ClientHttpRequest newRequest = this.requestFactory.createRequest(mockRequest.getURI(), mockRequest.getMethod());

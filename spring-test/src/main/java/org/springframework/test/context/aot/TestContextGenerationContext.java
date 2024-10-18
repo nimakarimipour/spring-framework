@@ -20,6 +20,7 @@ import org.springframework.aot.generate.ClassNameGenerator;
 import org.springframework.aot.generate.DefaultGenerationContext;
 import org.springframework.aot.generate.GeneratedFiles;
 import org.springframework.aot.hint.RuntimeHints;
+import javax.annotation.Nullable;
 
 /**
  * Extension of {@link DefaultGenerationContext} with a custom implementation of
@@ -30,7 +31,7 @@ import org.springframework.aot.hint.RuntimeHints;
  */
 class TestContextGenerationContext extends DefaultGenerationContext {
 
-	private final String featureName;
+	@Nullable private final String featureName;
 
 
 	/**

@@ -223,7 +223,7 @@ public class MockServletContext implements ServletContext {
 		this.contexts.put(contextPath, context);
 	}
 
-	@Override
+	@Nullable @Override
 	public ServletContext getContext(String contextPath) {
 		if (this.contextPath.equals(contextPath)) {
 			return this;
@@ -375,7 +375,7 @@ public class MockServletContext implements ServletContext {
 		return new MockRequestDispatcher(path);
 	}
 
-	@Override
+	@Nullable @Override
 	public RequestDispatcher getNamedDispatcher(String path) {
 		return this.namedRequestDispatchers.get(path);
 	}
@@ -464,7 +464,7 @@ public class MockServletContext implements ServletContext {
 		return "MockServletContext";
 	}
 
-	@Override
+	@Nullable @Override
 	public String getInitParameter(String name) {
 		Assert.notNull(name, "Parameter name must not be null");
 		return this.initParameters.get(name);

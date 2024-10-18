@@ -450,7 +450,7 @@ final class HtmlUnitRequestBuilder implements RequestBuilder, Mergeable {
 			super(servletContext, method, requestURI);
 		}
 
-		@Override
+		@Nullable @Override
 		public HttpSession getSession(boolean create) {
 			HttpSession session = super.getSession(false);
 			if (session == null && create) {

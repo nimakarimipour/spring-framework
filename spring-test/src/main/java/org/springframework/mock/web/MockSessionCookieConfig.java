@@ -135,7 +135,7 @@ public class MockSessionCookieConfig implements SessionCookieConfig {
 		this.attributes.put(name, value);
 	}
 
-	@Override
+	@Nullable @Override
 	public String getAttribute(String name) {
 		return this.attributes.get(name);
 	}

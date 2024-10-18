@@ -102,7 +102,7 @@ public class MediaTypeAssert extends AbstractObjectAssert<MediaTypeAssert, Media
 
 	private static final class ShouldBeValidMediaType extends BasicErrorMessageFactory {
 
-		private ShouldBeValidMediaType(String mediaType, String errorMessage) {
+		private ShouldBeValidMediaType(String mediaType, @Nullable String errorMessage) {
 			super("%nExpecting:%n  %s%nTo be a valid media type but got:%n  %s%n", mediaType, errorMessage);
 		}
 	}

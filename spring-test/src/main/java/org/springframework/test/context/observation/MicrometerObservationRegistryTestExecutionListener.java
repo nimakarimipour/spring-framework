@@ -28,6 +28,7 @@ import org.springframework.core.Conventions;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.support.AbstractTestExecutionListener;
 import org.springframework.util.ReflectionUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@code TestExecutionListener} which provides support for Micrometer's
@@ -67,7 +68,7 @@ class MicrometerObservationRegistryTestExecutionListener extends AbstractTestExe
 	static final String OBSERVATION_THREAD_LOCAL_ACCESSOR_CLASS_NAME =
 			"io.micrometer.observation.contextpropagation.ObservationThreadLocalAccessor";
 
-	private static final String ERROR_MESSAGE;
+	@Nullable private static final String ERROR_MESSAGE;
 
 	static {
 		// Trigger eager resolution of Micrometer Observation types to ensure that

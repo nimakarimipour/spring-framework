@@ -25,6 +25,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.springframework.test.util.AssertionErrors.assertEquals;
+import javax.annotation.Nullable;
 
 /**
  * Factory for assertions on the response status.
@@ -104,7 +105,7 @@ public class StatusResultMatchers {
 				HttpStatus.Series.SERVER_ERROR, getHttpStatusSeries(result));
 	}
 
-	private HttpStatus.Series getHttpStatusSeries(MvcResult result) {
+	@Nullable private HttpStatus.Series getHttpStatusSeries(MvcResult result) {
 		return HttpStatus.Series.resolve(result.getResponse().getStatus());
 	}
 

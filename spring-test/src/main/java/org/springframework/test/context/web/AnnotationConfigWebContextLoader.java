@@ -26,6 +26,7 @@ import org.springframework.test.context.ContextConfigurationAttributes;
 import org.springframework.test.context.MergedContextConfiguration;
 import org.springframework.test.context.support.AnnotationConfigContextLoaderUtils;
 import org.springframework.web.context.support.GenericWebApplicationContext;
+import javax.annotation.Nullable;
 
 /**
  * Concrete implementation of {@link AbstractGenericWebContextLoader} that loads
@@ -108,7 +109,7 @@ public class AnnotationConfigWebContextLoader extends AbstractGenericWebContextL
 	 * @see org.springframework.test.context.support.AbstractContextLoader#modifyLocations
 	 */
 	@Override
-	protected String[] modifyLocations(Class<?> clazz, String... locations) {
+	protected String[] modifyLocations(Class<?> clazz, @Nullable String... locations) {
 		throw new UnsupportedOperationException(
 				"AnnotationConfigWebContextLoader does not support the modifyLocations(Class, String...) method");
 	}
