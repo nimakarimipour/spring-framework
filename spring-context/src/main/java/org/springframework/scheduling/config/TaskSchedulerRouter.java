@@ -105,7 +105,7 @@ public class TaskSchedulerRouter implements TaskScheduler, BeanNameAware, BeanFa
 	}
 
 
-	@Override
+	@Nullable @Override
 	public ScheduledFuture<?> schedule(Runnable task, Trigger trigger) {
 		return determineTargetScheduler(task).schedule(task, trigger);
 	}

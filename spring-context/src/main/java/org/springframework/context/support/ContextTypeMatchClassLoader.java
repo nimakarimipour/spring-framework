@@ -122,7 +122,7 @@ class ContextTypeMatchClassLoader extends DecoratingClassLoader implements Smart
 			return true;
 		}
 
-		@Override
+		@Nullable @Override
 		protected Class<?> loadClassForOverriding(String name) throws ClassNotFoundException {
 			byte[] bytes = bytesCache.get(name);
 			if (bytes == null) {

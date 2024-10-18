@@ -314,7 +314,7 @@ public class CommonAnnotationBeanPostProcessor extends InitDestroyAnnotationBean
 		metadata.checkConfigMembers(beanDefinition);
 	}
 
-	@Override
+	@Nullable @Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		BeanRegistrationAotContribution parentAotContribution = super.processAheadOfTime(registeredBean);
 		Class<?> beanClass = registeredBean.getBeanClass();
@@ -350,7 +350,7 @@ public class CommonAnnotationBeanPostProcessor extends InitDestroyAnnotationBean
 		this.injectionMetadataCache.remove(beanName);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) {
 		return null;
 	}

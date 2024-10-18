@@ -203,7 +203,7 @@ final class ConfigurationClass {
 		return this.beanMethods;
 	}
 
-	void addImportedResource(String importedResource, Class<? extends BeanDefinitionReader> readerClass) {
+	void addImportedResource(String importedResource, @Nullable Class<? extends BeanDefinitionReader> readerClass) {
 		this.importedResources.put(importedResource, readerClass);
 	}
 

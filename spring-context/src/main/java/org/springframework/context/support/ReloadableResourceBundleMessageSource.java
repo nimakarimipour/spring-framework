@@ -190,7 +190,7 @@ public class ReloadableResourceBundleMessageSource extends AbstractResourceBased
 	 * Resolves the given message code as key in the retrieved bundle files,
 	 * returning the value found in the bundle as-is (without MessageFormat parsing).
 	 */
-	@Override
+	@Nullable @Override
 	protected String resolveCodeWithoutArguments(String code, Locale locale) {
 		if (getCacheMillis() < 0) {
 			PropertiesHolder propHolder = getMergedProperties(locale);

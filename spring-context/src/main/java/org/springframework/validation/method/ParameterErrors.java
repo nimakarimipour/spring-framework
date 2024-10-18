@@ -146,7 +146,7 @@ public class ParameterErrors extends ParameterValidationResult implements Errors
 		return this.errors.getGlobalErrors();
 	}
 
-	@Override
+	@Nullable @Override
 	public ObjectError getGlobalError() {
 		return this.errors.getGlobalError();
 	}
@@ -166,7 +166,7 @@ public class ParameterErrors extends ParameterValidationResult implements Errors
 		return this.errors.getFieldErrors();
 	}
 
-	@Override
+	@Nullable @Override
 	public FieldError getFieldError() {
 		return this.errors.getFieldError();
 	}
@@ -186,17 +186,17 @@ public class ParameterErrors extends ParameterValidationResult implements Errors
 		return this.errors.getFieldErrors(field);
 	}
 
-	@Override
+	@Nullable @Override
 	public FieldError getFieldError(String field) {
 		return this.errors.getFieldError(field);
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getFieldValue(String field) {
 		return this.errors.getFieldError(field);
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getFieldType(String field) {
 		return this.errors.getFieldType(field);
 	}

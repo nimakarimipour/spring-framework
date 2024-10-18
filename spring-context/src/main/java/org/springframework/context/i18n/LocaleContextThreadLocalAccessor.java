@@ -17,6 +17,7 @@
 package org.springframework.context.i18n;
 
 import io.micrometer.context.ThreadLocalAccessor;
+import javax.annotation.Nullable;
 
 /**
  * Adapt {@link LocaleContextHolder} to the {@link ThreadLocalAccessor} contract
@@ -39,7 +40,7 @@ public class LocaleContextThreadLocalAccessor implements ThreadLocalAccessor<Loc
 		return KEY;
 	}
 
-	@Override
+	@Nullable @Override
 	public LocaleContext getValue() {
 		return LocaleContextHolder.getLocaleContext();
 	}

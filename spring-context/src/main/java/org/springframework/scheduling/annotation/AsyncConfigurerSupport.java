@@ -33,7 +33,7 @@ import org.springframework.lang.Nullable;
 @Deprecated(since = "6.0")
 public class AsyncConfigurerSupport implements AsyncConfigurer {
 
-	@Override
+	@Nullable @Override
 	public Executor getAsyncExecutor() {
 		return null;
 	}

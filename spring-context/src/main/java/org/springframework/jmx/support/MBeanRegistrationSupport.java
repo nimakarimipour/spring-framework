@@ -115,7 +115,7 @@ public class MBeanRegistrationSupport {
 	 * @param registrationPolicy the policy to use
 	 * @since 3.2
 	 */
-	public void setRegistrationPolicy(RegistrationPolicy registrationPolicy) {
+	public void setRegistrationPolicy(@Nullable RegistrationPolicy registrationPolicy) {
 		Assert.notNull(registrationPolicy, "RegistrationPolicy must not be null");
 		this.registrationPolicy = registrationPolicy;
 	}

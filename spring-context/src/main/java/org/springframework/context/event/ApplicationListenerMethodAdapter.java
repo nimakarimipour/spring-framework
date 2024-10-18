@@ -335,7 +335,7 @@ public class ApplicationListenerMethodAdapter implements GenericApplicationListe
 		}
 	}
 
-	private void publishEvents(Object result) {
+	private void publishEvents(@Nullable Object result) {
 		if (result.getClass().isArray()) {
 			Object[] events = ObjectUtils.toObjectArray(result);
 			for (Object event : events) {
@@ -433,7 +433,7 @@ public class ApplicationListenerMethodAdapter implements GenericApplicationListe
 	 * the given error message.
 	 * @param message error message to append the HandlerMethod details to
 	 */
-	protected String getDetailedErrorMessage(Object bean, String message) {
+	protected String getDetailedErrorMessage(Object bean, @Nullable String message) {
 		StringBuilder sb = new StringBuilder(message).append('\n');
 		sb.append("HandlerMethod details: \n");
 		sb.append("Bean [").append(bean.getClass().getName()).append("]\n");
@@ -460,7 +460,7 @@ public class ApplicationListenerMethodAdapter implements GenericApplicationListe
 		}
 	}
 
-	private String getInvocationErrorMessage(Object bean, String message, Object[] resolvedArgs) {
+	private String getInvocationErrorMessage(Object bean, @Nullable String message, Object[] resolvedArgs) {
 		StringBuilder sb = new StringBuilder(getDetailedErrorMessage(bean, message));
 		sb.append("Resolved arguments: \n");
 		for (int i = 0; i < resolvedArgs.length; i++) {

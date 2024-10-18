@@ -93,6 +93,6 @@ public abstract class AdviceModeImportSelector<A extends Annotation> implements 
 	 * {@code null} if the given {@code AdviceMode} is unknown)
 	 */
 	@Nullable
-	protected abstract String[] selectImports(AdviceMode adviceMode);
+	protected abstract String[] selectImports(@Nullable AdviceMode adviceMode);
 
 }

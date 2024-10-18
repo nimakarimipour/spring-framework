@@ -84,7 +84,7 @@ public class MapAccessor implements CompilablePropertyAccessor {
 	}
 
 	@Override
-	public void generateCode(String propertyName, MethodVisitor mv, CodeFlow cf) {
+	public void generateCode(@Nullable String propertyName, MethodVisitor mv, CodeFlow cf) {
 		String descriptor = cf.lastDescriptor();
 		if (descriptor == null || !descriptor.equals("Ljava/util/Map")) {
 			if (descriptor == null) {
