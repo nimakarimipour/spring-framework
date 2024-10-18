@@ -25,6 +25,7 @@ import org.springframework.beans.factory.config.RuntimeBeanReference;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.beans.factory.xml.ParserContext;
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * Parser for the JMS {@code <listener-container>} element.
@@ -55,7 +56,7 @@ class JmsListenerContainerParser extends AbstractListenerContainerParser {
 	private static final String BACK_OFF_ATTRIBUTE = "back-off";
 
 
-	@Override
+	@Nullable @Override
 	protected RootBeanDefinition createContainerFactory(String factoryId, Element containerEle, ParserContext parserContext,
 			PropertyValues commonContainerProperties, PropertyValues specificContainerProperties) {
 
