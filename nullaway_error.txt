@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/MimeType.java:579: warning: [NullAway] dereferenced expression thisValue is @Nullable
-                                comp = thisValue.compareTo(otherValue);
-                                                ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/buffer/DataBufferUtils.java:1086: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+                        if (this.state.get().equals(State.DISPOSED)) {
+                                            ^
     (see http://t.uber.com/nullaway )
