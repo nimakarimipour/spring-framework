@@ -82,25 +82,25 @@ public class WebSocketServerSockJsSession extends AbstractSockJsSession implemen
 		return this.webSocketSession.getHandshakeHeaders();
 	}
 
-	@Override
+	@Nullable @Override
 	public Principal getPrincipal() {
 		Assert.state(this.webSocketSession != null, "WebSocketSession not yet initialized");
 		return this.webSocketSession.getPrincipal();
 	}
 
-	@Override
+	@Nullable @Override
 	public InetSocketAddress getLocalAddress() {
 		Assert.state(this.webSocketSession != null, "WebSocketSession not yet initialized");
 		return this.webSocketSession.getLocalAddress();
 	}
 
-	@Override
+	@Nullable @Override
 	public InetSocketAddress getRemoteAddress() {
 		Assert.state(this.webSocketSession != null, "WebSocketSession not yet initialized");
 		return this.webSocketSession.getRemoteAddress();
 	}
 
-	@Override
+	@Nullable @Override
 	public String getAcceptedProtocol() {
 		Assert.state(this.webSocketSession != null, "WebSocketSession not yet initialized");
 		return this.webSocketSession.getAcceptedProtocol();

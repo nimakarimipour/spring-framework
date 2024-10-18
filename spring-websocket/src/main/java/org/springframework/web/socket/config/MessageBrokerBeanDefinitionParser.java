@@ -132,7 +132,7 @@ class MessageBrokerBeanDefinitionParser implements BeanDefinitionParser {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public BeanDefinition parse(Element element, ParserContext context) {
 		Object source = context.extractSource(element);
 		CompositeComponentDefinition compDefinition = new CompositeComponentDefinition(element.getTagName(), source);

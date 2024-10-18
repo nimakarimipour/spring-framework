@@ -128,7 +128,7 @@ public class StandardWebSocketSession extends AbstractWebSocketSession<Session> 
 		return this.handshakeHeaders;
 	}
 
-	@Override
+	@Nullable @Override
 	public String getAcceptedProtocol() {
 		checkNativeSessionInitialized();
 		return this.acceptedProtocol;
@@ -140,7 +140,7 @@ public class StandardWebSocketSession extends AbstractWebSocketSession<Session> 
 		return this.extensions;
 	}
 
-	@Override
+	@Nullable @Override
 	public Principal getPrincipal() {
 		return this.user;
 	}

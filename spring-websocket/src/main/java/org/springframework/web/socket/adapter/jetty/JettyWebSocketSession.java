@@ -113,7 +113,7 @@ public class JettyWebSocketSession extends AbstractWebSocketSession<Session> {
 		return this.headers;
 	}
 
-	@Override
+	@Nullable @Override
 	public String getAcceptedProtocol() {
 		checkNativeSessionInitialized();
 		return this.acceptedProtocol;
@@ -125,7 +125,7 @@ public class JettyWebSocketSession extends AbstractWebSocketSession<Session> {
 		return this.extensions;
 	}
 
-	@Override
+	@Nullable @Override
 	public Principal getPrincipal() {
 		return this.user;
 	}

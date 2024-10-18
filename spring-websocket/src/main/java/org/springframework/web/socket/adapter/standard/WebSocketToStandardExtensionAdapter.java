@@ -22,6 +22,7 @@ import java.util.List;
 import jakarta.websocket.Extension;
 
 import org.springframework.web.socket.WebSocketExtension;
+import javax.annotation.Nullable;
 
 /**
  * Adapt an instance of {@link org.springframework.web.socket.WebSocketExtension} to
@@ -45,7 +46,7 @@ public class WebSocketToStandardExtensionAdapter implements Extension {
 				public String getName() {
 					return paramName;
 				}
-				@Override
+				@Nullable @Override
 				public String getValue() {
 					return extension.getParameters().get(paramName);
 				}

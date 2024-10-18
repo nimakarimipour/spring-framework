@@ -31,6 +31,7 @@ import org.springframework.web.socket.WebSocketExtension;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.sockjs.transport.TransportType;
+import javax.annotation.Nullable;
 
 /**
  * An extension of {@link AbstractClientSockJsSession} for use with HTTP
@@ -95,18 +96,18 @@ public class XhrClientSockJsSession extends AbstractClientSockJsSession {
 		return this.headers;
 	}
 
-	@Override
+	@Nullable @Override
 	public InetSocketAddress getLocalAddress() {
 		return null;
 	}
 
-	@Override
+	@Nullable @Override
 	public InetSocketAddress getRemoteAddress() {
 		URI uri = getUri();
 		return (uri != null ? new InetSocketAddress(uri.getHost(), uri.getPort()) : null);
 	}
 
-	@Override
+	@Nullable @Override
 	public String getAcceptedProtocol() {
 		return null;
 	}

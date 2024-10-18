@@ -206,7 +206,7 @@ public class RestTemplateXhrTransport extends AbstractXhrTransport {
 			this.sockJsSession = sockJsSession;
 		}
 
-		@Override
+		@Nullable @Override
 		public Object extractData(ClientHttpResponse response) throws IOException {
 			HttpStatusCode httpStatus = response.getStatusCode();
 			if (httpStatus != HttpStatus.OK) {
