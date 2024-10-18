@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/support/PathMatchingResourcePatternResolver.java:631: warning: [NullAway] dereferenced expression commonPrefix is @Nullable
-                                else if (commonPrefix.equals(rootDirPath)) {
-                                                     ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/support/PathMatchingResourcePatternResolver.java:837: warning: [NullAway] dereferenced expression rootEntryPath is @Nullable
+                                        String relativePath = entryPath.substring(rootEntryPath.length());
+                                                                                               ^
     (see http://t.uber.com/nullaway )
