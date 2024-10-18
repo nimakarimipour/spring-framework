@@ -66,7 +66,7 @@ public class MockSpringFactoriesLoader extends SpringFactoriesLoader {
 	}
 
 
-	@Override
+	@Nullable @Override
 	@SuppressWarnings("unchecked")
 	protected <T> T instantiateFactory(String implementationName, Class<T> type,
 			@Nullable ArgumentResolver argumentResolver, FailureHandler failureHandler) {
