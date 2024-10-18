@@ -26,6 +26,7 @@ import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * Decrement operator.  Can be used in a prefix or postfix form. This will throw
@@ -44,7 +45,7 @@ public class OpDec extends Operator {
 	private final boolean postfix;  // false means prefix
 
 
-	public OpDec(int startPos, int endPos, boolean postfix, SpelNodeImpl... operands) {
+	public OpDec(int startPos, int endPos, boolean postfix, @Nullable SpelNodeImpl... operands) {
 		super(DEC, startPos, endPos, operands);
 		this.postfix = postfix;
 		Assert.notEmpty(operands, "Operands must not be empty");

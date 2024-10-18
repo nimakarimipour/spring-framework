@@ -621,7 +621,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 		@Nullable
 		private final Method originalMethod;
 
-		OptimalPropertyAccessor(InvokerPair invokerPair) {
+		OptimalPropertyAccessor(@Nullable InvokerPair invokerPair) {
 			this.member = invokerPair.member;
 			this.typeDescriptor = invokerPair.typeDescriptor;
 			this.originalMethod = invokerPair.originalMethod;
@@ -714,7 +714,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 		}
 
 		@Override
-		public void generateCode(String propertyName, MethodVisitor mv, CodeFlow cf) {
+		public void generateCode(@Nullable String propertyName, MethodVisitor mv, CodeFlow cf) {
 			Class<?> publicDeclaringClass = this.member.getDeclaringClass();
 			if (!Modifier.isPublic(publicDeclaringClass.getModifiers()) && this.originalMethod != null) {
 				publicDeclaringClass = CodeFlow.findPublicDeclaringClass(this.originalMethod);

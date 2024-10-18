@@ -15,6 +15,7 @@
  */
 
 package org.springframework.expression.spel;
+import javax.annotation.Nullable;
 
 /**
  * Wraps a real parse exception. This exception flows to the top parse method and then
@@ -30,7 +31,7 @@ public class InternalParseException extends RuntimeException {
 		super(cause);
 	}
 
-	@Override
+	@Nullable @Override
 	public SpelParseException getCause() {
 		return (SpelParseException) super.getCause();
 	}

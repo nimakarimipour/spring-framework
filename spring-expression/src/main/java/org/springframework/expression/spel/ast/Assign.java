@@ -19,6 +19,7 @@ package org.springframework.expression.spel.ast;
 import org.springframework.expression.EvaluationException;
 import org.springframework.expression.TypedValue;
 import org.springframework.expression.spel.ExpressionState;
+import javax.annotation.Nullable;
 
 /**
  * Represents assignment. An alternative to calling {@code setValue}
@@ -32,7 +33,7 @@ import org.springframework.expression.spel.ExpressionState;
  */
 public class Assign extends SpelNodeImpl {
 
-	public Assign(int startPos, int endPos, SpelNodeImpl... operands) {
+	public Assign(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super(startPos, endPos, operands);
 	}
 

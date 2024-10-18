@@ -17,6 +17,7 @@
 package org.springframework.expression.spel;
 
 import java.text.MessageFormat;
+import javax.annotation.Nullable;
 
 /**
  * Contains all the messages that can be produced by the Spring Expression Language.
@@ -313,7 +314,7 @@ public enum SpelMessage {
 	 * @return a formatted message
 	 * @since 4.3.5
 	 */
-	public String formatMessage(Object... inserts) {
+	public String formatMessage(@Nullable Object... inserts) {
 		StringBuilder formattedMessage = new StringBuilder();
 		formattedMessage.append("EL").append(this.code);
 		if (this.kind == Kind.ERROR) {

@@ -19,6 +19,7 @@ package org.springframework.expression.spel;
 import org.springframework.asm.MethodVisitor;
 import org.springframework.asm.Opcodes;
 import org.springframework.expression.PropertyAccessor;
+import javax.annotation.Nullable;
 
 /**
  * A compilable {@link PropertyAccessor} is able to generate bytecode that represents
@@ -48,6 +49,6 @@ public interface CompilablePropertyAccessor extends PropertyAccessor, Opcodes {
 	 * @param methodVisitor the ASM method visitor into which code should be generated
 	 * @param codeFlow the current state of the expression compiler
 	 */
-	void generateCode(String propertyName, MethodVisitor methodVisitor, CodeFlow codeFlow);
+	void generateCode(@Nullable String propertyName, MethodVisitor methodVisitor, CodeFlow codeFlow);
 
 }

@@ -26,6 +26,7 @@ import org.springframework.expression.spel.ExpressionState;
 import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * Increment operator. Can be used in a prefix or postfix form. This will throw
@@ -44,7 +45,7 @@ public class OpInc extends Operator {
 	private final boolean postfix;  // false means prefix
 
 
-	public OpInc(int startPos, int endPos, boolean postfix, SpelNodeImpl... operands) {
+	public OpInc(int startPos, int endPos, boolean postfix, @Nullable SpelNodeImpl... operands) {
 		super(INC, startPos, endPos, operands);
 		this.postfix = postfix;
 		Assert.notEmpty(operands, "Operands must not be empty");

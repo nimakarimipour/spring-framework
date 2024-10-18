@@ -626,7 +626,7 @@ public class CodeFlow implements Opcodes {
 	 * <p>Assumes at least one of the types is in boxed form (i.e. single char descriptor).
 	 * @return {@code true} if it is possible to get (via boxing) from one descriptor to the other
 	 */
-	public static boolean areBoxingCompatible(String desc1, String desc2) {
+	public static boolean areBoxingCompatible(@Nullable String desc1, String desc2) {
 		if (desc1.equals(desc2)) {
 			return true;
 		}
@@ -706,7 +706,7 @@ public class CodeFlow implements Opcodes {
 	 * @param descriptor a descriptor for a type that should have a primitive representation
 	 * @return the single character descriptor for a primitive input descriptor
 	 */
-	public static char toPrimitiveTargetDesc(String descriptor) {
+	public static char toPrimitiveTargetDesc(@Nullable String descriptor) {
 		if (descriptor.length() == 1) {
 			return descriptor.charAt(0);
 		}

@@ -17,6 +17,7 @@
 package org.springframework.expression.spel;
 
 import org.springframework.expression.EvaluationException;
+import javax.annotation.Nullable;
 
 /**
  * Root exception for Spring EL related exceptions.
@@ -35,7 +36,7 @@ public class SpelEvaluationException extends EvaluationException {
 
 	private final SpelMessage message;
 
-	private final Object[] inserts;
+	@Nullable private final Object[] inserts;
 
 
 	public SpelEvaluationException(SpelMessage message, Object... inserts) {
@@ -44,19 +45,19 @@ public class SpelEvaluationException extends EvaluationException {
 		this.inserts = inserts;
 	}
 
-	public SpelEvaluationException(int position, SpelMessage message, Object... inserts) {
+	public SpelEvaluationException(int position, SpelMessage message, @Nullable Object... inserts) {
 		super(position, message.formatMessage(inserts));
 		this.message = message;
 		this.inserts = inserts;
 	}
 
-	public SpelEvaluationException(int position, Throwable cause, SpelMessage message, Object... inserts) {
+	public SpelEvaluationException(int position, @Nullable Throwable cause, SpelMessage message, @Nullable Object... inserts) {
 		super(position, message.formatMessage(inserts), cause);
 		this.message = message;
 		this.inserts = inserts;
 	}
 
-	public SpelEvaluationException(Throwable cause, SpelMessage message, Object... inserts) {
+	public SpelEvaluationException(Throwable cause, SpelMessage message, @Nullable Object... inserts) {
 		super(message.formatMessage(inserts), cause);
 		this.message = message;
 		this.inserts = inserts;
@@ -80,7 +81,7 @@ public class SpelEvaluationException extends EvaluationException {
 	/**
 	 * Return the message inserts.
 	 */
-	public Object[] getInserts() {
+	@Nullable public Object[] getInserts() {
 		return this.inserts;
 	}
 

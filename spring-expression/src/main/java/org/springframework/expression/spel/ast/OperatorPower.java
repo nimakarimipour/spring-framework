@@ -24,6 +24,7 @@ import org.springframework.expression.Operation;
 import org.springframework.expression.TypedValue;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * The power operator.
@@ -34,7 +35,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OperatorPower extends Operator {
 
-	public OperatorPower(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OperatorPower(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("^", startPos, endPos, operands);
 	}
 

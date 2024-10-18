@@ -27,6 +27,7 @@ import org.springframework.expression.spel.CodeFlow;
 import org.springframework.expression.spel.ExpressionState;
 import org.springframework.util.Assert;
 import org.springframework.util.NumberUtils;
+import javax.annotation.Nullable;
 
 /**
  * The minus operator supports:
@@ -49,7 +50,7 @@ import org.springframework.util.NumberUtils;
  */
 public class OpMinus extends Operator {
 
-	public OpMinus(int startPos, int endPos, SpelNodeImpl... operands) {
+	public OpMinus(int startPos, int endPos, @Nullable SpelNodeImpl... operands) {
 		super("-", startPos, endPos, operands);
 	}
 

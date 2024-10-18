@@ -26,6 +26,7 @@ import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.expression.spel.SpelMessage;
 import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
+import javax.annotation.Nullable;
 
 /**
  * Represents a ternary expression, for example: "someCheck()?true:false".
@@ -37,7 +38,7 @@ import org.springframework.util.ObjectUtils;
  */
 public class Ternary extends SpelNodeImpl {
 
-	public Ternary(int startPos, int endPos, SpelNodeImpl... args) {
+	public Ternary(int startPos, int endPos, @Nullable SpelNodeImpl... args) {
 		super(startPos, endPos, args);
 	}
 
