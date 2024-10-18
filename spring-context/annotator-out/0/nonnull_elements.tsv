@@ -1,0 +1,4 @@
+kind	class	method	param	index	uri
+METHOD	org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$ConfigurationClassBeanDefinition	getFactoryMethodMetadata()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassBeanDefinitionReader.java
+METHOD	org.springframework.scheduling.annotation.AsyncConfigurationSelector	selectImports(org.springframework.context.annotation.AdviceMode)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/scheduling/annotation/AsyncConfigurationSelector.java
+METHOD	org.springframework.validation.MapBindingResult	getTarget()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/MapBindingResult.java

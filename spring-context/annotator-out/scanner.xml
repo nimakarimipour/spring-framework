@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scanner>
+	<serialization active="true"/>
+	<uuid>eaa892b1-9c85-4193-ae16-30fef023db49</uuid>
+	<path>/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/annotator-out/0</path>
+	<processor>
+		<LOMBOK active="true"/>
+	</processor>
+	<annotations/>
+</scanner>

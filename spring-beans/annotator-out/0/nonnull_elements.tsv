@@ -1,0 +1,6 @@
+kind	class	method	param	index	uri
+METHOD	org.springframework.beans.SimpleBeanInfoFactory	getBeanInfo(java.lang.Class)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/SimpleBeanInfoFactory.java
+METHOD	org.springframework.beans.ExtendedBeanInfoFactory	getBeanInfo(java.lang.Class)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/ExtendedBeanInfoFactory.java
+METHOD	org.springframework.beans.StandardBeanInfoFactory	getBeanInfo(java.lang.Class)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/StandardBeanInfoFactory.java
+METHOD	org.springframework.beans.factory.support.BeanDefinitionOverrideException	getResourceDescription()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/BeanDefinitionOverrideException.java
+METHOD	org.springframework.beans.factory.support.BeanDefinitionOverrideException	getBeanName()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/BeanDefinitionOverrideException.java

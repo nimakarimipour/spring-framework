@@ -1,0 +1,2 @@
+kind	class	method	param	index	uri
+METHOD	org.springframework.mock.web.MockMultipartFile	getOriginalFilename()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-test/src/main/java/org/springframework/mock/web/MockMultipartFile.java

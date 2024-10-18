@@ -1,0 +1,4 @@
+REGION_CLASS	REGION_MEMBER	USED_MEMBER	USED_CLASS	SOURCE_TYPE
+org.springframework.instrument.InstrumentationSavingAgent	premain(java.lang.String,java.lang.instrument.Instrumentation)	instrumentation	org.springframework.instrument.InstrumentationSavingAgent	SOURCE
+org.springframework.instrument.InstrumentationSavingAgent	agentmain(java.lang.String,java.lang.instrument.Instrumentation)	instrumentation	org.springframework.instrument.InstrumentationSavingAgent	SOURCE
+org.springframework.instrument.InstrumentationSavingAgent	getInstrumentation()	instrumentation	org.springframework.instrument.InstrumentationSavingAgent	SOURCE

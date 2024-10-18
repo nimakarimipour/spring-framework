@@ -1,0 +1,2 @@
+kind	class	method	param	index	uri	field
+METHOD	org.springframework.core.test.tools.CompileWithForkedClassLoaderClassLoader	setClassResourceLookup(java.util.function.Function)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core-test/src/main/java/org/springframework/core/test/tools/CompileWithForkedClassLoaderClassLoader.java	classResourceLookup

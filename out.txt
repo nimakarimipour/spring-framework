@@ -1,0 +1,21 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java:111: warning: [NullAway] initializer method does not guarantee @NonNull field ffff (line 74) is initialized along all control-flow paths (remember to check for exceptions or early returns).
+	protected AbstractNestablePropertyAccessor(boolean registerDefaultEditors) {
+	          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java:122: warning: [NullAway] initializer method does not guarantee @NonNull field ffff (line 74) is initialized along all control-flow paths (remember to check for exceptions or early returns).
+	protected AbstractNestablePropertyAccessor(Object object) {
+	          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java:131: warning: [NullAway] initializer method does not guarantee @NonNull field ffff (line 74) is initialized along all control-flow paths (remember to check for exceptions or early returns).
+	protected AbstractNestablePropertyAccessor(Class<?> clazz) {
+	          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java:143: warning: [NullAway] initializer method does not guarantee @NonNull field ffff (line 74) is initialized along all control-flow paths (remember to check for exceptions or early returns).
+	protected AbstractNestablePropertyAccessor(Object object, String nestedPath, Object rootObject) {
+	          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java:155: warning: [NullAway] initializer method does not guarantee @NonNull field ffff (line 74) is initialized along all control-flow paths (remember to check for exceptions or early returns).
+	protected AbstractNestablePropertyAccessor(Object object, String nestedPath, AbstractNestablePropertyAccessor parent) {
+	          ^
+    (see http://t.uber.com/nullaway )
+5 warnings

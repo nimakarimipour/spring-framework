@@ -1,0 +1,3 @@
+kind	class	method	param	index	uri
+METHOD	org.springframework.web.util.HierarchicalUriComponents	getPath()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/HierarchicalUriComponents.java
+METHOD	org.springframework.http.client.MultipartBodyBuilder$PublisherEntity	getResolvableType()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/MultipartBodyBuilder.java

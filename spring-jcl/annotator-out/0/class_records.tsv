@@ -1,0 +1,16 @@
+class	path
+org.apache.commons.logging.LogFactory	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogFactory.java
+org.apache.commons.logging.LogFactory$1	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogFactory.java
+org.apache.commons.logging.Log	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/Log.java
+org.apache.commons.logging.impl.SimpleLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/impl/SimpleLog.java
+org.apache.commons.logging.impl.NoOpLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/impl/NoOpLog.java
+org.apache.commons.logging.LogAdapter	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$Log4jAdapter	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$Slf4jAdapter	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$JavaUtilAdapter	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$Log4jLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$Slf4jLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$Slf4jLocationAwareLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$JavaUtilLog	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogAdapter$LocationResolvingLogRecord	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogAdapter.java
+org.apache.commons.logging.LogFactoryService	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jcl/src/main/java/org/apache/commons/logging/LogFactoryService.java

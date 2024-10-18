@@ -1,0 +1,7 @@
+kind	class	method	param	index	uri
+PARAMETER	org.aopalliance.intercept.MethodInterceptor	invoke(org.aopalliance.intercept.MethodInvocation)	invocation	0	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/MethodInterceptor.java
+METHOD	org.aopalliance.intercept.MethodInvocation	getMethod()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/MethodInvocation.java
+METHOD	org.aopalliance.intercept.Invocation	getArguments()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/Invocation.java
+METHOD	org.aopalliance.intercept.Joinpoint	getStaticPart()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/Joinpoint.java
+METHOD	org.aopalliance.intercept.ConstructorInvocation	getConstructor()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/ConstructorInvocation.java
+METHOD	org.aopalliance.intercept.ConstructorInterceptor	construct(org.aopalliance.intercept.ConstructorInvocation)	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/aopalliance/intercept/ConstructorInterceptor.java

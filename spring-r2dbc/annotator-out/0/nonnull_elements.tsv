@@ -1,0 +1,2 @@
+kind	class	method	param	index	uri
+METHOD	org.springframework.r2dbc.core.binding.Bindings$ValueBinding	getValue()	null	null	/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-r2dbc/src/main/java/org/springframework/r2dbc/core/binding/Bindings.java

@@ -1,0 +1,677 @@
+Exception in thread "DisconnectableInputStream source reader" org.gradle.api.UncheckedIOException: java.io.IOException: Input/output error
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:62)
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:41)
+	at org.gradle.util.internal.DisconnectableInputStream$1.run(DisconnectableInputStream.java:127)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.io.IOException: Input/output error
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:279)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:290)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:351)
+	at org.gradle.util.internal.DisconnectableInputStream$1.run(DisconnectableInputStream.java:98)
+	... 1 more
+Exception in thread "Thread-0" net.rubygrapefruit.platform.NativeException: Could not write to output stream.
+	at net.rubygrapefruit.platform.internal.AbstractTerminal.write(AbstractTerminal.java:61)
+	at net.rubygrapefruit.platform.internal.TerminfoTerminal.reset(TerminfoTerminal.java:269)
+	at net.rubygrapefruit.platform.internal.AbstractTerminals$1.run(AbstractTerminals.java:47)
+Caused by: java.io.IOException: Input/output error
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:341)
+	at net.rubygrapefruit.platform.internal.AbstractTerminal.write(AbstractTerminal.java:59)
+	... 2 more
+ll-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ContentDisposition.java:803: warning: [NullAway] parameter filename is @NonNull, but parameter in superclass method org.springframework.http.ContentDisposition.Builder.filename(java.lang.String,java.nio.charset.Charset) is @Nullable
+		public Builder filename(String filename, Charset charset) {
+		                               ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ContentDisposition.java:811: warning: [NullAway] parameter size is @NonNull, but parameter in superclass method org.springframework.http.ContentDisposition.Builder.size(java.lang.Long) is @Nullable
+		public Builder size(Long size) {
+		                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ContentDisposition.java:818: warning: [NullAway] parameter creationDate is @NonNull, but parameter in superclass method org.springframework.http.ContentDisposition.Builder.creationDate(java.time.ZonedDateTime) is @Nullable
+		public Builder creationDate(ZonedDateTime creationDate) {
+		                                          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ContentDisposition.java:825: warning: [NullAway] parameter modificationDate is @NonNull, but parameter in superclass method org.springframework.http.ContentDisposition.Builder.modificationDate(java.time.ZonedDateTime) is @Nullable
+		public Builder modificationDate(ZonedDateTime modificationDate) {
+		                                              ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ContentDisposition.java:832: warning: [NullAway] parameter readDate is @NonNull, but parameter in superclass method org.springframework.http.ContentDisposition.Builder.readDate(java.time.ZonedDateTime) is @Nullable
+		public Builder readDate(ZonedDateTime readDate) {
+		                                      ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/accept/ServletPathExtensionContentNegotiationStrategy.java:114: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return mediaType;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/support/StaticWebApplicationContext.java:143: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return null;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletRequestAttributes.java:168: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return null;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletRequestAttributes.java:250: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return getSession(true);
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletRequestAttributes.java:253: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return null;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/support/ServletContextAttributeFactoryBean.java:81: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (this.attribute != null ? this.attribute.getClass() : null);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/support/ServletContextResourcePatternResolver.java:140: warning: [NullAway] passing @Nullable parameter 'pathInJarFile' where @NonNull is required
+						doRetrieveMatchingJarEntries(absoluteJarPath, pathInJarFile, result);
+						                                              ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/StandardServletAsyncWebRequest.java:95: warning: [NullAway] dereferenced expression ((LifecycleHttpServletResponse) getResponse()) is @Nullable
+		((LifecycleHttpServletResponse) getResponse()).setAsyncWebRequest(this);
+		                                              ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/StandardServletAsyncWebRequest.java:104: warning: [NullAway] parameter timeout is @NonNull, but parameter in superclass method org.springframework.web.context.request.async.AsyncWebRequest.setTimeout(java.lang.Long) is @Nullable
+	public void setTimeout(Long timeout) {
+	                            ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/StandardServletAsyncWebRequest.java:261: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.outputStream;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/StandardServletAsyncWebRequest.java:279: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.writer;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletWebRequest.java:102: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return getResponse();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletWebRequest.java:107: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return WebUtils.getNativeRequest(getRequest(), requiredType);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletWebRequest.java:113: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (response != null ? WebUtils.getNativeResponse(response, requiredType) : null);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:321: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				logger.debug("Servlet container timeout notification for " + formatUri(this.asyncWebRequest));
+				                                                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:323: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+			Object result = interceptorChain.triggerAfterTimeout(this.asyncWebRequest, callable);
+			                                                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:331: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				logger.debug("Servlet container error notification for " + formatUri(this.asyncWebRequest) + ": " + ex);
+				                                                                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:333: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+			Object result = interceptorChain.triggerAfterError(this.asyncWebRequest, callable, ex);
+			                                                       ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:339: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				interceptorChain.triggerAfterCompletion(this.asyncWebRequest, callable));
+				                                            ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:347: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+					interceptorChain.applyPreProcess(this.asyncWebRequest, callable);
+					                                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:354: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+					result = interceptorChain.applyPostProcess(this.asyncWebRequest, callable, result);
+					                                               ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:436: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				logger.debug("Servlet container timeout notification for " + formatUri(this.asyncWebRequest));
+				                                                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:439: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				interceptorChain.triggerAfterTimeout(this.asyncWebRequest, deferredResult);
+				                                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:448: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				logger.debug("Servlet container error notification for " + formatUri(this.asyncWebRequest));
+				                                                                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:451: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				if (!interceptorChain.triggerAfterError(this.asyncWebRequest, deferredResult, ex)) {
+				                                            ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:462: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				interceptorChain.triggerAfterCompletion(this.asyncWebRequest, deferredResult));
+				                                            ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/WebAsyncManager.java:470: warning: [NullAway] passing @Nullable parameter 'this.asyncWebRequest' where @NonNull is required
+				result = interceptorChain.applyPostProcess(this.asyncWebRequest, deferredResult, result);
+				                                               ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/FacesRequestAttributes.java:106: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return getAttributeMap(scope).get(name);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/FacesRequestAttributes.java:134: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return switch (key) {
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/FacesWebRequest.java:69: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return null;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/FacesWebRequest.java:81: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return null;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/HierarchicalUriComponents.java:1085: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return value;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java:658: warning: [NullAway] passing @Nullable parameter '(value != null ? value : (StringUtils.hasLength(eq) ? "" : null))' where @NonNull is required
+				queryParam(name, (value != null ? value : (StringUtils.hasLength(eq) ? "" : null)));
+				                 ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java:931: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+				return null;
+				^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java:980: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return (this.pathSegments.isEmpty() ? null :
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/util/WebUtils.java:529: warning: [NullAway] passing @Nullable parameter 'ex.getMessage()' where @NonNull is required
+		exposeRequestAttributeIfNotPresent(request, ERROR_MESSAGE_ATTRIBUTE, ex.getMessage());
+		                                                                                  ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/ErrorResponseException.java:169: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.messageDetailArguments;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/ServerWebExchangeDecorator.java:98: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return getDelegate().getApplicationContext();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/adapter/HttpWebHandlerAdapter.java:159: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.codecConfigurer;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/InMemoryWebSessionStore.java:193: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.id.get();
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/InMemoryWebSessionStore.java:228: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+			return this.state.get().equals(State.STARTED) || !getAttributes().isEmpty();
+			                       ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/InMemoryWebSessionStore.java:269: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+				if (this.state.get().equals(State.EXPIRED)) {
+				                    ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/InMemoryWebSessionStore.java:293: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+			if (this.state.get().equals(State.EXPIRED)) {
+			                    ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java:143: warning: [NullAway] dereferenced expression this.multipartParameterNames is @Nullable
+		if (this.multipartParameterNames.isEmpty()) {
+		                                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java:163: warning: [NullAway] dereferenced expression this.multipartParameterNames is @Nullable
+		if (this.multipartParameterNames.isEmpty()) {
+		                                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java:182: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return (part != null ? part.getContentType() : null);
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java:201: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+				return null;
+				^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/AbstractMultipartHttpServletRequest.java:143: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.multipartFiles;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:136: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return file.getContentType();
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:139: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return getMultipartParameterContentTypes().get(paramOrFileName);
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:152: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return null;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:174: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.multipartParameters;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:194: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.multipartParameterContentTypes;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/MultipartFileResource.java:69: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.multipartFile.getOriginalFilename();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/CorsConfiguration.java:187: warning: [NullAway] dereferenced expression this.allowedOrigins is @Nullable
+			this.allowedOrigins.add(value);
+			                   ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/CorsConfiguration.java:257: warning: [NullAway] dereferenced expression this.allowedOriginPatterns is @Nullable
+			this.allowedOriginPatterns.add(new OriginPattern(value));
+			                          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/reactive/DefaultCorsProcessor.java:156: warning: [NullAway] dereferenced expression allowHeaders is @Nullable
+		if (preFlightRequest && !allowHeaders.isEmpty()) {
+		                                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/DefaultCorsProcessor.java:158: warning: [NullAway] dereferenced expression allowHeaders is @Nullable
+		if (preFlightRequest && !allowHeaders.isEmpty()) {
+		                                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/DefaultErrorResponseBuilder.java:215: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.detailMessageArguments;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/filter/ForwardedHeaderFilter.java:345: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+				return this.forwardedPrefixExtractor.getErrorRequestUri();
+				^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/filter/ServerHttpObservationFilter.java:143: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (ex instanceof ServletException) ? ex.getCause() : ex;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ResponseEntity.java:166: warning: [NullAway] dereferenced expression otherEntity is @Nullable
+		return ObjectUtils.nullSafeEquals(this.status, otherEntity.status);
+		                                                          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/RequestPartArgumentResolver.java:93: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return null;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/RequestAttributeArgumentResolver.java:45: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (annot == null ? null :
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/RequestHeaderArgumentResolver.java:62: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (annot == null ? null :
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceMethod.java:242: warning: [NullAway] dereferenced expression typeLevelUrl is @Nullable
+				return (typeLevelUrl + (!typeLevelUrl.endsWith("/") && !methodLevelUrl.startsWith("/") ? "/" : "") + methodLevelUrl);
+				                                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/PathVariableArgumentResolver.java:53: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (annot == null ? null :
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/ReactiveHttpRequestValues.java:239: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+			super.setBodyValue(null);
+			                   ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/CookieValueArgumentResolver.java:61: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (annot == null ? null :
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/RequestParamArgumentResolver.java:65: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (annot == null ? null :
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceProxyFactory.java:265: warning: [NullAway] passing @Nullable parameter 'this.exchangeAdapter' where @NonNull is required
+			resolvers.add(new RequestBodyArgumentResolver(this.exchangeAdapter));
+			                                                  ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceProxyFactory.java:268: warning: [NullAway] passing @Nullable parameter 'this.exchangeAdapter' where @NonNull is required
+			resolvers.add(new RequestPartArgumentResolver(this.exchangeAdapter));
+			                                                  ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceProxyFactory.java:270: warning: [NullAway] dereferenced expression this.exchangeAdapter is @Nullable
+			if (this.exchangeAdapter.supportsRequestAttributes()) {
+			                        ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceProxyFactory.java:303: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+				return httpServiceMethod.invoke(arguments);
+				^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/bind/ServletRequestBindingException.java:122: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.messageDetailArguments;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/bind/support/BindParamNameResolver.java:42: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return null;
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/bind/support/WebExchangeDataBinder.java:166: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.map.get(name);
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/RequestEntity.java:209: warning: [NullAway] dereferenced expression otherEntity is @Nullable
+		return (ObjectUtils.nullSafeEquals(this.method, otherEntity.method) &&
+		                                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/RequestEntity.java:740: warning: [NullAway] dereferenced expression otherEntity is @Nullable
+			return (ObjectUtils.nullSafeEquals(this.uriTemplate, otherEntity.uriTemplate) &&
+			                                                                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/HttpMessageConverterExtractor.java:91: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return null;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/support/RestClientAdapter.java:73: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return newRequest(values).retrieve().body(bodyType);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/support/RestTemplateAdapter.java:74: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.restTemplate.exchange(newRequest(values), bodyType).getBody();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/DefaultResponseErrorHandler.java:209: warning: [NullAway] passing @Nullable parameter 'this.messageConverters' where @NonNull is required
+						new HttpMessageConverterExtractor<>(resolvableType.getType(), this.messageConverters);
+						                                                                  ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/DefaultRestClient.java:236: warning: [NullAway] passing @Nullable parameter 'cause' where @NonNull is required
+					ResolvableType.forType(bodyType) + "] and content type [" + contentType + "]", cause);
+					                                                                               ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/DefaultRestClient.java:460: warning: [NullAway] dereferenced expression DefaultRestClient.this.defaultRequest is @Nullable
+					DefaultRestClient.this.defaultRequest.accept(this);
+					                                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/DefaultRestClient.java:538: warning: [NullAway] dereferenced expression DefaultRestClient.this.initializers is @Nullable
+				DefaultRestClient.this.initializers.forEach(initializer -> initializer.initialize(request));
+				                                   ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/DefaultRestClient.java:657: warning: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+				throw new ResourceAccessException("Could not retrieve response status code: " + ex.getMessage(), ex.getCause());
+				                                                                                                            ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/AbstractNamedValueMethodArgumentResolver.java:298: warning: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+					namedValueInfo.name, parameter, ex.getCause());
+					                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/AbstractNamedValueMethodArgumentResolver.java:302: warning: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+					namedValueInfo.name, parameter, ex.getCause());
+					                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/HandlerMethod.java:345: warning: [NullAway] dereferenced expression ((HandlerMethod) other) is @Nullable
+		return (this == other || (super.equals(other) && this.bean.equals(((HandlerMethod) other).bean)));
+		                                                                                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/RequestParamMethodArgumentResolver.java:250: warning: [NullAway] passing @Nullable parameter 'element' where @NonNull is required
+				builder.queryParam(name, element);
+				                         ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/RequestParamMethodArgumentResolver.java:254: warning: [NullAway] passing @Nullable parameter 'formatUriValue(conversionService, new TypeDescriptor(parameter), value)' where @NonNull is required
+			builder.queryParam(name, formatUriValue(conversionService, new TypeDescriptor(parameter), value));
+			                                       ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/ExceptionHandlerMethodResolver.java:188: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.mappedMethods.get(matches.get(0));
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/converter/ResourceHttpMessageConverter.java:86: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+					return inputMessage.getHeaders().getContentDisposition().getFilename();
+					^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/converter/json/AbstractJackson2HttpMessageConverter.java:332: warning: [NullAway] dereferenced expression cause.getMessage() is @Nullable
+		boolean debugLevel = (cause instanceof JsonMappingException && cause.getMessage().startsWith("Cannot find"));
+		                                                                                 ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/converter/json/Jackson2ObjectMapperFactoryBean.java:473: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (this.objectMapper != null ? this.objectMapper.getClass() : null);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/cbor/Jackson2CborEncoder.java:57: warning: [NullAway] parameter mimeType is @NonNull, but parameter in superclass method org.springframework.http.codec.json.AbstractJackson2Encoder.encode(org.reactivestreams.Publisher<?>,org.springframework.core.io.buffer.DataBufferFactory,org.springframework.core.ResolvableType,org.springframework.util.MimeType,java.util.Map<java.lang.String,java.lang.Object>) is @Nullable
+	public Flux<DataBuffer> encode(Publisher<?> inputStream, DataBufferFactory bufferFactory, ResolvableType elementType, MimeType mimeType, Map<String, Object> hints) {
+	                                                                                                                               ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/cbor/Jackson2CborDecoder.java:56: warning: [NullAway] parameter mimeType is @NonNull, but parameter in superclass method org.springframework.http.codec.json.AbstractJackson2Decoder.decode(org.reactivestreams.Publisher<org.springframework.core.io.buffer.DataBuffer>,org.springframework.core.ResolvableType,org.springframework.util.MimeType,java.util.Map<java.lang.String,java.lang.Object>) is @Nullable
+	public Flux<Object> decode(Publisher<DataBuffer> input, ResolvableType elementType, MimeType mimeType, Map<String, Object> hints) {
+	                                                                                             ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:162: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+					sseBuilder.id(line.substring(3).trim());
+					          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:165: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+					sseBuilder.event(line.substring(6).trim());
+					          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:168: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+					sseBuilder.retry(Duration.ofMillis(Long.parseLong(line.substring(6).trim())));
+					          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:181: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+				sseBuilder.comment(comment.substring(0, comment.length() - 1));
+				          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:184: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+				sseBuilder.data(decodedData);
+				          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:186: warning: [NullAway] dereferenced expression sseBuilder is @Nullable
+			return sseBuilder.build();
+			                 ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/MultipartParser.java:120: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onNext(value);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/MultipartParser.java:125: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onComplete();
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:120: warning: [NullAway] passing @Nullable parameter 'state' where @NonNull is required
+			newPart(state, token.headers());
+			        ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:123: warning: [NullAway] dereferenced expression state is @Nullable
+			state.body(token.buffer());
+			     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:140: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onComplete();
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:145: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().error(throwable);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:197: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+				this.state.get().canRequest() &&
+				                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:635: warning: [NullAway] dereferenced expression state is @Nullable
+				state.onComplete();
+				     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/ServletServerHttpRequest.java:153: warning: [NullAway] dereferenced expression headers is @Nullable
+				headers.setContentType(new MediaType(contentType, params));
+				       ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:112: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onSubscribe(this, subscription);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:120: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onNext(this, publisher);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:133: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onError(this, ex);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:146: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onComplete(this);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:155: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onFlushPossible(this);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:280: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+					processor.state.get().onComplete(processor);
+					                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:303: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+					processor.state.get().onComplete(processor);
+					                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:347: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+					processor.state.get().onComplete(processor);
+					                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:366: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+					processor.state.get().onComplete(processor);
+					                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:408: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+				processor.state.get().onError(processor, ex);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteFlushProcessor.java:465: warning: [NullAway] dereferenced expression this.processor.state.get() is @Nullable
+				this.processor.state.get().writeComplete(this.processor);
+				                          ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:111: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onSubscribe(this, subscription);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:119: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onNext(this, data);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:132: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onError(this, ex);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:145: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onComplete(this);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:158: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onWritePossible(this);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:314: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+			this.state.get().onComplete(this);
+			                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerWriteProcessor.java:482: warning: [NullAway] dereferenced expression processor.state.get() is @Nullable
+				processor.state.get().onError(processor, ex);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:77: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().subscribe(this, subscriber);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:88: warning: [NullAway] dereferenced expression state is @Nullable
+		state.publishComplete(this);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:99: warning: [NullAway] dereferenced expression state is @Nullable
+		state.publishError(this, t);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:138: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return this.publisher.state.get();
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:171: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+						publisher.state.get().publishComplete(publisher);
+						                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:175: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+						publisher.state.get().publishError(publisher, ex);
+						                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:258: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().cancel(publisher);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:269: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().publishComplete(publisher);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:280: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().publishError(publisher, t);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:111: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().subscribe(this, subscriber);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:124: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onDataAvailable(this);
+		                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:136: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onAllDataRead(this);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:148: warning: [NullAway] dereferenced expression state is @Nullable
+		state.onError(this, ex);
+		     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:248: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+				this.state.get().onAllDataRead(this);
+				                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:256: warning: [NullAway] dereferenced expression this.state.get() is @Nullable
+				this.state.get().onError(this, ex);
+				                ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:279: warning: [NullAway] dereferenced expression state.get() is @Nullable
+			state.get().request(AbstractListenerReadPublisher.this, n);
+			           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:288: warning: [NullAway] dereferenced expression state is @Nullable
+			state.cancel(AbstractListenerReadPublisher.this);
+			     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:488: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().cancel(publisher);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:504: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().onAllDataRead(publisher);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/AbstractListenerReadPublisher.java:517: warning: [NullAway] dereferenced expression publisher.state.get() is @Nullable
+				publisher.state.get().onError(publisher, t);
+				                     ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/ServerHttpResponseDecorator.java:65: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return getDelegate().getStatusCode();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/ServerHttpResponseDecorator.java:76: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return getDelegate().getRawStatusCode();
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ReadOnlyHttpHeaders.java:64: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+			return contentType;
+			^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/ReadOnlyHttpHeaders.java:88: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return (values != null ? Collections.unmodifiableList(values) : null);
+		^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/AbstractStreamingClientHttpRequest.java:68: warning: [NullAway] dereferenced expression this.bodyStream is @Nullable
+			this.body = outputStream -> this.bodyStream.writeTo(outputStream);
+			                                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/JdkClientHttpRequest.java:126: warning: [NullAway] dereferenced expression cause is @Nullable
+				throw new IOException(cause.getMessage(), cause);
+				                           ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/SimpleClientHttpResponse.java:100: warning: [NullAway] dereferenced expression this.responseStream is @Nullable
+			this.responseStream.close();
+			                   ^
+    (see http://t.uber.com/nullaway )
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/JettyClientHttpRequest.java:120: warning: [NullAway] dereferenced expression cause is @Nullable
+				throw new IOException(cause.getMessage(), cause);
+				                           ^
+    (see http://t.uber.com/nullaway )
