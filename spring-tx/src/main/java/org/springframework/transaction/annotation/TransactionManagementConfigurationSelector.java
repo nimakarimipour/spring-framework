@@ -21,6 +21,7 @@ import org.springframework.context.annotation.AdviceModeImportSelector;
 import org.springframework.context.annotation.AutoProxyRegistrar;
 import org.springframework.transaction.config.TransactionManagementConfigUtils;
 import org.springframework.util.ClassUtils;
+import javax.annotation.Nullable;
 
 /**
  * Selects which implementation of {@link AbstractTransactionManagementConfiguration}
@@ -44,7 +45,7 @@ public class TransactionManagementConfigurationSelector extends AdviceModeImport
 	 * respectively.
 	 */
 	@Override
-	protected String[] selectImports(AdviceMode adviceMode) {
+	protected String[] selectImports(@Nullable AdviceMode adviceMode) {
 		return switch (adviceMode) {
 			case PROXY -> new String[] {AutoProxyRegistrar.class.getName(),
 					ProxyTransactionManagementConfiguration.class.getName()};

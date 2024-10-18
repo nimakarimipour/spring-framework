@@ -15,6 +15,7 @@
  */
 
 package org.springframework.dao;
+import javax.annotation.Nullable;
 
 /**
  * Root for exceptions thrown when we use a data access resource incorrectly.
@@ -30,7 +31,7 @@ public class InvalidDataAccessResourceUsageException extends NonTransientDataAcc
 	 * Constructor for InvalidDataAccessResourceUsageException.
 	 * @param msg the detail message
 	 */
-	public InvalidDataAccessResourceUsageException(String msg) {
+	public InvalidDataAccessResourceUsageException(@Nullable String msg) {
 		super(msg);
 	}
 

@@ -15,6 +15,7 @@
  */
 
 package org.springframework.dao;
+import javax.annotation.Nullable;
 
 /**
  * Exception thrown on mismatch between Java type and database type:
@@ -30,7 +31,7 @@ public class TypeMismatchDataAccessException extends InvalidDataAccessResourceUs
 	 * Constructor for TypeMismatchDataAccessException.
 	 * @param msg the detail message
 	 */
-	public TypeMismatchDataAccessException(String msg) {
+	public TypeMismatchDataAccessException(@Nullable String msg) {
 		super(msg);
 	}
 

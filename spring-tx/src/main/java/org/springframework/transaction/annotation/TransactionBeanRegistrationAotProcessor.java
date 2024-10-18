@@ -30,6 +30,7 @@ import org.springframework.beans.factory.support.RegisteredBean;
 import org.springframework.core.annotation.MergedAnnotations;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
+import javax.annotation.Nullable;
 
 /**
  * AOT {@code BeanRegistrationAotProcessor} that detects the presence of
@@ -45,7 +46,7 @@ class TransactionBeanRegistrationAotProcessor implements BeanRegistrationAotProc
 	private static final String JAKARTA_TRANSACTIONAL_CLASS_NAME = "jakarta.transaction.Transactional";
 
 
-	@Override
+	@Nullable @Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		Class<?> beanClass = registeredBean.getBeanClass();
 		if (isTransactional(beanClass)) {
