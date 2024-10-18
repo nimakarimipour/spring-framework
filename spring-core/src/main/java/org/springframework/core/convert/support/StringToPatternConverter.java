@@ -19,6 +19,7 @@ package org.springframework.core.convert.support;
 import java.util.regex.Pattern;
 
 import org.springframework.core.convert.converter.Converter;
+import javax.annotation.Nullable;
 
 /**
  * Converts from a String to a {@link java.util.regex.Pattern}.
@@ -29,7 +30,7 @@ import org.springframework.core.convert.converter.Converter;
  */
 final class StringToPatternConverter implements Converter<String, Pattern> {
 
-	@Override
+	@Nullable @Override
 	public Pattern convert(String source) {
 		if (source.isEmpty()) {
 			return null;

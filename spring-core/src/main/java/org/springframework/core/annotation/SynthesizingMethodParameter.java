@@ -23,6 +23,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 import org.springframework.core.MethodParameter;
+import javax.annotation.Nullable;
 
 /**
  * A {@link MethodParameter} variant which synthesizes annotations that

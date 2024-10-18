@@ -321,7 +321,7 @@ final class PlaceholderParser {
 			this.resolver = resolver;
 		}
 
-		@Override
+		@Nullable @Override
 		public String resolvePlaceholder(String placeholderName) {
 			String value = this.resolver.resolvePlaceholder(placeholderName);
 			if (value != null && logger.isTraceEnabled()) {
