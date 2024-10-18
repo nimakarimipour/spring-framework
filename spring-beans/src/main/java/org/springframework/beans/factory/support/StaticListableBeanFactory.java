@@ -112,7 +112,7 @@ public class StaticListableBeanFactory implements ListableBeanFactory {
 	//---------------------------------------------------------------------
 
 	@Override
-	public Object getBean(String name) throws BeansException {
+	public Object getBean(@Nullable String name) throws BeansException {
 		String beanName = BeanFactoryUtils.transformedBeanName(name);
 		Object bean = this.beans.get(beanName);
 
@@ -202,7 +202,7 @@ public class StaticListableBeanFactory implements ListableBeanFactory {
 	}
 
 	@Override
-	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
+	public boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException {
 		Object bean = getBean(name);
 		// In case of FactoryBean, return singleton status of created object.
 		if (bean instanceof FactoryBean<?> factoryBean) {
@@ -231,12 +231,12 @@ public class StaticListableBeanFactory implements ListableBeanFactory {
 		return (typeToMatch == null || (type != null && typeToMatch.isAssignableFrom(type)));
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getType(String name) throws NoSuchBeanDefinitionException {
 		return getType(name, true);
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getType(String name, boolean allowFactoryBeanInit) throws NoSuchBeanDefinitionException {
 		String beanName = BeanFactoryUtils.transformedBeanName(name);
 

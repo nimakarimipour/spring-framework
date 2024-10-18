@@ -50,7 +50,7 @@ public class EmbeddedValueResolver implements StringValueResolver {
 
 	@Override
 	@Nullable
-	public String resolveStringValue(String strVal) {
+	public String resolveStringValue(@Nullable String strVal) {
 		String value = this.exprContext.getBeanFactory().resolveEmbeddedValue(strVal);
 		if (this.exprResolver != null && value != null) {
 			Object evaluated = this.exprResolver.evaluate(value, this.exprContext);

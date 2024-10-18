@@ -223,7 +223,7 @@ public class PropertyPathFactoryBean implements FactoryBean<Object>, BeanNameAwa
 		return target.getPropertyValue(this.propertyPath);
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getObjectType() {
 		return this.resultType;
 	}

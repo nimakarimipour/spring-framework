@@ -241,7 +241,7 @@ public class PropertyPlaceholderConfigurer extends PlaceholderConfigurerSupport 
 
 		@Override
 		@Nullable
-		public String resolveStringValue(String strVal) throws BeansException {
+		public String resolveStringValue(@Nullable String strVal) throws BeansException {
 			String resolved = this.helper.replacePlaceholders(strVal, this.resolver);
 			if (trimValues) {
 				resolved = resolved.trim();

@@ -17,6 +17,7 @@
 package org.springframework.beans;
 
 import java.beans.PropertyChangeEvent;
+import javax.annotation.Nullable;
 
 /**
  * Thrown when a bean property getter or setter method throws an exception,
@@ -38,7 +39,7 @@ public class MethodInvocationException extends PropertyAccessException {
 	 * @param propertyChangeEvent the PropertyChangeEvent that resulted in an exception
 	 * @param cause the Throwable raised by the invoked method
 	 */
-	public MethodInvocationException(PropertyChangeEvent propertyChangeEvent, Throwable cause) {
+	public MethodInvocationException(PropertyChangeEvent propertyChangeEvent, @Nullable Throwable cause) {
 		super(propertyChangeEvent, "Property '" + propertyChangeEvent.getPropertyName() + "' threw exception", cause);
 	}
 

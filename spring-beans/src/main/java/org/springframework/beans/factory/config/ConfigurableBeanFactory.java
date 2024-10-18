@@ -248,7 +248,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	 * @since 3.0
 	 */
 	@Nullable
-	String resolveEmbeddedValue(String value);
+	String resolveEmbeddedValue(@Nullable String value);
 
 	/**
 	 * Add a new BeanPostProcessor that will get applied to beans created

@@ -1605,7 +1605,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	}
 
 	@Nullable
-	private Object resolveInstance(Object candidate, DependencyDescriptor descriptor, Class<?> type, String name) {
+	private Object resolveInstance(@Nullable Object candidate, DependencyDescriptor descriptor, Class<?> type, String name) {
 		Object result = candidate;
 		if (result instanceof NullBean) {
 			// Raise exception if null encountered for required injection point

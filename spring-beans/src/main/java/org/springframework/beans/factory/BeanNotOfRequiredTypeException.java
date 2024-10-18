@@ -18,6 +18,7 @@ package org.springframework.beans.factory;
 
 import org.springframework.beans.BeansException;
 import org.springframework.util.ClassUtils;
+import javax.annotation.Nullable;
 
 /**
  * Thrown when a bean doesn't match the expected type.

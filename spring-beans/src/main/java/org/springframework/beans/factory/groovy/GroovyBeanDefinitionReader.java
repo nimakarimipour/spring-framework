@@ -249,7 +249,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 
 		@SuppressWarnings("serial")
 		Closure<Object> beans = new Closure<>(this) {
-			@Override
+			@Nullable @Override
 			public Object call(Object... args) {
 				invokeBeanDefiningClosure((Closure<?>) args[0]);
 				return null;
@@ -653,7 +653,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 	 * properties from the {@code GroovyBeanDefinitionReader} itself
 	 * </ul>
 	 */
-	@Override
+	@Nullable @Override
 	public Object getProperty(String name) {
 		Binding binding = getBinding();
 		if (binding != null && binding.hasVariable(name)) {
@@ -727,9 +727,9 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 
 		private final String name;
 
-		public Object value;
+		@Nullable public Object value;
 
-		public DeferredProperty(GroovyBeanDefinitionWrapper beanDefinition, String name, Object value) {
+		public DeferredProperty(GroovyBeanDefinitionWrapper beanDefinition, String name, @Nullable Object value) {
 			this.beanDefinition = beanDefinition;
 			this.name = name;
 			this.value = value;
@@ -761,7 +761,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 			return this.metaClass;
 		}
 
-		@Override
+		@Nullable @Override
 		public Object getProperty(String property) {
 			if (property.equals("beanName")) {
 				return getBeanName();
@@ -804,9 +804,9 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 
 			private final String propertyName;
 
-			private final Object propertyValue;
+			@Nullable private final Object propertyValue;
 
-			public GroovyPropertyValue(String propertyName, Object propertyValue) {
+			public GroovyPropertyValue(String propertyName, @Nullable Object propertyValue) {
 				this.propertyName = propertyName;
 				this.propertyValue = propertyValue;
 			}

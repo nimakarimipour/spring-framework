@@ -276,7 +276,7 @@ public class RootBeanDefinition extends AbstractBeanDefinition {
 	}
 
 
-	@Override
+	@Nullable @Override
 	public String getParentName() {
 		return null;
 	}
@@ -638,7 +638,7 @@ public class RootBeanDefinition extends AbstractBeanDefinition {
 		}
 	}
 
-	private static boolean hasAnyExternallyManagedMethod(Set<String> candidates, String methodName) {
+	private static boolean hasAnyExternallyManagedMethod(@Nullable Set<String> candidates, String methodName) {
 		if (candidates != null) {
 			for (String candidate : candidates) {
 				int indexOfDot = candidate.lastIndexOf('.');

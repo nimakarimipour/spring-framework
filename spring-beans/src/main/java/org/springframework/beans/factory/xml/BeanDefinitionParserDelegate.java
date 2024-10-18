@@ -277,7 +277,7 @@ public class BeanDefinitionParserDelegate {
 	/**
 	 * Report an error with the given message for the given source element.
 	 */
-	protected void error(String message, Element source) {
+	protected void error(@Nullable String message, Element source) {
 		this.readerContext.error(message, source, this.parseState.snapshot());
 	}
 
