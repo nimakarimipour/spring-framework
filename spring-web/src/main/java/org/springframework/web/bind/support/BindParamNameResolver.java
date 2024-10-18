@@ -20,6 +20,7 @@ import org.springframework.core.MethodParameter;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.DataBinder;
 import org.springframework.web.bind.annotation.BindParam;
+import javax.annotation.Nullable;
 
 /**
  * {@link org.springframework.validation.DataBinder.NameResolver} that determines
@@ -31,7 +32,7 @@ import org.springframework.web.bind.annotation.BindParam;
  */
 public final class BindParamNameResolver implements DataBinder.NameResolver {
 
-	@Override
+	@Nullable @Override
 	public String resolveName(MethodParameter parameter) {
 		BindParam bindParam = parameter.getParameterAnnotation(BindParam.class);
 		if (bindParam != null) {

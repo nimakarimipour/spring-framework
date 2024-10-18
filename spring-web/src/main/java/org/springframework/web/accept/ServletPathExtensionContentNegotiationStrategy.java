@@ -98,7 +98,7 @@ public class ServletPathExtensionContentNegotiationStrategy extends PathExtensio
 	 * @return the MediaType for the extension, or {@code null} if none found
 	 * @since 4.3
 	 */
-	@Override
+	@Nullable @Override
 	public MediaType getMediaTypeForResource(Resource resource) {
 		MediaType mediaType = null;
 		String mimeType = this.servletContext.getMimeType(resource.getFilename());

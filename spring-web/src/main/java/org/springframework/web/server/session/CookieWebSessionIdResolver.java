@@ -103,7 +103,7 @@ public class CookieWebSessionIdResolver implements WebSessionIdResolver {
 	}
 
 	@Override
-	public void setSessionId(ServerWebExchange exchange, String id) {
+	public void setSessionId(ServerWebExchange exchange, @Nullable String id) {
 		Assert.notNull(id, "'id' is required");
 		ResponseCookie cookie = initCookie(exchange, id).build();
 		exchange.getResponse().getCookies().set(this.cookieName, cookie);

@@ -83,7 +83,7 @@ public abstract class AbstractMultipartHttpServletRequest extends HttpServletReq
 		return getMultipartFiles().keySet().iterator();
 	}
 
-	@Override
+	@Nullable @Override
 	public MultipartFile getFile(String name) {
 		return getMultipartFiles().getFirst(name);
 	}

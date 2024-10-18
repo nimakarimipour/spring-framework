@@ -22,6 +22,7 @@ import java.util.List;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.Assert;
 import org.springframework.web.server.ServerWebExchange;
+import javax.annotation.Nullable;
 
 /**
  * Request and response header-based {@link WebSessionIdResolver}.
@@ -67,7 +68,7 @@ public class HeaderWebSessionIdResolver implements WebSessionIdResolver {
 	}
 
 	@Override
-	public void setSessionId(ServerWebExchange exchange, String id) {
+	public void setSessionId(ServerWebExchange exchange, @Nullable String id) {
 		Assert.notNull(id, "'id' is required.");
 		exchange.getResponse().getHeaders().set(getHeaderName(), id);
 	}

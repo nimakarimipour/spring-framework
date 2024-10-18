@@ -42,7 +42,7 @@ public interface WebSession {
 	/**
 	 * Return a unique session identifier.
 	 */
-	String getId();
+	@Nullable String getId();
 
 	/**
 	 * Return a map that holds session attributes.

@@ -46,7 +46,7 @@ public class RequestBodyArgumentResolver implements HttpServiceArgumentResolver 
 	 * Constructor with a {@link HttpExchangeAdapter}, for access to config settings.
 	 * @since 6.1
 	 */
-	public RequestBodyArgumentResolver(HttpExchangeAdapter exchangeAdapter) {
+	public RequestBodyArgumentResolver(@Nullable HttpExchangeAdapter exchangeAdapter) {
 		if (REACTOR_PRESENT) {
 			this.reactiveAdapterRegistry =
 					(exchangeAdapter instanceof ReactorHttpExchangeAdapter reactorAdapter ?

@@ -161,7 +161,7 @@ public class WebExchangeDataBinder extends WebDataBinder {
 	 */
 	private record MapValueResolver(Map<String, Object> map) implements ValueResolver {
 
-		@Override
+		@Nullable @Override
 		public Object resolveValue(String name, Class<?> type) {
 			return this.map.get(name);
 		}

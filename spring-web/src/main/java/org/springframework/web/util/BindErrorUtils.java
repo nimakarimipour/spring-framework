@@ -27,6 +27,7 @@ import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.support.StaticMessageSource;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.FieldError;
+import javax.annotation.Nullable;
 
 /**
  * Utility methods to resolve a list of {@link MessageSourceResolvable}s, and
@@ -113,7 +114,7 @@ public abstract class BindErrorUtils {
 			setUseCodeAsDefaultMessage(true);
 		}
 
-		@Override
+		@Nullable @Override
 		protected String getDefaultMessage(MessageSourceResolvable resolvable, Locale locale) {
 			String message = super.getDefaultMessage(resolvable, locale);
 			return (resolvable instanceof FieldError error ? error.getField() + ": " + message : message);

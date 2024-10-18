@@ -60,7 +60,7 @@ public class ServerHttpResponseDecorator implements ServerHttpResponse {
 		return getDelegate().setStatusCode(status);
 	}
 
-	@Override
+	@Nullable @Override
 	public HttpStatusCode getStatusCode() {
 		return getDelegate().getStatusCode();
 	}
@@ -70,7 +70,7 @@ public class ServerHttpResponseDecorator implements ServerHttpResponse {
 		return getDelegate().setRawStatusCode(value);
 	}
 
-	@Override
+	@Nullable @Override
 	@Deprecated
 	public Integer getRawStatusCode() {
 		return getDelegate().getRawStatusCode();

@@ -36,6 +36,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.IdGenerator;
 import org.springframework.util.JdkIdGenerator;
 import org.springframework.web.server.WebSession;
+import javax.annotation.Nullable;
 
 /**
  * Simple Map-based storage for {@link WebSession} instances.
@@ -188,7 +189,7 @@ public class InMemoryWebSessionStore implements WebSessionStore {
 			this.lastAccessTime = this.creationTime;
 		}
 
-		@Override
+		@Nullable @Override
 		public String getId() {
 			return this.id.get();
 		}

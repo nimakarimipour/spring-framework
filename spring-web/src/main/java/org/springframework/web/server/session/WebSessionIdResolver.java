@@ -19,6 +19,7 @@ package org.springframework.web.server.session;
 import java.util.List;
 
 import org.springframework.web.server.ServerWebExchange;
+import javax.annotation.Nullable;
 
 /**
  * Contract for session ID resolution strategies. Allows for session ID
@@ -43,7 +44,7 @@ public interface WebSessionIdResolver {
 	 * @param exchange the current exchange
 	 * @param sessionId the session ID
 	 */
-	void setSessionId(ServerWebExchange exchange, String sessionId);
+	void setSessionId(ServerWebExchange exchange, @Nullable String sessionId);
 
 	/**
 	 * Instruct the client to end the current session.

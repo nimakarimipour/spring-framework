@@ -21,6 +21,7 @@ import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
 import org.springframework.http.ProblemDetail;
 import org.springframework.util.ClassUtils;
+import javax.annotation.Nullable;
 
 /**
  * {@link RuntimeHintsRegistrar} implementation that registers binding reflection entries
@@ -33,7 +34,7 @@ import org.springframework.util.ClassUtils;
 class ProblemDetailRuntimeHints implements RuntimeHintsRegistrar {
 
 	@Override
-	public void registerHints(RuntimeHints hints, ClassLoader classLoader) {
+	public void registerHints(RuntimeHints hints, @Nullable ClassLoader classLoader) {
 		BindingReflectionHintsRegistrar bindingRegistrar = new BindingReflectionHintsRegistrar();
 		bindingRegistrar.registerReflectionHints(hints.reflection(), ProblemDetail.class);
 		if (ClassUtils.isPresent("com.fasterxml.jackson.dataformat.xml.XmlMapper", classLoader)) {

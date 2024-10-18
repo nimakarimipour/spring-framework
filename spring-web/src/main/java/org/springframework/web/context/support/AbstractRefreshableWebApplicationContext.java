@@ -143,7 +143,7 @@ public abstract class AbstractRefreshableWebApplicationContext extends AbstractR
 		return this.namespace;
 	}
 
-	@Override
+	@Nullable @Override
 	public String[] getConfigLocations() {
 		return super.getConfigLocations();
 	}

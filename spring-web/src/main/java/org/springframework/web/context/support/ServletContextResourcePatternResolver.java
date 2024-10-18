@@ -33,6 +33,7 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
+import javax.annotation.Nullable;
 
 /**
  * ServletContext-aware subclass of {@link PathMatchingResourcePatternResolver},
@@ -153,7 +154,7 @@ public class ServletContextResourcePatternResolver extends PathMatchingResourceP
 	 * @param entryPattern the pattern for jar entries to match
 	 * @param result the Set of matching Resources to add to
 	 */
-	private void doRetrieveMatchingJarEntries(String jarFilePath, String entryPattern, Set<Resource> result) {
+	private void doRetrieveMatchingJarEntries(String jarFilePath, @Nullable String entryPattern, Set<Resource> result) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Searching jar file [" + jarFilePath + "] for entries matching [" + entryPattern + "]");
 		}

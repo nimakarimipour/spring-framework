@@ -176,7 +176,7 @@ public class StandardMultipartHttpServletRequest extends AbstractMultipartHttpSe
 		return paramMap;
 	}
 
-	@Override
+	@Nullable @Override
 	public String getMultipartContentType(String paramOrFileName) {
 		try {
 			Part part = getPart(paramOrFileName);
@@ -187,7 +187,7 @@ public class StandardMultipartHttpServletRequest extends AbstractMultipartHttpSe
 		}
 	}
 
-	@Override
+	@Nullable @Override
 	public HttpHeaders getMultipartHeaders(String paramOrFileName) {
 		try {
 			Part part = getPart(paramOrFileName);

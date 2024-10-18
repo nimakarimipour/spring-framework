@@ -97,17 +97,17 @@ public class ServletWebRequest extends ServletRequestAttributes implements Nativ
 		return getRequest();
 	}
 
-	@Override
+	@Nullable @Override
 	public Object getNativeResponse() {
 		return getResponse();
 	}
 
-	@Override
+	@Nullable @Override
 	public <T> T getNativeRequest(@Nullable Class<T> requiredType) {
 		return WebUtils.getNativeRequest(getRequest(), requiredType);
 	}
 
-	@Override
+	@Nullable @Override
 	public <T> T getNativeResponse(@Nullable Class<T> requiredType) {
 		HttpServletResponse response = getResponse();
 		return (response != null ? WebUtils.getNativeResponse(response, requiredType) : null);

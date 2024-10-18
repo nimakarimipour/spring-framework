@@ -19,6 +19,7 @@ package org.springframework.web.context.request.async;
 import java.util.concurrent.Callable;
 
 import org.springframework.web.context.request.NativeWebRequest;
+import javax.annotation.Nullable;
 
 /**
  * Sends a 503 (SERVICE_UNAVAILABLE) in case of a timeout if the response is not
@@ -40,7 +41,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 public class TimeoutCallableProcessingInterceptor implements CallableProcessingInterceptor {
 
 	@Override
-	public <T> Object handleTimeout(NativeWebRequest request, Callable<T> task) throws Exception {
+	public <T> Object handleTimeout(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
 		return new AsyncRequestTimeoutException();
 	}
 

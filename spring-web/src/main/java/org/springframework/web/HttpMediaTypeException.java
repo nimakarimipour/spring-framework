@@ -101,7 +101,7 @@ public abstract class HttpMediaTypeException extends ServletException implements
 		return this.messageDetailCode;
 	}
 
-	@Override
+	@Nullable @Override
 	public Object[] getDetailMessageArguments() {
 		return this.messageDetailArguments;
 	}

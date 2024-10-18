@@ -18,6 +18,7 @@ package org.springframework.web.service.invoker;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.annotation.RequestAttribute;
+import javax.annotation.Nullable;
 
 /**
  * {@link HttpServiceArgumentResolver} for {@link RequestAttribute @RequestAttribute}
@@ -39,7 +40,7 @@ import org.springframework.web.bind.annotation.RequestAttribute;
 public class RequestAttributeArgumentResolver extends AbstractNamedValueArgumentResolver {
 
 
-	@Override
+	@Nullable @Override
 	protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {
 		RequestAttribute annot = parameter.getParameterAnnotation(RequestAttribute.class);
 		return (annot == null ? null :

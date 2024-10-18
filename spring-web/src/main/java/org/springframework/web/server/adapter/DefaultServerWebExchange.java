@@ -116,7 +116,7 @@ public class DefaultServerWebExchange implements ServerWebExchange {
 	}
 
 	DefaultServerWebExchange(ServerHttpRequest request, ServerHttpResponse response,
-			WebSessionManager sessionManager, ServerCodecConfigurer codecConfigurer,
+			WebSessionManager sessionManager, @Nullable ServerCodecConfigurer codecConfigurer,
 			LocaleContextResolver localeContextResolver, @Nullable ApplicationContext applicationContext) {
 
 		Assert.notNull(request, "'request' is required");

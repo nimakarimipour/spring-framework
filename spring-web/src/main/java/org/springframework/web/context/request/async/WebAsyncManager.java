@@ -490,7 +490,7 @@ public final class WebAsyncManager {
 		this.asyncWebRequest.startAsync();
 	}
 
-	private static String formatUri(AsyncWebRequest asyncWebRequest) {
+	private static String formatUri(@Nullable AsyncWebRequest asyncWebRequest) {
 		HttpServletRequest request = asyncWebRequest.getNativeRequest(HttpServletRequest.class);
 		return (request != null ? "\"" + request.getRequestURI() + "\"" : "servlet container");
 	}

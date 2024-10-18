@@ -17,6 +17,7 @@
 package org.springframework.web.context.request;
 
 import io.micrometer.context.ThreadLocalAccessor;
+import javax.annotation.Nullable;
 
 /**
  * Adapt {@link RequestContextHolder} to the {@link ThreadLocalAccessor} contract
@@ -39,7 +40,7 @@ public class RequestAttributesThreadLocalAccessor implements ThreadLocalAccessor
 		return KEY;
 	}
 
-	@Override
+	@Nullable @Override
 	public RequestAttributes getValue() {
 		return RequestContextHolder.getRequestAttributes();
 	}

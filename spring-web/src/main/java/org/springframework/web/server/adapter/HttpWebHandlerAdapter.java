@@ -152,7 +152,7 @@ public class HttpWebHandlerAdapter extends WebHandlerDecorator implements HttpHa
 	/**
 	 * Return the configured {@link ServerCodecConfigurer}.
 	 */
-	public ServerCodecConfigurer getCodecConfigurer() {
+	@Nullable public ServerCodecConfigurer getCodecConfigurer() {
 		if (this.codecConfigurer == null) {
 			setCodecConfigurer(ServerCodecConfigurer.create());
 		}

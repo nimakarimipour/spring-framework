@@ -76,7 +76,7 @@ public class ServletContextAttributeFactoryBean implements FactoryBean<Object>, 
 		return this.attribute;
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getObjectType() {
 		return (this.attribute != null ? this.attribute.getClass() : null);
 	}

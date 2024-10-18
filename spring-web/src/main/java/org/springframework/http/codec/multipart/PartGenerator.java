@@ -49,6 +49,7 @@ import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.core.io.buffer.DefaultDataBufferFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.FastByteArrayOutputStream;
+import javax.annotation.Nullable;
 
 /**
  * Subscribes to a token stream (i.e. the result of
@@ -124,7 +125,7 @@ final class PartGenerator extends BaseSubscriber<MultipartParser.Token> {
 		}
 	}
 
-	private void newPart(State currentState, HttpHeaders headers) {
+	private void newPart(@Nullable State currentState, HttpHeaders headers) {
 		if (MultipartUtils.isFormField(headers)) {
 			changeState(currentState, new FormFieldState(headers));
 			requestToken();
@@ -153,7 +154,7 @@ final class PartGenerator extends BaseSubscriber<MultipartParser.Token> {
 		cancel();
 	}
 
-	boolean changeState(State oldState, State newState) {
+	boolean changeState(@Nullable State oldState, State newState) {
 		if (this.state.compareAndSet(oldState, newState)) {
 			if (logger.isTraceEnabled()) {
 				logger.trace("Changed state: " + oldState + " -> " + newState);
