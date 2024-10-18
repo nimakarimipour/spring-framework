@@ -246,7 +246,7 @@ public final class RSocketServiceProxyFactory {
 					.collect(Collectors.toMap(RSocketServiceMethod::getMethod, Function.identity()));
 		}
 
-		@Override
+		@Nullable @Override
 		public Object invoke(MethodInvocation invocation) throws Throwable {
 			Method method = invocation.getMethod();
 			RSocketServiceMethod serviceMethod = this.serviceMethods.get(method);

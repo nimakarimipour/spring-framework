@@ -15,6 +15,7 @@
  */
 
 package org.springframework.messaging;
+import javax.annotation.Nullable;
 
 /**
  * Exception that indicates an error occurred during message delivery.
@@ -37,7 +38,7 @@ public class MessageDeliveryException extends MessagingException {
 		super(undeliveredMessage, description);
 	}
 
-	public MessageDeliveryException(Message<?> message, Throwable cause) {
+	public MessageDeliveryException(Message<?> message, @Nullable Throwable cause) {
 		super(message, cause);
 	}
 

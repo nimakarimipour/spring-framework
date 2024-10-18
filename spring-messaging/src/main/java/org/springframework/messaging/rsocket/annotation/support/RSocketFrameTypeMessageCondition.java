@@ -133,7 +133,7 @@ public class RSocketFrameTypeMessageCondition extends AbstractMessageCondition<R
 		return new RSocketFrameTypeMessageCondition(set);
 	}
 
-	@Override
+	@Nullable @Override
 	public RSocketFrameTypeMessageCondition getMatchingCondition(Message<?> message) {
 		FrameType actual = message.getHeaders().get(FRAME_TYPE_HEADER, FrameType.class);
 		if (actual != null) {

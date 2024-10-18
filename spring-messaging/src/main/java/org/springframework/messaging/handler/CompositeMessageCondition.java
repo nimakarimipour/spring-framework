@@ -79,7 +79,7 @@ public class CompositeMessageCondition implements MessageCondition<CompositeMess
 		return ((T) first).combine((T) second);
 	}
 
-	@Override
+	@Nullable @Override
 	public CompositeMessageCondition getMatchingCondition(Message<?> message) {
 		List<MessageCondition<?>> result = new ArrayList<>(this.messageConditions.size());
 		for (MessageCondition<?> condition : this.messageConditions) {
