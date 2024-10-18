@@ -52,7 +52,7 @@ class ScopedProxyBeanRegistrationAotProcessor implements BeanRegistrationAotProc
 	private static final Log logger = LogFactory.getLog(ScopedProxyBeanRegistrationAotProcessor.class);
 
 
-	@Override
+	@Nullable @Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		Class<?> beanClass = registeredBean.getBeanClass();
 		if (beanClass.equals(ScopedProxyFactoryBean.class)) {
@@ -94,12 +94,12 @@ class ScopedProxyBeanRegistrationAotProcessor implements BeanRegistrationAotProc
 
 		private final RegisteredBean registeredBean;
 
-		private final String targetBeanName;
+		@Nullable private final String targetBeanName;
 
 		private final BeanDefinition targetBeanDefinition;
 
 		ScopedProxyBeanRegistrationCodeFragments(BeanRegistrationCodeFragments delegate,
-				RegisteredBean registeredBean, String targetBeanName, BeanDefinition targetBeanDefinition) {
+				RegisteredBean registeredBean, @Nullable String targetBeanName, BeanDefinition targetBeanDefinition) {
 
 			super(delegate);
 			this.registeredBean = registeredBean;

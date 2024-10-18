@@ -30,6 +30,7 @@ import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.aspectj.TypePatternClassFilter;
 import org.springframework.aop.framework.AopConfigException;
 import org.springframework.aop.support.ComposablePointcut;
+import javax.annotation.Nullable;
 
 /**
  * Metadata for an AspectJ aspect class, with an additional Spring AOP pointcut

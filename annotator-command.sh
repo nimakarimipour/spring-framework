@@ -1,1 +1,1 @@
-./gradlew clean spring-beans:compileJava --rerun-tasks --no-build-cache
+./gradlew clean spring-aop:compileJava --rerun-tasks --no-build-cache

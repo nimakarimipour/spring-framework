@@ -23,6 +23,7 @@ import org.springframework.beans.factory.parsing.BeanComponentDefinition;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.beans.factory.xml.BeanDefinitionParser;
 import org.springframework.beans.factory.xml.ParserContext;
+import javax.annotation.Nullable;
 
 /**
  * {@link BeanDefinitionParser} responsible for parsing the
@@ -50,7 +51,7 @@ class SpringConfiguredBeanDefinitionParser implements BeanDefinitionParser {
 			"org.springframework.beans.factory.aspectj.AnnotationBeanConfigurerAspect";
 
 
-	@Override
+	@Nullable @Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		if (!parserContext.getRegistry().containsBeanDefinition(BEAN_CONFIGURER_ASPECT_BEAN_NAME)) {
 			RootBeanDefinition def = new RootBeanDefinition();

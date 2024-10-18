@@ -168,7 +168,7 @@ public class AnnotationMatchingPointcut implements Pointcut {
 
 		private final Class<? extends Annotation> annotationType;
 
-		AnnotationCandidateClassFilter(Class<? extends Annotation> annotationType) {
+		AnnotationCandidateClassFilter(@Nullable Class<? extends Annotation> annotationType) {
 			this.annotationType = annotationType;
 		}
 

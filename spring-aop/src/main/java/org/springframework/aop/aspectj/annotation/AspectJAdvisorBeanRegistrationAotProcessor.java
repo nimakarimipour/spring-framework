@@ -23,6 +23,7 @@ import org.springframework.beans.factory.aot.BeanRegistrationAotProcessor;
 import org.springframework.beans.factory.aot.BeanRegistrationCode;
 import org.springframework.beans.factory.support.RegisteredBean;
 import org.springframework.util.ClassUtils;
+import javax.annotation.Nullable;
 
 /**
  * An AOT {@link BeanRegistrationAotProcessor} that detects the presence of
@@ -37,7 +38,7 @@ class AspectJAdvisorBeanRegistrationAotProcessor implements BeanRegistrationAotP
 			AspectJAdvisorBeanRegistrationAotProcessor.class.getClassLoader());
 
 
-	@Override
+	@Nullable @Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		if (aspectjPresent) {
 			Class<?> beanClass = registeredBean.getBeanClass();

@@ -124,7 +124,7 @@ public class ScopedProxyFactoryBean extends ProxyConfig
 		return this.proxy;
 	}
 
-	@Override
+	@Nullable @Override
 	public Class<?> getObjectType() {
 		if (this.proxy != null) {
 			return this.proxy.getClass();
