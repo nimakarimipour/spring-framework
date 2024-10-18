@@ -17,6 +17,7 @@
 package org.springframework.r2dbc.core;
 
 import io.r2dbc.spi.Parameter;
+import javax.annotation.Nullable;
 
 /**
  * Interface that defines common functionality for objects

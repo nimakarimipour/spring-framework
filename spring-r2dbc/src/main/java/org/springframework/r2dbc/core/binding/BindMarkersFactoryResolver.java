@@ -128,7 +128,7 @@ public final class BindMarkersFactoryResolver {
 		}
 
 
-		@Override
+		@Nullable @Override
 		public BindMarkersFactory getBindMarkers(ConnectionFactory connectionFactory) {
 			ConnectionFactoryMetadata metadata = connectionFactory.getMetadata();
 			BindMarkersFactory r2dbcDialect = BUILTIN.get(metadata.getName());

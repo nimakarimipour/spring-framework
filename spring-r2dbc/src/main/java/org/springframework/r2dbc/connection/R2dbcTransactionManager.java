@@ -446,7 +446,7 @@ public class R2dbcTransactionManager extends AbstractReactiveTransactionManager 
 			boolean readOnly, @Nullable IsolationLevel isolationLevel, Duration lockWaitTimeout)
 			implements io.r2dbc.spi.TransactionDefinition {
 
-		@SuppressWarnings("unchecked")
+		@Nullable @SuppressWarnings("unchecked")
 		@Override
 		public <T> T getAttribute(Option<T> option) {
 			return (T) doGetValue(option);

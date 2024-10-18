@@ -23,6 +23,7 @@ import io.r2dbc.spi.Parameter;
 import io.r2dbc.spi.Parameters;
 
 import org.springframework.util.Assert;
+import javax.annotation.Nullable;
 
 /**
  * {@link BindParameterSource} implementation that holds a given {@link Map} of parameters
@@ -74,7 +75,7 @@ class MapBindParameterSource implements BindParameterSource {
 		return this.values.containsKey(paramName);
 	}
 
-	@Override
+	@Nullable @Override
 	public Parameter getValue(String paramName) throws IllegalArgumentException {
 		if (!hasValue(paramName)) {
 			throw new IllegalArgumentException("No value registered for key '" + paramName + "'");
