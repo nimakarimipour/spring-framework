@@ -318,16 +318,17 @@ final class TypeMappedAnnotation<A extends Annotation> extends AbstractMergedAnn
 		return value;
 	}
 
-	@Nullable @Override
+	@Override
 	@SuppressWarnings("unchecked")
 	protected A createSynthesizedAnnotation() {
 		// Check root annotation
-		if (isTargetAnnotation(this.rootAttributes) && !isSynthesizable((Annotation) this.rootAttributes)) {
-			return (A) this.rootAttributes;
+		if (this.rootAttributes instanceof Annotation ann && isTargetAnnotation(ann) && !isSynthesizable(ann)) {
+			return (A) ann;
 		}
 		// Check meta-annotation
-		else if (isTargetAnnotation(this.mapping.getAnnotation()) && !isSynthesizable(this.mapping.getAnnotation())) {
-			return (A) this.mapping.getAnnotation();
+		Annotation meta = this.mapping.getAnnotation();
+		if (meta != null && isTargetAnnotation(this.mapping.getAnnotation()) && !isSynthesizable(this.mapping.getAnnotation())) {
+			return (A) meta;
 		}
 		return SynthesizedMergedAnnotationInvocationHandler.createProxy(this, getType());
 	}
