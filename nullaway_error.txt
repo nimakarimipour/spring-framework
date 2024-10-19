@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/PlaceholderParser.java:361: warning: [NullAway] dereferenced expression this.visitedPlaceholders is @Nullable
-                        this.visitedPlaceholders.remove(placeholder);
-                                                ^
+/home/nima/Developer/nullness-benchmarks/spring-framework/spring-core/src/main/java/org/springframework/util/concurrent/ListenableFuture.java:67: warning: [NullAway] parameter value of referenced method is @NonNull, but parameter in functional interface method org.springframework.util.concurrent.SuccessCallback.onSuccess(T) is @Nullable
+                addCallback(completable::complete, completable::completeExceptionally);
+                            ^
     (see http://t.uber.com/nullaway )
