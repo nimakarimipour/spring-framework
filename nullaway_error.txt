@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/aot/hint/predicate/ReflectionHintsPredicates.java:223: warning: [NullAway] dereferenced expression getTypeHint(hints) is @Nullable
-                        return this.and(hints -> getTypeHint(hints).getMemberCategories().contains(memberCategory));
-                                                                   ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/aot/hint/predicate/ReflectionHintsPredicates.java:371: warning: [NullAway] dereferenced expression hints.reflection().getTypeHint(this.executable.getDeclaringClass()) is @Nullable
+                                        hints.reflection().getTypeHint(this.executable.getDeclaringClass()).methods().anyMatch(executableHint -> {
+                                                                                                           ^
     (see http://t.uber.com/nullaway )

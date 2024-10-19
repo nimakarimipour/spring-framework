@@ -370,11 +370,13 @@ public class ReflectionHintsPredicates {
 
 		@Override
 		Predicate<RuntimeHints> exactMatch() {
-			return hints -> (hints.reflection().getTypeHint(this.executable.getDeclaringClass()) != null) &&
-					hints.reflection().getTypeHint(this.executable.getDeclaringClass()).methods().anyMatch(executableHint -> {
-						List<TypeReference> parameters = TypeReference.listOf(this.executable.getParameterTypes());
-						return includes(executableHint, this.executable.getName(), parameters, this.executableMode);
-					});
+			return hints -> {
+				TypeHint hint = hints.reflection().getTypeHint(this.executable.getDeclaringClass());
+				return (hint != null && hint.methods().anyMatch(executableHint -> {
+					List<TypeReference> parameters = TypeReference.listOf(this.executable.getParameterTypes());
+					return includes(executableHint, this.executable.getName(), parameters, this.executableMode);
+				}));
+			};
 		}
 
 	}
