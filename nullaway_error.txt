@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AbstractMergedAnnotation.java:211: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
-                return synthesized;
-                ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotationUtils.java:989: warning: [NullAway] dereferenced expression ((AnnotationAttributes) attributes) is @Nullable
+                Object result = ((AnnotationAttributes) attributes).get(attribute.getName());
+                                                                   ^
     (see http://t.uber.com/nullaway )
