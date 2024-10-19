@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/io/support/PathMatchingResourcePatternResolver.java:837: warning: [NullAway] dereferenced expression rootEntryPath is @Nullable
-                                        String relativePath = entryPath.substring(rootEntryPath.length());
-                                                                                               ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotationAttributes.java:209: warning: [NullAway] unboxing of a @Nullable value
+                return getRequiredAttribute(attributeName, Boolean.class);
+                                           ^
     (see http://t.uber.com/nullaway )

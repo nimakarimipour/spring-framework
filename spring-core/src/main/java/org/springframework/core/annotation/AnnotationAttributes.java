@@ -345,10 +345,15 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	private <T> T getRequiredAttribute(String attributeName, Class<T> expectedType) {
 		Assert.hasText(attributeName, "'attributeName' must not be null or empty");
 		Object value = get(attributeName);
+		if (value == null) {
+			throw new IllegalArgumentException(String.format(
+					"Attribute '%s' not found in attributes for annotation [%s]",
+					attributeName, this.displayName));
+		}
 		assertAttributePresence(attributeName, value);
 		assertNotException(attributeName, value);
 		if (!expectedType.isInstance(value) && expectedType.isArray() &&
