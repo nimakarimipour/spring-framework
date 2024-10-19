@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/SimpleAliasRegistry.java:192: warning: [NullAway] dereferenced expression registeredName is @Nullable
-                                else if (!registeredName.equals(resolvedName)) {
-                                                        ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/PlaceholderParser.java:361: warning: [NullAway] dereferenced expression this.visitedPlaceholders is @Nullable
+                        this.visitedPlaceholders.remove(placeholder);
+                                                ^
     (see http://t.uber.com/nullaway )

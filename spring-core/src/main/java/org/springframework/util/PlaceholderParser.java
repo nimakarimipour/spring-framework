@@ -358,6 +358,7 @@ final class PlaceholderParser {
 		}
 
 		public void removePlaceholder(String placeholder) {
+			Assert.state(this.visitedPlaceholders != null, "Visited placeholders must not be null");
 			this.visitedPlaceholders.remove(placeholder);
 		}
 
