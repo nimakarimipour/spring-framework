@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/NumberUtils.java:265: warning: [NullAway] dereferenced expression decimalFormat is @Nullable
-                                        decimalFormat.setParseBigDecimal(false);
-                                                     ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/concurrent/ListenableFutureTask.java:75: warning: [NullAway] parameter value of referenced method is @NonNull, but parameter in functional interface method org.springframework.util.concurrent.SuccessCallback.onSuccess(T) is @Nullable
+                this.callbacks.addSuccessCallback(completable::complete);
+                                                  ^
     (see http://t.uber.com/nullaway )
