@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotationsScanner.java:138: warning: [NullAway] dereferenced expression relevant is @Nullable
-                                                for (int relevantIndex = 0; relevantIndex < relevant.length; relevantIndex++) {
-                                                                                                    ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AbstractMergedAnnotation.java:211: warning: [NullAway] returning @Nullable expression from method with @NonNull return type
+                return synthesized;
+                ^
     (see http://t.uber.com/nullaway )
