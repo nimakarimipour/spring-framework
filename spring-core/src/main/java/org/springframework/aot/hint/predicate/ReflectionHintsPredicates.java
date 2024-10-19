@@ -220,7 +220,10 @@ public class ReflectionHintsPredicates {
 		 */
 		public Predicate<RuntimeHints> withMemberCategory(MemberCategory memberCategory) {
 			Assert.notNull(memberCategory, "'memberCategory' must not be null");
-			return this.and(hints -> getTypeHint(hints).getMemberCategories().contains(memberCategory));
+			return this.and(hints -> {
+				TypeHint hint = getTypeHint(hints);
+				return (hint != null && hint.getMemberCategories().contains(memberCategory));
+			});
 		}
 
 		/**
