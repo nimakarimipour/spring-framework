@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/ConcurrentLruCache.java:128: warning: [NullAway] dereferenced expression status is @Nullable
-                if (status.shouldDrainBuffers(drainRequested)) {
-                          ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/NumberUtils.java:265: warning: [NullAway] dereferenced expression decimalFormat is @Nullable
+                                        decimalFormat.setParseBigDecimal(false);
+                                                     ^
     (see http://t.uber.com/nullaway )
