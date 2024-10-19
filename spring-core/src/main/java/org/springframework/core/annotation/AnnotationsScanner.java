@@ -128,7 +128,11 @@ abstract class AnnotationsScanner {
 					return result;
 				}
 				Annotation[] declaredAnnotations = getDeclaredAnnotations(source, true);
-				if (relevant == null && declaredAnnotations.length > 0) {
+				if (declaredAnnotations.length > 0) {
+					relevant = root.getAnnotations();
+					remaining = relevant.length;
+				}
+				if (relevant == null) {
 					relevant = root.getAnnotations();
 					remaining = relevant.length;
 				}
