@@ -1,4 +1,4 @@
-/home/nima/Developer/nullness-benchmarks/spring-framework/spring-core/src/main/java/org/springframework/util/concurrent/ListenableFuture.java:67: warning: [NullAway] parameter value of referenced method is @NonNull, but parameter in functional interface method org.springframework.util.concurrent.SuccessCallback.onSuccess(T) is @Nullable
-                addCallback(completable::complete, completable::completeExceptionally);
-                            ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/core/type/classreading/SimpleMetadataReaderFactory.java:86: warning: [NullAway] dereferenced expression className is @Nullable
+                        int lastDotIndex = className.lastIndexOf('.');
+                                                    ^
     (see http://t.uber.com/nullaway )
