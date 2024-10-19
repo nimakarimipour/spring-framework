@@ -1,1 +1,1 @@
-./gradlew clean spring-core:compileJava --rerun-tasks --no-build-cache
+./gradlew spring-core-test:compileJava
