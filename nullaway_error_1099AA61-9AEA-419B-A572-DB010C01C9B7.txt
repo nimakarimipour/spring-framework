@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-expression/src/main/java/org/springframework/expression/spel/ast/ConstructorReference.java:237: error: [NullAway] enhanced-for expression this.dimensions is @Nullable
+				for (SpelNodeImpl dimension : this.dimensions) {
+				                                  ^
+    (see http://t.uber.com/nullaway )
