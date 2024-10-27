@@ -1,1 +1,1 @@
-./gradlew spring-core-test:compileJava
+./gradlew spring-expression:compileJava
