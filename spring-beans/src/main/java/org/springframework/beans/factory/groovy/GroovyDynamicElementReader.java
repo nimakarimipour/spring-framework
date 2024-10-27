@@ -58,7 +58,7 @@ class GroovyDynamicElementReader extends GroovyObjectSupport {
 
 
 	public GroovyDynamicElementReader(String namespace, Map<String, String> namespaceMap,
-			BeanDefinitionParserDelegate delegate, @Nullable GroovyBeanDefinitionWrapper beanDefinition, boolean decorating) {
+			BeanDefinitionParserDelegate delegate, GroovyBeanDefinitionWrapper beanDefinition, boolean decorating) {
 
 		this.rootNamespace = namespace;
 		this.xmlNamespaces = namespaceMap;
