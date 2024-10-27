@@ -706,7 +706,7 @@ public class CodeFlow implements Opcodes {
 	 * @param descriptor a descriptor for a type that should have a primitive representation
 	 * @return the single character descriptor for a primitive input descriptor
 	 */
-	public static char toPrimitiveTargetDesc(@Nullable String descriptor) {
+	public static char toPrimitiveTargetDesc(String descriptor) {
 		if (descriptor.length() == 1) {
 			return descriptor.charAt(0);
 		}
