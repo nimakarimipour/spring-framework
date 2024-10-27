@@ -75,18 +75,8 @@ public class AnnotationMatchingPointcut implements Pointcut {
 		this(classAnnotationType, methodAnnotationType, false);
 	}
 
-	/**
-	 * Create a new AnnotationMatchingPointcut for the given annotation types.
-	 * @param classAnnotationType the annotation type to look for at the class level
-	 * (can be {@code null})
-	 * @param methodAnnotationType the annotation type to look for at the method level
-	 * (can be {@code null})
-	 * @param checkInherited whether to also check the superclasses and interfaces
-	 * as well as meta-annotations for the annotation type
-	 * @since 5.0
-	 * @see AnnotationClassFilter#AnnotationClassFilter(Class, boolean)
-	 * @see AnnotationMethodMatcher#AnnotationMethodMatcher(Class, boolean)
-	 */
+
+	@SuppressWarnings("NullAway")
 	public AnnotationMatchingPointcut(@Nullable Class<? extends Annotation> classAnnotationType,
 			@Nullable Class<? extends Annotation> methodAnnotationType, boolean checkInherited) {
 
@@ -168,7 +158,7 @@ public class AnnotationMatchingPointcut implements Pointcut {
 
 		private final Class<? extends Annotation> annotationType;
 
-		AnnotationCandidateClassFilter(@Nullable Class<? extends Annotation> annotationType) {
+		AnnotationCandidateClassFilter(Class<? extends Annotation> annotationType) {
 			this.annotationType = annotationType;
 		}
 
