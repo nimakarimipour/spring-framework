@@ -184,6 +184,7 @@ public class InjectionMetadata {
 	 * @return {@code true} indicating a refresh, {@code false} otherwise
 	 * @see #needsRefresh(Class)
 	 */
+	@Contract("null, _ -> true")
 	public static boolean needsRefresh(@Nullable InjectionMetadata metadata, Class<?> clazz) {
 		return (metadata == null || metadata.needsRefresh(clazz));
 	}

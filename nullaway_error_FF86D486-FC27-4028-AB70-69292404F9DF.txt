@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java:559: error: [NullAway] returning @Nullable expression from method with @NonNull return type
-		return metadata;
-		^
-    (see http://t.uber.com/nullaway )
