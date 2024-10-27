@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReader.java:428: error: [NullAway] dereferenced expression this.currentBeanDefinition is @Nullable
+			this.deferredProperties.put(this.currentBeanDefinition.getBeanName() + '.' + property,
+			                                                      ^
+    (see http://t.uber.com/nullaway )

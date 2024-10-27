@@ -54,6 +54,7 @@ import org.springframework.core.io.DescriptiveResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.EncodedResource;
 import org.springframework.lang.Nullable;
+import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
@@ -425,6 +426,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 
 	private boolean addDeferredProperty(String property, Object newValue) {
 		if (newValue instanceof List || newValue instanceof Map) {
+			Assert.state(this.currentBeanDefinition != null, "No current bean definition set");
 			this.deferredProperties.put(this.currentBeanDefinition.getBeanName() + '.' + property,
 					new DeferredProperty(this.currentBeanDefinition, property, newValue));
 			return true;
