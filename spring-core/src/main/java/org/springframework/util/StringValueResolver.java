@@ -39,6 +39,6 @@ public interface StringValueResolver {
 	 * @throws IllegalArgumentException in case of an unresolvable String value
 	 */
 	@Nullable
-	String resolveStringValue(@Nullable String strVal);
+	String resolveStringValue(String strVal);
 
 }

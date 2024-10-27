@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/config/FieldRetrievingFactoryBean.java:207: error: [NullAway] dereferenced expression targetClass is @Nullable
-		this.fieldObject = targetClass.getField(this.targetField);
-		                              ^
-    (see http://t.uber.com/nullaway )
