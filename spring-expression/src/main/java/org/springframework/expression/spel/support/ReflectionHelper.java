@@ -392,7 +392,8 @@ public abstract class ReflectionHelper {
 				TypeDescriptor sourceType = TypeDescriptor.forObject(argument);
 				if (argument == null) {
 					// Perform the equivalent of GenericConversionService.convertNullSource() for a single argument.
-					if (varArgContentType.getElementTypeDescriptor().getObjectType() == Optional.class) {
+					TypeDescriptor elementDesc = varArgContentType.getElementTypeDescriptor();
+					if (elementDesc != null && elementDesc.getObjectType() == Optional.class) {
 						arguments[varargsPosition] = Optional.empty();
 						conversionOccurred = true;
 					}
