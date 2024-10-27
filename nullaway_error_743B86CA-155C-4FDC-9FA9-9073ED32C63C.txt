@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-expression/src/main/java/org/springframework/expression/spel/ast/OpNE.java:79: error: [NullAway] dereferenced expression leftDesc is @Nullable
+			CodeFlow.insertBoxIfNecessary(mv, leftDesc.charAt(0));
+			                                          ^
+    (see http://t.uber.com/nullaway )
