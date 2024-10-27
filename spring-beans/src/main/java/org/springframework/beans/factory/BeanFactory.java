@@ -143,7 +143,7 @@ public interface BeanFactory {
 	 * @throws NoSuchBeanDefinitionException if there is no bean with the specified name
 	 * @throws BeansException if the bean could not be obtained
 	 */
-	Object getBean(@Nullable String name) throws BeansException;
+	Object getBean(String name) throws BeansException;
 
 	/**
 	 * Return an instance, which may be shared or independent, of the specified bean.
