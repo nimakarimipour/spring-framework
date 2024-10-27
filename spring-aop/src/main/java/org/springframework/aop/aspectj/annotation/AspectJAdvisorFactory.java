@@ -68,7 +68,7 @@ public interface AspectJAdvisorFactory {
 	 * (not the aspect instance itself in order to avoid eager instantiation)
 	 * @return a list of advisors for this class
 	 */
-	List<Advisor> getAdvisors(@Nullable MetadataAwareAspectInstanceFactory aspectInstanceFactory);
+	List<Advisor> getAdvisors(MetadataAwareAspectInstanceFactory aspectInstanceFactory);
 
 	/**
 	 * Build a Spring AOP Advisor for the given AspectJ advice method.
