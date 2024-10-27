@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/ConstructorResolver.java:255: error: [NullAway] dereferenced expression explicitArgs is @Nullable
-					if (parameterCount != explicitArgs.length) {
-					                                  ^
-    (see http://t.uber.com/nullaway )
