@@ -516,6 +516,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 	 * <p>Note: An optimized accessor is currently only usable for read attempts.
 	 * Do not call this method if you need a read-write accessor.
 	 */
+	@SuppressWarnings("NullAway")
 	public PropertyAccessor createOptimalAccessor(EvaluationContext context, @Nullable Object target, String name) {
 		// Don't be clever for arrays or a null target...
 		if (target == null) {
@@ -622,7 +623,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 		@Nullable
 		private final Method originalMethod;
 
-		OptimalPropertyAccessor(@Nullable InvokerPair invokerPair) {
+		OptimalPropertyAccessor(InvokerPair invokerPair) {
 			this.member = invokerPair.member;
 			this.typeDescriptor = invokerPair.typeDescriptor;
 			this.originalMethod = invokerPair.originalMethod;
