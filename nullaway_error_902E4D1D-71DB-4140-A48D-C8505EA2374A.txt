@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/springframework/aop/target/dynamic/AbstractRefreshableTargetSource.java:73: error: [NullAway] dereferenced expression this.targetObject is @Nullable
-		return this.targetObject.getClass();
-		                        ^
-    (see http://t.uber.com/nullaway )
