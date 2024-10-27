@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/AbstractBeanFactory.java:1244: error: [NullAway] dereferenced expression name is @Nullable
-                if (name.startsWith(FACTORY_BEAN_PREFIX)) {
-                        ^
-    (see http://t.uber.com/nullaway )

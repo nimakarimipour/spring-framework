@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java:308: error: [NullAway] enhanced-for expression this.suppressedExceptions is @Nullable
+						for (Exception suppressedException : this.suppressedExceptions) {
+						                                         ^
+    (see http://t.uber.com/nullaway )
