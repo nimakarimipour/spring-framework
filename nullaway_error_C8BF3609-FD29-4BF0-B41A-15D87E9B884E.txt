@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/config/PropertyPathFactoryBean.java:185: error: [NullAway] dereferenced expression this.beanName is @Nullable
-			this.targetBeanName = this.beanName.substring(0, dotIndex);
-			                                   ^
-    (see http://t.uber.com/nullaway )
