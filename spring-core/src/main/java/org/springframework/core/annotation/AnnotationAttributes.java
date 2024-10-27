@@ -193,7 +193,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable public String[] getStringArray(String attributeName) {
+	public String[] getStringArray(String attributeName) {
 		return getRequiredAttribute(attributeName, String[].class);
 	}
 
@@ -354,15 +354,23 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 					"Attribute '%s' not found in attributes for annotation [%s]",
 					attributeName, this.displayName));
 		}
-		assertAttributePresence(attributeName, value);
-		assertNotException(attributeName, value);
+		if (value instanceof Throwable throwable) {
+			throw new IllegalArgumentException(String.format(
+					"Attribute '%s' for annotation [%s] was not resolvable due to exception [%s]",
+					attributeName, this.displayName, value), throwable);
+		}
 		if (!expectedType.isInstance(value) && expectedType.isArray() &&
 				expectedType.componentType().isInstance(value)) {
 			Object array = Array.newInstance(expectedType.componentType(), 1);
 			Array.set(array, 0, value);
 			value = array;
 		}
-		assertAttributeType(attributeName, value, expectedType);
+		if (!expectedType.isInstance(value)) {
+			throw new IllegalArgumentException(String.format(
+					"Attribute '%s' is of type %s, but %s was expected in attributes for annotation [%s]",
+					attributeName, value.getClass().getSimpleName(), expectedType.getSimpleName(),
+					this.displayName));
+		}
 		return (T) value;
 	}
 
