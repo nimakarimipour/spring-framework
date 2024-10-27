@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/springframework/aop/aspectj/AbstractAspectJAdvice.java:580: error: [NullAway] unboxing of a @Nullable value
-					adviceInvocationArgs[index] = parameter.getBinding();
-					                     ^
-    (see http://t.uber.com/nullaway )
