@@ -116,7 +116,7 @@ public class InjectionMetadata {
 	 * @return {@code true} indicating a refresh, {@code false} otherwise
 	 * @since 5.2.4
 	 */
-	@Contract("null, _ -> true")
+	@Contract("null-> true")
 	protected boolean needsRefresh(Class<?> clazz) {
 		return (this.targetClass != clazz);
 	}
