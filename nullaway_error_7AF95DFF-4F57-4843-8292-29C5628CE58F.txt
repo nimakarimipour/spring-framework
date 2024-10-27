@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-aop/src/main/java/org/springframework/aop/aspectj/annotation/BeanFactoryAspectInstanceFactory.java:84: error: [NullAway] passing @Nullable parameter 'resolvedType' where @NonNull is required
+		this.aspectMetadata = new AspectMetadata(resolvedType, name);
+		                                         ^
+    (see http://t.uber.com/nullaway )
