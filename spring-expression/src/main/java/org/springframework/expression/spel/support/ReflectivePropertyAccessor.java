@@ -155,6 +155,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 	}
 
 	@Override
+	@SuppressWarnings("NullAway")
 	public TypedValue read(EvaluationContext context, @Nullable Object target, String name) throws AccessException {
 		Assert.state(target != null, "Target must not be null");
 		Class<?> type = (target instanceof Class<?> clazz ? clazz : target.getClass());
