@@ -1,4 +1,4 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/aot/hint/predicate/ReflectionHintsPredicates.java:371: warning: [NullAway] dereferenced expression hints.reflection().getTypeHint(this.executable.getDeclaringClass()) is @Nullable
-                                        hints.reflection().getTypeHint(this.executable.getDeclaringClass()).methods().anyMatch(executableHint -> {
-                                                                                                           ^
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core-test/src/main/java/org/springframework/aot/agent/InstrumentedMethod.java:200: error: [NullAway] passing @Nullable parameter 'invocation.getReturnValue()' where @NonNull is required
+                                                .or(reflection().onField(invocation.getReturnValue()));
+                                                                                                  ^
     (see http://t.uber.com/nullaway )
