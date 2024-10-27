@@ -109,7 +109,7 @@ public abstract class CoroutinesUtils {
 	 * @since 6.0
 	 */
 	@SuppressWarnings({"deprecation", "DataFlowIssue", "NullAway"})
-	public static Publisher<?> invokeSuspendingFunction(CoroutineContext context, @Nullable Method method, Object target,
+	public static Publisher<?> invokeSuspendingFunction(CoroutineContext context, @Nullable Method method, @Nullable Object target,
 														@Nullable Object... args) {
 		Assert.isTrue(KotlinDetector.isSuspendingFunction(method), "'method' must be a suspending function");
 		KFunction<?> function = ReflectJvmMapping.getKotlinFunction(method);
