@@ -203,6 +203,7 @@ enum InstrumentedMethod {
 	/**
 	 * {@link Class#getFields()}.
 	 */
+	@SuppressWarnings("NullAway")
 	CLASS_GETFIELDS(Class.class, "getFields", HintType.REFLECTION,
 			invocation -> {
 				Class<?> thisClass = invocation.getInstance();
