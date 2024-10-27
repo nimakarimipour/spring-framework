@@ -373,7 +373,7 @@ public abstract class AopUtils {
 	 */
 	private static class KotlinDelegate {
 
-		public static Publisher<?> invokeSuspendingFunction(Method method, @Nullable Object target, Object... args) {
+		public static Publisher<?> invokeSuspendingFunction(Method method, Object target, Object... args) {
 			Continuation<?> continuation = (Continuation<?>) args[args.length -1];
 			Assert.state(continuation != null, "No Continuation available");
 			CoroutineContext context = continuation.getContext().minusKey(Job.Key);
