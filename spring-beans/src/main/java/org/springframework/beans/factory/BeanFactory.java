@@ -288,7 +288,7 @@ public interface BeanFactory {
 	 * @see #getBean
 	 * @see #isPrototype
 	 */
-	boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException;
+	boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
 
 	/**
 	 * Is this bean a prototype? That is, will {@link #getBean} always return

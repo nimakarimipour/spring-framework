@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/AbstractBeanFactory.java:198: error: [NullAway] parameter name is @NonNull, but parameter in superclass method org.springframework.beans.factory.BeanFactory.getBean(java.lang.String) is @Nullable
-	public Object getBean(String name) throws BeansException {
-	                             ^
-    (see http://t.uber.com/nullaway )
