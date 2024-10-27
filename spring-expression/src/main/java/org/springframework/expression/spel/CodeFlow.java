@@ -626,7 +626,7 @@ public class CodeFlow implements Opcodes {
 	 * <p>Assumes at least one of the types is in boxed form (i.e. single char descriptor).
 	 * @return {@code true} if it is possible to get (via boxing) from one descriptor to the other
 	 */
-	public static boolean areBoxingCompatible(@Nullable String desc1, String desc2) {
+	public static boolean areBoxingCompatible(String desc1, String desc2) {
 		if (desc1.equals(desc2)) {
 			return true;
 		}
