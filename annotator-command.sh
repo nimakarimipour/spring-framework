@@ -5,7 +5,7 @@ rm -f nullaway_error_*.txt
 uuid=$(uuidgen)
 
 # Run the command, capture the error output, and display it on stdout
-./gradlew spring-aop:compileJava 2>&1 >/dev/null | tee error_temp.txt
+./gradlew spring-context:compileJava 2>&1 >/dev/null | tee error_temp.txt
 
 # Save the first 4 lines to a unique file
 head -n 4 error_temp.txt > "nullaway_error_${uuid}.txt"
