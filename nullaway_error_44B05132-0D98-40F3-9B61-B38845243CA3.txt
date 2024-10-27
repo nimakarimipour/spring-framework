@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/DefaultListableBeanFactory.java:1039: error: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+				ReflectionUtils.rethrowRuntimeException(ex.getCause());
+				                                                   ^
+    (see http://t.uber.com/nullaway )

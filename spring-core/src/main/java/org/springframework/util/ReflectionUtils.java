@@ -137,7 +137,7 @@ public abstract class ReflectionUtils {
 	 * @param ex the exception to rethrow
 	 * @throws RuntimeException the rethrown exception
 	 */
-	public static void rethrowRuntimeException(Throwable ex) {
+	public static void rethrowRuntimeException(@Nullable Throwable ex) {
 		if (ex instanceof RuntimeException runtimeException) {
 			throw runtimeException;
 		}
