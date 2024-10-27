@@ -642,6 +642,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 				this.currentBeanDefinition = current;
 			}
 		}
+		Assert.state(this.currentBeanDefinition != null, "No current bean definition set");
 		this.currentBeanDefinition.addProperty(name, value);
 	}
 
