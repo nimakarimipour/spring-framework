@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/PropertyEditorRegistrySupport.java:195: error: [NullAway] dereferenced expression this.defaultEditors is @Nullable
+		return this.defaultEditors.get(requiredType);
+		                          ^
+    (see http://t.uber.com/nullaway )
