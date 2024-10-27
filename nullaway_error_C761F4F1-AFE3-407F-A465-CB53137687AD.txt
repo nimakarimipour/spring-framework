@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/DefaultListableBeanFactory.java:1618: error: [NullAway] dereferenced expression candidate is @Nullable
+			throw new BeanNotOfRequiredTypeException(name, type, candidate.getClass());
+			                                                              ^
+    (see http://t.uber.com/nullaway )
