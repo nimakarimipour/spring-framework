@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-expression/src/main/java/org/springframework/expression/spel/ast/PropertyOrFieldReference.java:137: error: [NullAway] dereferenced expression result.getTypeDescriptor() is @Nullable
+                                                Class<?> clazz = result.getTypeDescriptor().getType();
+                                                                                           ^
+    (see http://t.uber.com/nullaway )
