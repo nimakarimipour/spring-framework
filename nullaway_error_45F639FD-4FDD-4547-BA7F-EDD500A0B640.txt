@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-beans/src/main/java/org/springframework/beans/GenericTypeAwarePropertyDescriptor.java:109: error: [NullAway] dereferenced expression writeMethodToUse is @Nullable
+					if (method.getName().equals(writeMethodToUse.getName()) &&
+					                                            ^
+    (see http://t.uber.com/nullaway )
