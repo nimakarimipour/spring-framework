@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/jpa/EntityManagerFactoryUtils.java:379: error: [NullAway] passing @Nullable parameter 'ex.getMessage()' where @NonNull is required
-			return new EmptyResultDataAccessException(ex.getMessage(), 1, ex);
-			                                                       ^
-    (see http://t.uber.com/nullaway )

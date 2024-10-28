@@ -16,6 +16,8 @@
 
 package org.springframework.dao;
 
+import org.springframework.lang.Nullable;
+
 /**
  * Data access exception thrown when a result was not of the expected size,
  * for example when expecting a single row but getting 0 or more than 1 rows.
@@ -59,7 +61,7 @@ public class IncorrectResultSizeDataAccessException extends DataRetrievalFailure
 	 * @param msg the detail message
 	 * @param expectedSize the expected result size
 	 */
-	public IncorrectResultSizeDataAccessException(String msg, int expectedSize) {
+	public IncorrectResultSizeDataAccessException(@Nullable String msg, int expectedSize) {
 		super(msg);
 		this.expectedSize = expectedSize;
 		this.actualSize = -1;
@@ -71,7 +73,7 @@ public class IncorrectResultSizeDataAccessException extends DataRetrievalFailure
 	 * @param expectedSize the expected result size
 	 * @param ex the wrapped exception
 	 */
-	public IncorrectResultSizeDataAccessException(String msg, int expectedSize, Throwable ex) {
+	public IncorrectResultSizeDataAccessException(@Nullable String msg, int expectedSize, Throwable ex) {
 		super(msg, ex);
 		this.expectedSize = expectedSize;
 		this.actualSize = -1;
@@ -83,7 +85,7 @@ public class IncorrectResultSizeDataAccessException extends DataRetrievalFailure
 	 * @param expectedSize the expected result size
 	 * @param actualSize the actual result size (or -1 if unknown)
 	 */
-	public IncorrectResultSizeDataAccessException(String msg, int expectedSize, int actualSize) {
+	public IncorrectResultSizeDataAccessException(@Nullable String msg, int expectedSize, int actualSize) {
 		super(msg);
 		this.expectedSize = expectedSize;
 		this.actualSize = actualSize;
@@ -96,7 +98,7 @@ public class IncorrectResultSizeDataAccessException extends DataRetrievalFailure
 	 * @param actualSize the actual result size (or -1 if unknown)
 	 * @param ex the wrapped exception
 	 */
-	public IncorrectResultSizeDataAccessException(String msg, int expectedSize, int actualSize, Throwable ex) {
+	public IncorrectResultSizeDataAccessException(@Nullable String msg, int expectedSize, int actualSize, Throwable ex) {
 		super(msg, ex);
 		this.expectedSize = expectedSize;
 		this.actualSize = actualSize;
