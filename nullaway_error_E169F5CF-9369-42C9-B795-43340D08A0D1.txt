@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/DefaultMultipartHttpServletRequest.java:174: error: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.multipartParameters;
+		^
+    (see http://t.uber.com/nullaway )
