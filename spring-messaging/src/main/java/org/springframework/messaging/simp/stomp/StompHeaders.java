@@ -278,6 +278,7 @@ public class StompHeaders implements MultiValueMap<String, String>, Serializable
 	 * Get the heartbeat header.
 	 */
 	@Nullable
+	@SuppressWarnings("NullAway")
 	public long[] getHeartbeat() {
 		String rawValue = getFirst(HEARTBEAT);
 		int pos = (rawValue != null ? rawValue.indexOf(',') : -1);
