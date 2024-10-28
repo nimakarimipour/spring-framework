@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/DefaultWebSessionManager.java:119: error: [NullAway] dereferenced expression session.getId() is @Nullable
+		if (ids.isEmpty() || !session.getId().equals(ids.get(0))) {
+		                                     ^
+    (see http://t.uber.com/nullaway )

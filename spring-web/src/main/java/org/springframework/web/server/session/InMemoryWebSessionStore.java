@@ -189,7 +189,8 @@ public class InMemoryWebSessionStore implements WebSessionStore {
 			this.lastAccessTime = this.creationTime;
 		}
 
-		@Nullable @Override
+		@Override
+		@SuppressWarnings("NullAway")
 		public String getId() {
 			return this.id.get();
 		}
