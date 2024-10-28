@@ -92,7 +92,7 @@ public abstract class CoroutinesUtils {
 	 * @throws IllegalArgumentException if {@code method} is not a suspending function
 	 */
 	public static Publisher<?> invokeSuspendingFunction(Method method, Object target,
-			Object... args) {
+			@Nullable Object... args) {
 		return invokeSuspendingFunction(Dispatchers.getUnconfined(), method, target, args);
 	}
 
