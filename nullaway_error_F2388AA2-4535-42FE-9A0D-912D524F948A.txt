@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-tx/src/main/java/org/springframework/transaction/interceptor/TransactionAspectSupport.java:412: error: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+							if (txAttr.rollbackOn(ex.getCause())) {
+							                                 ^
+    (see http://t.uber.com/nullaway )
