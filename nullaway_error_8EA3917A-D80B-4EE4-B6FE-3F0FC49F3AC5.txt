@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/view/RedirectView.java:331: error: [NullAway] dereferenced expression getUrl() is @Nullable
+		if (this.contextRelative && getUrl().startsWith("/")) {
+		                                    ^
+    (see http://t.uber.com/nullaway )
