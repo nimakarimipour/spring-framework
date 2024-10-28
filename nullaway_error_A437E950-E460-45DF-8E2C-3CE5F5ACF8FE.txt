@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/hibernate5/HibernateQueryException.java:42: error: [NullAway] dereferenced expression ((QueryException) getCause()) is @Nullable
-		return ((QueryException) getCause()).getQueryString();
-		                                    ^
-    (see http://t.uber.com/nullaway )
