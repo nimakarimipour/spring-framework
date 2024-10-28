@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/server/reactive/WriteResultPublisher.java:77: error: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().subscribe(this, subscriber);
+		                ^
+    (see http://t.uber.com/nullaway )
