@@ -12,3 +12,7 @@ head -n 4 error_temp.txt > "nullaway_error_${uuid}.txt"
 
 # Clean up the temporary file
 rm error_temp.txt
+
+# print content of nullaway_error_<UUID>.txt
+echo "First NullAway error output:"
+cat "nullaway_error_${uuid}.txt"
