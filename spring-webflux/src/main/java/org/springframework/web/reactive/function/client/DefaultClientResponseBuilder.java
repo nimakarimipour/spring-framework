@@ -256,7 +256,7 @@ final class DefaultClientResponseBuilder implements ClientResponse.Builder {
 		}
 
 		@Override
-		@SuppressWarnings("ConstantConditions")
+		@SuppressWarnings({"ConstantConditions", "NullAway"})
 		public HttpHeaders getHeaders() {
 			return (this.headers != null ? this.headers : this.originalResponse.headers().asHttpHeaders());
 		}
