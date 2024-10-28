@@ -171,6 +171,7 @@ public class CorsConfiguration {
 	/**
 	 * Variant of {@link #setAllowedOrigins} for adding one origin at a time.
 	 */
+	@SuppressWarnings("NullAway")
 	public void addAllowedOrigin(@Nullable String origin) {
 		if (origin == null) {
 			return;
