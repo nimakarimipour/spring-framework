@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/ObjectOptimisticLockingFailureException.java:46: error: [NullAway] passing @Nullable parameter 'msg' where @NonNull is required
+		super(msg, cause);
+		      ^
+    (see http://t.uber.com/nullaway )
