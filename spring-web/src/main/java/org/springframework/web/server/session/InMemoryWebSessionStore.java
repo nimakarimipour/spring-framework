@@ -255,6 +255,7 @@ public class InMemoryWebSessionStore implements WebSessionStore {
 		}
 
 		@Override
+		@SuppressWarnings("NullAway")
 		public Mono<Void> save() {
 
 			checkMaxSessionsLimit();
