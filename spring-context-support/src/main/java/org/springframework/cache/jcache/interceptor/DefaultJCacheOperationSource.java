@@ -208,6 +208,7 @@ public class DefaultJCacheOperationSource extends AnnotationJCacheOperationSourc
 	}
 
 	@Nullable @Override
+	@SuppressWarnings("NullAway")
 	protected CacheResolver getDefaultCacheResolver() {
 		if (getCacheResolver() == null) {
 			this.cacheResolver = SingletonSupplier.of(new SimpleCacheResolver(getDefaultCacheManager()));
