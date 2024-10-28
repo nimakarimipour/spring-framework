@@ -16,6 +16,8 @@
 
 package org.springframework.dao;
 
+import org.springframework.lang.Nullable;
+
 /**
  * Exception thrown on incorrect usage of the API, such as failing to
  * "compile" a query object that needed compilation before execution.
@@ -32,7 +34,7 @@ public class InvalidDataAccessApiUsageException extends NonTransientDataAccessEx
 	 * Constructor for InvalidDataAccessApiUsageException.
 	 * @param msg the detail message
 	 */
-	public InvalidDataAccessApiUsageException(String msg) {
+	public InvalidDataAccessApiUsageException(@Nullable String msg) {
 		super(msg);
 	}
 

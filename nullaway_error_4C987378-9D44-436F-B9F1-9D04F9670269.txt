@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/core/simple/AbstractJdbcCall.java:296: error: [NullAway] passing @Nullable parameter 'ex.getMessage()' where @NonNull is required
-				throw new InvalidDataAccessApiUsageException(ex.getMessage());
-				                                                          ^
-    (see http://t.uber.com/nullaway )
