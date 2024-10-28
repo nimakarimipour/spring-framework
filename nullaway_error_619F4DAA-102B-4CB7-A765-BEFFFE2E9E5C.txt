@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceMethod.java:242: error: [NullAway] dereferenced expression typeLevelUrl is @Nullable
+				return (typeLevelUrl + (!typeLevelUrl.endsWith("/") && !methodLevelUrl.startsWith("/") ? "/" : "") + methodLevelUrl);
+				                                     ^
+    (see http://t.uber.com/nullaway )
