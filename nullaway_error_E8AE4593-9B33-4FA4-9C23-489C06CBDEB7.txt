@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/format/datetime/standard/DateTimeFormatterRegistrar.java:84: error: [NullAway] dereferenced expression this.factories.get(Type.DATE) is @Nullable
-		this.factories.get(Type.DATE).setIso(useIsoFormat ? ISO.DATE : ISO.NONE);
-		                             ^
-    (see http://t.uber.com/nullaway )
