@@ -522,6 +522,7 @@ public abstract class AbstractMethodMessageHandler<T>
 		handleMatch(bestMatch.mapping, bestMatch.handlerMethod, lookupDestination, message);
 	}
 
+	@SuppressWarnings("NullAway")
 	private void addMatchesToCollection(Collection<T> mappingsToCheck, Message<?> message, List<Match> matches) {
 		for (T mapping : mappingsToCheck) {
 			T match = getMatchingMapping(mapping, message);
@@ -676,7 +677,7 @@ public abstract class AbstractMethodMessageHandler<T>
 
 		private final HandlerMethod handlerMethod;
 
-		public Match(T mapping, @Nullable HandlerMethod handlerMethod) {
+		public Match(T mapping, HandlerMethod handlerMethod) {
 			this.mapping = mapping;
 			this.handlerMethod = handlerMethod;
 		}

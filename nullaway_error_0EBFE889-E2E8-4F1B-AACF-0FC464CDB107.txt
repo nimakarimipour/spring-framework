@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/handler/HandlerMethod.java:199: error: [NullAway] dereferenced expression ((HandlerMethod) other) is @Nullable
-		return (this == other || (super.equals(other) && this.bean.equals(((HandlerMethod) other).bean)));
-		                                                                                         ^
-    (see http://t.uber.com/nullaway )
