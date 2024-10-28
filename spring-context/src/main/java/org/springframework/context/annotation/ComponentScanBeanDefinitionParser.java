@@ -219,6 +219,7 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
 							"Ignoring non-present type filter class: " + ex, parserContext.extractSource(element));
 				}
 				catch (Exception ex) {
+					Assert.state(message != null, "Exception message must not be null");
 					parserContext.getReaderContext().error(
 							ex.getMessage(), parserContext.extractSource(element), ex.getCause());
 				}
