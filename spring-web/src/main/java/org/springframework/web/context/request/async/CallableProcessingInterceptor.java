@@ -89,7 +89,7 @@ public interface CallableProcessingInterceptor {
 	 * @param task the task for the current async request
 	 * @throws Exception in case of errors
 	 */
-	default <T> void preProcess(@Nullable NativeWebRequest request, Callable<T> task) throws Exception {
+	default <T> void preProcess(NativeWebRequest request, Callable<T> task) throws Exception {
 	}
 
 	/**

@@ -61,7 +61,7 @@ class CallableInterceptorChain {
 		}
 	}
 
-	public void applyPreProcess(@Nullable NativeWebRequest request, Callable<?> task) throws Exception {
+	public void applyPreProcess(NativeWebRequest request, Callable<?> task) throws Exception {
 		for (CallableProcessingInterceptor interceptor : this.interceptors) {
 			interceptor.preProcess(request, task);
 			this.preProcessIndex++;

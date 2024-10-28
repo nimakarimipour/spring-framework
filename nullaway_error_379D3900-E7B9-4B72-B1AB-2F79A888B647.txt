@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java:1210: error: [NullAway] dereferenced expression webRequest is @Nullable
+			HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
+			                                       ^
+    (see http://t.uber.com/nullaway )

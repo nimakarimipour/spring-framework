@@ -62,7 +62,7 @@ class AsyncRequestInterceptor implements CallableProcessingInterceptor, Deferred
 
 
 	@Override
-	public <T> void preProcess(@Nullable NativeWebRequest request, Callable<T> task) {
+	public <T> void preProcess(NativeWebRequest request, Callable<T> task) {
 		bindEntityManager();
 	}
 
