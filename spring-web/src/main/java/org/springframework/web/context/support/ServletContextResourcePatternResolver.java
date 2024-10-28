@@ -105,6 +105,7 @@ public class ServletContextResourcePatternResolver extends PathMatchingResourceP
 	 * @see ServletContextResource
 	 * @see jakarta.servlet.ServletContext#getResourcePaths
 	 */
+	@SuppressWarnings("NullAway")
 	protected void doRetrieveMatchingServletContextResources(
 			ServletContext servletContext, String fullPattern, String dir, Set<Resource> result)
 			throws IOException {
@@ -154,7 +155,7 @@ public class ServletContextResourcePatternResolver extends PathMatchingResourceP
 	 * @param entryPattern the pattern for jar entries to match
 	 * @param result the Set of matching Resources to add to
 	 */
-	private void doRetrieveMatchingJarEntries(String jarFilePath, @Nullable String entryPattern, Set<Resource> result) {
+	private void doRetrieveMatchingJarEntries(String jarFilePath, String entryPattern, Set<Resource> result) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Searching jar file [" + jarFilePath + "] for entries matching [" + entryPattern + "]");
 		}
