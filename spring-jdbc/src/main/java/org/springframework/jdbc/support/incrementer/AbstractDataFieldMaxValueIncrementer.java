@@ -75,6 +75,7 @@ public abstract class AbstractDataFieldMaxValueIncrementer implements DataFieldM
 	/**
 	 * Return the data source to retrieve the value from.
 	 */
+	@SuppressWarnings("NullAway")
 	public DataSource getDataSource() {
 		return this.dataSource;
 	}

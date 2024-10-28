@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/support/incrementer/AbstractDataFieldMaxValueIncrementer.java:79: error: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.dataSource;
+		^
+    (see http://t.uber.com/nullaway )
