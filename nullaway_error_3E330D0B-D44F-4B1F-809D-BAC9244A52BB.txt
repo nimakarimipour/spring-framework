@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/reactive/DefaultCorsProcessor.java:156: error: [NullAway] dereferenced expression allowHeaders is @Nullable
+		if (preFlightRequest && !allowHeaders.isEmpty()) {
+		                                     ^
+    (see http://t.uber.com/nullaway )
