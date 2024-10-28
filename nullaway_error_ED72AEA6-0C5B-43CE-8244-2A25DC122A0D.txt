@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseFactory.java:261: error: [NullAway] assigning @Nullable expression to @NonNull field
-			this.dataSource = dataSource;
-			                ^
-    (see http://t.uber.com/nullaway )

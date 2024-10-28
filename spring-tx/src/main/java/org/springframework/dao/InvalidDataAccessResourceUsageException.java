@@ -40,7 +40,7 @@ public class InvalidDataAccessResourceUsageException extends NonTransientDataAcc
 	 * @param msg the detail message
 	 * @param cause the root cause from the data access API in use
 	 */
-	public InvalidDataAccessResourceUsageException(String msg, Throwable cause) {
+	public InvalidDataAccessResourceUsageException(@Nullable String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
