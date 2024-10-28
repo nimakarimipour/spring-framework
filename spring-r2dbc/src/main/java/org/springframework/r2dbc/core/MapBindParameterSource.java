@@ -75,7 +75,8 @@ class MapBindParameterSource implements BindParameterSource {
 		return this.values.containsKey(paramName);
 	}
 
-	@Nullable @Override
+	@Override
+	@SuppressWarnings("NullAway")
 	public Parameter getValue(String paramName) throws IllegalArgumentException {
 		if (!hasValue(paramName)) {
 			throw new IllegalArgumentException("No value registered for key '" + paramName + "'");
