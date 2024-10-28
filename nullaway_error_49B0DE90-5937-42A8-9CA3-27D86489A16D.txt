@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context-support/src/main/java/org/springframework/scheduling/quartz/SchedulerAccessor.java:252: error: [NullAway] dereferenced expression this.transactionManager is @Nullable
+					this.transactionManager.rollback(transactionStatus);
+					                       ^
+    (see http://t.uber.com/nullaway )
