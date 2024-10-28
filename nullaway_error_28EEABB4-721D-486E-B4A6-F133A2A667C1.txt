@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/method/ParameterValidationResult.java:177: error: [NullAway] dereferenced expression otherResult is @Nullable
-		return (getMethodParameter().equals(otherResult.getMethodParameter()) &&
-		                                               ^
-    (see http://t.uber.com/nullaway )

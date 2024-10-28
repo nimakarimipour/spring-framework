@@ -242,6 +242,7 @@ public class DefaultMessageCodesResolver implements MessageCodesResolver, Serial
 		 * {@link DefaultMessageCodesResolver#CODE_SEPARATOR}, skipping zero-length or
 		 * null elements altogether.
 		 */
+		@SuppressWarnings("NullAway")
 		public static String toDelimitedString(@Nullable String... elements) {
 			StringJoiner rtn = new StringJoiner(CODE_SEPARATOR);
 			for (String element : elements) {
