@@ -20,6 +20,7 @@ import java.lang.annotation.Annotation;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import org.springframework.util.Assert;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -112,14 +113,18 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
 			parseBeanNameGenerator(element, scanner);
 		}
 		catch (Exception ex) {
-			parserContext.getReaderContext().error(ex.getMessage(), parserContext.extractSource(element), ex.getCause());
+			String message = ex.getMessage();
+			Assert.state(message != null, "Exception message must not be null");
+			parserContext.getReaderContext().error(message, parserContext.extractSource(element), ex.getCause());
 		}
 
 		try {
 			parseScope(element, scanner);
 		}
 		catch (Exception ex) {
-			parserContext.getReaderContext().error(ex.getMessage(), parserContext.extractSource(element), ex.getCause());
+			String message = ex.getMessage();
+			Assert.state(message != null, "Exception message must not be null");
+			parserContext.getReaderContext().error(message, parserContext.extractSource(element), ex.getCause());
 		}
 
 		parseTypeFilters(element, scanner, parserContext);
