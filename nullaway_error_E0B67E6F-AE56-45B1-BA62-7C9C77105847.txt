@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/AbstractStreamingClientHttpRequest.java:68: error: [NullAway] dereferenced expression this.bodyStream is @Nullable
-			this.body = outputStream -> this.bodyStream.writeTo(outputStream);
-			                                           ^
-    (see http://t.uber.com/nullaway )
