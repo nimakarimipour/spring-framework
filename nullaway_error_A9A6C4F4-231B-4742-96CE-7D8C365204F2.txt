@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/DataBinder.java:1039: error: [NullAway] dereferenced expression this.targetType is @Nullable
+		if (this.targetType.getSource() instanceof MethodParameter parameter) {
+		                   ^
+    (see http://t.uber.com/nullaway )
