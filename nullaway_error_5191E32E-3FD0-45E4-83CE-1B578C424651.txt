@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/FieldError.java:111: error: [NullAway] dereferenced expression otherError is @Nullable
-		return (getField().equals(otherError.getField()) &&
-		                                    ^
-    (see http://t.uber.com/nullaway )
