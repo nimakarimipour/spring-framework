@@ -259,7 +259,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable public Class<?>[] getClassArray(String attributeName) {
+	public Class<?>[] getClassArray(String attributeName) {
 		return getRequiredAttribute(attributeName, Class[].class);
 	}
 

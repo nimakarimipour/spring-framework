@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/TypeFilterUtils.java:80: error: [NullAway] switch expression filterType is @Nullable
+			switch (filterType) {
+			        ^
+    (see http://t.uber.com/nullaway )
