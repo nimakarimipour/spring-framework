@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.java:357: error: [NullAway] passing @Nullable parameter 'managerToUse' where @NonNull is required
-		this.persistenceUnitInfo = determinePersistenceUnitInfo(managerToUse);
-		                                                        ^
-    (see http://t.uber.com/nullaway )
