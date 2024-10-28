@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/simp/stomp/StompHeaderAccessor.java:247: error: [NullAway] dereferenced expression rawValue is @Nullable
+				Long.parseLong(rawValue, pos + 1, rawValue.length(), 10)};
+				                                          ^
+    (see http://t.uber.com/nullaway )
