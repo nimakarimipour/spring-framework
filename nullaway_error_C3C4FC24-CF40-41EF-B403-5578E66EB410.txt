@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/datasource/SingleConnectionDataSource.java:192: error: [NullAway] dereferenced expression this.connection is @Nullable
+			if (this.connection.isClosed()) {
+			                   ^
+    (see http://t.uber.com/nullaway )
