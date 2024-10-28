@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/tags/MessageTag.java:328: error: [NullAway] passing @Nullable parameter 'this.code' where @NonNull is required
+						this.code, argumentsArray, this.text, getRequestContext().getLocale());
+						    ^
+    (see http://t.uber.com/nullaway )

@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/resource/ResourceUrlProvider.java:244: error: [NullAway] dereferenced expression handler is @Nullable
-				ResourceResolverChain chain = new DefaultResourceResolverChain(handler.getResourceResolvers());
-				                                                                      ^
-    (see http://t.uber.com/nullaway )
