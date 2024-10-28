@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/function/client/DefaultClientResponseBuilder.java:267: error: [NullAway] dereferenced expression this.originalResponse is @Nullable
+			return (this.cookies != null ? this.cookies : this.originalResponse.cookies());
+			                                                                   ^
+    (see http://t.uber.com/nullaway )
