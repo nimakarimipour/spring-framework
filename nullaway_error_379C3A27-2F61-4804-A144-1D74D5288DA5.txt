@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/CorsConfiguration.java:257: error: [NullAway] dereferenced expression this.allowedOriginPatterns is @Nullable
+			this.allowedOriginPatterns.add(new OriginPattern(value));
+			                          ^
+    (see http://t.uber.com/nullaway )
