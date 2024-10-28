@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/hibernate5/HibernateTemplate.java:962: error: [NullAway] dereferenced expression paramNames is @Nullable
+					applyNamedParameterToQuery(queryObject, paramNames[i], values[i]);
+					                                                  ^
+    (see http://t.uber.com/nullaway )
