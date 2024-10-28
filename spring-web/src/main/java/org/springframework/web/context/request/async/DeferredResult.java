@@ -239,11 +239,11 @@ public class DeferredResult<T> {
 	 * {@code false} if the result was already set or the async request expired
 	 * @see #isSetOrExpired()
 	 */
-	public boolean setResult(T result) {
+	public boolean setResult(@Nullable T result) {
 		return setResultInternal(result);
 	}
 
-	private boolean setResultInternal(Object result) {
+	private boolean setResultInternal(@Nullable Object result) {
 		// Immediate expiration check outside of the result lock
 		if (isSetOrExpired()) {
 			return false;
