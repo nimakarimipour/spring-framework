@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/xml/Jaxb2XmlDecoder.java:187: error: [NullAway] passing @Nullable parameter 'ex.getMessage()' where @NonNull is required
+			throw new DecodingException(ex.getMessage(), ex);
+			                                         ^
+    (see http://t.uber.com/nullaway )
