@@ -736,8 +736,8 @@ public class RequestEntity<T> extends HttpEntity<T> {
 			if (!super.equals(other)) {
 				return false;
 			}
-			UriTemplateRequestEntity<?> otherEntity = (UriTemplateRequestEntity<?>) other;
-			return (ObjectUtils.nullSafeEquals(this.uriTemplate, otherEntity.uriTemplate) &&
+			return (other instanceof UriTemplateRequestEntity<?> otherEntity &&
+					ObjectUtils.nullSafeEquals(this.uriTemplate, otherEntity.uriTemplate) &&
 					ObjectUtils.nullSafeEquals(this.uriVarsArray, otherEntity.uriVarsArray) &&
 					ObjectUtils.nullSafeEquals(this.uriVarsMap, otherEntity.uriVarsMap));
 		}
