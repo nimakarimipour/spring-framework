@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java:165: error: [NullAway] dereferenced expression this.multipartParameterNames is @Nullable
+		if (this.multipartParameterNames.isEmpty()) {
+		                                ^
+    (see http://t.uber.com/nullaway )
