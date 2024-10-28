@@ -325,6 +325,7 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 
 	@Override
 	@Nullable
+	@SuppressWarnings("NullAway")
 	public BeanFactoryInitializationAotContribution processAheadOfTime(ConfigurableListableBeanFactory beanFactory) {
 		boolean hasPropertySourceDescriptors = !CollectionUtils.isEmpty(this.propertySourceDescriptors);
 		boolean hasImportRegistry = beanFactory.containsBean(IMPORT_REGISTRY_BEAN_NAME);
@@ -666,7 +667,7 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 
 		private final Function<String, Resource> resourceResolver;
 
-		PropertySourcesAotContribution(@Nullable List<PropertySourceDescriptor> descriptors, Function<String, Resource> resourceResolver) {
+		PropertySourcesAotContribution(List<PropertySourceDescriptor> descriptors, Function<String, Resource> resourceResolver) {
 			this.descriptors = descriptors;
 			this.resourceResolver = resourceResolver;
 		}
