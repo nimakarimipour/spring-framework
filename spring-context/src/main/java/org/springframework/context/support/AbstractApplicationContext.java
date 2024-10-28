@@ -1245,7 +1245,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	//---------------------------------------------------------------------
 
 	@Override
-	public Object getBean(@Nullable String name) throws BeansException {
+	public Object getBean(String name) throws BeansException {
 		assertBeanFactoryActive();
 		return getBeanFactory().getBean(name);
 	}

@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/support/AbstractApplicationContext.java:1297: error: [NullAway] passing @Nullable parameter 'name' where @NonNull is required
+		return getBeanFactory().isSingleton(name);
+		                                    ^
+    (see http://t.uber.com/nullaway )
