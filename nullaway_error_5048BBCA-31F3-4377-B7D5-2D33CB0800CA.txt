@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/BeanAnnotationHelper.java:54: error: [NullAway] dereferenced expression names is @Nullable
-				if (names.length > 0) {
-				         ^
-    (see http://t.uber.com/nullaway )
