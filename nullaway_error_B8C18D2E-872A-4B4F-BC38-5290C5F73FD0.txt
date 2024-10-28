@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClass.java:226: error: [NullAway] unboxing of a @Nullable value
+		if (attributes != null && (Boolean) attributes.get("proxyBeanMethods") && this.metadata.isFinal()) {
+		                          ^
+    (see http://t.uber.com/nullaway )

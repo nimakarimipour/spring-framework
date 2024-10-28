@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/BeanMethod.java:59: error: [NullAway] unboxing of a @Nullable value
-		if (attributes != null && (Boolean) attributes.get("proxyBeanMethods") && !getMetadata().isOverridable()) {
-		                          ^
-    (see http://t.uber.com/nullaway )
