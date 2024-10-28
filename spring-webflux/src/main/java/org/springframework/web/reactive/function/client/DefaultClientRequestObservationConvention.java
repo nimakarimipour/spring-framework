@@ -24,6 +24,7 @@ import io.micrometer.common.KeyValues;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
+import org.springframework.lang.Nullable;
 import org.springframework.util.StringUtils;
 import org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.HighCardinalityKeyNames;
 import org.springframework.web.reactive.function.client.ClientHttpObservationDocumentation.LowCardinalityKeyNames;
@@ -88,8 +89,10 @@ public class DefaultClientRequestObservationConvention implements ClientRequestO
 	}
 
 	@Override
+	@Nullable
 	public String getContextualName(ClientRequestObservationContext context) {
-		return "http " + context.getRequest().method().name().toLowerCase();
+		ClientRequest request = context.getRequest();
+		return (request != null ? "http " + request.method().name().toLowerCase() : null);
 	}
 
 	@Override
