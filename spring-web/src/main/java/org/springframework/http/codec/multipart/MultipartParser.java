@@ -49,6 +49,7 @@ import org.springframework.lang.Nullable;
  * @author Arjen Poutsma
  * @since 5.3
  */
+@SuppressWarnings("NullAway")
 final class MultipartParser extends BaseSubscriber<DataBuffer> {
 
 	private static final byte CR = '\r';

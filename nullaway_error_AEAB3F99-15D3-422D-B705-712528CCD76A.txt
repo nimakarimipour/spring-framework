@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/MultipartParser.java:126: error: [NullAway] dereferenced expression this.state.get() is @Nullable
+		this.state.get().onComplete();
+		                ^
+    (see http://t.uber.com/nullaway )
