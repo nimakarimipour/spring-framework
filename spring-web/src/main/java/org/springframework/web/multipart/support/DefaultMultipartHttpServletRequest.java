@@ -187,7 +187,8 @@ public class DefaultMultipartHttpServletRequest extends AbstractMultipartHttpSer
 	 * lazily initializing it if necessary.
 	 * @see #initializeMultipart()
 	 */
-	@Nullable protected Map<String, String> getMultipartParameterContentTypes() {
+	@SuppressWarnings("NullAway")
+	protected Map<String, String> getMultipartParameterContentTypes() {
 		if (this.multipartParameterContentTypes == null) {
 			initializeMultipart();
 		}
