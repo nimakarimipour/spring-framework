@@ -177,7 +177,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable public String getString(String attributeName) {
+	public String getString(String attributeName) {
 		return getRequiredAttribute(attributeName, String.class);
 	}
 
@@ -230,7 +230,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	public <E extends Enum<?>> E getEnum(String attributeName) {
 		return (E) getRequiredAttribute(attributeName, Enum.class);
 	}
@@ -243,7 +243,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	public <T> Class<? extends T> getClass(String attributeName) {
 		return getRequiredAttribute(attributeName, Class.class);
 	}
@@ -274,7 +274,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable public AnnotationAttributes getAnnotation(String attributeName) {
+	public AnnotationAttributes getAnnotation(String attributeName) {
 		return getRequiredAttribute(attributeName, AnnotationAttributes.class);
 	}
 
@@ -289,7 +289,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * if it is not of the expected type
 	 * @since 4.2
 	 */
-	@Nullable public <A extends Annotation> A getAnnotation(String attributeName, Class<A> annotationType) {
+	public <A extends Annotation> A getAnnotation(String attributeName, Class<A> annotationType) {
 		return getRequiredAttribute(attributeName, annotationType);
 	}
 
@@ -307,7 +307,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * @throws IllegalArgumentException if the attribute does not exist or
 	 * if it is not of the expected type
 	 */
-	@Nullable public AnnotationAttributes[] getAnnotationArray(String attributeName) {
+	public AnnotationAttributes[] getAnnotationArray(String attributeName) {
 		return getRequiredAttribute(attributeName, AnnotationAttributes[].class);
 	}
 
@@ -325,7 +325,7 @@ public class AnnotationAttributes extends LinkedHashMap<String, Object> {
 	 * if it is not of the expected type
 	 * @since 4.2
 	 */
-	@Nullable @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	public <A extends Annotation> A[] getAnnotationArray(String attributeName, Class<A> annotationType) {
 		return (A[]) getRequiredAttribute(attributeName, annotationType.arrayType());
 	}
