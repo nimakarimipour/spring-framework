@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/DefaultMessageCodesResolver.java:247: error: [NullAway] enhanced-for expression elements is @Nullable
-			for (String element : elements) {
-			                      ^
-    (see http://t.uber.com/nullaway )

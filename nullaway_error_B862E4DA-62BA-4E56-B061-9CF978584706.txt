@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/DataBinder.java:687: error: [NullAway] enhanced-for expression validators is @Nullable
+		for (Validator validator : validators) {
+		                           ^
+    (see http://t.uber.com/nullaway )
