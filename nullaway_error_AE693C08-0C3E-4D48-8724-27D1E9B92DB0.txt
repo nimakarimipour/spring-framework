@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/ServletWebRequest.java:356: error: [NullAway] dereferenced expression getResponse() is @Nullable
+			if (lastModifiedTimestamp > 0 && parseDateValue(getResponse().getHeader(HttpHeaders.LAST_MODIFIED)) == -1) {
+			                                                             ^
+    (see http://t.uber.com/nullaway )

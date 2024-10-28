@@ -352,7 +352,7 @@ public class ServletWebRequest extends ServletRequestAttributes implements Nativ
 	}
 
 	private void addCachingResponseHeaders(@Nullable String eTag, long lastModifiedTimestamp) {
-		if (SAFE_METHODS.contains(getRequest().getMethod())) {
+		if (getResponse() != null && SAFE_METHODS.contains(getRequest().getMethod())) {
 			if (lastModifiedTimestamp > 0 && parseDateValue(getResponse().getHeader(HttpHeaders.LAST_MODIFIED)) == -1) {
 				getResponse().setDateHeader(HttpHeaders.LAST_MODIFIED, lastModifiedTimestamp);
 			}
