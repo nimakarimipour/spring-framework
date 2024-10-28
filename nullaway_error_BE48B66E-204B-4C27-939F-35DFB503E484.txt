@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-websocket/src/main/java/org/springframework/web/socket/sockjs/support/AbstractSockJsService.java:368: error: [NullAway] returning @Nullable expression from method with @NonNull return type
+		return this.corsConfiguration.getAllowedOriginPatterns();
+		^
+    (see http://t.uber.com/nullaway )

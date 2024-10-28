@@ -364,6 +364,7 @@ public abstract class AbstractSockJsService implements SockJsService, CorsConfig
 	 * @since 5.3.2
 	 */
 	@SuppressWarnings("ConstantConditions")
+	@Nullable
 	public Collection<String> getAllowedOriginPatterns() {
 		return this.corsConfiguration.getAllowedOriginPatterns();
 	}
@@ -417,7 +418,7 @@ public abstract class AbstractSockJsService implements SockJsService, CorsConfig
 
 			else if (sockJsPath.matches("/iframe[0-9-.a-z_]*.html")) {
 				if (!CollectionUtils.isEmpty(getAllowedOrigins()) && !getAllowedOrigins().contains("*") ||
-						!getAllowedOriginPatterns().isEmpty()) {
+						!CollectionUtils.isEmpty(getAllowedOriginPatterns())) {
 					if (requestInfo != null) {
 						logger.debug("Iframe support is disabled when an origin check is required. " +
 								"Ignoring transport request: " + requestInfo);
