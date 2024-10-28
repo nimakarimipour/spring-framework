@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/socket/adapter/StandardWebSocketHandlerAdapter.java:74: error: [NullAway] dereferenced expression this.delegateSession is @Nullable
+			this.delegateSession.handleMessage(webSocketMessage.getType(), webSocketMessage);
+			                    ^
+    (see http://t.uber.com/nullaway )
