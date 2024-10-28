@@ -137,6 +137,7 @@ public class StandardMultipartHttpServletRequest extends AbstractMultipartHttpSe
 	}
 
 	@Override
+	@SuppressWarnings("NullAway")
 	public Enumeration<String> getParameterNames() {
 		if (this.multipartParameterNames == null) {
 			initializeMultipart();
