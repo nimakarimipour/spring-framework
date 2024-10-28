@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/result/method/InvocableHandlerMethod.java:209: error: [NullAway] dereferenced expression adapter is @Nullable
+					return (asyncVoid ? Mono.from(adapter.toPublisher(value)) : Mono.empty());
+					                                     ^
+    (see http://t.uber.com/nullaway )
