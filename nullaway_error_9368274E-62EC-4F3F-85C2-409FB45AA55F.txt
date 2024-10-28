@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/validation/DataBinder.java:1185: error: [NullAway] dereferenced expression pv is @Nullable
+					if (pv.getValue() instanceof String text) {
+					      ^
+    (see http://t.uber.com/nullaway )
