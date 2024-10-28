@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-r2dbc/src/main/java/org/springframework/r2dbc/connection/lookup/AbstractRoutingConnectionFactory.java:229: error: [NullAway] dereferenced expression this.resolvedConnectionFactories is @Nullable
+			ConnectionFactory connectionFactory = this.resolvedConnectionFactories.get(key);
+			                                                                      ^
+    (see http://t.uber.com/nullaway )

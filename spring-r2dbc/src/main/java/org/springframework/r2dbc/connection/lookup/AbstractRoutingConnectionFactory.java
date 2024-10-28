@@ -220,6 +220,7 @@ public abstract class AbstractRoutingConnectionFactory implements ConnectionFact
 	 * per {@link #determineCurrentLookupKey()}
 	 * @see #determineCurrentLookupKey()
 	 */
+	@SuppressWarnings("NullAway")
 	protected Mono<ConnectionFactory> determineTargetConnectionFactory() {
 		Assert.state(this.resolvedConnectionFactories != null, "ConnectionFactory router not initialized");
 
