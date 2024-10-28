@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/server/session/InMemoryWebSessionStore.java:230: error: [NullAway] dereferenced expression this.state.get() is @Nullable
+			return this.state.get().equals(State.STARTED) || !getAttributes().isEmpty();
+			                       ^
+    (see http://t.uber.com/nullaway )

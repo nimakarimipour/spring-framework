@@ -226,6 +226,7 @@ public class InMemoryWebSessionStore implements WebSessionStore {
 		}
 
 		@Override
+		@SuppressWarnings("NullAway")
 		public boolean isStarted() {
 			return this.state.get().equals(State.STARTED) || !getAttributes().isEmpty();
 		}
