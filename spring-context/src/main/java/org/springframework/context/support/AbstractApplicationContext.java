@@ -1292,7 +1292,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	@Override
-	public boolean isSingleton(@Nullable String name) throws NoSuchBeanDefinitionException {
+	public boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
 		assertBeanFactoryActive();
 		return getBeanFactory().isSingleton(name);
 	}
