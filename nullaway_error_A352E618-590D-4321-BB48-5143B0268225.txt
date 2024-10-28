@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/function/client/DefaultClientResponseBuilder.java:143: error: [NullAway] dereferenced expression this.originalResponse is @Nullable
+			this.headers = new HttpHeaders(this.originalResponse.headers().asHttpHeaders());
+			                                                    ^
+    (see http://t.uber.com/nullaway )
