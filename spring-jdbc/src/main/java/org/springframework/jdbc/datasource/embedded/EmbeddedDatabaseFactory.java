@@ -162,6 +162,7 @@ public class EmbeddedDatabaseFactory {
 	 * Factory method that returns the {@linkplain EmbeddedDatabase embedded database}
 	 * instance, which is also a {@link DataSource}.
 	 */
+	@SuppressWarnings("NullAway")
 	public EmbeddedDatabase getDatabase() {
 		if (this.dataSource == null) {
 			initDatabase();
@@ -257,7 +258,7 @@ public class EmbeddedDatabaseFactory {
 
 		private final DataSource dataSource;
 
-		public EmbeddedDataSourceProxy(@Nullable DataSource dataSource) {
+		public EmbeddedDataSourceProxy(DataSource dataSource) {
 			this.dataSource = dataSource;
 		}
 
