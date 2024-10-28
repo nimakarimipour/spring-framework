@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/resource/ResourceWebHandler.java:500: error: [NullAway] dereferenced expression this.transformerChain is @Nullable
+				.flatMap(resource -> this.transformerChain.transform(exchange, resource));
+				                                          ^
+    (see http://t.uber.com/nullaway )

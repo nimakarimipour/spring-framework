@@ -483,6 +483,7 @@ public class ResourceWebHandler implements WebHandler, InitializingBean {
 				});
 	}
 
+	@SuppressWarnings("NullAway")
 	protected Mono<Resource> getResource(ServerWebExchange exchange) {
 		String rawPath = getResourcePath(exchange);
 		String path = processPath(rawPath);
