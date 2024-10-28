@@ -104,7 +104,7 @@ public interface CallableProcessingInterceptor {
 	 * be a {@link Throwable} if the {@code Callable} raised an exception
 	 * @throws Exception in case of errors
 	 */
-	default <T> void postProcess(@Nullable NativeWebRequest request, Callable<T> task,
+	default <T> void postProcess(NativeWebRequest request, Callable<T> task,
 			@Nullable Object concurrentResult) throws Exception {
 	}
 
