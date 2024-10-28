@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/handler/invocation/reactive/InvocableHandlerMethod.java:157: error: [NullAway] dereferenced expression adapter is @Nullable
+					Mono.from(adapter.toPublisher(value)) : Mono.justOrEmpty(value));
+					                 ^
+    (see http://t.uber.com/nullaway )

@@ -153,7 +153,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 			MethodParameter returnType = getReturnType();
 			Class<?> reactiveType = (isSuspendingFunction ? value.getClass() : returnType.getParameterType());
 			ReactiveAdapter adapter = this.reactiveAdapterRegistry.getAdapter(reactiveType);
-			return (isAsyncVoidReturnType(returnType, adapter) ?
+			return (adapter != null && isAsyncVoidReturnType(returnType, adapter) ?
 					Mono.from(adapter.toPublisher(value)) : Mono.justOrEmpty(value));
 		});
 	}
