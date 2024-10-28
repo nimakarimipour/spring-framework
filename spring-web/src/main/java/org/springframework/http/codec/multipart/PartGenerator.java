@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  * @author Arjen Poutsma
  * @since 5.3
  */
+@SuppressWarnings("NullAway")
 final class PartGenerator extends BaseSubscriber<MultipartParser.Token> {
 
 	private static final Log logger = LogFactory.getLog(PartGenerator.class);

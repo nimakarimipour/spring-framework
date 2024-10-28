@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java:124: error: [NullAway] dereferenced expression state is @Nullable
+			state.body(token.buffer());
+			     ^
+    (see http://t.uber.com/nullaway )
