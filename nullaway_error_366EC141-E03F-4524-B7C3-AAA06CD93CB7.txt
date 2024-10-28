@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/event/ApplicationListenerMethodAdapter.java:254: error: [NullAway] passing @Nullable parameter 'args' where @NonNull is required
-                        Object result = doInvoke(args);
-                                                 ^
-    (see http://t.uber.com/nullaway )

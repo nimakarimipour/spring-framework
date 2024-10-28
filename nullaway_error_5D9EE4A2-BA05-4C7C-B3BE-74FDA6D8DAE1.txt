@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/event/ApplicationListenerMethodAdapter.java:339: error: [NullAway] dereferenced expression result is @Nullable
+		if (result.getClass().isArray()) {
+		          ^
+    (see http://t.uber.com/nullaway )

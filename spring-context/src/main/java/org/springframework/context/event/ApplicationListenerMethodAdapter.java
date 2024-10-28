@@ -336,7 +336,7 @@ public class ApplicationListenerMethodAdapter implements GenericApplicationListe
 	}
 
 	private void publishEvents(@Nullable Object result) {
-		if (result.getClass().isArray()) {
+		if (result != null && result.getClass().isArray()) {
 			Object[] events = ObjectUtils.toObjectArray(result);
 			for (Object event : events) {
 				publishEvent(event);
