@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/request/async/StandardServletAsyncWebRequest.java:95: error: [NullAway] dereferenced expression ((LifecycleHttpServletResponse) getResponse()) is @Nullable
+		((LifecycleHttpServletResponse) getResponse()).setAsyncWebRequest(this);
+		                                              ^
+    (see http://t.uber.com/nullaway )

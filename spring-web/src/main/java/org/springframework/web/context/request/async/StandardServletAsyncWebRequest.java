@@ -84,6 +84,7 @@ public class StandardServletAsyncWebRequest extends ServletWebRequest implements
 	 * @param previousRequest the existing request from the last dispatch
 	 * @since 5.3.33
 	 */
+	@SuppressWarnings("NullAway")
 	StandardServletAsyncWebRequest(HttpServletRequest request, HttpServletResponse response,
 			@Nullable StandardServletAsyncWebRequest previousRequest) {
 

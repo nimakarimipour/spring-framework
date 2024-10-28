@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/context/support/ServletContextResourcePatternResolver.java:165: error: [NullAway] passing @Nullable parameter 'entryPattern' where @NonNull is required
-				if (getPathMatcher().match(entryPattern, entryPath)) {
-				                           ^
-    (see http://t.uber.com/nullaway )
