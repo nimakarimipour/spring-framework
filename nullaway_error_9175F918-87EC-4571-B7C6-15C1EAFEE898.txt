@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/RequestEntity.java:209: error: [NullAway] dereferenced expression otherEntity is @Nullable
+		return (ObjectUtils.nullSafeEquals(this.method, otherEntity.method) &&
+		                                                           ^
+    (see http://t.uber.com/nullaway )

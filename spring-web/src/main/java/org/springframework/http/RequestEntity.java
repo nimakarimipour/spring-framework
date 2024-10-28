@@ -205,8 +205,8 @@ public class RequestEntity<T> extends HttpEntity<T> {
 		if (!super.equals(other)) {
 			return false;
 		}
-		RequestEntity<?> otherEntity = (RequestEntity<?>) other;
-		return (ObjectUtils.nullSafeEquals(this.method, otherEntity.method) &&
+		return (other instanceof RequestEntity<?> otherEntity &&
+				ObjectUtils.nullSafeEquals(this.method, otherEntity.method) &&
 				ObjectUtils.nullSafeEquals(this.url, otherEntity.url));
 	}
 

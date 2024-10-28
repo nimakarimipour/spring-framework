@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceProxyFactory.java:270: error: [NullAway] dereferenced expression this.exchangeAdapter is @Nullable
-			if (this.exchangeAdapter.supportsRequestAttributes()) {
-			                        ^
-    (see http://t.uber.com/nullaway )
