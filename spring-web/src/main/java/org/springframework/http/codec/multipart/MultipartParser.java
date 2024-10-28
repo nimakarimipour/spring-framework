@@ -115,6 +115,7 @@ final class MultipartParser extends BaseSubscriber<DataBuffer> {
 	}
 
 	@Override
+	@SuppressWarnings("NullAway")
 	protected void hookOnNext(DataBuffer value) {
 		this.requestOutstanding.set(false);
 		this.state.get().onNext(value);
