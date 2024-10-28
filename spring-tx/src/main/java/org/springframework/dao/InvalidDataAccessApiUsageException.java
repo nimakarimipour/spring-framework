@@ -43,7 +43,7 @@ public class InvalidDataAccessApiUsageException extends NonTransientDataAccessEx
 	 * @param msg the detail message
 	 * @param cause the root cause from the data access API in use
 	 */
-	public InvalidDataAccessApiUsageException(String msg, Throwable cause) {
+	public InvalidDataAccessApiUsageException(@Nullable String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
