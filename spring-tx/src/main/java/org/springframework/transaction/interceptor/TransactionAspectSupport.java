@@ -903,7 +903,9 @@ public abstract class TransactionAspectSupport implements BeanFactoryAware, Init
 
 		@Override
 		public String toString() {
-			return getCause().toString();
+			Throwable cause = getCause();
+			Assert.state(cause != null, "Cause must not be null");
+			return cause.toString();
 		}
 	}
 

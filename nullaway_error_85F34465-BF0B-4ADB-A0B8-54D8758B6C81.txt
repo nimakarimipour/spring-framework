@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-tx/src/main/java/org/springframework/transaction/interceptor/TransactionAspectSupport.java:906: error: [NullAway] dereferenced expression getCause() is @Nullable
+			return getCause().toString();
+			                 ^
+    (see http://t.uber.com/nullaway )
