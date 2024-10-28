@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jms/src/main/java/org/springframework/jms/listener/adapter/MessagingMessageListenerAdapter.java:110: error: [NullAway] passing @Nullable parameter 'session' where @NonNull is required
+			return handlerMethod.invoke(message, jmsMessage, session);
+			                                                 ^
+    (see http://t.uber.com/nullaway )
