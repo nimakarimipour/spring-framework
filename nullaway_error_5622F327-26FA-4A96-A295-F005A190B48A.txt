@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webflux/src/main/java/org/springframework/web/reactive/result/method/RequestMappingInfo.java:598: error: [NullAway] dereferenced expression patterns is @Nullable
-                        List<PathPattern> result = new ArrayList<>(patterns.length);
-                                                                           ^
-    (see http://t.uber.com/nullaway )

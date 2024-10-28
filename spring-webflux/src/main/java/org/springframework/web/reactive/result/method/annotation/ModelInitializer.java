@@ -124,7 +124,7 @@ class ModelInitializer {
 			ResolvableType type = handlerResult.getReturnType();
 			MethodParameter typeSource = handlerResult.getReturnTypeSource();
 			ReactiveAdapter adapter = this.adapterRegistry.getAdapter(type.resolve(), value);
-			if (isAsyncVoidType(type, typeSource, adapter)) {
+			if (adapter != null && isAsyncVoidType(type, typeSource, adapter)) {
 				return Mono.from(adapter.toPublisher(value));
 			}
 			String name = getAttributeName(typeSource);
