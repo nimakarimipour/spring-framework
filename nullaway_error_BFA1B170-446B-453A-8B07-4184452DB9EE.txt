@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/handler/annotation/MessageMappingReflectiveProcessor.java:86: error: [NullAway] passing @Nullable parameter 'getMessageType(methodParameter)' where @NonNull is required
-				this.bindingRegistrar.registerReflectionHints(hints, getMessageType(methodParameter));
-				                                                                   ^
-    (see http://t.uber.com/nullaway )
