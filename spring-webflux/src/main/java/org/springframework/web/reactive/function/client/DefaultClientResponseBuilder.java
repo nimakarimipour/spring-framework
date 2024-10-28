@@ -159,7 +159,7 @@ final class DefaultClientResponseBuilder implements ClientResponse.Builder {
 		return this;
 	}
 
-	@SuppressWarnings("ConstantConditions")
+	@SuppressWarnings({"ConstantConditions", "NullAway"})
 	private MultiValueMap<String, ResponseCookie> getCookies() {
 		if (this.cookies == null) {
 			this.cookies = new LinkedMultiValueMap<>(this.originalResponse.cookies());
