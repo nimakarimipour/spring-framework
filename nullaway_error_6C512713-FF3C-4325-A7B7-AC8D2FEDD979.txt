@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context-support/src/main/java/org/springframework/cache/jcache/interceptor/CacheResultInterceptor.java:104: error: [NullAway] dereferenced expression context.getOperation().getExceptionCacheResolver() is @Nullable
+			return extractFrom(context.getOperation().getExceptionCacheResolver().resolveCaches(context));
+			                                                                     ^
+    (see http://t.uber.com/nullaway )
