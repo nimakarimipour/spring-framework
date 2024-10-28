@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExecutionChain.java:82: error: [NullAway] assigning @Nullable expression to @NonNull field
-                        this.handler = handler;
-                                     ^
-    (see http://t.uber.com/nullaway )

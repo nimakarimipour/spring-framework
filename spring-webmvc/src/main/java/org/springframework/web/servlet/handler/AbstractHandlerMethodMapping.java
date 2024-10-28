@@ -442,6 +442,7 @@ public abstract class AbstractHandlerMethodMapping<T> extends AbstractHandlerMap
 		}
 	}
 
+	@SuppressWarnings("NullAway")
 	private void addMatchingMappings(Collection<T> mappings, List<Match> matches, HttpServletRequest request) {
 		for (T mapping : mappings) {
 			T match = getMatchingMapping(mapping, request);
@@ -801,7 +802,7 @@ public abstract class AbstractHandlerMethodMapping<T> extends AbstractHandlerMap
 
 		private final MappingRegistration<T> registration;
 
-		public Match(T mapping, @Nullable MappingRegistration<T> registration) {
+		public Match(T mapping, MappingRegistration<T> registration) {
 			this.mapping = mapping;
 			this.registration = registration;
 		}
