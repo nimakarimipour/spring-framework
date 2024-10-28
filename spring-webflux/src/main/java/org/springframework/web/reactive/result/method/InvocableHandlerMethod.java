@@ -162,7 +162,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 	 * @param providedArgs optional list of argument values to match by type
 	 * @return a Mono with a {@link HandlerResult}
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({"unchecked", "NullAway"})
 	public Mono<HandlerResult> invoke(
 			ServerWebExchange exchange, BindingContext bindingContext, Object... providedArgs) {
 
