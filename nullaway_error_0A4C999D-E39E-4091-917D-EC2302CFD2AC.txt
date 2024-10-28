@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/service/invoker/HttpServiceMethod.java:492: error: [NullAway] passing @Nullable parameter 'entity.getBody()' where @NonNull is required
-						Object body = reactiveAdapter.fromPublisher(entity.getBody());
-						                                                          ^
-    (see http://t.uber.com/nullaway )
