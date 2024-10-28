@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/codec/ServerSentEventHttpMessageReader.java:162: error: [NullAway] dereferenced expression sseBuilder is @Nullable
+					sseBuilder.id(line.substring(3).trim());
+					          ^
+    (see http://t.uber.com/nullaway )
