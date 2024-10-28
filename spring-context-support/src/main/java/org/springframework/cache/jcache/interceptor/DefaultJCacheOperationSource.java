@@ -188,6 +188,7 @@ public class DefaultJCacheOperationSource extends AnnotationJCacheOperationSourc
 		}
 	}
 
+	@SuppressWarnings("NullAway")
 	protected CacheManager getDefaultCacheManager() {
 		if (getCacheManager() == null) {
 			Assert.state(this.beanFactory != null, "BeanFactory required for default CacheManager resolution");
