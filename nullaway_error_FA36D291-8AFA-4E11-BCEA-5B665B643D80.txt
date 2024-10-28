@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/AnnotationConfigUtils.java:259: error: [NullAway] dereferenced expression role.getNumber("value") is @Nullable
+			abd.setRole(role.getNumber("value").intValue());
+			                                   ^
+    (see http://t.uber.com/nullaway )

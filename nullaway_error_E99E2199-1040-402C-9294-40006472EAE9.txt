@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/jmx/export/annotation/AnnotationJmxAttributeSource.java:120: error: [NullAway] dereferenced expression defaultValue is @Nullable
-                if (!defaultValue.isEmpty()) {
-                                 ^
-    (see http://t.uber.com/nullaway )
