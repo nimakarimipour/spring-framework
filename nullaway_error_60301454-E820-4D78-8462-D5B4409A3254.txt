@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/http/client/JettyClientHttpRequest.java:120: error: [NullAway] dereferenced expression cause is @Nullable
+				throw new IOException(cause.getMessage(), cause);
+				                           ^
+    (see http://t.uber.com/nullaway )
