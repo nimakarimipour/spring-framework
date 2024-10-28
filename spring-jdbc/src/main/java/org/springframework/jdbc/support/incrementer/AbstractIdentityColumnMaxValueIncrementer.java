@@ -42,7 +42,7 @@ public abstract class AbstractIdentityColumnMaxValueIncrementer extends Abstract
 	private boolean deleteSpecificValues = false;
 
 	/** The current cache of values. */
-	@Nullable private long[] valueCache;
+	private long[] valueCache;
 
 	/** The next id to serve from the value cache. */
 	private int nextValueIndex = -1;
@@ -54,9 +54,11 @@ public abstract class AbstractIdentityColumnMaxValueIncrementer extends Abstract
 	 * @see #setIncrementerName
 	 * @see #setColumnName
 	 */
+	@SuppressWarnings("NullAway")
 	public AbstractIdentityColumnMaxValueIncrementer() {
 	}
 
+	@SuppressWarnings("NullAway")
 	public AbstractIdentityColumnMaxValueIncrementer(DataSource dataSource, String incrementerName, String columnName) {
 		super(dataSource, incrementerName, columnName);
 	}

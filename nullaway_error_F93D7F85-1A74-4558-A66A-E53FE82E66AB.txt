@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/core/ArgumentTypePreparedStatementSetter.java:51: error: [NullAway] dereferenced expression argTypes is @Nullable
-				(args != null && args.length != argTypes.length)) {
-				                                        ^
-    (see http://t.uber.com/nullaway )

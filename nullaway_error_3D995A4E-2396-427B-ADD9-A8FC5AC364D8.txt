@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jdbc/src/main/java/org/springframework/jdbc/support/incrementer/AbstractIdentityColumnMaxValueIncrementer.java:122: error: [NullAway] dereferenced expression this.valueCache is @Nullable
+                return this.valueCache[this.nextValueIndex++];
+                                      ^
+    (see http://t.uber.com/nullaway )
