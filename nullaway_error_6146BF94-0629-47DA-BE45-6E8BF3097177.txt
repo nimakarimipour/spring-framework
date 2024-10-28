@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/handler/RequestMatchResult.java:100: error: [NullAway] dereferenced expression this.pathPattern.matchAndExtract(this.lookupPathContainer) is @Nullable
-				this.pathPattern.matchAndExtract(this.lookupPathContainer).getUriVariables() :
-				                                                          ^
-    (see http://t.uber.com/nullaway )
