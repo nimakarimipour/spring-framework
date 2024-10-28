@@ -50,7 +50,7 @@ public abstract class HttpMediaTypeException extends ServletException implements
 	 * @deprecated as of 6.0
 	 */
 	@Deprecated
-	protected HttpMediaTypeException(String message) {
+	protected HttpMediaTypeException(@Nullable String message) {
 		this(message, Collections.emptyList());
 	}
 
@@ -60,7 +60,7 @@ public abstract class HttpMediaTypeException extends ServletException implements
 	 * @deprecated as of 6.0
 	 */
 	@Deprecated
-	protected HttpMediaTypeException(String message, List<MediaType> supportedMediaTypes) {
+	protected HttpMediaTypeException(@Nullable String message, List<MediaType> supportedMediaTypes) {
 		this(message, supportedMediaTypes, null, null);
 	}
 
@@ -73,7 +73,7 @@ public abstract class HttpMediaTypeException extends ServletException implements
 	 * resolving the problem "detail" through a {@code MessageSource}
 	 * @since 6.0
 	 */
-	protected HttpMediaTypeException(String message, List<MediaType> supportedMediaTypes,
+	protected HttpMediaTypeException(@Nullable String message, List<MediaType> supportedMediaTypes,
 			@Nullable String messageDetailCode, @Nullable Object[] messageDetailArguments) {
 
 		super(message);
