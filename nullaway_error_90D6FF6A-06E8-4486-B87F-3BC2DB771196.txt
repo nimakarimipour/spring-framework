@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/method/annotation/AbstractNamedValueMethodArgumentResolver.java:287: error: [NullAway] dereferenced expression BeanUtils.findPrimaryConstructor(parameterType) is @Nullable
+			parameterType = BeanUtils.findPrimaryConstructor(parameterType).getParameterTypes()[0];
+			                                                               ^
+    (see http://t.uber.com/nullaway )

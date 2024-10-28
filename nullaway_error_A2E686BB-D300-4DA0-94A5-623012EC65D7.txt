@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/client/HttpMessageConverterExtractor.java:96: error: [NullAway] enhanced-for expression this.messageConverters is @Nullable
-                        for (HttpMessageConverter<?> messageConverter : this.messageConverters) {
-                                                                            ^
-    (see http://t.uber.com/nullaway )
