@@ -290,7 +290,7 @@ public abstract class CollectionUtils {
 	 */
 	@SuppressWarnings("unchecked")
 	@Nullable
-	public static <T> T findValueOfType(Collection<?> collection, @Nullable Class<T> type) {
+	public static <T> T findValueOfType(@Nullable Collection<?> collection, @Nullable Class<T> type) {
 		if (isEmpty(collection)) {
 			return null;
 		}
