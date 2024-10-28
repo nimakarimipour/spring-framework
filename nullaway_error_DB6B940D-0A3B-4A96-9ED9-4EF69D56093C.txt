@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/ContextAnnotationAutowireCandidateResolver.java:121: error: [NullAway] passing @Nullable parameter 'beanName' where @NonNull is required
-							dlbf.registerDependentBean(autowiredBeanName, beanName);
-							                                              ^
-    (see http://t.uber.com/nullaway )

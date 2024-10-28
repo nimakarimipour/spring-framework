@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/ProfileCondition.java:37: error: [NullAway] enhanced-for expression attrs.get("value") is @Nullable
+			for (Object value : attrs.get("value")) {
+			                             ^
+    (see http://t.uber.com/nullaway )
