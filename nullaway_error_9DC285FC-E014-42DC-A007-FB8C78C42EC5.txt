@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassParser.java:635: error: [NullAway] dereferenced expression configurationClass is @Nullable
+		AnnotationMetadata metadata = configurationClass.getMetadata();
+		                                                ^
+    (see http://t.uber.com/nullaway )
