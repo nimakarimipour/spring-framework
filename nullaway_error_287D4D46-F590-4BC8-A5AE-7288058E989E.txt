@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/rsocket/service/RSocketServiceMethod.java:116: error: [NullAway] passing @Nullable parameter 'route1' where @NonNull is required
+			return strategies.routeMatcher().combine(route1, route2);
+			                                         ^
+    (see http://t.uber.com/nullaway )

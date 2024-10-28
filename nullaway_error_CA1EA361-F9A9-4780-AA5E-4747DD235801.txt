@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-messaging/src/main/java/org/springframework/messaging/simp/stomp/StompDecoder.java:151: error: [NullAway] dereferenced expression headerAccessor is @Nullable
-					StompCommand stompCommand = headerAccessor.getCommand();
-					                                          ^
-    (see http://t.uber.com/nullaway )
