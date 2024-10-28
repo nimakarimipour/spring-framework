@@ -138,7 +138,7 @@ tasks.withType(JavaCompile).configureEach {
 	options.compilerArgs += ["-Xmaxwarns", "10000"]
 }
 
-def projectToAnalyze = "spring-jdbc"
+def projectToAnalyze = "spring-jms"
 
 tasks.compileJava {
 	// The check defaults to a warning, bump it up to an error for the main sources
