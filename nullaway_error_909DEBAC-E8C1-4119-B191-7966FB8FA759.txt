@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context-support/src/main/java/org/springframework/scheduling/quartz/SchedulerFactoryBean.java:673: error: [NullAway] dereferenced expression this.resourceLoader is @Nullable
+			currentThread.setContextClassLoader(this.resourceLoader.getClassLoader());
+			                                                       ^
+    (see http://t.uber.com/nullaway )
