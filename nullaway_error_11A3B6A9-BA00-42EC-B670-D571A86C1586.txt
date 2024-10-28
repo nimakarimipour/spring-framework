@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor.java:878: error: [NullAway] dereferenced expression properties is @Nullable
+				for (String propertyName : new TreeSet<>(properties.stringPropertyNames())) {
+				                                                   ^
+    (see http://t.uber.com/nullaway )
