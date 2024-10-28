@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context-support/src/main/java/org/springframework/cache/jcache/JCacheCache.java:95: error: [NullAway] passing @Nullable parameter 'ex.getCause()' where @NonNull is required
+			throw new ValueRetrievalException(key, valueLoader, ex.getCause());
+			                                                               ^
+    (see http://t.uber.com/nullaway )

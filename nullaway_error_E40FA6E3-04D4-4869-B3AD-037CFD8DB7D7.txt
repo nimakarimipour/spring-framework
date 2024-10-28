@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-jms/src/main/java/org/springframework/jms/connection/SingleConnectionFactory.java:341: error: [NullAway] returning @Nullable expression from method with @NonNull return type
-			return this.connection;
-			^
-    (see http://t.uber.com/nullaway )
