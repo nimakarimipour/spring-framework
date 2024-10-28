@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/context/event/EventListenerMethodProcessor.java:115: error: [NullAway] dereferenced expression beanFactory is @Nullable
-		String[] beanNames = beanFactory.getBeanNamesForType(Object.class);
-		                                ^
-    (see http://t.uber.com/nullaway )
