@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/jpa/persistenceunit/PersistenceManagedTypesBeanRegistrationAotProcessor.java:211: error: [NullAway] passing @Nullable parameter 'embeddableInstantiatorClass' where @NonNull is required
+			reflection.registerType(embeddableInstantiatorClass, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
+			                        ^
+    (see http://t.uber.com/nullaway )
