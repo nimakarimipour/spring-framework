@@ -186,6 +186,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	 * @since 5.3
 	 */
 	@Nullable
+	@SuppressWarnings("NullAway")
 	protected Object lookupHandler(
 			RequestPath path, String lookupPath, HttpServletRequest request) throws Exception {
 
@@ -335,7 +336,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	 * @param uriTemplateVariables the URI template variables, can be {@code null} if no variables found
 	 * @return the final handler object
 	 */
-	protected Object buildPathExposingHandler(@Nullable Object rawHandler, String bestMatchingPattern,
+	protected Object buildPathExposingHandler(Object rawHandler, String bestMatchingPattern,
 			String pathWithinMapping, @Nullable Map<String, String> uriTemplateVariables) {
 
 		HandlerExecutionChain chain = new HandlerExecutionChain(rawHandler);
