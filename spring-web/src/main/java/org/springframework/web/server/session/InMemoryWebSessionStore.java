@@ -293,6 +293,7 @@ public class InMemoryWebSessionStore implements WebSessionStore {
 			return isExpired(clock.instant());
 		}
 
+		@SuppressWarnings("NullAway")
 		private boolean isExpired(Instant now) {
 			if (this.state.get().equals(State.EXPIRED)) {
 				return true;
