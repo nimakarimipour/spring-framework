@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-web/src/main/java/org/springframework/web/cors/DefaultCorsProcessor.java:159: error: [NullAway] passing @Nullable parameter 'allowHeaders' where @NonNull is required
+			responseHeaders.setAccessControlAllowHeaders(allowHeaders);
+			                                             ^
+    (see http://t.uber.com/nullaway )
