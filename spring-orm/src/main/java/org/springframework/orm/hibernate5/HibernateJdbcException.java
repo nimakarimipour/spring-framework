@@ -49,6 +49,7 @@ public class HibernateJdbcException extends UncategorizedDataAccessException {
 	/**
 	 * Return the SQL that led to the problem.
 	 */
+	@SuppressWarnings("NullAway")
 	public String getSql() {
 		return ((JDBCException) getCause()).getSQL();
 	}

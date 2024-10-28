@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-orm/src/main/java/org/springframework/orm/hibernate5/HibernateJdbcException.java:45: error: [NullAway] dereferenced expression ((JDBCException) getCause()) is @Nullable
-		return ((JDBCException) getCause()).getSQLException();
-		                                   ^
-    (see http://t.uber.com/nullaway )
