@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-context/src/main/java/org/springframework/cache/interceptor/CacheAspectSupport.java:1099: error: [NullAway] dereferenced expression ((Mono<?>) invokeOperation(invoker)) is @Nullable
+				return Mono.fromFuture(cache.retrieve(key, () -> ((Mono<?>) invokeOperation(invoker)).toFuture()));
+				                                                                                     ^
+    (see http://t.uber.com/nullaway )
