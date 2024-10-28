@@ -1,0 +1,4 @@
+/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/RequestMappingInfo.java:499: error: [NullAway] dereferenced expression (pathPatterns != null ? pathPatterns : patterns) is @Nullable
+		return (pathPatterns != null ? pathPatterns : patterns).hashCode() * 31 +
+		                                                       ^
+    (see http://t.uber.com/nullaway )
