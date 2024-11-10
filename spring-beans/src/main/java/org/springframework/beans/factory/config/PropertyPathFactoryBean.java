@@ -29,6 +29,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
+import org.springframework.util.NullabilityUtil;
 import org.springframework.util.StringUtils;
 
 /**
@@ -162,7 +163,6 @@ public class PropertyPathFactoryBean implements FactoryBean<Object>, BeanNameAwa
 
 
 	@Override
-	@SuppressWarnings("NullAway")
 	public void setBeanFactory(BeanFactory beanFactory) {
 		this.beanFactory = beanFactory;
 
@@ -183,6 +183,7 @@ public class PropertyPathFactoryBean implements FactoryBean<Object>, BeanNameAwa
 						"Neither 'targetObject' nor 'targetBeanName' specified, and PropertyPathFactoryBean " +
 						"bean name '" + this.beanName + "' does not follow 'beanName.property' syntax");
 			}
+			this.beanName = NullabilityUtil.castToNonNullType(this.beanName);
 			this.targetBeanName = this.beanName.substring(0, dotIndex);
 			this.propertyPath = this.beanName.substring(dotIndex + 1);
 		}
@@ -192,11 +193,14 @@ public class PropertyPathFactoryBean implements FactoryBean<Object>, BeanNameAwa
 			throw new IllegalArgumentException("'propertyPath' is required");
 		}
 
-		if (this.targetBeanWrapper == null && this.beanFactory.isSingleton(this.targetBeanName)) {
-			// Eagerly fetch singleton target bean, and determine result type.
-			Object bean = this.beanFactory.getBean(this.targetBeanName);
-			this.targetBeanWrapper = PropertyAccessorFactory.forBeanPropertyAccess(bean);
-			this.resultType = this.targetBeanWrapper.getPropertyType(this.propertyPath);
+		if (this.targetBeanWrapper == null){
+			this.targetBeanName = NullabilityUtil.castToNonNullType(this.targetBeanName);
+			if(this.beanFactory.isSingleton(this.targetBeanName)) {
+				// Eagerly fetch singleton target bean, and determine result type.
+				Object bean = this.beanFactory.getBean(this.targetBeanName);
+				this.targetBeanWrapper = PropertyAccessorFactory.forBeanPropertyAccess(bean);
+				this.resultType = this.targetBeanWrapper.getPropertyType(this.propertyPath);
+			}
 		}
 	}
 
