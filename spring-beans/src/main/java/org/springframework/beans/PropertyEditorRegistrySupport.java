@@ -44,6 +44,7 @@ import java.util.TimeZone;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
+import com.uber.nullaway.annotations.EnsuresNonNull;
 import org.xml.sax.InputSource;
 
 import org.springframework.beans.propertyeditors.ByteArrayPropertyEditor;
@@ -179,7 +180,6 @@ public class PropertyEditorRegistrySupport implements PropertyEditorRegistry {
 	 * @see #registerDefaultEditors
 	 */
 	@Nullable
-	@SuppressWarnings("NullAway")
 	public PropertyEditor getDefaultEditor(Class<?> requiredType) {
 		if (!this.defaultEditorsActive) {
 			return null;
@@ -199,6 +199,7 @@ public class PropertyEditorRegistrySupport implements PropertyEditorRegistry {
 	/**
 	 * Actually register the default editors for this registry instance.
 	 */
+	@EnsuresNonNull("defaultEditors")
 	private void createDefaultEditors() {
 		this.defaultEditors = new HashMap<>(64);
 
