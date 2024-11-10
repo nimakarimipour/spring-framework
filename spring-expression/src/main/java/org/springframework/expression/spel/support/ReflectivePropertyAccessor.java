@@ -49,6 +49,7 @@ import org.springframework.expression.spel.CompilablePropertyAccessor;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
+import org.springframework.util.NullabilityUtil;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -187,6 +188,7 @@ public class ReflectivePropertyAccessor implements PropertyAccessor {
 			}
 			if (methodToInvoke != null) {
 				try {
+					invoker = NullabilityUtil.castToNonNullType(invoker);
 					ReflectionUtils.makeAccessible(methodToInvoke);
 					Object value = methodToInvoke.invoke(target);
 					return new TypedValue(value, invoker.typeDescriptor.narrow(value));
