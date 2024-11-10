@@ -29,6 +29,7 @@ import org.springframework.beans.factory.config.DependencyDescriptor;
 import org.springframework.core.ResolvableType;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ClassUtils;
+import org.springframework.util.NullabilityUtil;
 
 /**
  * Basic {@link AutowireCandidateResolver} that performs a full generic type
@@ -73,7 +74,6 @@ public class GenericTypeAwareAutowireCandidateResolver extends SimpleAutowireCan
 	 * Match the given dependency type with its generic type information against the given
 	 * candidate bean definition.
 	 */
-	@SuppressWarnings("NullAway")
 	protected boolean checkGenericTypeMatch(BeanDefinitionHolder bdHolder, DependencyDescriptor descriptor) {
 		ResolvableType dependencyType = descriptor.getResolvableType();
 		if (dependencyType.getType() instanceof Class) {
@@ -143,6 +143,7 @@ public class GenericTypeAwareAutowireCandidateResolver extends SimpleAutowireCan
 			return true;
 		}
 		if (cacheType) {
+			rbd = NullabilityUtil.castToNonNullType(rbd);
 			rbd.targetType = targetType;
 		}
 		if (descriptor.fallbackMatchAllowed()) {
