@@ -238,7 +238,6 @@ public abstract class NumberUtils {
 	 * @see #convertNumberToTargetClass
 	 * @see #parseNumber(String, Class)
 	 */
-	@SuppressWarnings("NullAway")
 	public static <T extends Number> T parseNumber(
 			String text, Class<T> targetClass, @Nullable NumberFormat numberFormat) {
 
@@ -262,7 +261,7 @@ public abstract class NumberUtils {
 				throw new IllegalArgumentException("Could not parse number: " + ex.getMessage());
 			}
 			finally {
-				if (resetBigDecimal) {
+				if (decimalFormat != null && resetBigDecimal) {
 					decimalFormat.setParseBigDecimal(false);
 				}
 			}
