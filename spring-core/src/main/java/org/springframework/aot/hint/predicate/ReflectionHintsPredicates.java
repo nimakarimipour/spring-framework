@@ -231,6 +231,7 @@ public class ReflectionHintsPredicates {
 		 * @param memberCategories the member categories
 		 * @return the refined {@link RuntimeHints} predicate
 		 */
+		@SuppressWarnings("NullAway")
 		public Predicate<RuntimeHints> withMemberCategories(MemberCategory... memberCategories) {
 			Assert.notEmpty(memberCategories, "'memberCategories' must not be empty");
 			return this.and(hints -> getTypeHint(hints).getMemberCategories().containsAll(Arrays.asList(memberCategories)));
@@ -241,6 +242,7 @@ public class ReflectionHintsPredicates {
 		 * @param memberCategories the member categories
 		 * @return the refined {@link RuntimeHints} predicate
 		 */
+		@SuppressWarnings("NullAway")
 		public Predicate<RuntimeHints> withAnyMemberCategory(MemberCategory... memberCategories) {
 			Assert.notEmpty(memberCategories, "'memberCategories' must not be empty");
 			return this.and(hints -> Arrays.stream(memberCategories)
@@ -324,6 +326,7 @@ public class ReflectionHintsPredicates {
 		}
 
 		@Override
+		@SuppressWarnings("NullAway")
 		Predicate<RuntimeHints> exactMatch() {
 			return hints -> (hints.reflection().getTypeHint(this.executable.getDeclaringClass()) != null) &&
 					hints.reflection().getTypeHint(this.executable.getDeclaringClass()).constructors().anyMatch(executableHint -> {

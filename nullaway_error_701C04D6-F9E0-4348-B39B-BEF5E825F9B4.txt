@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-test/src/main/java/org/springframework/test/context/transaction/TransactionalTestExecutionListener.java:422: error: [NullAway] dereferenced expression rollback is @Nullable
-			boolean defaultRollback = rollback.value();
-			                                  ^
-    (see http://t.uber.com/nullaway )
