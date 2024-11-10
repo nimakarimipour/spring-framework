@@ -27,6 +27,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
+import org.springframework.util.NullabilityUtil;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -167,7 +168,6 @@ public class FieldRetrievingFactoryBean
 
 
 	@Override
-	@SuppressWarnings("NullAway")
 	public void afterPropertiesSet() throws ClassNotFoundException, NoSuchFieldException {
 		if (this.targetClass != null && this.targetObject != null) {
 			throw new IllegalArgumentException("Specify either targetClass or targetObject, not both");
@@ -205,6 +205,7 @@ public class FieldRetrievingFactoryBean
 
 		// Try to get the exact method first.
 		Class<?> targetClass = (this.targetObject != null ? this.targetObject.getClass() : this.targetClass);
+		targetClass = NullabilityUtil.castToNonNullType(targetClass);
 		this.fieldObject = targetClass.getField(this.targetField);
 	}
 
