@@ -45,7 +45,7 @@ import org.springframework.lang.Nullable;
  * @param <V> the type of the cached values, does not allow null values
  * @see #get(Object)
  */
-@SuppressWarnings({"unchecked", "NullAway"})
+@SuppressWarnings({"unchecked"})
 public final class ConcurrentLruCache<K, V> {
 
 	private final int capacity;
@@ -125,7 +125,7 @@ public final class ConcurrentLruCache<K, V> {
 	private void processRead(Node<K, V> node) {
 		boolean drainRequested = this.readOperations.recordRead(node);
 		final DrainStatus status = this.drainStatus.get();
-		if (status.shouldDrainBuffers(drainRequested)) {
+		if (status != null && status.shouldDrainBuffers(drainRequested)) {
 			drainOperations();
 		}
 	}
@@ -200,6 +200,9 @@ public final class ConcurrentLruCache<K, V> {
 	private void markAsRemoved(Node<K, V> node) {
 		for (; ; ) {
 			CacheEntry<V> current = node.get();
+			if(current == null) {
+				return;
+			}
 			CacheEntry<V> removed = new CacheEntry<>(current.value, CacheEntryState.REMOVED);
 			if (node.compareAndSet(current, removed)) {
 				this.currentSize.lazySet(this.currentSize.get() - 1);
@@ -241,7 +244,7 @@ public final class ConcurrentLruCache<K, V> {
 	private void markForRemoval(Node<K, V> node) {
 		for (; ; ) {
 			final CacheEntry<V> current = node.get();
-			if (!current.isActive()) {
+			if (current == null || !current.isActive()) {
 				return;
 			}
 			final CacheEntry<V> pendingRemoval = new CacheEntry<>(current.value, CacheEntryState.PENDING_REMOVAL);
@@ -264,7 +267,7 @@ public final class ConcurrentLruCache<K, V> {
 		@Override
 		public void run() {
 			currentSize.lazySet(currentSize.get() + 1);
-			if (this.node.get().isActive()) {
+			if (this.node.get() != null && this.node.get().isActive()) {
 				evictionQueue.add(this.node);
 				evictEntries();
 			}
@@ -516,7 +519,11 @@ public final class ConcurrentLruCache<K, V> {
 		}
 
 		V getValue() {
-			return get().value;
+			CacheEntry<V> v = get();
+			if (v == null) {
+				throw new IllegalStateException("Node is in an invalid state");
+			}
+			return v.value;
 		}
 	}
 
