@@ -62,10 +62,13 @@ public interface ListenableFuture<T> extends Future<T> {
 	 * Expose this {@link ListenableFuture} as a JDK {@link CompletableFuture}.
 	 * @since 5.0
 	 */
-	@SuppressWarnings("NullAway")
 	default CompletableFuture<T> completable() {
 		CompletableFuture<T> completable = new DelegatingCompletableFuture<>(this);
-		addCallback(completable::complete, completable::completeExceptionally);
+		addCallback(result -> {
+			if (result != null) {
+				completable.complete(result);
+			}
+		}, completable::completeExceptionally);
 		return completable;
 	}
 
