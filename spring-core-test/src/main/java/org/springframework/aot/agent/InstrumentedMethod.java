@@ -187,7 +187,7 @@ enum InstrumentedMethod {
 	/**
 	 * {@link Class#getField(String)}.
 	 */
-	@SuppressWarnings("NullAway")
+
 	CLASS_GETFIELD(Class.class, "getField", HintType.REFLECTION,
 			invocation -> {
 				Field field = invocation.getReturnValue();
@@ -198,7 +198,7 @@ enum InstrumentedMethod {
 				return reflection().onType(thisType).withMemberCategory(MemberCategory.PUBLIC_FIELDS)
 						.and(runtimeHints -> Modifier.isPublic(field.getModifiers()))
 						.or(reflection().onType(thisType).withMemberCategory(MemberCategory.DECLARED_FIELDS))
-						.or(reflection().onField(invocation.getReturnValue()));
+						.or(reflection().onField(field));
 			}),
 
 	/**

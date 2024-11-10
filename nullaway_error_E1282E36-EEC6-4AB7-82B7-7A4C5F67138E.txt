@@ -1,4 +1,0 @@
-/Users/nima/Developer/null-repair-auto/projects/spring-framework/spring-core/src/main/java/org/springframework/util/concurrent/ListenableFutureTask.java:75: error: [NullAway] parameter value of referenced method is @NonNull, but parameter in functional interface method org.springframework.util.concurrent.SuccessCallback.onSuccess(T) is @Nullable
-		this.callbacks.addSuccessCallback(completable::complete);
-		                                  ^
-    (see http://t.uber.com/nullaway )
