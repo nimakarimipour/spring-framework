@@ -70,10 +70,13 @@ public class ListenableFutureTask<T> extends FutureTask<T> implements Listenable
 	}
 
 	@Override
-	@SuppressWarnings("NullAway")
 	public CompletableFuture<T> completable() {
 		CompletableFuture<T> completable = new DelegatingCompletableFuture<>(this);
-		this.callbacks.addSuccessCallback(completable::complete);
+		this.callbacks.addSuccessCallback(result -> {
+			if(result != null){
+				completable.complete(result);
+			}
+		});
 		this.callbacks.addFailureCallback(completable::completeExceptionally);
 		return completable;
 	}
