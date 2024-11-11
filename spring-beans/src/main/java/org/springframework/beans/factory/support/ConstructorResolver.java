@@ -72,6 +72,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.MethodInvoker;
+import org.springframework.util.NullabilityUtil;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
@@ -130,7 +131,6 @@ class ConstructorResolver {
 	 * or {@code null} if none (-> use constructor argument values from bean definition)
 	 * @return a BeanWrapper for the new instance
 	 */
-	@SuppressWarnings("NullAway")
 	public BeanWrapper autowireConstructor(String beanName, RootBeanDefinition mbd,
 			@Nullable Constructor<?>[] chosenCtors, @Nullable Object[] explicitArgs) {
 
@@ -156,7 +156,7 @@ class ConstructorResolver {
 					}
 				}
 			}
-			if (argsToResolve != null) {
+			if (constructorToUse != null && argsToResolve != null) {
 				argsToUse = resolvePreparedArguments(beanName, mbd, bw, constructorToUse, argsToResolve);
 			}
 		}
@@ -252,6 +252,7 @@ class ConstructorResolver {
 					}
 				}
 				else {
+					explicitArgs = NullabilityUtil.castToNonNullType(explicitArgs);
 					// Explicit arguments given -> arguments length must match exactly.
 					if (parameterCount != explicitArgs.length) {
 						continue;
