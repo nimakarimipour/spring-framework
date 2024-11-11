@@ -16,6 +16,7 @@
 
 package org.springframework.aop.target.dynamic;
 
+import com.uber.nullaway.annotations.EnsuresNonNull;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -66,7 +67,6 @@ public abstract class AbstractRefreshableTargetSource implements TargetSource, R
 
 
 	@Override
-	@SuppressWarnings("NullAway")
 	public synchronized Class<?> getTargetClass() {
 		if (this.targetObject == null) {
 			refresh();
@@ -75,7 +75,6 @@ public abstract class AbstractRefreshableTargetSource implements TargetSource, R
 	}
 
 	@Override
-	@Nullable
 	public final synchronized Object getTarget() {
 		if ((refreshCheckDelayElapsed() && requiresRefresh()) || this.targetObject == null) {
 			refresh();
@@ -85,6 +84,7 @@ public abstract class AbstractRefreshableTargetSource implements TargetSource, R
 
 
 	@Override
+	@EnsuresNonNull("targetObject")
 	public final synchronized void refresh() {
 		logger.debug("Attempting to refresh target");
 
