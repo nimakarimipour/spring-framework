@@ -21,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
+import com.uber.nullaway.annotations.EnsuresNonNull;
 import org.aopalliance.aop.Advice;
 import org.aspectj.lang.reflect.PerClauseKind;
 
@@ -195,7 +196,6 @@ final class InstantiationModelAwarePointcutAdvisorImpl
 	}
 
 	@Override
-	@SuppressWarnings("NullAway")
 	public boolean isBeforeAdvice() {
 		if (this.isBeforeAdvice == null) {
 			determineAdviceType();
@@ -216,6 +216,7 @@ final class InstantiationModelAwarePointcutAdvisorImpl
 	 * Duplicates some logic from getAdvice, but importantly does not force
 	 * creation of the advice.
 	 */
+	@EnsuresNonNull("isBeforeAdvice")
 	private void determineAdviceType() {
 		AspectJAnnotation aspectJAnnotation =
 				AbstractAspectJAdvisorFactory.findAspectJAnnotationOnMethod(this.aspectJAdviceMethod);
