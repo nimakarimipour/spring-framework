@@ -215,7 +215,7 @@ final class InstantiationModelAwarePointcutAdvisorImpl
 	 * Duplicates some logic from getAdvice, but importantly does not force
 	 * creation of the advice.
 	 */
-	@EnsuresNonNull("isBeforeAdvice")
+	@EnsuresNonNull({"isBeforeAdvice", "isAfterAdvice"})
 	private void determineAdviceType() {
 		AspectJAnnotation aspectJAnnotation =
 				AbstractAspectJAdvisorFactory.findAspectJAnnotationOnMethod(this.aspectJAdviceMethod);
