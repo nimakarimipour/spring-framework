@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.aspectj.lang.reflect.PerClauseKind;
@@ -80,7 +81,6 @@ public class BeanFactoryAspectJAdvisorsBuilder {
 	 * @return the list of {@link org.springframework.aop.Advisor} beans
 	 * @see #isEligibleBean
 	 */
-	@SuppressWarnings("NullAway")
 	public List<Advisor> buildAspectJAdvisors() {
 		List<String> aspectNames = this.aspectBeanNames;
 
@@ -147,7 +147,7 @@ public class BeanFactoryAspectJAdvisorsBuilder {
 			}
 			else {
 				MetadataAwareAspectInstanceFactory factory = this.aspectFactoryCache.get(aspectName);
-				advisors.addAll(this.advisorFactory.getAdvisors(factory));
+				advisors.addAll(this.advisorFactory.getAdvisors(Objects.requireNonNull(factory)));
 			}
 		}
 		return advisors;
