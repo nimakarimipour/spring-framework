@@ -393,7 +393,6 @@ class ConstructorResolver {
 	 * method, or {@code null} if none (-> use constructor argument values from bean definition)
 	 * @return a BeanWrapper for the new instance
 	 */
-	@SuppressWarnings("NullAway")
 	public BeanWrapper instantiateUsingFactoryMethod(
 			String beanName, RootBeanDefinition mbd, @Nullable Object[] explicitArgs) {
 
@@ -449,6 +448,7 @@ class ConstructorResolver {
 				}
 			}
 			if (argsToResolve != null) {
+				factoryMethodToUse = NullabilityUtil.castToNonNullType(factoryMethodToUse);
 				argsToUse = resolvePreparedArguments(beanName, mbd, bw, factoryMethodToUse, argsToResolve);
 			}
 		}
