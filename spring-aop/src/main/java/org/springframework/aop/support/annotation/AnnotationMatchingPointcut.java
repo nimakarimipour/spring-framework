@@ -76,6 +76,7 @@ public class AnnotationMatchingPointcut implements Pointcut {
 	}
 
 
+	@SuppressWarnings("NullAway")
 	public AnnotationMatchingPointcut(@Nullable Class<? extends Annotation> classAnnotationType,
 			@Nullable Class<? extends Annotation> methodAnnotationType, boolean checkInherited) {
 
