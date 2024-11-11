@@ -704,7 +704,7 @@ public class GroovyBeanDefinitionReader extends AbstractBeanDefinitionReader imp
 				new DescriptiveResource("Groovy"));
 		BeanDefinitionParserDelegate delegate = new BeanDefinitionParserDelegate(readerContext);
 		boolean decorating = (this.currentBeanDefinition != null);
-		if (!decorating) {
+		if (this.currentBeanDefinition == null) {
 			this.currentBeanDefinition = new GroovyBeanDefinitionWrapper(namespace);
 		}
 		return new GroovyDynamicElementReader(namespace, this.namespaces, delegate, this.currentBeanDefinition, decorating) {
